@@ -11,9 +11,6 @@ $(document).ready(function () {
     mui('body').on('shown', '.mui-popover', function (e) {
         //console.log('shown', e.detail.id);//detail为当前popover元素
     });
-    mui('body').on('hidden', '.mui-popover', function (e) {
-        //console.log('hidden', e.detail.id);//detail为当前popover元素
-    });
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });

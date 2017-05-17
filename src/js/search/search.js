@@ -101,4 +101,6 @@ function itemDone(e) {
     elParent = target.parentNode;
 
 }
+
+/*函数加载*/
 init_hotkeyword();

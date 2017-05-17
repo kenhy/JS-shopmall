@@ -16,7 +16,7 @@
     <a href="javascript:void(0);" class="mui-icon iconfont icon-gouwuche2 mui-pull-right nmg"></a>
     <h1 class="mui-title"></h1>
 </header>
-<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
     <div class="mui-scroll">
         <div class="mui-content padding-b50">
             <div data-type="details">
@@ -76,15 +76,16 @@
             <p class="iconfont icon-fenxiang mui-pull-left radius50 border bakc-fff text-c font18"></p>
         </div>
     </div>
-    {{if }}
+    {{if superDealBO.status = 0}}
     <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
         <div class="top-left">
             <h4 class="font-weight font16">Flash Deals</h4>
-            <s class="line-through font12">US$89.99</s>
+            <s class="line-through font12">TTD $89.99</s>
         </div>
-        <b class="text-c font18">US$9.99</b>
+        <b class="text-c font18">TTD $9.99</b>
         <div class="count-down color-white font12 text-c">April 28 began spike</div>
     </div>
+    {{else}}
     {{/if}}
     <div class="bakc-fff padding-line44" style="padding-bottom: 0;">
         <div class="description">
@@ -204,16 +205,21 @@
                     </li>
                     <li class="margin-t10">
                         <ul class="hidden">
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                src="../../images/img.jpg"></li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                src="../../images/img2.jpg"></li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                src="../../images/img3.jpg"></li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                src="../../images/cat.jpg"></li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                src="../../images/Default-Avatar.jpg"></li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/img.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/img2.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/img3.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/cat.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/Default-Avatar.jpg">
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -230,7 +236,10 @@
             <dd>
                 <ul style="margin-left: 42px;">
                     <li class="line16 font-color-3">
-                        <p class="font-color-3">Buyer Protection<br/>Protecting your purchase from click to delivery</p>
+                        <p class="font-color-3">
+                            Buyer Protection<br/>
+                            Protecting your purchase from click to delivery
+                        </p>
                         <br/>
                         <p class="font-color-3">
                             Welcome to RTTMALL buyer Protection<br/>
@@ -251,7 +260,11 @@
     <div class="mui-table-view-cell text-c bakc-fff margin-t10 ptb-lr">
         <span class="iconfont icon-shang font18"></span>
         <p class="font-color-3">swipe up view item description</p>
+        <div id="">
+
+        </div>
     </div>
+
 </script>
 <script>
     mui.init();
@@ -286,6 +299,26 @@
     }
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
+    });
+    var div = document.getElementsByClassName("mui-slider-item ");
+    for (var i = 0; i < div.length; i++) {
+        var d = div[i];
+        var width = d.offsetWidth;
+        d.style.height = width + "px";
+    }
+    mui.init({
+        pullRefresh: {
+            container: "#refreshContainer", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up: {
+                height: 50, //可选.默认50.触发上拉加载拖动距离
+                auto: false, //可选,默认false.自动上拉加载一次
+                contentrefresh: "Loading...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+                contentnomore: '-_- have nothing !!!', //可选，请求完毕若没有更多数据时显示的提醒内容；
+                callback: function () {
+                    alert(1);
+                }
+            }
+        }
     });
 </script>
 </body>

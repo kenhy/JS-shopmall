@@ -36,16 +36,9 @@ function getMessage(url_message) {
                 client : client
             },
             success : function(data) {
-                console.log(data);
-                console.log(data.data.imagePath);
                 var list = template('details',data.data);
                 $("[data-type=details]").html(list);
-                var div = document.getElementsByClassName("mui-slider-item ");
-                for (var i = 0; i < div.length; i++) {
-                    var d = div[i];
-                    var width = d.offsetWidth;
-                    d.style.height = width + "px";
-                }
+                $("#productDes").html(data.data.productDetail.productDes)
             }
         });
     }
