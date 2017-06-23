@@ -2,7 +2,12 @@
  * Created by JonathanZhang on 2017/6/19.
  */
 
-var Logined = false;/*登录状态*/
+/*登录状态*/
+var Logined = false;
+/*页面默认设置*/
+var defaultCountry = "TT",
+    defaultUserNo;
+
 
 var logincheck = {
     /*登录*/
@@ -42,6 +47,6 @@ var logincheck = {
 
 /*登录错误提醒*/
 function showLoginTip(msg) {
-    
+
 }
 

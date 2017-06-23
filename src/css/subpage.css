@@ -19,8 +19,8 @@
 .area-phone{position: absolute; left: 82px;}
 .validation-box{position: relative;}
 .validation-num{ width: 100% !important; position: absolute; left: 0; z-index: 2;}
-.verificatione{position: absolute;right: 0; text-align: center; height: 44px; display:table; padding: 0 5px; border-left:3px #EEEEEE solid; z-index: 5;} 
-.verificatione-code{ vertical-align:middle;display:table-cell;line-height: 14px;}    
+.verificatione{position: absolute;right: 0; text-align: center; height: 44px; display:table; padding: 0 5px; border-left:3px #EEEEEE solid; z-index: 5;}
+.verificatione-code{ vertical-align:middle;display:table-cell;line-height: 14px;}
 /*设置*/
 .mui-table-view-cell span.iconfont{height: 20px; overflow: hidden; display: block;}
 .icon-review,.icon-tuihuanhuo{font-size: 22px !important;}
@@ -95,7 +95,7 @@
 .mui-control-content ul dl dd.mui-pull-right{margin-top: 5px;}
 .mui-control-content ul dl dd.mui-pull-right:active{background: #EEEEEE !important;}
 .mui-control-content ul dl dd a{ width: 70px; text-align: center; display: block; line-height: 28px; font-size: 0.8em;}
-.mui-control-content ul dl dd a:hover{color: #FFFFFF;} 
+.mui-control-content ul dl dd a:hover{color: #FFFFFF;}
 .mui-popover{z-index: 10000;}
 .right-nav{ border: 1px #EEEEEE solid; margin-top: -6px;}
 .right-nav li{line-height: 26px; padding: 0 10px; border-bottom: 1px #EEEEEE solid;}
@@ -139,8 +139,8 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .rating-img{width: 30px; height: 30px; overflow: hidden; margin-top: 7px; margin-right: 5px;}
 .rating-img img{display: block; width: 100%;}
 .mui-demo-container{padding: 12px 15px;}
-.five-star{background:url(../images/star.png) repeat-x; height: 20px; width: 100px; background-size:20% ;}
-.five-star span{background:#FFFFFF url(../images/star-red.png) repeat-x; height: 20px; width: 100px; background-size:20% ;}
+.five-star{background:url(../images/star-on.png) repeat-x; height: 20px; width: 100px; background-size:20% ;}
+.five-star span{background:#FFFFFF url(../images/star-off.png) repeat-x; height: 20px; width: 100px; background-size:20% ;}
 #progressbarBtn1{ position: absolute; top: 0; left: 0; width: 100px;}
 #progressbarBtn1 li{overflow: hidden;}
 #progressbarBtn1 li a{width: 20%; height: 20px; display: block; float: left;}
@@ -163,7 +163,7 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .select-button input{top: 50% !important; margin-top:-13px;}
 .select-goods{ position: absolute; top: 12px; left: 30px; right:0;}
 .buy-now{position: fixed; bottom: 0; left: 0; width: 100%; z-index: 3;padding: 7px 15px;}
-.buy-now .mui-checkbox{margin: 5px 0;} 
+.buy-now .mui-checkbox{margin: 5px 0;}
 .buy-now div.mui-pull-right{padding: 0 15px 0 0;}
 .buy-now-button{ width: 80px; padding: 6px 0; margin-left: 5px;}
 .buy-now div.mui-pull-right p{line-height: 16px;}
