@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>Login</title>
+
 </head>
 <link rel="stylesheet" href="../../css/base.css">
 <link rel="stylesheet" href="../../css/mui.min.css">
@@ -98,7 +99,7 @@
                                         <button type="button" class="mui-col-xs-12 mui-btn nborder npd line44 font12" >Sign in</button>
                                     </div>
                                     <div class="margin-t12 text-c">
-                                        <a href="javascript:void()" class=" underline font-color-3 font12">Forget Password?</a>
+                                        <a href="javascript:void(0)" class=" underline font-color-3 font12">Forget Password?</a>
                                     </div>
                                 </form>
                             </div>
@@ -107,22 +108,36 @@
                 </div>
                 <div id="move-togger"></div>
             </div>
+
             <div class="bottom-sign-in">
-                <ul class="sign-in-with">
-                    <p class="font-color-3">Sign in with</p>
-                    <li class="mui-pull-left"><span class="iconfont icon-google font-color-h font-sign-icon"></span></li>
-                    <li class="mui-pull-left"><span class="iconfont icon-tian7_facebook font-color-h font-sign-icon" ></span></li>
-                    <li class="mui-pull-left"><span class="iconfont icon-tuite font-color-h font-sign-icon" ></span></li>
-                </ul>
+                <div class="fb-login-button" data-width="auto" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                 <p class="font14 font-color-3">No Account?<a href="javscript:void(0)" class="font-weight underline font-color-3">Register</a></p>
             </div>
         </div>
         <div class="mui-off-canvas-backdrop"></div>
     </div>
 </div>
-<script src="../../js/common/mui.min.js"></script>
+<div id="fb-root"></div>
 <script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '1578457612455263',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
 </script>
+<script src="../../js/common/mui.min.js"></script>
 </body>
 </html>
