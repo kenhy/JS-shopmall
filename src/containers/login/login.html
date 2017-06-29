@@ -101,6 +101,17 @@
                                     <div class="margin-t12 text-c">
                                         <a href="javascript:void(0)" class=" underline font-color-3 font12">Forget Password?</a>
                                     </div>
+                                    <div class="margin-t20">
+                                        <div class="mui-col-xs-12 mui-btn  nborder margin-t5 npd  button-facebook line44" >
+                                            <span class="iconfont icon-facebook span-facebook  mui-pull-left "></span><p class="mui-pull-left color-white margin-l20">login in with Facebook</p>
+                                        </div>
+                                        <div class="mui-col-xs-12 mui-btn nborder margin-t5 npd  button-google hidden" >
+                                            <span class="span-google mui-pull-left"></span><p class="mui-pull-left color-white margin-google">login in with Google</p>
+                                        </div>
+                                        <div class="mui-col-xs-12 mui-btn nborder margin-t5  npd button-twitter line44" >
+                                            <span class="iconfont icon-twitter span-twitter mui-pull-left "></span><p class="mui-pull-left color-white margin-l20">login in with Twitter</p>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -108,17 +119,14 @@
                 </div>
                 <div id="move-togger"></div>
             </div>
-
             <div class="bottom-sign-in">
-                <div class="fb-login-button" data-width="auto" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                 <p class="font14 font-color-3">No Account?<a href="javscript:void(0)" class="font-weight underline font-color-3">Register</a></p>
             </div>
         </div>
         <div class="mui-off-canvas-backdrop"></div>
     </div>
 </div>
-<div id="fb-root"></div>
-<script type="text/javascript">
+<script>
     window.fbAsyncInit = function() {
         FB.init({
             appId            : '1578457612455263',
@@ -136,7 +144,6 @@
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
 </script>
 <script src="../../js/common/mui.min.js"></script>
 </body>

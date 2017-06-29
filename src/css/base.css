@@ -1,10 +1,10 @@
-@charset "utf-8";
+
 @font-face {font-family: "iconfont";
-    src: url('../fonts/iconfont.eot?t=1498200957405'); /* IE9*/
-    src: url('../fonts/iconfont.eot?t=1498200957405#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../fonts/iconfont.woff?t=1498200957405') format('woff'), /* chrome, firefox */
-    url('../fonts/iconfont.ttf?t=1498200957405') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-    url('../fonts/iconfont.svg?t=1498200957405#iconfont') format('svg'); /* iOS 4.1- */
+    src: url('../fonts/iconfont.eot?t=1498703150303'); /* IE9*/
+    src: url('../fonts/iconfont.eot?t=1498703150303#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff?t=1498703150303') format('woff'), /* chrome, firefox */
+    url('../fonts/iconfont.ttf?t=1498703150303') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg?t=1498703150303#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -57,6 +57,8 @@
 
 .icon-01:before { content: "\e68b"; }
 
+.icon-twitter:before { content: "\ec9c"; }
+
 .icon-hua:before { content: "\e634"; }
 
 .icon-shafa:before { content: "\e60b"; }
@@ -87,11 +89,13 @@
 
 .icon-gantanhao:before { content: "\e64c"; }
 
+.icon-facebook:before { content: "\e623"; }
+
 .icon-dianzuan:before { content: "\e616"; }
 
-.icon-vip:before { content: "\e646"; }
+.icon-jingyin:before { content: "\e7dc"; }
 
-.icon-tian7_facebook:before { content: "\e61e"; }
+.icon-vip:before { content: "\e646"; }
 
 .icon-shexiangtou:before { content: "\e63d"; }
 
@@ -143,9 +147,9 @@
 
 .icon--:before { content: "\e615"; }
 
-.icon-tuite:before { content: "\e620"; }
+.icon-google:before { content: "\e832"; }
 
-.icon-google:before { content: "\e635"; }
+
 
 *{word-wrap:break-word}
 body{width: 100%;height: 100%;	margin: 0px;padding: 0px;}
@@ -245,6 +249,28 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #cc
 .nborder-b{border-bottom:none !important;}
 .nborder{ border: none !important;}
 .button-h{background: #C7A062 !important; color: #FFFFFF !important;}
+.button-facebook {
+    background:#4267b2 !important;
+    color: #FFFFFF !important;
+    height: 44px!important;
+    cursor: pointer!important;}
+.button-twitter{background:#1da1f2 !important; color: #FFFFFF !important; height: 44px!important; cursor: pointer!important;}
+.button-google{background:#4285F4 !important; color: #FFFFFF !important; height: 44px!important; cursor: pointer!important;}
+.span-facebook{margin-left: 7px;font-size: 30px;}
+.span-twitter{margin-left: 7px;font-size: 30px;}
+.span-google{
+    background:  url("../images/sign/google.svg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 7px;
+    margin-left: 7px;
+    height: 30px!important;width: 30px!important;}
+.margin-google{
+    margin-top: 13px;
+    margin-left: 20px;
+}
 .hidden{overflow: hidden;}
 .visible{overflow: visible;}
 .height44{height: 44px;}
