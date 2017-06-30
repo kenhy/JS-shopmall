@@ -1,9 +1,29 @@
 /**
  * Created by JonathanZhang on 2017/6/19.
  */
+(mui.init({
+//子页面
+    subpages: [{
+        //...
+    }],
+//预加载
+    preloadPages:[
+        //...
+    ],
+//下拉刷新、上拉加载
+    pullRefresh : {
+        //...
+    },
+//手势配置
+    gestureConfig:{
+        //...
+    },
+})
+());
+
 
 /*登录状态*/
-var Logined = false;
+var Login_status = false;
 /*页面默认设置*/
 var defaultCountry = "TT",
     defaultUserNo;
@@ -47,6 +67,6 @@ function logincheck() {
  * @param msg
  */
 function showLoginTip(msg) {
-    $("#tip_login").html(msg);
+
 }
 
