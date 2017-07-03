@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/7/3.
  */
-var API_BASE_URL = "http://192.168.1.52:8087/apipro2";
+var API_BASE_URL = "http://diy.rttshop.com/apipro";
 var RTTMALL_API = {
     URL_IM_AUTH : API_BASE_URL + "/im/auth",
     URL_PRODUCT_DETAIL : API_BASE_URL + "/product/sku",
