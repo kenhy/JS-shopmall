@@ -8,6 +8,11 @@
 		<link rel="stylesheet" href="../../css/mui.min.css">
 		<link rel="stylesheet" href="../../css/base.css" />
 		<link rel="stylesheet" href="../../css/subpage.css" />
+		<style type="text/css">
+			.mui-input-group .mui-input-row{height: 50px;}
+        	.mui-input-row input{margin-left: 28px;}
+        	.icon-yanzhengma{font-size: 20px;position: absolute; z-index: 3; top: 14px; left: 0; width: 38px; height: 38px; text-align: center; color: #ccc;}
+		</style>
     </head>
 
 	<body>
@@ -78,27 +83,28 @@
 					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
 					<h1 class="mui-title">Register</h1>
 				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper bakc-fff">
 					<div class="mui-scroll">
-						<div class="mui-content">
-							<div class="mui-content register">
+						<div class="mui-content bakc-fff">
+							<div class="mui-content register bakc-fff">
 								<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
 									<a class="mui-control-item mui-active current font-color-9" href="#item1">Email<s></s></a>
 									<a class="mui-control-item font-color-9 current" href="#item2">Phone<s></s></a>
 								</div>
 							</div>
-							<div id="item1" class="mui-control-content mui-active register">
+							<div id="item1" class="mui-control-content register  mui-active">
 								<form class="mui-input-group mui-table-view nback margin-t12">
 									<div class="mui-input-row bakc-fff">
+										<p class="mui-icon mui-icon-email bakc-fff"></p>
 										<input id="r_email" type="text" class="" placeholder="Email">
 									</div>
 									<div class="mui-input-row bakc-fff">
+										<p class="mui-icon mui-icon-locked bakc-fff"></p>
 										<input id="r_pwd" type="password" class="" placeholder="Password(6 characters or above)">
-										<span class="iconfont icon-bukejian"></span>
 									</div>
 									<div class="mui-input-row bakc-fff">
-										<input id="r_pwd2" type="password" class="" placeholder="Confirm password">
-										<span class="iconfont icon-eye font-color-h"></span>
+										<p class="mui-icon mui-icon-locked bakc-fff"></p>
+										<input id="r_pwd2" type="password" class="" placeholder="Confirm password">							
 									</div>
 									<div class="mui-checkbox mui-left">
 										<label class="font12">Read RttMall Free <a href="javascript:void(0)" class="underline font-color-3">Membership Agreement</a></label>
@@ -110,21 +116,22 @@
 									</div>
 								</form>
 							</div>
-							<div id="item2" class="mui-control-content register">
+							<div id="item2" class="mui-control-content register ">
 								<form class="mui-input-group mui-table-view nback margin-t12 hidden">
 									<div class="phone-number">
-										<input class="area-code bakc-fff line44">+1(868) <a class="mui-icon mui-icon-arrowdown font16"></a></input>
-										<input type="text" class="area-phone bakc-fff" placeholder="Tel">
+										<p class="area-code bakc-fff line44 text-l"><s class="iconfont icon-icon031 font22 mui-pull-left margin-l5" style="color: #DDDDDD;"></s>+1(868) <em class="mui-icon mui-icon-arrowdown font16 mui-pull-right line44 margin-r5"></em></p>
+										<input type="text" class="area-phone bakc-fff border-be" placeholder="Tel">
 									</div>
-									<div class="mui-input-row margin-t12 phone-number">
-										<input id="tel-code" type="text" class="validation-num bakc-fff" placeholder="Verificatione Code">
+									<div class="margin-t12 phone-number">
+										<p class="iconfont icon-yanzhengma bakc-fff"></p>
+										<input id="tel-code" type="text" class="validation-num border-be" placeholder="Verificatione Code" style="margin-left: 28px;">
 										<p class="verificatione button-h font12">
 											<span id="code-btn" class="verificatione-code">Get Verificatione Code</span>
 										</p>
 									</div>
-									<div class="mui-input-row bakc-fff margin-t12">
+									<div class="mui-input-row bakc-fff margin-t12 hidden">
+										<p class="mui-icon mui-icon-locked bakc-fff"></p>
 										<input type="text" class="" placeholder="Password(6 characters or above)">
-										<span class="iconfont icon-bukejian"></span>
 									</div>
 									<div class=" mui-checkbox mui-left">
 										<label class="font12">Read RttMall Free <a href="javascript:void(0)" class="underline font-color-3">Membership Agreement</a></label>

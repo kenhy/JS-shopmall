@@ -25,7 +25,10 @@ var register = {
         }else if (r_pwd && r_pwd2 == ""){
             return show_register_tip("Password is required.");
         }
-        else if(r_pwd == r_pwd2) {
+        else if(r_pwd != r_pwd2) {
+            return show_register_tip("Password are not the same");
+        }
+        else{
             $.ajax({
                 type:"POST",
                 url:RTTMALL_API.URL_REGISTER_LOGINNAME_VERIFY,
@@ -51,10 +54,8 @@ var register = {
                 }
             })
         }
-        else{
-            return show_register_tip("");
-        }
     },
+
     /*邮箱验证*/
     emailVerify : function(email) {
         var filter = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
@@ -73,28 +74,22 @@ var register = {
             if (code == "") {
                 show_register_tip("Verification code is required.");
                 return false;
-            }
-            if (code.length != 6) {
-                $(".register-error-tel-code").show();
-                $(".register-error-tel-code .notice-descript").html(
-                    "6-digit number");
+            }else if (code.length != 6) {
+                show_register_tip("6-digit number");
                 return false;
-            }
-            if (loginConfig.registerCodeVerify(tel, code)) {
-                loginConfig.registerStep2(tel);
+            }else if (Register.registerCodeVerify(tel, code)) {
+
+                r_way = "phone";
+                console.log(r_way);
+                var data = [r_email,r_pwd];
+                register.register_in(data,r_way);
             } else {
                 return false;
             }
         }
     },
 
-    /**
-     * 电话号码验证
-     *
-     * @param tel
-     *            电话号码
-     * @returns {Boolean} 是否合法
-     */
+   /* 电话号码验证*/
     telVerify : function(tel) {
         if (tel == "") {
             show_register_tip("Phone NO. is required.");
@@ -157,14 +152,71 @@ var register = {
         return;
     },
 
+    /*注册验证码*/
+    registerCodeVerify : function(userNo, code) {
+        var flag = false;
+        $.ajax({
+            type : "post",
+            url : RTTMALL_API.URL_REGISTER_CODE_VERIFY,
+            dataType : "json",
+            async : false,
+            cache : false,
+            data : {
+                loginName : userNo,
+                code : code
+            },
+            success : function(data) {
+                if (data != null) {
+                    console.info(data);
+                    if (data.code != "1") {
+                        flag = false;
+                        show_register_tip(data.msg);
+                    } else {
+                        registerCode = code;
+                        flag = true;
+                    }
+                }
+            }
+        });
+        return flag;
+    },
+
+    /*国家列表*/
+    initCountry : function(){
+        var country = getCookie("country");
+        if (country == "") {
+            $.ajax({
+                type: "get",
+                url: RTTMALL_API.URL_COUNTRY_HEADER,
+                dataType: "json",
+                async: false,
+                cache: false,
+                data: {},
+                success: function (data) {
+                    if (data != null) {
+                        if (data.code != "1") {
+                            alert(data.msg);
+                        } else {
+                            console.info(data);
+                            // 注册填写电话号码国家列表
+                            var html = template('countryAndPrefixTemplate',
+                                data);
+                            $("[data-type=countryAndPrefix]").html(html);
+                            // 填写个人信息时的国家列表
+                            html = template('countryTemplate', data);
+                            $("#c-optionmain").html(html);
+                            setCookie("country", JSON.stringify(data));
+                        }
+                    }
+                }
+            });
+        }
+    },
     /*提交注册*/
     register_in:function (data,r_way) {
-        //console.log(data);
-        //
         var client = "web",
             version = "1.0";
         if(r_way == "email"){
-            console.log(data[0]);
             $.ajax({
                 type : "POST",
                 url : RTTMALL_API.URL_REGISTER,
@@ -181,7 +233,6 @@ var register = {
                     if (data.data != null){
                         show_register_tip(data.msg);
                     }else{
-                        console.log(data.data);
                         alert("successed");
                     }
                 }
@@ -200,10 +251,8 @@ function show_register_tip(msg) {
     error_msg.html(msg);
 }
 
-/*国家列表*/
-function coutry_list(index) {
 
-}
+
 
 /*邮箱注册确认*/
 submit_register_email.on('click',register.emailRegister);

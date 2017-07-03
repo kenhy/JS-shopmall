@@ -15,8 +15,8 @@
 .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{font-size: 22px !important;}
 .bottom-sign-in{ position: fixed; bottom: 20px; left: 0; width: 100%; text-align: center;}
 .phone-number{height: 44px; position: relative; width: 100%;}
-.area-code{position: absolute; left: 0; text-align: center; height: 44px; width: 80px;}
-.area-phone{position: absolute; left: 82px;}
+.area-code{position: absolute; left: 0; height: 44px; width: 110px;}
+.area-phone{position: absolute; left:114px;}
 .validation-box{position: relative;}
 .validation-num{ width: 100% !important; position: absolute; left: 0; z-index: 2;}
 .verificatione{position: absolute;right: 0; text-align: center; height: 44px; display:table; padding: 0 5px; border-left:3px #EEEEEE solid; z-index: 5;} 
