@@ -162,9 +162,9 @@ address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}
 input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
 input,button{overflow: visible;vertical-align:middle;outline:none}
 s{text-decoration: none;}
-input:-moz-placeholder, textarea:-moz-placeholder {color: #ccc; }   
-input:-ms-input-placeholder,textarea:-ms-input-placeholder {color: #ccc; }   
-input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #ccc;}  
+input:-moz-placeholder, textarea:-moz-placeholder {color: #ccc; }
+input:-ms-input-placeholder,textarea:-ms-input-placeholder {color: #ccc; }
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #ccc;}
 
 .none{display: none !important;}
 .nmg{margin: 0 !important;}
@@ -262,3 +262,6 @@ header{box-shadow: 0 0 2px #eee !important;}
 .capitalize {text-transform:capitalize;}/*首字母大写*/
 .uppercase {text-transform:uppercase;}/*全都是大写*/
 .lowercase {text-transform:lowercase;}/*全都是小写*/
+
+
+

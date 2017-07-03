@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/subpage.css" />
+    </head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+				        <ul class="mui-table-view nmg">
+					       <li class="mui-table-view-cell mui-media">
+					            <a href="javascript:void(0);">
+					                <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
+					                <div class="mui-media-body margin-t12">
+					                    <p class="font14 font-weight font-color-3">Rttmall@foxmail.com</p>
+					                    <p class="iconfont icon-vip "><span class="font12 font-color-9">Membership</span></p>
+					                </div>
+					            </a>
+					        </li>
+					    </ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-icon font18 mar-right font-color-9 mui-pull-left"></s>Home</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-fenlei font18 mar-right font-color-9 mui-pull-left"></s>Categories</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-ren font18 mar-right font-color-9 mui-pull-left"></s>My Account</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-gouwuche2 font18 mar-right font-color-9 mui-pull-left"></s>Cart</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-icon17 font18 mar-right font-color-9 mui-pull-left"></s>My Orders</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-xinyuandan font18 mar-right font-color-9 mui-pull-left"></s>Wish List</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-youhuiquan font18 mar-right font-color-9 mui-pull-left"></s>My Coupons</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-lingdang font18 mar-right font-color-9 mui-pull-left"></s>My Messages</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-qipao font18 mar-right font-color-9 mui-pull-left"></s>Leave Feedback</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-liulanlishi font18 mar-right font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-fenxiang font18 mar-right font-color-9 mui-pull-left"></s>Invite Friends</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a class=""><s class="iconfont icon-shezhi font18 mar-right font-color-9 mui-pull-left"></s>Settings</a>
+						 	</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav bakc-fff">
+					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+					<h1 class="mui-title">Register</h1>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-content">
+							<div class="mui-content register">
+								<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+									<a class="mui-control-item mui-active current font-color-9" href="#item1">Email<s></s></a>
+									<a class="mui-control-item font-color-9 current" href="#item2">Phone<s></s></a>
+								</div>
+							</div>
+							<div id="item1" class="mui-control-content mui-active register">
+								<form class="mui-input-group mui-table-view nback margin-t12">
+									<div class="mui-input-row bakc-fff">
+										<input id="r_email" type="text" class="" placeholder="Email">
+									</div>
+									<div class="mui-input-row bakc-fff">
+										<input id="r_pwd" type="password" class="" placeholder="Password(6 characters or above)">
+										<span class="iconfont icon-bukejian"></span>
+									</div>
+									<div class="mui-input-row bakc-fff">
+										<input id="r_pwd2" type="password" class="" placeholder="Confirm password">
+										<span class="iconfont icon-eye font-color-h"></span>
+									</div>
+									<div class="mui-checkbox mui-left">
+										<label class="font12">Read RttMall Free <a href="javascript:void(0)" class="underline font-color-3">Membership Agreement</a></label>
+										<input id="agreement_email" name="checkbox1" type="checkbox" checked>
+									</div>
+
+									<div class="mui-button-row line44 npd">
+										<button id="submit_register_email" type="button" class="mui-col-xs-12 mui-btn nborder npd line44">Agree&Create Account</button>
+									</div>
+								</form>
+							</div>
+							<div id="item2" class="mui-control-content register">
+								<form class="mui-input-group mui-table-view nback margin-t12 hidden">
+									<div class="phone-number">
+										<input class="area-code bakc-fff line44">+1(868) <a class="mui-icon mui-icon-arrowdown font16"></a></input>
+										<input type="text" class="area-phone bakc-fff" placeholder="Tel">
+									</div>
+									<div class="mui-input-row margin-t12 phone-number">
+										<input id="tel-code" type="text" class="validation-num bakc-fff" placeholder="Verificatione Code">
+										<p class="verificatione button-h font12">
+											<span id="code-btn" class="verificatione-code">Get Verificatione Code</span>
+										</p>
+									</div>
+									<div class="mui-input-row bakc-fff margin-t12">
+										<input type="text" class="" placeholder="Password(6 characters or above)">
+										<span class="iconfont icon-bukejian"></span>
+									</div>
+									<div class=" mui-checkbox mui-left">
+										<label class="font12">Read RttMall Free <a href="javascript:void(0)" class="underline font-color-3">Membership Agreement</a></label>
+							  		    <input id="agreement_phone" name="checkbox1" type="checkbox" >
+									</div>
+									<div class="mui-button-row line44 npd">
+									    <button type="button" class="mui-col-xs-12 mui-btn nborder npd line44 font12" >Agree&Create Account</button>
+									</div>
+								</form>
+							</div>
+						</div>
+                        <div id="error_msg" class="text-c color-red margin-t5"></div>
+						<div id="move-togger"></div>
+					</div>
+					<div class="bottom-sign-in">
+						<p class="font14 font-color-3">Have an account?<a href="javscript:void(0)" class="font-weight underline font-color-3">Sign In</a></p>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+        <script src="../../js/common/api.js"></script>
+        <script src="../../js/common/jquery.min.js"></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
+        <script src="../../js/login/register.js"></script>
+        <script type="text/javascript">
+
+        </script>
+    </body>
+
+</html>
