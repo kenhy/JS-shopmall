@@ -251,6 +251,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #cc
 .nborder-b{border-bottom:none !important;}
 .nborder{ border: none !important;}
 .button-h{background: #C7A062 !important; color: #FFFFFF !important;}
+.button-g{background: #A0A0A0 !important; color: #FFFFFF !important;}
 .hidden{overflow: hidden;}
 .visible{overflow: visible;}
 .height44{height: 44px;}

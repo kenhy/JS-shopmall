@@ -1,13 +1,15 @@
 /**
  * Created by Administrator on 2017/7/3.
  */
-/*注册方式*/
-var r_way,
+var r_way, //注册方式
     submit_register_email = $("#submit_register_email"),
-    submit_register_phone = $("#submit_register_phone");
+    submit_register_phone = $("#submit_register_phone"),
+    code_btn = $("#code-btn");
+/*页面默认设置*/
+var defaultCountry = "TT";
 
 var register = {
-        /*邮箱登录验证*/
+    /*邮箱登录验证*/
     emailRegister: function () {
         var check = $("#agreement_email").is(":checked");
         if(check == false){
@@ -78,10 +80,9 @@ var register = {
                 show_register_tip("6-digit number");
                 return false;
             }else if (Register.registerCodeVerify(tel, code)) {
-
                 r_way = "phone";
                 console.log(r_way);
-                var data = [r_email,r_pwd];
+                var data = [tel, code];
                 register.register_in(data,r_way);
             } else {
                 return false;
@@ -129,7 +130,7 @@ var register = {
                 success : function(data) {
                     if (data != null) {
                          console.info(data);
-                        /*if (data.code != "1") {
+                        if (data.code != "1") {
                             show_register_tip(data.msg);
                         } else {
                             counts = count;// 对它赋值
@@ -143,7 +144,7 @@ var register = {
                             Timer = window.setInterval(timevode, 1000);// 设置定时函数
                             // timevode
                             registerPrefix = prefix;
-                        }*/
+                        }
                     }
                 }
             });
@@ -152,7 +153,7 @@ var register = {
         return;
     },
 
-    /*注册验证码*/
+    /*注册验证码验证*/
     registerCodeVerify : function(userNo, code) {
         var flag = false;
         $.ajax({
@@ -212,6 +213,7 @@ var register = {
             });
         }
     },
+
     /*提交注册*/
     register_in:function (data,r_way) {
         var client = "web",
@@ -233,12 +235,33 @@ var register = {
                     if (data.data != null){
                         show_register_tip(data.msg);
                     }else{
-                        alert("successed");
+                        alert("successed_1");
                     }
                 }
             });
         }else if(r_way == "phone"){
-
+            $.ajax({
+                type : "POST",
+                url : RTTMALL_API.URL_REGISTER,
+                dataType : "json",
+                async : true,
+                cache : false,
+                data : {
+                    loginName:data[0],
+                    pwd:data[1],
+                    code:data[2],
+                    countryId:data[3],
+                    client:client,
+                    version:version
+                },
+                success:function (data) {
+                    if (data.data != null){
+                        show_register_tip(data.msg);
+                    }else{
+                        alert("successed_2");
+                    }
+                }
+            });
         }else{
             return show_register_tip("system error");
         }
@@ -251,10 +274,9 @@ function show_register_tip(msg) {
     error_msg.html(msg);
 }
 
-
-
-
 /*邮箱注册确认*/
 submit_register_email.on('click',register.emailRegister);
 /*手机注册确认*/
 submit_register_phone.on('click',register.phoneRegister);
+/*注册接收验证码*/
+code_btn.on('click',register.sendMessage);
