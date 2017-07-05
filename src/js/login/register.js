@@ -4,7 +4,9 @@
 var r_way, //注册方式
     submit_register_email = $("#submit_register_email"),
     submit_register_phone = $("#submit_register_phone"),
-    code_btn = $("#code-btn");
+    code_btn = $("#code-btn"),
+    counts,
+    count = 60 ;
 /*页面默认设置*/
 var defaultCountry = "TT";
 
@@ -184,7 +186,7 @@ var register = {
 
     /*国家列表*/
     initCountry : function(){
-        var country = getCookie("country");
+        var country = "";// = getCookie("country");
         if (country == "") {
             $.ajax({
                 type: "get",
@@ -194,44 +196,44 @@ var register = {
                 cache: false,
                 data: {},
                 success: function (data) {
+                  console.log(data)
                     if (data != null) {
                         if (data.code != "1") {
                             alert(data.msg);
                         } else {
                             console.info(data);
                             // 注册填写电话号码国家列表
-                            var html = template('countryAndPrefixTemplate',
-                                data);
+                            var html = template('countryAndPrefixTemplate',data);
                             $("[data-type=countryAndPrefix]").html(html);
                         }
                     }
                 }
             });
         }
-        /*else {
+        else {
                 // 注册填写电话号码国家列表
                 var html = template('countryAndPrefixTemplate', JSON.parse(country));
                 $("[data-type=countryAndPrefix]").html(html);
             }
 
-            // 填写电话号码时，国家列表点击事件
-            $("[data-type=tel-country]").click(function(event) {
-                if ($("[data-type=countryAndPrefix]").is(":visible")) {
-                    $("#transparent").hide();
-                    $("[data-type=countryAndPrefix]").hide();
-                } else {
-                    $("#transparent").show();
-                    $("[data-type=countryAndPrefix]").show();
-                }
-            });
-            /!* 赋值给文本框 *!/
-            $("[data-type=countryAndPrefix] p").click(
-                function() {
-                    var value = $(this).html();
-                    defaultCountry = $(this).find("span").attr("data-type");
-                    $(this).parent().siblings("[data-type=tel-country-text]")
-                        .html(value);
-                })*/
+            // // 填写电话号码时，国家列表点击事件
+            // $("[data-type=tel-country]").click(function(event) {
+            //     if ($("[data-type=countryAndPrefix]").is(":visible")) {
+            //         $("#transparent").hide();
+            //         $("[data-type=countryAndPrefix]").hide();
+            //     } else {
+            //         $("#transparent").show();
+            //         $("[data-type=countryAndPrefix]").show();
+            //     }
+            // });
+            // /!* 赋值给文本框 *!/
+            // $("[data-type=countryAndPrefix] p").click(
+            //     function() {
+            //         var value = $(this).html();
+            //         defaultCountry = $(this).find("span").attr("data-type");
+            //         $(this).parent().siblings("[data-type=tel-country-text]")
+            //             .html(value);
+            //     })*/
     },
 
     /*提交注册*/
