@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>My Orders</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/base.css">
+		<link rel="stylesheet" href="../../css/subpage.css" />
+		<style type="text/css">
+			.mui-control-content{margin-top: 62px;}
+		</style>
+	</head>
+	
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+				        <ul class="mui-table-view nmg">
+					       <li class="mui-table-view-cell mui-media">
+					            <a href="javascript:void(0);">
+					                <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
+					                <div class="mui-media-body margin-t12">
+					                    <p class="font14 font-weight font-color-3">Rttmall@foxmail.com</p>
+					                    <p class="iconfont icon-vip "><span class="font12 font-color-9">Membership</span></p>
+					                </div>
+					            </a>
+					        </li>
+					    </ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="home.html" class=""><s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left"></s>Home</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Type/brand-list.html" class=""><s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left"></s>Categories</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Mine/account.html" class=""><s class="iconfont icon-ren font18 margin-r10 font-color-9 mui-pull-left"></s>My Account</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../ShoppingCard/shopping-cart.html" class=""><s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left"></s>Cart</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Order/my-order.html" class=""><s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left"></s>My Orders</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/wish-list.html" class=""><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left"></s>Wish List</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Coupon/coupons.html" class=""><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../News/messages.html" class=""><s class="iconfont icon-lingdang font18 margin-r10 font-color-9 mui-pull-left"></s>My Messages</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/my-evaluate.html" class=""><s class="iconfont icon-qipao font18 margin-r10 font-color-9 mui-pull-left"></s>My assessment</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Record/recently.html" class=""><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="" class=""><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>Invite Friends</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Setting/settings.html" class=""><s class="iconfont icon-shezhi font18 margin-r10 font-color-9 mui-pull-left"></s>Settings</a>
+						 	</li>
+						</ul>
+					</div>
+				</div>
+			</aside>	
+			<!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav bakc-fff">
+					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+					<a id="menu" class="mui-icon mui-pull-right iconfont icon-shenglve font20"  href="#topPopover"></a>
+					<a class="mui-icon mui-pull-right iconfont icon-sousuo font20" ></a>
+					<h1 class="mui-title">My Orders</h1>
+				</header>
+				<div id="topPopover" class="mui-popover">
+					<div class="mui-popover-arrow none"></div>
+					<div class="mui-scroll-wrapper nmg">
+						<div class="mui-scroll" style="width: initial; right: 0;">
+							<ul class="mui-table-view radius4 right-nav">
+								<li><a href="#">Messages</a></li>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Help</a></li>
+								<li><a href="#">Feedback</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div style="position: fixed; top:44px; left: 0;z-index: 9;">
+						<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted Order-classification margin-b10 bakc-eee">
+						    <div id="segmentedControl" class="mui-scroll" >
+						        <a class="mui-control-item mui-active current font-color-9" href="#item1">ALL<s></s></a>
+								<a class="mui-control-item font-color-9 current" href="#item2">Awaiting Payment<s></s></a>
+								<a class="mui-control-item font-color-9 current" href="#item3">Awaiting Received<s></s></a>
+								<a class="mui-control-item font-color-9 current" href="#item4">Awaiting Reviews<s></s></a>
+								<a class="mui-control-item font-color-9 current" href="#item5">Awaiting Dispute<s></s></a>
+						    </div>
+						</div>
+					</div>
+					<div class="mui-scroll">
+						<div class="mui-content">
+							<div id="item1" class="mui-control-content mui-active">
+								<ul>
+									<li class="mui-table-view border-t margin-b10">
+										<p class="bakc-fff mui-table-view-cell height44">Trinidad and Tobago Commodity</p>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<ul>
+											<li class="mui-table-view-cell line20">
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right color-red">US $ 16.00</span></p>
+												<div class="hidden">
+												<button class="mui-pull-right cart-btn-button nborder margin-t20">View Logistics</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div id="item2" class="mui-control-content">
+								<ul>
+									<li class="mui-table-view border-t margin-b10">
+										<p class="bakc-fff mui-table-view-cell height44">Trinidad and Tobago Commodity</p>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<ul>
+											<li class="mui-table-view-cell line20">
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right color-red">US $ 16.00</span></p>
+												<div class="hidden">
+													<button class="mui-pull-right buy-now-button nborder back-gray margin-t20">Cancel</button>
+													<button class="mui-pull-right buy-now-button nborder margin-t20">Buy(2)</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div id="item3" class="mui-control-content">
+								<ul>
+									<li class="mui-table-view border-t margin-b10">
+										<p class="bakc-fff mui-table-view-cell height44">Trinidad and Tobago Commodity</p>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<ul>
+											<li class="mui-table-view-cell line20">
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right color-red">US $ 16.00</span></p>
+												<div class="hidden">
+												<button class="mui-pull-right cart-btn-button nborder margin-t20">View Logistics</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div id="item4" class="mui-control-content">
+								<ul>
+									<li class="mui-table-view border-t margin-b10">
+										<p class="bakc-fff mui-table-view-cell height44">Trinidad and Tobago Commodity</p>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<ul>
+											<li class="mui-table-view-cell line20">
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right color-red">US $ 16.00</span></p>
+												<div class="hidden">
+													<button class="mui-pull-right buy-now-button nborder margin-t20">Reviews</button>
+													<button class="mui-pull-right cart-btn-button nborder margin-t20">View Logistics</button>
+													<button class="mui-pull-right buy-now-button nborder back-gray margin-t20">Delete</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div id="item5" class="mui-control-content">
+								<ul>
+									<li class="mui-table-view border-t margin-b10">
+										<p class="bakc-fff mui-table-view-cell height44">Trinidad and Tobago Commodity</p>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<div class="mui-table-view-cell">
+											<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+											<dl class="mui-media-body product-text relative">
+												<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+												<dd style="overflow: hidden;">
+													<p class="mui-pull-left">US $86.64</p>
+													<p class="font-weight color-red mui-pull-right">US $86.64</p>
+												</dd>
+												<dd class="hidden">
+													<p class="mui-pull-left font-color-3 font12">Red,32*32*9cm</p>
+													<p class="mui-pull-right font-color-3 text-r bottom-right">x10</p>
+												</dd>
+											</dl>
+										</div>
+										<ul>
+											<li class="mui-table-view-cell line20">
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right">US $ 16.00</span></p>
+												<p>Shipping:<span class="mui-pull-right color-red">US $ 16.00</span></p>
+												<div class="hidden">
+													<button class="mui-pull-right cart-btn-button nborder margin-t20">See Details</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div id="move-togger"></div>
+					</div>
+				</div>
+				<!-- off-canvas backdrop -->
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
+		<script>
+			/*右上角菜单显示*/
+			mui.init();
+			mui.plusReady(function () {
+			});
+			mui('.mui-scroll-wrapper').scroll();
+			mui('body').on('shown', '.mui-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			mui('body').on('hidden', '.mui-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+		
+			mui('body').on('tap','a',function(){
+			    window.top.location.href=this.href;
+			});
+		</script>
+	</body>
+
+</html>

@@ -13,13 +13,11 @@
     </style>
 </head>
 <body>
-<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-    <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav bakc-fff">
-            <a href="" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></a>
+            <a href="javascript:window.location.go(-1)" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></a>
             <h1 class="mui-title">Sign in</h1>
         </header>
-        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper bakc-fff">
+        <div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
             <div class="mui-scroll">
                 <div class="mui-content">
                     <div class="mui-control-content mui-active register">
@@ -64,9 +62,6 @@
                 <p class="font14 font-color-3">No Account?<a href="register.html" class="font-weight underline font-color-3">Register</a></p>
             </div>
         </div>
-        <div class="mui-off-canvas-backdrop"></div>
-    </div>
-</div>
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/api.js"></script>
 <script src="../../js/common/jquery.min.js"></script>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Commodity classification</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/base.css">
+		<link rel="stylesheet" href="../../css/subpage.css" />
+		<style>
+			.brands .mui-slider-item{width: 21.8% !important; margin:0 4px ;}
+			.brands .mui-slider-item a:first-child{margin-bottom: 8px !important;}
+		</style>
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+				        <ul class="mui-table-view nmg">
+					       <li class="mui-table-view-cell mui-media">
+					            <a href="javascript:void(0);">
+					                <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
+					                <div class="mui-media-body margin-t12">
+					                    <p class="font14 font-weight font-color-3">Rttmall@foxmail.com</p>
+					                    <p class="iconfont icon-vip "><span class="font12 font-color-9">Membership</span></p>
+					                </div>
+					            </a>
+					        </li>
+					    </ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="home.html" class=""><s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left"></s>Home</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Type/brand-list.html" class=""><s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left"></s>Categories</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Mine/account.html" class=""><s class="iconfont icon-ren font18 margin-r10 font-color-9 mui-pull-left"></s>My Account</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../ShoppingCard/shopping-cart.html" class=""><s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left"></s>Cart</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Order/my-order.html" class=""><s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left"></s>My Orders</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/wish-list.html" class=""><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left"></s>Wish List</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Coupon/coupons.html" class=""><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../News/messages.html" class=""><s class="iconfont icon-lingdang font18 margin-r10 font-color-9 mui-pull-left"></s>My Messages</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/my-evaluate.html" class=""><s class="iconfont icon-qipao font18 margin-r10 font-color-9 mui-pull-left"></s>My assessment</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Record/recently.html" class=""><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="" class=""><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>Invite Friends</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Setting/settings.html" class=""><s class="iconfont icon-shezhi font18 margin-r10 font-color-9 mui-pull-left"></s>Settings</a>
+						 	</li>
+						</ul>
+					</div>
+				</div>
+			</aside><!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+					<div class="nav-input radius4">
+						<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
+						<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
+					</div>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div id="move-togger"></div>
+					</div>
+				</div>
+				<!-- off-canvas backdrop -->
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<div class="mui-content mui-scroll-wrapper" style=" z-index: 9; padding-top: 44px; position: fixed; bottom: 1px;">
+			<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary bakc-fff">
+				<div class="register">
+					<a class="mui-control-item mui-active current font-color-9" href="#item1">Categories<s></s></a>
+					<a class="mui-control-item font-color-9 current" href="#item2">Brand<s></s></a>
+				</div>
+			</div>
+			<div id="item1" class="mui-control-content overflow-y mui-active">
+				<div class="mui-row mui-fullscreen" style=" z-index: 9; bottom: 44px; top: 1px;">
+					<div class="mui-col-xs-3 bakc-eee" style="width: 27%;">
+						<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+						</div>
+					</div>
+					<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 0.5px solid #d1d1d1; width: 73%;">
+						<div class="mui-control-content overflow-y mui-active"></div>
+						<div class="mui-control-content overflow-y"></div>
+						<div class="mui-control-content overflow-y"></div>
+					</div>
+				</div>
+			</div>
+			<div id="item2" class="mui-control-content overflow-y">
+				<div class="mui-row mui-fullscreen">
+					<ul class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_07.jpg" />
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_09.jpg" />
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_107.jpg" />
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_109.jpg" />
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_17.jpg" />
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_19.jpg" />
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_37.jpg" />
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="#" class="npd">
+						        <img src="../../images/logo/logo_39.jpg" />
+						    </a>
+						</li>
+					</ul>
+					<ul class="mui-table-view nback brand-list">
+						<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">Alibab Corporation</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">lenovo</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">people</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">unilever</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">syllable</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">dangdang</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">huawei</a>
+					   	</li>
+					   		<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">lenovo</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">people</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">unilever</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">syllable</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">dangdang</a>
+					   	</li>
+					   	<li class="mui-table-view-cell line20">
+					        <a href="javascript:void(0)">huawei</a>
+					   	</li>
+					</ul>
+				</div>
+			</div>
+		</div>		
+
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
+		<script type="text/javascript">
+			mui.init({
+//				swipeBack: true //启用右滑关闭功能
+			});
+			var controls = document.getElementById("segmentedControls");
+			var contents = document.getElementById("segmentedControlContents");
+			var html = [];
+			var i = 1,
+				j = 1,
+				m = 8, //左侧选项卡数量+1
+				n = 16; //每个选项卡列表数量+1
+			for (; i < m; i++) {
+				html.push('<a class="mui-control-item left-navigation" href="#content' + i + '"><p class="iconfont icon-dianzan font22"></p><span class="font12 line12">Preferred Products</span>' + '</a>');
+			}
+			controls.innerHTML = html.join('');
+			html = [];
+			for (i = 1; i < m; i++) {
+				html.push('<div id="content' + i + '" class="mui-control-content overflow-y"><ul class="mui-table-view">');
+				for (j = 1; j < n; j++) {
+					html.push('<li class="mui-table-view-cell mui-table-view-cell mui-collapse"><a class="mui-navigate-right font18" href="#"><em class="font-weight font12">Dress</em></a>' + '</a><div class="mui-collapse-content npd"><dl class="hidden right-classification mar-left"><dt class="mui-pull-left"><img src="../../images/img.png" /></dt><dd class="mui-pull-left">Dress</dd></dl><p class="border-b mar-left"></p><dl class="hidden right-classification mar-left"><dt class="mui-pull-left"><img src="../../images/img.png" /></dt><dd class="mui-pull-left">Dress</dd></dl></div></li>');
+				}
+				html.push('</ul></div>');
+			}
+			contents.innerHTML = html.join('');
+			 //默认选中第一个
+			controls.querySelector('.mui-control-item').classList.add('mui-active');
+			contents.querySelector('.mui-control-content').classList.add('mui-active');
+			mui('body').on('tap','a',function(){
+			    window.top.location.href=this.href;
+			});
+		</script>
+	</body>
+
+</html>

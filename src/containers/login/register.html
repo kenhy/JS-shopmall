@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../../css/mui.min.css">
 		<link rel="stylesheet" href="../../css/base.css" />
 		<link rel="stylesheet" href="../../css/subpage.css" />
+        <link rel="stylesheet" href="../../css/country.css">
 		<style type="text/css">
 			.mui-input-group .mui-input-row{height: 50px;}
         	.mui-input-row input{margin-left: 28px;}
@@ -16,13 +17,11 @@
     </head>
 
 	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-			<div class="mui-inner-wrap">
 				<header class="mui-bar mui-bar-nav bakc-fff">
-					<a href="" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></a>
+					<a href="javascript:window.location.go(-1)" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></a>
 					<h1 class="mui-title">Register</h1>
 				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper bakc-fff">
+				<div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
 					<div class="mui-scroll">
 						<div class="mui-content bakc-fff">
 							<div class="mui-content register bakc-fff">
@@ -89,9 +88,6 @@
 						<p class="font14 font-color-3">Have an account?<a href="login.html" class="font-weight underline font-color-3">Sign In</a></p>
 					</div>
 				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-			</div>
-		</div>
         <div id="Areacode-phone" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height border-t">
             <div class="mui-poppicker-header bakc-fff hidden">
                 <a href="#Areacode-phone" class="hidden"><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
@@ -173,6 +169,20 @@
                 window.top.location.href=this.href;
             });
         </script>
+                <script id="countryTemplate" type="text/html">
+                    {{each data.top as c i}}
+                    <p data-country="{{c.id}}">
+                        <span data-type="{{c.countriesCode}}" class="css_flag css_{{c.countriesCode.toLowerCase()}} FL"><s class="country-text">{{c.name}}</s></span>
+                    </p>
+                    {{/each}}
+                    <span style="background: #ffffff;">Country & Territories (A-Z)</span>
+                    {{each data.list as c i}}
+                    <p data-country="{{c.id}}">
+                        <span data-type="{{c.countriesCode}}" class="css_flag css_{{c.countriesCode.toLowerCase()}} FL"><s class="country-text">{{c.name}}</s></span>
+                    </p>
+                    {{/each}}
+                    <span style="background: #ffffff;">Country & Territories (A-Z)</span>
+                </script>
     </body>
 
 </html>

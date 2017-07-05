@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>My Profile</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/base.css">
+		<link rel="stylesheet" href="../../css/subpage.css" />
+		<link rel="stylesheet" href="../../css/country.css" />
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+				        <ul class="mui-table-view nmg">
+					       <li class="mui-table-view-cell mui-media">
+					            <a href="javascript:void(0);">
+					                <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
+					                <div class="mui-media-body margin-t12">
+					                    <p class="font14 font-weight font-color-3">Rttmall@foxmail.com</p>
+					                    <p class="iconfont icon-vip "><span class="font12 font-color-9">Membership</span></p>
+					                </div>
+					            </a>
+					        </li>
+					    </ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="home.html" class=""><s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left"></s>Home</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Type/brand-list.html" class=""><s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left"></s>Categories</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Mine/account.html" class=""><s class="iconfont icon-ren font18 margin-r10 font-color-9 mui-pull-left"></s>My Account</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../ShoppingCard/shopping-cart.html" class=""><s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left"></s>Cart</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Order/my-order.html" class=""><s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left"></s>My Orders</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/wish-list.html" class=""><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left"></s>Wish List</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Coupon/coupons.html" class=""><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../News/messages.html" class=""><s class="iconfont icon-lingdang font18 margin-r10 font-color-9 mui-pull-left"></s>My Messages</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/my-evaluate.html" class=""><s class="iconfont icon-qipao font18 margin-r10 font-color-9 mui-pull-left"></s>My assessment</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Record/recently.html" class=""><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="" class=""><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>Invite Friends</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Setting/settings.html" class=""><s class="iconfont icon-shezhi font18 margin-r10 font-color-9 mui-pull-left"></s>Settings</a>
+						 	</li>
+						</ul>
+					</div>
+				</div>
+			</aside>	
+			<!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+					<h1 class="mui-title">My Profile</h1>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-content my-profile">
+							<ul class="mui-table-view nmg">
+					            <li class="mui-table-view-cell mui-media">
+					                <a href="#picture" >
+					                    <img class="mui-media-object margin-r20 mui-pull-right radius50" src="../../images/Default-Avatar.jpg">
+					                    <div class="mui-media-body">
+					                        <p class="font14 line44 font-color-3">My Photo</p>					                        
+					                    </div>
+					                    <s class="mui-navigate-right font18"></s>
+					                </a>
+					            </li>
+					        </ul>
+					        <ul class="mui-table-view margin-t12">
+								<li class="mui-table-view-cell">
+							        <a href="#nickname"><span class="mui-navigate-right font18"></span>Nickname<em class="mui-pull-right margin-r20 font-color-9 text-r">Siberian Husck</em></a>
+							   </li>
+							   <li class="mui-table-view-cell">
+							        <a href="#realname"><span class="mui-navigate-right font18"></span>Contact Name<em class="mui-pull-right margin-r20 font-color-9 text-r">Siberian</em></a>
+							   </li>
+							   <li class="mui-table-view-cell">
+							        <a href="#gender"><span class="mui-navigate-right font18"></span>Gender<em class="mui-pull-right margin-r20 font-color-9 text-r">Husck</em></a>
+							   </li>
+							   <li class="mui-table-view-cell">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Date of Birth<button data-options='{"type":"date"}' class="btn mui-btn mui-btn-block nback nborder  margin-r20"><p id='result' class="ui-alert text-r mui-pull-right  margin-r10">April.7.2017</p></button>
+							        </a>
+							   </li>
+							</ul>
+							<ul class="mui-table-view margin-t12">
+								<li class="mui-table-view-cell National-flag">
+							        <a href="#National-flag"><span class="mui-navigate-right font18"></span>Country/Region<s class="ui-alert css_cn country-flag css_flag mui-pull-right Country-icon"></s></a>
+							  	</li>
+							  	<li></li>
+								<li class="mui-table-view-cell bakc-fff">
+									<a href="#street-popup"><span class="mui-navigate-right font18"></span>Street<em class="mui-pull-right margin-r20 font-color-9 text-r">Tobago</em></a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a href="#my-address"><span class="mui-navigate-right font18"></span>Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite/Taiparo/#60port</em></a>
+								</li>
+							</ul>
+							<ul class="mui-table-view margin-t12">
+								<li class="mui-table-view-cell">
+							        <a href="#ship-address"><span class="mui-navigate-right font18"></span>Shipping Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite</em></a>
+								</li>
+							</ul>
+							<ul class="mui-table-view margin-t12">
+								<li class="mui-table-view-cell">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Account and Security<em class="mui-pull-right margin-r20 font-color-9 text-r iconfont icon-unie65b font18"></em></a>
+								</li>
+							</ul>
+						</div>
+						<div id="move-togger"></div>
+					</div>
+				</div>
+				<!-- off-canvas backdrop -->
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
+			<div class="mui-poppicker-header bakc-fff">
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"><a href="#">Take Phone</a></li>
+				<li class="mui-table-view-cell"><a href="#">Select from the album</a></li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"><a href="#picture"><b>Cancel</b></a></li>
+			</ul>
+		</div>
+		<div id="nickname" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
+			<div class="mui-poppicker-header bakc-fff">			
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<div class="mui-table-view">
+				<textarea placeholder="Nick Name"></textarea>
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"><a href="#nickname"><b>Cancel</b></a></li>
+			</ul>	
+		</div>
+		<div id="realname" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
+			<div class="mui-poppicker-header bakc-fff">		
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<div class="mui-table-view nback">
+				<input placeholder="First Name" type="text" value="" name=""/>
+				<input placeholder="Last Name" type="text" value="" name=""/>
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"><a href="#realname"><b>Cancel</b></a></li>
+			</ul>	
+		</div>
+		<div id="gender" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
+			<div class="mui-poppicker-header bakc-fff">
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"><a href="#">Male</a></li>
+				<li class="mui-table-view-cell"><a href="#">Female</a></li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell"><a href="#gender"><b>Cancel</b></a></li>
+			</ul>
+		</div>
+		<div id="my-address" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
+			<div class="mui-poppicker-header bakc-fff">
+				<button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel"><a href="#my-address" class="font-color-h"><b>Cancel</b></a></button>
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<div class="mui-table-view">
+				<textarea placeholder="Address"></textarea>
+			</div>
+		</div>
+		<div id="ship-address" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
+			<div class="mui-poppicker-header bakc-fff">			
+				<button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel"><a href="#ship-address" class="font-color-h"><b>Cancel</b></a></button>
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<div class="mui-table-view">
+				<textarea placeholder="Shipping Address"></textarea>
+			</div>	
+		</div>
+		
+		<div id="National-flag" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height">
+			<div class="mui-poppicker-header bakc-fff">
+				<a href="#National-flag" class=""><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<div class="mui-scroll-wrapper Cancellation-list">
+				<div class="mui-scroll">
+					<ul>
+						<li class="padding-line44 height44"><em class="ui-alert css_cn country-flag css_flag mui-pull-left margin-r10" style="margin-top: 4px;"></em>中国<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44"><em class="ui-alert css_cn country-flag css_flag mui-pull-left margin-r10" style="margin-top: 4px;"></em>中国<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44"><em class="ui-alert css_cn country-flag css_flag mui-pull-left margin-r10" style="margin-top: 4px;"></em>中国<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44"><em class="ui-alert css_cn country-flag css_flag mui-pull-left margin-r10" style="margin-top: 4px;"></em>中国<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44"><em class="ui-alert css_cn country-flag css_flag mui-pull-left margin-r10" style="margin-top: 4px;"></em>中国<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44"><em class="ui-alert css_cn country-flag css_flag mui-pull-left margin-r10" style="margin-top: 4px;"></em>中国<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="street-popup" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height">
+			<div class="mui-poppicker-header bakc-fff">
+				<a href="#street-popup" class=""><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
+				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">Done</button>			
+				<div class="mui-poppicker-clear"></div>		
+			</div>
+			<div class="mui-scroll-wrapper Cancellation-list">
+				<div class="mui-scroll">
+					<ul>
+						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/mui.picker.min.js"></script>
+		<script src="../../js/mui.picker.js"></script>
+		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
+		<script>
+			
+			/*选择时间*/
+			(function($) {
+				$.init();
+				var result = $('#result')[0];
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							result.innerText = rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+			
+			(function($) {
+				$('.Cancellation-list').scroll({
+					indicators: true //是否显示滚动条
+				});
+			})(mui);
+			
+			mui('body').on('tap','a',function(){
+			    window.top.location.href=this.href;
+			});
+		</script>
+	</body>
+
+</html>

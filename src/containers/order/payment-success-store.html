@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>To store payment</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/base.css">
+		<link rel="stylesheet" href="../../css/subpage.css" />
+	</head>
+
+	<body>
+		<div class="mui-scroll">
+			<div class="mui-content">
+				<div class="text-c bakc-fff mui-table-view-cell payment-padding">
+					<button class="nback nborder font-color-3 text-r mui-pull-right payment-done" >Done</button>
+					<img src="../../images/smile1.png" class="Smile-icon mar-top" />
+					<p class="font-color-6">order submission is Successful</p>
+					<p class="font-color-6">order number 88845212545845</p>
+					<p class="font-color-6">payment Amount:<b class="font-color-3">US $65.32</b></p>
+				</div>
+				<dl class="store-address text-l margin-t10">
+					<dt><p class="bakc-fff mui-table-view-cell line16">Please go to the following store as soon as possible to pay the purchase price</p></dt>
+					<dd class="mui-table-view mui-table-view-cell border-t relative">
+						<p class="line16 font-color-3 store-adr">#19 Rosalino Street,#19 Rosalino Street,woodbrook port of spain of spain of spain spain of spain of spain</p>
+						<p class="font-color-3">Tel:（868）609-7777</p>
+						<a class="store-img"><img src="../../images/store-address.png" /></a>
+					</dd>
+					<dd class="mui-table-view mui-table-view-cell border-t relative">
+						<p class="line16 font-color-3 store-adr">#19 Rosalino Street,#19 Rosalino Street</p>
+						<p class="font-color-3">Tel:（868）609-7777</p>
+						<a class="store-img"><img src="../../images/store-address.png" /></a>
+					</dd>
+				</dl>
+				<p class="mui-table-view mui-table-view-cell margin-t10">温馨提示</p>
+				<p class="mui-table-view mui-table-view-cell font-color-3">到店支付成功后我们才会为您发货</p>
+			</div>
+			<div id="move-togger"></div>
+		</div>
+		<script type="text/javascript">
+			mui('body').on('tap','a',function(){
+			    window.top.location.href=this.href;
+			});
+		</script>
+	</body>
+
+</html>
