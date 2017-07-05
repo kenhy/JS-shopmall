@@ -14,7 +14,7 @@
 </head>
 <body>
         <header class="mui-bar mui-bar-nav bakc-fff">
-            <li href="javascript:window.location.go(-1)" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></li>
+            <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
             <h1 class="mui-title">Sign in</h1>
         </header>
         <div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
@@ -68,9 +68,11 @@
 <script src="../../js/common/jquery.md5.js"></script>
 <script src="../../js/login/login.js"></script>
 <script type="text/javascript">
+
     mui('body').on('tap','a',function(){
         window.top.location.href=this.href;
     });
+
 </script>
 </body>
 </html>

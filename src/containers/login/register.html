@@ -35,7 +35,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav bakc-fff">
-			<li href="javascript:window.location.go(-1)" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></li>
+			<span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
 			<h1 class="mui-title">Register</h1>
 		</header>
 		<div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
@@ -159,6 +159,7 @@
 			mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
 			});
+
 			setTimeout(register.initCountry(),0);
 		</script>
 	</body>
