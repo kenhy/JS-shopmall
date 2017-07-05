@@ -13,7 +13,7 @@
 .mui-checkbox input{left: 0 !important;}
 .mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{color:#c7a062;}
 .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{font-size: 22px !important;}
-.bottom-sign-in{ position: fixed; bottom: 20px\n; left: 0; width: 100%; text-align: center;}
+.bottom-sign-in{ position: fixed; bottom: 20px; left: 0; width: 100%; text-align: center;}
 .phone-number{height: 44px; position: relative; width: 100%;}
 .area-code{position: absolute; left: 0; height: 44px; width: 110px;}
 .area-phone{position: absolute; left:114px;}
