@@ -203,18 +203,35 @@ var register = {
                             var html = template('countryAndPrefixTemplate',
                                 data);
                             $("[data-type=countryAndPrefix]").html(html);
-                            // 填写个人信息时的国家列表
-                            html = template('countryTemplate', data);
-                            $("#c-optionmain").html(html);
-                            setCookie("country", JSON.stringify(data));
                         }
                     }
                 }
             });
         }
-        else{
+        /*else {
+                // 注册填写电话号码国家列表
+                var html = template('countryAndPrefixTemplate', JSON.parse(country));
+                $("[data-type=countryAndPrefix]").html(html);
+            }
 
-        }
+            // 填写电话号码时，国家列表点击事件
+            $("[data-type=tel-country]").click(function(event) {
+                if ($("[data-type=countryAndPrefix]").is(":visible")) {
+                    $("#transparent").hide();
+                    $("[data-type=countryAndPrefix]").hide();
+                } else {
+                    $("#transparent").show();
+                    $("[data-type=countryAndPrefix]").show();
+                }
+            });
+            /!* 赋值给文本框 *!/
+            $("[data-type=countryAndPrefix] p").click(
+                function() {
+                    var value = $(this).html();
+                    defaultCountry = $(this).find("span").attr("data-type");
+                    $(this).parent().siblings("[data-type=tel-country-text]")
+                        .html(value);
+                })*/
     },
 
     /*提交注册*/
