@@ -18,7 +18,7 @@
 
 	<body>
 				<header class="mui-bar mui-bar-nav bakc-fff">
-					<a href="javascript:window.location.go(-1)" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></a>
+					<li href="javascript:window.location.go(-1)" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"></li>
 					<h1 class="mui-title">Register</h1>
 				</header>
 				<div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
@@ -157,7 +157,7 @@
         <script src="../../js/common/api.js"></script>
         <script src="../../js/common/jquery.min.js"></script>
 		<script src="../../js/common/mui.min.js"></script>
-		<script src="../../js/common/Sideslip.js" ></script>
+        <script src="../../js/common/jquery.md5.js"></script>
         <script src="../../js/login/register.js"></script>
         <script type="text/javascript">
             (function($) {
@@ -165,18 +165,16 @@
                     indicators: true //是否显示滚动条
                 });
             })(mui);
+
             mui('body').on('tap','a',function(){
-                window.top.location.href=this.href;
+                window.top.location.href = this.href;
             });
+
+            loginConfig.initCountry();
+
         </script>
                 <script id="countryTemplate" type="text/html">
                     {{each data.top as c i}}
-                    <p data-country="{{c.id}}">
-                        <span data-type="{{c.countriesCode}}" class="css_flag css_{{c.countriesCode.toLowerCase()}} FL"><s class="country-text">{{c.name}}</s></span>
-                    </p>
-                    {{/each}}
-                    <span style="background: #ffffff;">Country & Territories (A-Z)</span>
-                    {{each data.list as c i}}
                     <p data-country="{{c.id}}">
                         <span data-type="{{c.countriesCode}}" class="css_flag css_{{c.countriesCode.toLowerCase()}} FL"><s class="country-text">{{c.name}}</s></span>
                     </p>
