@@ -5,11 +5,12 @@
 
 /*登录状态*/
 var submit_login = $("#submit_login"),
-     btn_code = $("#btn_code");
-var count = 60;// 初始秒数
-var counts;// 在按钮上显示出的秒数
-var Timer;// 时间定时器
-var Login_status = false;
+    btn_code = $("#btn_code"),
+    submit_reset_password = $("#submit_reset_password"),
+    count = 60, // 初始秒数
+    counts, // 在按钮上显示出的秒数
+    Timer, // 时间定时器
+    Login_status = false;
 /*页面默认设置*/
 var defaultCountry = "TT",
     defaultUserNo;
@@ -28,6 +29,7 @@ var login = {
         }
         else {
             var opwd = $.md5(userNo.concat(pwd)).toUpperCase(),
+                npwd = $.md5(pwd).toUpperCase(),
                 client = "web",
                 version = "1.0";
                 //clientId = generateUUID();
@@ -39,7 +41,7 @@ var login = {
                 cache: false,
                 data: {
                     loginName: userNo,
-                    pwd: pwd,
+                    pwd: npwd,
                     opwd: opwd,
                     client : client,
                     version : version
@@ -49,7 +51,8 @@ var login = {
                         if(data.code !="1"){
                             showLoginTip(data.msg);
                         }else{
-                            setCookie("token", data.data.token);
+                            alert('login in');
+                            /*setCookie("token", data.data.token);
                             setCookie("loginName", data.data.loginName);
                             setCookie("userName", encodeURIComponent(data.data.userName));
                             setCookie("customerId", data.data.customerId);
@@ -58,7 +61,7 @@ var login = {
                                 setCookie("imagePath", data.data.imagePath);
                             }
                             setCookie("role", data.data.role);
-                            var callback = getUrlParam("callback");
+                            var callback = getUrlParam("callback");*/
                         }
                     }
                 }
@@ -70,31 +73,25 @@ var login = {
     login_forget:function () {
         var pwd1 = $("#pwd1").val(),
             pwd2 = $("#pwd2").val(),
-            count  = $("#count").val(),
-            tel_code = $("#tel_code").val();
-        if(check == false){
-            return show_register_tip("You must accept the Conditions of Use.");
-        }else if(login.telVerify(tel)){
-            var code = $("#tel-code").val();
-            if (code == "") {
-                show_register_tip("Verification code is required.");
-                return false;
-            }else if (code.length != 6) {
-                show_register_tip("6-digit number");
-                return false;
-            }else if (pwd1 && pwd2 == ""){
-                return show_register_tip("Password is required.");
-            }
-            else if(pwd1 != pwd2) {
-                return show_register_tip("Password are not the same");
-            }else if (login.forget_reset_code()){
-
-            } else {
-                show_register_tip("system error");
-                return false;
+            userNo  = $("#userNo").val(),
+            code = $("#tel_code").val();
+        if(userNo == ""){
+            return showLoginTip("Please fill in the username");
+        }else if (code == "") {
+            showLoginTip("Verification code is required.");
+            return false;
+        }else if (code.length != 6) {
+            showLoginTip("6-digit number");
+            return false;
+        }else if (pwd1 && pwd2 == ""){
+            return showLoginTip("Password is required.");
+        }else if(pwd1 != pwd2) {
+            return showLoginTip("Password are not the same");
+        }else{
+            if(login.forget_reset_code(userNo,code)){
+                login.forget_reset(userNo,code,pwd1);
             }
         }
-
     },
 
     /*忘记密码验证码发送*/
@@ -133,38 +130,68 @@ var login = {
     },
 
     /*忘记密码验证码校验*/
-    forget_reset_code:function () {
-
+    forget_reset_code:function (userNo,code) {
+        var flag = false;
+        $.ajax({
+            type:"POST",
+            url: RTTMALL_API.URL_PWD_FORGET_CODE_VERIFY,
+            dataType:"JSON",
+            async: false,
+            cache: false,
+            data:{
+                loginName:userNo,
+                code:code
+            },
+            success:function (data) {
+                if (data != null){
+                    //console.log(data);
+                    if(data.code != "1"){
+                        showLoginTip(data.msg);
+                        //console.log(flag);
+                        flag = false;
+                    }else{
+                        flag = true;
+                    }
+                }
+            }
+        });
+        return flag;
     },
 
     /*忘记密码更改*/
-    forget_reset:function () {
-
-    },
-
-    /* 电话号码验证*/
-    telVerify : function(tel) {
-        if (tel == "") {
-            show_register_tip("Phone NO. is required.");
-            return false;
-        }
-        if (tel.length > 11) {
-            show_register_tip("Phone NO. is too long.");
-            return false;
-        }
-        var number = /^[0-9]*$/;
-        if (number.test(tel)) {
-            return true;
-        }
-        show_register_tip("Wrong phone NO.");
-        return false;
+    forget_reset:function (userNo,code,pwd1) {
+        var pwd = $.md5(pwd1).toUpperCase();
+        $.ajax({
+            type:"POST",
+            url: RTTMALL_API.URL_PWD_RESET,
+            dataType:"JSON",
+            async: false,
+            cache: false,
+            data:{
+                loginName:userNo,
+                pwd:pwd,
+                code:code
+            },
+            success:function (data) {
+                if (data != null){
+                    console.log(data);
+                    if(data.code != "1"){
+                        showLoginTip(data.msg);
+                    }else{
+                        console.log('ok');
+                        window.location.href = "login.html";
+                    }
+                }
+            }
+        });
     }
+
 };
 
 
 /*登录错误提醒*/
 function showLoginTip(msg) {
-        error_msg = $("#error_msg");
+        var error_msg = $("#error_msg");
         error_msg.html(msg);
 }
 
@@ -187,4 +214,4 @@ submit_login.on('click',login.login_check);
 /*发送验证码*/
 btn_code.on('click',login.send_msg_forget);
 /*密码找回更改*/
-
+submit_reset_password.on('click',login.login_forget);
