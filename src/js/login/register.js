@@ -6,9 +6,10 @@ var r_way, //注册方式
     submit_register_phone = $("#submit_register_phone"),
     code_btn = $("#code-btn"),
     counts,
-    count = 60 ;
+    count = 60,
+    prefix = $("prefix");
 /*页面默认设置*/
-var defaultCountry = "TT";
+var default_countriesCode = "TT";
 
 var register = {
     /*邮箱登录验证*/
@@ -196,15 +197,18 @@ var register = {
                 cache: false,
                 data: {},
                 success: function (data) {
-                  console.log(data)
+                  //console.log(data);
                     if (data != null) {
                         if (data.code != "1") {
                             alert(data.msg);
                         } else {
-                            console.info(data);
                             // 注册填写电话号码国家列表
-                            var html = template('countryAndPrefixTemplate',data);
-                            $("[data-type=countryAndPrefix]").html(html);
+                            var arr = data.data.list;
+                            var index = tel_loading(arr);
+                            //console.log(index);
+                            prefix.html(index);
+                            var list = template('countryAndPrefixTemplate',data);
+                            $("[data-type=countryAndPrefix]").html(list);
                         }
                     }
                 }
@@ -214,26 +218,13 @@ var register = {
                 // 注册填写电话号码国家列表
                 var html = template('countryAndPrefixTemplate', JSON.parse(country));
                 $("[data-type=countryAndPrefix]").html(html);
-            }
+        }
 
-            // // 填写电话号码时，国家列表点击事件
-            // $("[data-type=tel-country]").click(function(event) {
-            //     if ($("[data-type=countryAndPrefix]").is(":visible")) {
-            //         $("#transparent").hide();
-            //         $("[data-type=countryAndPrefix]").hide();
-            //     } else {
-            //         $("#transparent").show();
-            //         $("[data-type=countryAndPrefix]").show();
-            //     }
-            // });
-            // /!* 赋值给文本框 *!/
-            // $("[data-type=countryAndPrefix] p").click(
-            //     function() {
-            //         var value = $(this).html();
-            //         defaultCountry = $(this).find("span").attr("data-type");
-            //         $(this).parent().siblings("[data-type=tel-country-text]")
-            //             .html(value);
-            //     })*/
+
+        //赋值给文本框
+        $("[data-type=countryAndPrefix] li").on('tap',function () {
+            default_countriesCode = $().val
+        })
     },
 
     /*提交注册*/
@@ -294,6 +285,17 @@ var register = {
 function show_register_tip(msg) {
     error_msg = $("#error_msg");
     error_msg.html(msg);
+}
+
+//文本框初始化
+function tel_loading(data) {
+    var arr = [];
+    arr = data.filter(function (item,index) {
+        if(item.countriesCode == default_countriesCode){
+            return true;
+        }
+    })
+    return arr[0].prefix
 }
 
 /*邮箱注册确认*/
