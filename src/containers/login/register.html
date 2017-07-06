@@ -77,7 +77,7 @@
 								<a href="#Areacode-phone">
                                     <p class="area-code bakc-fff line44 text-l">
                                         <s class="iconfont icon-icon031 font22 mui-pull-left margin-l5" style="color: #DDDDDD;"></s>
-                                        <a id="" class="mui-pull-left"></a>
+                                        <a href="#Areacode-phone" id="prefix" class="mui-pull-left"></a>
                                         <em class="mui-icon mui-icon-arrowdown font16 mui-pull-right line44 margin-r5"></em>
                                     </p>
 								</a>
@@ -87,12 +87,12 @@
 								<p class="iconfont icon-yanzhengma bakc-fff"></p>
 								<input id="tel-code" type="text" class="validation-num border-be" placeholder="Verificatione Code" style="margin-left: 28px;">
 								<p class="verificatione button-h font12">
-									<span id="code-btn" class="verificatione-code">Get Verificatione Code</span>
+                                    <input id="code_btn" type="button" class="verificatione-code button-h" value="Send" />
 								</p>
 							</div>
 							<div class="mui-input-row bakc-fff margin-t12 hidden">
 								<p class="mui-icon mui-icon-locked bakc-fff"></p>
-								<input type="text" class="" placeholder="Password(6 characters or above)">
+								<input id="p_pwd" type="password" class="" placeholder="Password(6 characters or above)">
 							</div>
 							<div class=" mui-checkbox mui-left">
 								<label class="font12">Read RttMall Free <a href="javascript:void(0)" class="underline font-color-3">Membership Agreement</a></label>
@@ -113,8 +113,7 @@
 		</div>
 		<div id="Areacode-phone" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height border-t">
 			<div class="mui-poppicker-header bakc-fff hidden">
-				<a href="#Areacode-phone" class="hidden"><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">Done</button>
+				<a id="cancel-phone" href="#Areacode-phone" class="hidden"><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
 			</div>
 			<div class="mui-indexed-list-bar">
 				<a href="#">top</a>
@@ -140,7 +139,7 @@
 			<li class="padding-line44 height44 border-b">
 				<span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
                 <i>{{c.name}}</i>
-                <em class="mui-pull-right margin-r20">{{c.prefix}}</em>
+                <em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
 			</li>
 			{{/each}}
             <li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
@@ -148,7 +147,7 @@
 			<li class="padding-line44 height44 border-b">
 				<span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
                 <i>{{c.name}}</i>
-                <em class="mui-pull-right margin-r20">{{c.prefix}}</em>
+                <em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
 			</li>
 			{{/each}}
 		</script>
