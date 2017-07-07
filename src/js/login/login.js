@@ -52,7 +52,7 @@ var login = {
                             showLoginTip(data.msg);
                         }else{
                             alert('login in');
-                            /*setCookie("token", data.data.token);
+                            setCookie("token", data.data.token);
                             setCookie("loginName", data.data.loginName);
                             setCookie("userName", encodeURIComponent(data.data.userName));
                             setCookie("customerId", data.data.customerId);
@@ -61,7 +61,7 @@ var login = {
                                 setCookie("imagePath", data.data.imagePath);
                             }
                             setCookie("role", data.data.role);
-                            var callback = getUrlParam("callback");*/
+                            var callback = getUrlParam("callback");
                         }
                     }
                 }
