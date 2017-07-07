@@ -12,7 +12,6 @@
 			.brands .mui-slider-item{width: 21.8% !important; margin:0 4px ;}
 			.brands .mui-slider-item a:first-child{margin-bottom: 8px !important;}
 		</style>
-
     </head>
 
 	<body>
@@ -44,139 +43,81 @@
 			<div id="item1" class="mui-control-content overflow-y mui-active">
 				<div class="mui-row mui-fullscreen" style=" z-index: 9; bottom: 44px; top: 1px;">
 					<div class="mui-col-xs-3 bakc-eee" style="width: 27%;">
-						<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+						<div id="segmentedControls" data-type="category_ist_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+                            <!--left-->
 						</div>
 					</div>
 					<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 0.5px solid #d1d1d1; width: 73%;">
-						<div class="mui-control-content overflow-y mui-active"></div>
-						<div class="mui-control-content overflow-y"></div>
-						<div class="mui-control-content overflow-y"></div>
+                        <!--right-->
 					</div>
 				</div>
 			</div>
 			<div id="item2" class="mui-control-content overflow-y">
-				<div class="mui-row mui-fullscreen">
-					<ul class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_07.jpg" />
-						    </a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_09.jpg" />
-						    </a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_107.jpg" />
-						    </a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_109.jpg" />
-						    </a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_17.jpg" />
-						    </a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_19.jpg" />
-						    </a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_37.jpg" />
-						    </a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-						    <a href="#" class="npd">
-						        <img src="../../images/logo/logo_39.jpg" />
-						    </a>
-						</li>
-					</ul>
-					<ul class="mui-table-view nback brand-list">
-						<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">Alibab Corporation</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">lenovo</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">people</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">unilever</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">syllable</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">dangdang</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">huawei</a>
-					   	</li>
-					   		<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">lenovo</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">people</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">unilever</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">syllable</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">dangdang</a>
-					   	</li>
-					   	<li class="mui-table-view-cell line20">
-					        <a href="javascript:void(0)">huawei</a>
-					   	</li>
-					</ul>
+				<div data-type="brand_list" class="mui-row mui-fullscreen">
+					<!--brand-->
 				</div>
 			</div>
 		</div>
-
+        <script src="../../js/common/api.js"></script>
 		<script src="../../js/common/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
+        <script src="../../js/common/template/template.js"></script>
+        <script src="../../js/common/jquery.min.js"></script>
         <script src="../../js/brand/brand.js"></script>
-		<script type="text/javascript">
+
+        <script id="brand-list" type="text/html">
+            <ul class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
+                {{each data.listRecommend as c i}}
+                <li class="mui-table-view-cell mui-media">
+                    <a href="#" class="npd">
+                        <img src="{{c.imgPath}}" title="{{c.name}}" />
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+            <ul class="mui-table-view nback brand-list">
+                {{each data.list as c i}}
+                <li class="mui-table-view-cell line20">
+                    <a href="">{{c.name}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+
+
+        <script id="category-list-right" type="text/html">
+
+        </script>
+
+        <script id="category-list-left" type="text/html">
+            {{each firstCategory as c i}}
+            <a class="mui-control-item left-navigation">
+                <img src="{{c.iconPath}}" title="{{c.typeName}}">
+                <span class="line12 fount12">
+                    {{c.typeName}}
+                </span>
+            </a>
+            {{/each}}
+        </script>
+
+
+        <script type="text/javascript">
 			mui.init({
-//				swipeBack: true //启用右滑关闭功能
+                //swipeBack: true //启用右滑关闭功能
 			});
-			var controls = document.getElementById("segmentedControls");
-			var contents = document.getElementById("segmentedControlContents");
-			var html = [];
-			var i = 1,
-				j = 1,
-				m = 8, //左侧选项卡数量+1
-				n = 16; //每个选项卡列表数量+1
-			for (; i < m; i++) {
-				html.push('<a class="mui-control-item left-navigation" href="#content' + i + '"><p class="iconfont icon-dianzan font22"></p><span class="font12 line12">Preferred Products</span>' + '</a>');
-			}
-			controls.innerHTML = html.join('');
-			html = [];
-			for (i = 1; i < m; i++) {
-				html.push('<div id="content' + i + '" class="mui-control-content overflow-y"><ul class="mui-table-view">');
-				for (j = 1; j < n; j++) {
-					html.push('<li class="mui-table-view-cell mui-table-view-cell mui-collapse"><a class="mui-navigate-right font18" href="#"><em class="font-weight font12">Dress</em></a>' + '</a><div class="mui-collapse-content npd"><dl class="hidden right-classification mar-left"><dt class="mui-pull-left"><img src="../../images/img.png" /></dt><dd class="mui-pull-left">Dress</dd></dl><p class="border-b mar-left"></p><dl class="hidden right-classification mar-left"><dt class="mui-pull-left"><img src="../../images/img.png" /></dt><dd class="mui-pull-left">Dress</dd></dl></div></li>');
-				}
-				html.push('</ul></div>');
-			}
-			contents.innerHTML = html.join('');
-			 //默认选中第一个
-			controls.querySelector('.mui-control-item').classList.add('mui-active');
-			contents.querySelector('.mui-control-content').classList.add('mui-active');
-			mui('body').on('tap','a',function(){
-			    window.top.location.href=this.href;
-			});
+
+            mui('body').on('tap','a',function(){
+                window.top.location.href=this.href;
+            });
+            //brand
+            brand_list.init_brand();
+            //category
+            brand_list.category_list_left();
 		</script>
+
+
+
+
 	</body>
 
 </html>

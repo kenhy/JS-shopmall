@@ -65,6 +65,9 @@ var RTTMALL_API = {
     // 服务网点列表
     URL_SERVICE_NETWORK : API_BASE_URL + "/network/service",
 
+
+    //APP分类页
+    URL_CATEGORY: API_BASE_URL + "/category/all",
     // 搜索输入框备选分类
     URL_CATEGORY_HEADER_SEARCH : API_BASE_URL + "/category/header/search",
     // 获取某分类下子类以及子类的子类
@@ -94,7 +97,7 @@ var RTTMALL_API = {
     // 热门关键字
     URL_INDEX_HOTKEYWORDS : API_BASE_URL + "/product/hotKeywords",
 
-    URL_BRANDS : API_BASE_URL + "/brands/searchBrands",
+    URL_BRANDS : API_BASE_URL + "/brands/app",
 
     URL_ORDER_COUNT : API_BASE_URL + "/order/count",
     URL_ORDER_LOGISTICS : API_BASE_URL + "/order/logistics/all",
