@@ -133,10 +133,12 @@
                 window.top.location.href=this.href;
             });
             init_category();
-            init_category_right(10002);
+            init_category_right(default_category);
             controls.querySelector('.mui-control-item').classList.add('mui-active');
             contents.querySelector('.mui-control-content').classList.add('mui-active');
-            default_category = querySelector('.mui-control-item').getAttribute("[data-id]");
+            category_list = controls.querySelector('.mui-active');
+            console.log(category_list);
+            init_category_right(default_category);
             /*----动作加载----*/
             /*点击触发*/
             /*$('.tap-cat-onclick').on('tab',function () {
