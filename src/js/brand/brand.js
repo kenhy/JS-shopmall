@@ -1,7 +1,7 @@
 /**
  * Created by Jonathan Zhang on 2017/7/7.
  */
-
+var default_category = "0";
 var brand_list = {
     /*品牌列表*/
     init_brand:function () {
@@ -24,6 +24,7 @@ var brand_list = {
             }
         })
     },
+
     /*category*/
     init_category:function (index) {
         var arr = {};
@@ -45,12 +46,46 @@ var brand_list = {
         });
         return arr;
     },
+
     /*category_left*/
     category_list_left:function () {
-        var data = brand_list.init_category(0);
-        console.log(data);
+        var data = brand_list.init_category(default_category);
+        //console.log(data);
         var list = template('category-list-left',data);
-        console.log(list);
-        $("[data-type=category_ist_left]").html(list);
+        //console.log(list);
+        $("[data-type=category_list_left]").html(list);
+    },
+
+    /*category_right*/
+    category_list_right:function (index) {
+        var data = brand_list.init_category(index);
+        //console.log(data);
+        var list = template('category-list-right',data);
+        //console.log(list);
+        $("[data-type=category_list_right]").html(list);
+    },
+
+    /*category_right_in*/
+    category_list_right_in:function () {
+        var data = brand_list.init_category(index);
+        //console.log(data);
+        var list = template('category-list-right',data);
+        //console.log(list);
+        $("[data-type=category_list_right]").html(list);
     }
 };
+
+/*页面动态加载器*/
+function init_category_right(index) {
+    brand_list.category_list_right(index);
+}
+
+/*页面静态加载器*/
+function init_category() {
+    //brand
+    brand_list.init_brand();
+    //category
+    brand_list.category_list_left();
+}
+
+

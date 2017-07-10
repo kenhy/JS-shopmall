@@ -15,7 +15,6 @@
             #back_btn{width: 12%;display: block;height: 44px;line-height: 44px;}
 		</style>
     </head>
-
 	<body>
 
 				<header class="mui-bar mui-bar-nav npd">
@@ -40,11 +39,11 @@
 			<div id="item1" class="mui-control-content overflow-y mui-active">
 				<div class="mui-row mui-fullscreen" style=" z-index: 9; bottom: 44px; top: 1px;">
 					<div class="mui-col-xs-3 bakc-eee" style="width: 27%;">
-						<div id="segmentedControls" data-type="category_ist_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+						<div id="segmentedControls" data-type="category_list_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
                             <!--left-->
 						</div>
 					</div>
-					<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 0.5px solid #d1d1d1; width: 73%;">
+					<div id="segmentedControlContents" data-type="category_list_right" class="mui-col-xs-9" style="border-left: 0.5px solid #d1d1d1; width: 73%;">
                         <!--right-->
 					</div>
 				</div>
@@ -61,11 +60,11 @@
         <script src="../../js/common/template/template.js"></script>
         <script src="../../js/common/jquery.min.js"></script>
         <script src="../../js/brand/brand.js"></script>
-
+        <!--brand-list-->
         <script id="brand-list" type="text/html">
             <ul class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
                 {{each data.listRecommend as c i}}
-                <li class="mui-table-view-cell mui-media">
+                <li data-id="{{c.id}}" class="mui-table-view-cell mui-media">
                     <a href="#" class="npd">
                         <img src="{{c.imgPath}}" title="{{c.name}}" />
                     </a>
@@ -80,15 +79,43 @@
                 {{/each}}
             </ul>
         </script>
-
-
+        <!--category-list-right-->
         <script id="category-list-right" type="text/html">
-
+            {{each listCategory as c i}}
+            <div id="content{{c.id}}" class="mui-control-content overflow-y mui-active">
+                <ul class="mui-table-view">
+                    {{/each}}
+                    {{each listCategory as c i}}
+                    <li  class="mui-table-view-cell mui-table-view-cell mui-collapse">
+                        <a class="mui-navigate-right font18 " href="#">
+                            <em class="font-weight font12">{{c.typeName}}</em>
+                        </a>
+                        <div data-type="{{c.typeName}}" class="mui-collapse-content npd">
+                        </div>
+                    </li>
+                    {{/each}}
+                    {{each listCategory as c i}}
+                </ul>
+            </div>
+            {{/each}}
         </script>
-
+        <!--category-list-right-in-->
+        <script id="category-list-right-in" type="text/html">
+            {{each listCategory.listSon as c i}}
+                <dl class="hidden right-classification mar-left">
+                    <dt class="mui-pull-left"><img src="{{c.imgPath}}" />
+                    </dt>
+                    <dd class="mui-pull-left">
+                        {{c.typeName}}
+                    </dd>
+                </dl>
+            <p class="border-b mar-left"></p>
+            {{/each}}
+        </script>
+        <!--category-list-left-->
         <script id="category-list-left" type="text/html">
             {{each firstCategory as c i}}
-            <a class="mui-control-item left-navigation">
+            <a id="{{c.id}}" data-id="{{c.id}}" href="#content{{c.id}}" class="mui-control-item left-navigation tap-cat-onclick">
                 <img src="{{c.iconPath}}" title="{{c.typeName}}">
                 <span class="line12 fount12">
                     {{c.typeName}}
@@ -96,25 +123,28 @@
             </a>
             {{/each}}
         </script>
-
-
         <script type="text/javascript">
+            var controls = document.getElementById("segmentedControls");
+            var contents = document.getElementById("segmentedControlContents");
 			mui.init({
                 //swipeBack: true //启用右滑关闭功能
 			});
-
             mui('body').on('tap','a',function(){
                 window.top.location.href=this.href;
             });
-            //brand
-            brand_list.init_brand();
-            //category
-            brand_list.category_list_left();
+            init_category();
+            init_category_right(10002);
+            controls.querySelector('.mui-control-item').classList.add('mui-active');
+            contents.querySelector('.mui-control-content').classList.add('mui-active');
+            default_category = querySelector('.mui-control-item').getAttribute("[data-id]");
+            /*----动作加载----*/
+            /*点击触发*/
+            /*$('.tap-cat-onclick').on('tab',function () {
+                console.log(this);
+                var index = this.attr("[date-id]");
+                init_category_right(index);
+            });*/
+            /*点击搜索*/
 		</script>
-
-
-
-
 	</body>
-
 </html>
