@@ -50,7 +50,7 @@ var brand_list = {
         var data = brand_list.init_category(0);
         console.log(data);
         var list = template('category-list-left',data);
-        console.log(list)
+        console.log(list);
         $("[data-type=category_ist_left]").html(list);
     }
 };

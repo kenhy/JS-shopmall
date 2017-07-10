@@ -325,7 +325,6 @@ function country_id(data,admin) {
     return arr[0].id;
 }
 
-
 function timevode() {
     if (counts == 1) {// 当时秒数为0时
         // 按钮启用，颜色恢复，文字变成重新发送，计时器Timer清除
