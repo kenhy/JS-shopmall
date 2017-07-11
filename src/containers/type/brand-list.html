@@ -1,152 +1,182 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Commodity classification</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="../../css/mui.min.css">
-		<link rel="stylesheet" href="../../css/base.css">
-		<link rel="stylesheet" href="../../css/subpage.css" />
-		<style>
-			.brands .mui-slider-item{width: 21.8% !important; margin:0 4px ;}
-			.brands .mui-slider-item a:first-child{margin-bottom: 8px !important;}
-            .mui-off-canvas-wrap .mui-bar{position：fixed !important;}
-            #back_btn{width: 12%;display: block;height: 44px;line-height: 44px;}
-		</style>
-    </head>
-	<body>
+<head>
+	<meta charset="utf-8">
+	<title>Commodity classification</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="../../css/mui.min.css">
+	<link rel="stylesheet" href="../../css/base.css">
+	<link rel="stylesheet" href="../../css/subpage.css" />
+	<style>
+		.brands .mui-slider-item {
+			width: 21.8% !important;
+			margin: 0 4px;
+		}
 
-				<header class="mui-bar mui-bar-nav npd">
-                    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left npd nmg text-c" onclick="history.go(-1)"></span>
-					<div class="nav-input radius4">
-						<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-						<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
-					</div>
-				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<div id="move-togger"></div>
-					</div>
-				</div>
-		<div class="mui-content mui-scroll-wrapper" style=" z-index: 9; padding-top: 44px; position: fixed; bottom: 1px;">
-			<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary bakc-fff">
-				<div class="register">
-					<a class="mui-control-item mui-active current font-color-9" href="#item1">Categories<s></s></a>
-					<a class="mui-control-item font-color-9 current" href="#item2">Brand<s></s></a>
-				</div>
+		.brands .mui-slider-item a:first-child {
+			margin-bottom: 8px !important;
+		}
+
+		.mui-off-canvas-wrap .mui-bar {
+			position：fixed !important;
+		}
+
+		#back_btn {
+			width: 12%;
+			display: block;
+			height: 44px;
+			line-height: 44px;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav npd">
+		<span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left npd nmg text-c" onclick="history.go(-1)"></span>
+		<div class="nav-input radius4">
+			<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
+			<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
+		</div>
+	</header>
+	<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<div id="move-togger"></div>
+		</div>
+	</div>
+	<div class="mui-content mui-scroll-wrapper" style=" z-index: 9; padding-top: 44px; position: fixed; bottom: 1px;">
+		<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary bakc-fff">
+			<div class="register">
+				<a class="mui-control-item mui-active current font-color-9" href="#item1">Categories<s></s></a>
+				<a class="mui-control-item font-color-9 current" href="#item2">Brand<s></s></a>
 			</div>
-			<div id="item1" class="mui-control-content overflow-y mui-active">
-				<div class="mui-row mui-fullscreen" style=" z-index: 9; bottom: 44px; top: 1px;">
-					<div class="mui-col-xs-3 bakc-eee" style="width: 27%;">
-						<div id="segmentedControls" data-type="category_list_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
-                            <!--left-->
-						</div>
-					</div>
-					<div id="segmentedControlContents" data-type="category_list_right" class="mui-col-xs-9" style="border-left: 0.5px solid #d1d1d1; width: 73%;">
-                        <!--right-->
+		</div>
+		<div id="item1" class="mui-control-content overflow-y mui-active">
+			<div class="mui-row mui-fullscreen" style=" z-index: 9; bottom: 44px; top: 1px;">
+				<div class="mui-col-xs-3 bakc-eee" style="width: 27%;">
+					<div onclick="init_menu()" id="segmentedControls" data-type="category_list_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+						<!--left-->
 					</div>
 				</div>
-			</div>
-			<div id="item2" class="mui-control-content overflow-y">
-				<div data-type="brand_list" class="mui-row mui-fullscreen">
-					<!--brand-->
+				<div id="segmentedControlContents" data-type="category_list_right" class="mui-col-xs-9" style="border-left: 0.5px solid #d1d1d1; width: 73%;">
+					<!--right-->
 				</div>
 			</div>
 		</div>
-        <script src="../../js/common/api.js"></script>
-		<script src="../../js/common/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
-        <script src="../../js/common/template/template.js"></script>
-        <script src="../../js/common/jquery.min.js"></script>
-        <script src="../../js/brand/brand.js"></script>
-        <!--brand-list-->
-        <script id="brand-list" type="text/html">
-            <ul class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
-                {{each data.listRecommend as c i}}
-                <li data-id="{{c.id}}" class="mui-table-view-cell mui-media">
-                    <a href="#" class="npd">
+		<div id="item2" class="mui-control-content overflow-y">
+			<div data-type="brand_list" class="mui-row mui-fullscreen">
+				<!--brand-->
+			</div>
+		</div>
+	</div>
+	<script src="../../js/common/api.js"></script>
+    <script src="../../js/common/jquery.min.js"></script>
+	<script src="../../js/common/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/common/Sideslip.js"></script>
+	<script src="../../js/common/template/template.js"></script>
+	<script src="../../js/brand/brand.js"></script>
+	<!--brand-list-->
+	<script id="brand-list" type="text/html">
+		<ul class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
+			{{each data.listRecommend as c i}}
+			<li data-id="{{c.id}}" class="mui-table-view-cell mui-media">
+				<a href="#" class="npd">
                         <img src="{{c.imgPath}}" title="{{c.name}}" />
-                    </a>
-                </li>
-                {{/each}}
-            </ul>
-            <ul class="mui-table-view nback brand-list">
-                {{each data.list as c i}}
-                <li class="mui-table-view-cell line20">
-                    <a href="">{{c.name}}</a>
-                </li>
-                {{/each}}
-            </ul>
-        </script>
-        <!--category-list-right-->
-        <script id="category-list-right" type="text/html">
-            {{each listCategory as c i}}
-            <div id="content{{c.id}}" class="mui-control-content overflow-y mui-active">
-                <ul class="mui-table-view">
-                    {{/each}}
-                    {{each listCategory as c i}}
-                    <li  class="mui-table-view-cell mui-table-view-cell mui-collapse">
-                        <a class="mui-navigate-right font18 " href="#">
+                </a>
+			</li>
+			{{/each}}
+		</ul>
+		<ul class="mui-table-view nback brand-list">
+			{{each data.list as c i}}
+			<li class="mui-table-view-cell line20">
+				<a href="">{{c.name}}</a>
+			</li>
+			{{/each}}
+		</ul>
+	</script>
+	<!--category-list-right-->
+	<script id="category-list-right" type="text/html">
+		{{each listCategory as c i}}
+		<div id="content{{c.id}}" class="mui-control-content overflow-y mui-active">
+			<ul class="mui-table-view">
+				{{/each}}
+                {{each listCategory as c i}}
+				<li class="mui-table-view-cell mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right font18 " href="#">
                             <em class="font-weight font12">{{c.typeName}}</em>
                         </a>
-                        <div data-type="{{c.typeName}}" class="mui-collapse-content npd">
-                        </div>
-                    </li>
-                    {{/each}}
-                    {{each listCategory as c i}}
-                </ul>
-            </div>
-            {{/each}}
-        </script>
-        <!--category-list-right-in-->
-        <script id="category-list-right-in" type="text/html">
-            {{each listCategory.listSon as c i}}
-                <dl class="hidden right-classification mar-left">
-                    <dt class="mui-pull-left"><img src="{{c.imgPath}}" />
+					<div data-type="{{c.typeName}}" class="mui-collapse-content npd">
+
+                        <dl class="hidden right-classification mar-left">
+                            <dt class="mui-pull-left"><img src="{{c.listSon.imgPath}}" />
+                            </dt>
+                            <dd class="mui-pull-left">
+                                {{c.listSon.typeName}}
+                            </dd>
+                        </dl>
+                        <p class="border-b mar-left"></p>
+
+					</div>
+				</li>
+				{{/each}}
+                {{each listCategory as c i}}
+			</ul>
+		</div>
+		{{/each}}
+	</script>
+	<!--category-list-right-in-->
+	<script id="category-list-right-in" type="text/html">
+		{{each listCategory.listSon as c i}}
+		<dl class="hidden right-classification mar-left">
+			<dt class="mui-pull-left"><img src="{{c.imgPath}}" />
                     </dt>
-                    <dd class="mui-pull-left">
-                        {{c.typeName}}
-                    </dd>
-                </dl>
-            <p class="border-b mar-left"></p>
-            {{/each}}
-        </script>
-        <!--category-list-left-->
-        <script id="category-list-left" type="text/html">
-            {{each firstCategory as c i}}
-            <a id="{{c.id}}" data-id="{{c.id}}" href="#content{{c.id}}" class="mui-control-item left-navigation tap-cat-onclick">
+			<dd class="mui-pull-left">
+				{{c.typeName}}
+			</dd>
+		</dl>
+		<p class="border-b mar-left"></p>
+		{{/each}}
+	</script>
+	<!--category-list-left-->
+	<script id="category-list-left" type="text/html">
+		{{each firstCategory as c i}}
+		<a id="{{c.id}}" data-id="{{c.id}}" href="#content{{c.id}}" class="mui-control-item left-navigation tap-cat-onclick" >
                 <img src="{{c.iconPath}}" title="{{c.typeName}}">
                 <span class="line12 fount12">
                     {{c.typeName}}
                 </span>
-            </a>
-            {{/each}}
-        </script>
-        <script type="text/javascript">
-            var controls = document.getElementById("segmentedControls");
-            var contents = document.getElementById("segmentedControlContents");
-			mui.init({
-                //swipeBack: true //启用右滑关闭功能
-			});
-            mui('body').on('tap','a',function(){
-                window.top.location.href=this.href;
-            });
-            init_category();
-            init_category_right(default_category);
-            controls.querySelector('.mui-control-item').classList.add('mui-active');
-            contents.querySelector('.mui-control-content').classList.add('mui-active');
-            category_list = controls.querySelector('.mui-active');
+        </a>
+        {{/each}}
+	</script>
+	<script type="text/javascript">
+		var controls = document.getElementById("segmentedControls");
+		var contents = document.getElementById("segmentedControlContents");
+
+		mui.init({
+			//swipeBack: true //启用右滑关闭功能
+		});
+		mui('body').on('tap', 'a', function() {
+			window.top.location.href = this.href;
+		});
+		init_category();
+		init_category_right(default_category);
+		controls.querySelector('.mui-control-item').classList.add('mui-active');
+		contents.querySelector('.mui-control-content').classList.add('mui-active');
+
+        function init_menu() {
+            controls.addEventListener("click",category_list = controls.querySelector('.mui-active').getAttribute("id"));
             console.log(category_list);
-            init_category_right(default_category);
-            /*----动作加载----*/
-            /*点击触发*/
-            /*$('.tap-cat-onclick').on('tab',function () {
-                console.log(this);
-                var index = this.attr("[date-id]");
-                init_category_right(index);
-            });*/
-            /*点击搜索*/
-		</script>
-	</body>
+            init_category_right(category_list);
+        }
+		/*----动作加载----*/
+		/*点击触发*/
+		/*$('.tap-cat-onclick').on('tab',function () {
+		    console.log(this);
+		    var index = this.attr("[date-id]");
+		    init_category_right(index);
+		});*/
+		/*点击搜索*/
+	</script>
+</body>
+
 </html>

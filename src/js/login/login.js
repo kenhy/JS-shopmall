@@ -50,11 +50,10 @@ var login = {
                     if (data != null) {
                         if(data.code !="1"){
                             showLoginTip(data.msg);
-                        }else{
-                            alert('login in');
+                        }else {
                             setCookie("token", data.data.token);
                             setCookie("loginName", data.data.loginName);
-                            setCookie("userName", encodeURIComponent(data.data.userName));
+                            setCookie("userName", escape(data.data.userName));
                             setCookie("customerId", data.data.customerId);
                             setCookie("pwd", data.data.pwd);
                             if(data.data.imagePath != null || data.data.imagePath != "" || data.data.imagePath != "null"){
@@ -62,6 +61,10 @@ var login = {
                             }
                             setCookie("role", data.data.role);
                             var callback = getUrlParam("callback");
+                            if (callback != null) {
+                                window.location.href = callback;
+                            } else
+                                window.location.href = domain;
                         }
                     }
                 }

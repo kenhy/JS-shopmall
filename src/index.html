@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/mui.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/subpage.css" />
+    <script src="js/common/api.js"></script>
+
 </head>
 
 <body>
@@ -326,8 +328,10 @@
     </div>
 </div>
 
+<script src="js/common/jquery.min.js"></script>
 <script src="js/common/mui.min.js"></script>
 <script type="text/javascript" src="js/common/Sideslip.js" ></script>
+<script src="js/index.js"></script>
 <script type="text/javascript">
     var gallery = mui('.home-banner');
     gallery.slider({
@@ -336,6 +340,7 @@
     mui('body').on('tap','a',function(){
         window.top.location.href=this.href;
     });
+    initBanner();
 </script>
 </body>
 
