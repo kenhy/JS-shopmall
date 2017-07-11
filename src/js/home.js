@@ -1,23 +1,3 @@
-var util = {};
-Util.addEvent = function (obj, type , fn) {//添加事件监听
-    if (obj.addEventListener) {
-        obj.addEventListener(type, fn, false);
-    } else if (obj.attachEvent) {
-        obj.attachEvent('on' + type, fn);
-    } else {
-        obj['on' + type] = fn;
-    }
-};
-Util.removeEvent = function (obj, type, fn) {//删除事件监听
-    if (obj.removeEventListener) {
-        obj.removeEventListener(type, fn, false);
-    } else if (obj.detachEvent) {
-        obj.detachEvent('on' + type, fn);
-    } else {
-        obj['on' + type] = null;
-    }
-};
-
 function setCookie(name, value) {
     var expdate = new Date(); // 初始化时间
     expdate.setTime(expdate.getTime() + 30 * 24 * 60 * 60 * 1000); // 时间

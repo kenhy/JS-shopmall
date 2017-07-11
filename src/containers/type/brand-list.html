@@ -54,7 +54,7 @@
 		<div id="item1" class="mui-control-content overflow-y mui-active">
 			<div class="mui-row mui-fullscreen" style=" z-index: 9; bottom: 44px; top: 1px;">
 				<div class="mui-col-xs-3 bakc-eee" style="width: 27%;">
-					<div onclick="init_menu()" id="segmentedControls" data-type="category_list_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<div onclick="init_menu()"  id="segmentedControls" data-type="category_list_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
 						<!--left-->
 					</div>
 				</div>
@@ -162,9 +162,9 @@
 		init_category_right(default_category);
 		controls.querySelector('.mui-control-item').classList.add('mui-active');
 		contents.querySelector('.mui-control-content').classList.add('mui-active');
-
         function init_menu() {
-            controls.addEventListener("click",category_list = controls.querySelector('.mui-active').getAttribute("id"));
+            var category_list;
+            category_list = controls.querySelector('.mui-active').getAttribute("id");
             console.log(category_list);
             init_category_right(category_list);
         }
