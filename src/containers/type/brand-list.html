@@ -33,7 +33,7 @@
 
 <body>
 	<header class="mui-bar mui-bar-nav npd">
-		<span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left npd nmg text-c" onclick="history.go(-1)"></span>
+		<a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left npd nmg text-c" href="../../index.html"></a>
 		<div class="nav-input radius4">
 			<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
 			<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
@@ -72,7 +72,7 @@
 	<script src="../../js/common/api.js"></script>
     <script src="../../js/common/jquery.min.js"></script>
 	<script src="../../js/common/mui.min.js"></script>
-	<script type="text/javascript" src="../../js/common/Sideslip.js"></script>
+	<script src="../../js/common/Sideslip.js"></script>
 	<script src="../../js/common/template/template.js"></script>
 	<script src="../../js/brand/brand.js"></script>
 	<!--brand-list-->
@@ -158,16 +158,13 @@
 		mui('body').on('tap', 'a', function() {
 			window.top.location.href = this.href;
 		});
+
 		init_category();
 		init_category_right(default_category);
+
 		controls.querySelector('.mui-control-item').classList.add('mui-active');
 		contents.querySelector('.mui-control-content').classList.add('mui-active');
-        function init_menu() {
-            var category_list;
-            category_list = controls.querySelector('.mui-active').getAttribute("id");
-            console.log(category_list);
-            init_category_right(category_list);
-        }
+
 		/*----动作加载----*/
 		/*点击触发*/
 		/*$('.tap-cat-onclick').on('tab',function () {

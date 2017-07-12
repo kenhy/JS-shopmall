@@ -74,13 +74,13 @@
 						<form class="mui-input-group mui-table-view nback margin-t12 hidden">
 							<div class="phone-number">
 								<a href="#Areacode-phone">
-                                    <p class="area-code bakc-fff line44 text-l">
-                                        <a href="#Areacode-phone">
+									<p class="area-code bakc-fff line44 text-l">
+										<a href="#Areacode-phone">
                                         <s class="iconfont icon-icon031 font22 mui-pull-left margin-l5" style="color: #DDDDDD;"></s>
                                         <i id="prefix" class="mui-pull-left"></i>
                                         <em class="mui-icon mui-icon-arrowdown font16 mui-pull-right line44 margin-r5"></em>
                                         </a>
-                                    </p>
+									</p>
 								</a>
 								<input id="tel" type="text" class="area-phone bakc-fff border-be" placeholder="Tel">
 							</div>
@@ -88,7 +88,7 @@
 								<p class="iconfont icon-yanzhengma bakc-fff"></p>
 								<input id="tel-code" type="text" class="validation-num border-be" placeholder="Verificatione Code" style="margin-left: 28px;">
 								<p class="verificatione button-h font12">
-                                    <input id="code_btn" type="button" class="verificatione-code button-h" value="Send" />
+									<input id="code_btn" type="button" class="verificatione-code button-h" value="Send" />
 								</p>
 							</div>
 							<div class="mui-input-row bakc-fff margin-t12 hidden">
@@ -122,9 +122,9 @@
 			</div>
 			<div class="mui-scroll-wrapper Cancellation-list npd">
 				<div class="mui-scroll">
-						<ul data-type="countryAndPrefix">
-                            <!--country-->
-                        </ul>
+					<ul data-type="countryAndPrefix">
+						<!--country-->
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -135,20 +135,20 @@
 		<script src="../../js/common/jquery.md5.js"></script>
 		<script src="../../js/login/register.js"></script>
 		<script id="countryAndPrefixTemplate" type="text/html">
-            <li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
+			<li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
 			{{each data.top as c i}}
 			<li class="padding-line44 height44 border-b">
 				<span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-                <i>{{c.name}}</i>
-                <em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
+				<i>{{c.name}}</i>
+				<em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
 			</li>
 			{{/each}}
-            <li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
-            {{each data.list as c i}}
+			<li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
+			{{each data.list as c i}}
 			<li class="padding-line44 height44 border-b">
 				<span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-                <i>{{c.name}}</i>
-                <em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
+				<i>{{c.name}}</i>
+				<em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
 			</li>
 			{{/each}}
 		</script>
@@ -163,7 +163,7 @@
 				window.top.location.href = this.href;
 			});
 
-			setTimeout(register.initCountry(),0);
+			register.initCountry();
 		</script>
 	</body>
 

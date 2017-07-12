@@ -142,10 +142,8 @@ var RTTMALL_API = {
     URL_ACCOUNT_PHONE_GET : API_BASE_URL + "/account/getPhone",
     URL_ACCOUNT_PHONE_BIND : API_BASE_URL + "/phone/bind",
     URL_ACCOUNT_PHONE_BIND_CODE_SEND : API_BASE_URL + "/phone/bind/code/send",
-    URL_ACCOUNT_PHONE_CHANGE_CODE_SEND : API_BASE_URL
-    + "/phone/change/code/send",
-    URL_ACCOUNT_PHONE_CHANGE_CODE_VERIFY : API_BASE_URL
-    + "/phone/change/code/verify",
+    URL_ACCOUNT_PHONE_CHANGE_CODE_SEND : API_BASE_URL + "/phone/change/code/send",
+    URL_ACCOUNT_PHONE_CHANGE_CODE_VERIFY : API_BASE_URL + "/phone/change/code/verify",
     URL_ACCOUNT_PHONE_CHANGE : API_BASE_URL + "/phone/change",
 
     URL_ADDRESS_GET : API_BASE_URL + "/address/get",
