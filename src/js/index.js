@@ -8,17 +8,20 @@ var init_index = {
             type: "get",
             url: RTTMALL_API.URL_INDEX_BANNER,
             dataType: "json",
-            async: true,
+            async: false,
             cache: false,
             data: {
                 client: "ios"
             },
             success: function (data) {
-                var list = template('brand-list',data);
+                console.log(data);
+                var list = template('index-banner',data);
+                console.log(list);
+                $("[data-type=home-banner]").html(list);
 
             }
         });
     }
 }
 
-init_index.initBanner();
+

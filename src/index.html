@@ -81,7 +81,7 @@
             <div class="mui-inner-wrap">
                 <header class="mui-bar mui-bar-nav bakc-fff">
                     <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-                    <a href="javascript:void()" class="mui-icon mui-pull-right iconfont icon-liebiaoyehuihua font20 font-color-9"></a>
+                    <a href="javascript:void(0)" class="mui-icon mui-pull-right iconfont icon-liebiaoyehuihua font20 font-color-9"></a>
                     <div class="nav-input radius4">
                         <span class="iconfont icon-sousuo font18 mui-pull-left"></span>
                         <input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
@@ -90,8 +90,10 @@
                 <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
                     <div class="mui-scroll">
                         <div class="mui-content">
-                            <div id="slider" class="mui-slider home-banner">
+                            <div id="slider"  class="mui-slider home-banner">
+                                <div data-type="home-banner" class="mui-slider-group mui-slider-loop">
                                 <!--home-banner-->
+                                </div>
                             </div>
                             <ul class="mui-table-view mui-grid-view nback">
                                 <li class="mui-table-view-cell mui-media mui-col-xs-3">
@@ -298,18 +300,26 @@
         <script src="js/index.js"></script>
         <script src="js/common/template/template.js"></script>
         <script id="index-banner" type="text/html">
-        <div class="mui-slider-group mui-slider-loop">
-            {{each data.data as c i}}
-            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
             <div class="mui-slider-item mui-slider-item-duplicate">
                 <a href="#">
-                    <img src="{{c.}}">
+                    <img src="#">
+                </a>
+            </div>
+            {{each data as c i}}
+            <div class="mui-slider-item">
+                <a href="#">
+                    <img src="{{c.imagePath}}">
                 </a>
             </div>
             {{/each}}
-        </div>
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                    <img src="#">
+                </a>
+            </div>
         </script>
         <script type="text/javascript">
+            init_index.initBanner();
             var gallery = mui('.home-banner');
             gallery.slider({
                 interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0；
