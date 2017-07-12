@@ -60,10 +60,10 @@ var brand_list = {
     category_list_right:function (index) {
         var data = brand_list.init_category(index);
         //console.log(data);
-        var index = {};
+        /*var index = {};
         index = data.listCategory;
         var cate = [];
-        cate = index.listSon;
+        cate = index.listSon;*/
         var list = template('category-list-right',data);
         //console.log(list);
         $("[data-type=category_list_right]").html(list);

@@ -96,6 +96,8 @@ var RTTMALL_API = {
     URL_INDEX_SYSTEM_MESSAGE : API_BASE_URL + "/message/system",
     // 热门关键字
     URL_INDEX_HOTKEYWORDS : API_BASE_URL + "/product/hotKeywords",
+    //主页底图
+    URL_INDEX_FOOTER : API_BASE_URL + "/index_content",
 
     URL_BRANDS : API_BASE_URL + "/brands/app",
 

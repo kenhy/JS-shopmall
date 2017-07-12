@@ -1,20 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 	<head>
-		<meta charset="utf-8">
-		<title>Search</title>
+		<meta charset="UTF-8">
+		<title>New to RTTMALL</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
-		<style>
-			.mui-popup-title+.mui-popup-text{font-weight: 600; font-size: 15px; font-family:"arial, helvetica, sans-serif";}
-			.mui-popup-button{color: #333;}
-			.mui-popup-button:first-child{font-weight: bold;}
-			.mui-popup-button.mui-popup-button-bold{font-weight: normal;}
-		</style>
 	</head>
+	
 
 	<body>
 		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
@@ -79,59 +74,66 @@
 						</ul>
 					</div>
 				</div>
-			</aside>
-			<!--主界面部分-->
+			</aside><!--主界面部分-->
 			<div class="mui-inner-wrap">
 				<header class="mui-bar mui-bar-nav bakc-fff">
 					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-					<div class="nav-input radius4">
-						<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-						<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
-					</div>
+					<a id="menu" class="mui-icon mui-pull-right iconfont icon-shenglve font20"  href="#topPopover"></a>
+					<a class="mui-icon mui-pull-right iconfont icon-youhuiquan font20 nmg"></a>
+					<h1 class="mui-title">New to RTTMALL</h1>
 				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper bakc-fff">
+				<div id="topPopover" class="mui-popover">
+					<div class="mui-popover-arrow none"></div>
+					<div class="mui-scroll-wrapper nmg">
+						<div class="mui-scroll" style="width: initial; right: 0;">
+							<ul class="mui-table-view radius4 right-nav">
+								<li><a href="#">Messages</a></li>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Help</a></li>
+								<li><a href="#">Feedback</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<div class="mui-content">
-							<p class="padding-line44">Search History</p>
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
-							   </li>
-							</ul>
-							<p class="padding-line44">Popular Search</p>
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
-							   </li>
-							</ul>
-							<div class="padding-line44 bakc-fff">
-								<div class="mui-button-row line44 npd">
-									<button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">Clear All History</button>
-								</div>
+							<div class="new-coupon margin-t10">
+								<img src="../../images/newcoupon.png" />
+								<span class="color-white text-c">New registered users Special</span>
+								<p class="color-white text-c font-weight">$200</p>
+							</div>
+							<div class="mui-control-content mui-active register margin-t12">
+								<ul class="margin-b10 border-b">
+									<li class="bakc-fff margin-b10">
+										<div class="radius4 hidden">
+											<p class="text-c border-b padding-tb2 font12">Expires 30 Apr 2017 23:59:59</p>
+											<dl class="hidden register">
+												<dd class="mui-pull-left">
+													<p class="font16 font-weight color-red">$50.00 off $200</p>
+													<p class="font12"><s class="iconfont icon-gantanhao font16 mui-pull-left margin-r5"></s>For all products</p>
+												</dd>
+												<dd class="mui-pull-right back-green radius4"><a class="color-white">Save pass</a></dd>
+											</dl>
+											<p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
+											<p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
+										</div>
+									</li>
+									<li class="bakc-fff margin-b10">
+										<div class="radius4 hidden">
+											<p class="text-c border-b padding-tb2 font12">Expires 30 Apr 2017 23:59:59</p>
+											<dl class="hidden register">
+												<dd class="mui-pull-left">
+													<p class="font16 font-weight color-red">$50.00 off $200</p>
+													<p class="font12"><s class="iconfont icon-gantanhao font16 mui-pull-left margin-r5"></s>For all products</p>
+												</dd>
+												<dd class="mui-pull-right back-green radius4"><a class="color-white">Save pass</a></dd>
+											</dl>
+											<p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
+											<p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
 						<div id="move-togger"></div>
@@ -141,17 +143,9 @@
 				<div class="mui-off-canvas-backdrop"></div>
 			</div>
 		</div>
-		<script src="../../js/common/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
-		<script>
-			//清空历史记录弹窗
-			var info = document.getElementById("info");
-				document.getElementById("confirmBtn").addEventListener('tap', function() {
-				var btnArray = ['No', 'Yes'];
-				mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function(e) {
-				})
-			});
-
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
+		<script type="text/javascript">
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});

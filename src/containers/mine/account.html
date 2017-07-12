@@ -3,17 +3,11 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Search</title>
+		<title>My Account</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" href="../../css/mui.min.css">
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
-		<style>
-			.mui-popup-title+.mui-popup-text{font-weight: 600; font-size: 15px; font-family:"arial, helvetica, sans-serif";}
-			.mui-popup-button{color: #333;}
-			.mui-popup-button:first-child{font-weight: bold;}
-			.mui-popup-button.mui-popup-button-bold{font-weight: normal;}
-		</style>
 	</head>
 
 	<body>
@@ -79,60 +73,92 @@
 						</ul>
 					</div>
 				</div>
-			</aside>
+			</aside>	
 			<!--主界面部分-->
 			<div class="mui-inner-wrap">
-				<header class="mui-bar mui-bar-nav bakc-fff">
+				<header class="mui-bar mui-bar-nav">
 					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-					<div class="nav-input radius4">
-						<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-						<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
-					</div>
+					<!--<a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>-->
+					<h1 class="mui-title">My Account</h1>
 				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper bakc-fff">
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<div class="mui-content">
-							<p class="padding-line44">Search History</p>
-							<ul class="mui-table-view">
+							<ul class="mui-table-view nmg">
+					            <li class="mui-table-view-cell mui-media">
+					                <a href="evaluate.html">
+					                    <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
+					                    <div class="mui-media-body">
+					                        <p class="font14 font-weight font-color-3">USER WORD</p>
+					                        <p class="mui-ellipsis font-color-6 font12">Rttmall@foxmail.com</p>
+					                        <p class="iconfont icon-vip "><span class="font10 font-color-9">Membership</span></p>
+					                    </div>
+					                    <s class="mui-navigate-right font18"></s>
+					                </a>
+					            </li>
+					        </ul>
+					        <ul class="mui-table-view margin-t12 nmg">
 								<li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-lingdang font18 margin-r10 font-color-9"></s>My Messages</a>
 							   </li>
 							</ul>
-							<p class="padding-line44">Popular Search</p>
-							<ul class="mui-table-view">
+							<ul class="mui-table-view margin-t12">
 								<li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-icon17 font18 margin-r10 font-color-9"></s>My Orders</a>
 							   </li>
 							</ul>
-							<div class="padding-line44 bakc-fff">
-								<div class="mui-button-row line44 npd">
-									<button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">Clear All History</button>
-								</div>
-							</div>
+							<ul class="mui-table-view mui-grid-view mui-grid-9 nback nborder-t margin-t12">
+								<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 ">
+								    <a href="#">
+								        <span class="iconfont icon-wodeyinxingqia font20"></span>
+								        <div class="mui-media-body font10">Awaiting Payment</div>
+								    </a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 ">
+								    <a href="#">
+								        <span class="iconfont icon-qiche font20"></span>
+								        <div class="mui-media-body font10">Awaiting Received</div>
+								    </a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 ">
+								    <a href="#">
+								        <span class="iconfont icon-review font20"></span>
+								        <div class="mui-media-body font10">Awaiting Reviews</div>
+								    </a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 ">
+								    <a href="#">
+								        <span class="iconfont icon-tuihuanhuo font20"></span>
+								        <div class="mui-media-body font10">Awaiting Dispute</div>
+								    </a>
+								</li>
+							</ul>
+							<ul class="mui-table-view margin-t12">
+								<li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9"></s>My Coupons</a>
+							   </li>
+							   <li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9"></s>Wish List</a>
+							   </li>
+							   <li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9"></s>Recently Viewed Items</a>
+							   </li>
+							   <li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-review font18 margin-r10 font-color-9"></s>Leave Feedback</a>
+							   </li>
+							   <li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9"></s>Invite Friend</a>
+							   </li>
+							   <li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-shezhi font18 margin-r10 font-color-9"></s>Settings</a>
+							   </li>
+							   <li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9"></s>Invite Friend</a>
+							   </li>
+							   <li class="mui-table-view-cell line20">
+							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-shezhi font18 margin-r10 font-color-9"></s>Settings</a>
+							   </li>
+							</ul>
 						</div>
 						<div id="move-togger"></div>
 					</div>
@@ -141,17 +167,9 @@
 				<div class="mui-off-canvas-backdrop"></div>
 			</div>
 		</div>
-		<script src="../../js/common/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
 		<script>
-			//清空历史记录弹窗
-			var info = document.getElementById("info");
-				document.getElementById("confirmBtn").addEventListener('tap', function() {
-				var btnArray = ['No', 'Yes'];
-				mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function(e) {
-				})
-			});
-
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});

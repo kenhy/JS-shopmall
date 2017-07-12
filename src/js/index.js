@@ -15,13 +15,32 @@ var init_index = {
             },
             success: function (data) {
                 console.log(data);
-                var list = template('index-banner',data);
+                var list = template('index-banner', data);
                 console.log(list);
                 $("[data-type=home-banner]").html(list);
 
             }
         });
+    },
+    //初始化首页底部
+    initFooter:function () {
+        $.ajax({
+            type:"get",
+            url:RTTMALL_API.URL_INDEX_FOOTER,
+            dataType:"json",
+            async:false,
+            cache:false,
+            data:{},
+            success:function (data) {
+                console.log(data);
+            }
+        })
     }
+};
+
+
+function init_index_detail(data) {
+
 }
 
 

@@ -3,17 +3,11 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Search</title>
+		<title>My Messages</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" href="../../css/mui.min.css">
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
-		<style>
-			.mui-popup-title+.mui-popup-text{font-weight: 600; font-size: 15px; font-family:"arial, helvetica, sans-serif";}
-			.mui-popup-button{color: #333;}
-			.mui-popup-button:first-child{font-weight: bold;}
-			.mui-popup-button.mui-popup-button-bold{font-weight: normal;}
-		</style>
 	</head>
 
 	<body>
@@ -79,60 +73,29 @@
 						</ul>
 					</div>
 				</div>
-			</aside>
-			<!--主界面部分-->
+			</aside><!--主界面部分-->
 			<div class="mui-inner-wrap">
-				<header class="mui-bar mui-bar-nav bakc-fff">
+				<header class="mui-bar mui-bar-nav">
 					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-					<div class="nav-input radius4">
-						<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-						<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
-					</div>
+					<h1 class="mui-title">My Messages</h1>
 				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper bakc-fff">
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<div class="mui-content">
-							<p class="padding-line44">Search History</p>
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
-							   </li>
+							<ul class="mui-table-view nmg">
+								<li class="mui-table-view-cell" style="padding: 12px 15px;">
+							        <a href="javascript:void(0)" class="relative line20"><s class="iconfont icon-niao font22 margin-r10 font-color-9 mui-pull-left"></s><em class="quantity back-beige color-white font12">99</em>My Coupons<span class="mui-pull-right text-r">16-27</span></a>
+								</li>
+								<li class="mui-table-view-cell" style="padding: 12px 15px;">
+							        <a href="javascript:void(0)" class="relative line20"><s class="iconfont icon-lingdang font22 margin-r10 font-color-9 mui-pull-left"></s><em class="quantity back-beige color-white font12">99</em>My Coupons<span class="mui-pull-right text-r">16-27</span></a>
+								</li>
+								<li class="mui-table-view-cell" style="padding: 12px 15px;">
+							        <a href="javascript:void(0)" class="relative line20"><s class="iconfont icon-gongwenbaoxian font22 margin-r10 font-color-9 mui-pull-left"></s><em class="quantity back-beige color-white font12">99</em>My Coupons<span class="mui-pull-right text-r">16-27</span></a>
+								</li>
+								<li class="mui-table-view-cell" style="padding: 12px 15px;">
+							        <a href="javascript:void(0)" class="relative line20"><s class="iconfont icon-liwu font22 margin-r10 font-color-9 mui-pull-left"></s><em class="quantity back-beige color-white font12">99</em>My Coupons<span class="mui-pull-right text-r">16-27</span></a>
+								</li>
 							</ul>
-							<p class="padding-line44">Popular Search</p>
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
-							   </li>
-							</ul>
-							<div class="padding-line44 bakc-fff">
-								<div class="mui-button-row line44 npd">
-									<button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">Clear All History</button>
-								</div>
-							</div>
 						</div>
 						<div id="move-togger"></div>
 					</div>
@@ -141,17 +104,9 @@
 				<div class="mui-off-canvas-backdrop"></div>
 			</div>
 		</div>
-		<script src="../../js/common/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
-		<script>
-			//清空历史记录弹窗
-			var info = document.getElementById("info");
-				document.getElementById("confirmBtn").addEventListener('tap', function() {
-				var btnArray = ['No', 'Yes'];
-				mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function(e) {
-				})
-			});
-
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
+		<script type="text/javascript">
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
