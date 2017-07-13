@@ -28,11 +28,11 @@ var login = {
             return showLoginTip("Login Password is required");
         }
         else {
-            var opwd = $.md5(userNo.concat(pwd)).toUpperCase(),
-                npwd = $.md5(pwd).toUpperCase(),
+            var opwd=$.md5(userNo.concat(pwd)).toUpperCase(),
                 client = "web",
                 version = "1.0";
-                //clientId = generateUUID();
+            pwd = $.md5(pwd).toUpperCase();
+            //clientId = generateUUID();
             $.ajax({
                 type: "POST",
                 url: RTTMALL_API.URL_LOGIN,
@@ -41,7 +41,7 @@ var login = {
                 cache: false,
                 data: {
                     loginName: userNo,
-                    pwd: npwd,
+                    pwd: pwd,
                     opwd: opwd,
                     client : client,
                     version : version
@@ -49,22 +49,18 @@ var login = {
                 success: function (data) {
                     if (data != null) {
                         if(data.code !="1"){
+                            console.log(data);
                             showLoginTip(data.msg);
                         }else {
                             setCookie("token", data.data.token);
                             setCookie("loginName", data.data.loginName);
-                            setCookie("userName", escape(data.data.userName));
+                            setCookie("userName", (data.data.userName));
                             setCookie("customerId", data.data.customerId);
                             setCookie("pwd", data.data.pwd);
                             if(data.data.imagePath != null || data.data.imagePath != "" || data.data.imagePath != "null"){
                                 setCookie("imagePath", data.data.imagePath);
                             }
                             setCookie("role", data.data.role);
-                            var callback = getUrlParam("callback");
-                            if (callback != null) {
-                                window.location.href = callback;
-                            } else
-                                window.location.href = domain;
                         }
                     }
                 }

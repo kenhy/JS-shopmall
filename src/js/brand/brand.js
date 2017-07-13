@@ -59,20 +59,9 @@ var brand_list = {
     /*category_right*/
     category_list_right:function (index) {
         var data = brand_list.init_category(index);
-        console.log(data);
-        var init = [];
-        init = data.listCategory;
-        /*var cate = init.listSon;
-        console.log(cate);*/
+        var init = data.listCategory;
         var list = template('category-list-right',data);
-        //console.log(list);
-        /*category_right_in*/
         $("[data-type=category_list_right]").html(list);
-        init.forEach(function (value) {
-            console.log(value);
-            var list = template('category-list-right',value);
-
-        });
     }
 };
 

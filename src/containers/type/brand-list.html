@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<title>Commodity classification</title>
@@ -103,26 +102,21 @@
 					<a class="mui-navigate-right font18 " href="#">
                             <em class="font-weight font12">{{c.typeName}}</em>
                         </a>
-					<div data-type="{{c.typeName}}" class="mui-collapse-content npd">
-                        {{include 'category-list-right-in'}}
+					<div data-type="{{c.id}}" class="mui-collapse-content npd">
+                        {{each c.listSon as d i}}
+                        <dl class="hidden right-classification mar-left">
+                            <dt class="mui-pull-left"><img src="{{d.imgPath}}" /></dt>
+                            <dd class="mui-pull-left">
+                                {{d.typeName}}
+                            </dd>
+                        </dl>
+                        <p class="border-b mar-left"></p>
+                        {{/each}}
 					</div>
 				</li>
 				{{/each}}
 			</ul>
 		</div>
-	</script>
-	<!--category-list-right-in-->
-	<script id="category-list-right-in" type="text/html">
-		{{each listSon as c i}}
-		<dl class="hidden right-classification mar-left">
-			<dt class="mui-pull-left"><img src="{{c.imgPath}}" />
-                    </dt>
-			<dd class="mui-pull-left">
-				{{c.typeName}}
-			</dd>
-		</dl>
-		<p class="border-b mar-left"></p>
-		{{/each}}
 	</script>
 	<!--category-list-left-->
 	<script id="category-list-left" type="text/html">
@@ -138,28 +132,16 @@
 	<script type="text/javascript">
 		var controls = document.getElementById("segmentedControls");
 		var contents = document.getElementById("segmentedControlContents");
-
-		mui.init({
+        mui.init({
 			//swipeBack: true //启用右滑关闭功能
 		});
 		mui('body').on('tap', 'a', function() {
 			window.top.location.href = this.href;
 		});
-
 		init_category();
 		init_category_right(default_category);
-
 		controls.querySelector('.mui-control-item').classList.add('mui-active');
 		contents.querySelector('.mui-control-content').classList.add('mui-active');
-
-		/*----动作加载----*/
-		/*点击触发*/
-		/*$('.tap-cat-onclick').on('tab',function () {
-		    console.log(this);
-		    var index = this.attr("[date-id]");
-		    init_category_right(index);
-		});*/
-		/*点击搜索*/
 	</script>
 </body>
 

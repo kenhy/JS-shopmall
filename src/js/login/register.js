@@ -233,7 +233,6 @@ var register = {
                 $("[data-type=countryAndPrefix]").html(html);
         }
 
-
         //赋值给文本框
         $("[data-type=countryAndPrefix] li").on('tap',function() {
             var value = $(this).find("em").attr("data-type");
@@ -306,7 +305,7 @@ function show_register_tip(msg) {
 //文本框初始化
 function tel_loading(data) {
     var arr = [];
-    arr = data.filter(function (item,index) {
+    arr = data.filter(function (item) {
         if(item.countriesCode == default_countriesCode){
             return true;
         }
