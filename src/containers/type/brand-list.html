@@ -96,37 +96,24 @@
 	</script>
 	<!--category-list-right-->
 	<script id="category-list-right" type="text/html">
-		{{each listCategory as c i}}
-		<div id="content{{c.id}}" class="mui-control-content overflow-y mui-active">
+		<div  class="mui-control-content overflow-y mui-active">
 			<ul class="mui-table-view">
-				{{/each}}
                 {{each listCategory as c i}}
-				<li class="mui-table-view-cell mui-table-view-cell mui-collapse">
+				<li id="content{{c.id}}" class="mui-table-view-cell mui-table-view-cell mui-collapse">
 					<a class="mui-navigate-right font18 " href="#">
                             <em class="font-weight font12">{{c.typeName}}</em>
                         </a>
 					<div data-type="{{c.typeName}}" class="mui-collapse-content npd">
-
-                        <dl class="hidden right-classification mar-left">
-                            <dt class="mui-pull-left"><img src="{{c.listSon.imgPath}}" />
-                            </dt>
-                            <dd class="mui-pull-left">
-                                {{c.listSon.typeName}}
-                            </dd>
-                        </dl>
-                        <p class="border-b mar-left"></p>
-
+                        {{include 'category-list-right-in'}}
 					</div>
 				</li>
 				{{/each}}
-                {{each listCategory as c i}}
 			</ul>
 		</div>
-		{{/each}}
 	</script>
 	<!--category-list-right-in-->
 	<script id="category-list-right-in" type="text/html">
-		{{each listCategory.listSon as c i}}
+		{{each listSon as c i}}
 		<dl class="hidden right-classification mar-left">
 			<dt class="mui-pull-left"><img src="{{c.imgPath}}" />
                     </dt>

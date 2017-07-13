@@ -59,23 +59,20 @@ var brand_list = {
     /*category_right*/
     category_list_right:function (index) {
         var data = brand_list.init_category(index);
-        //console.log(data);
-        /*var index = {};
-        index = data.listCategory;
-        var cate = [];
-        cate = index.listSon;*/
+        console.log(data);
+        var init = [];
+        init = data.listCategory;
+        /*var cate = init.listSon;
+        console.log(cate);*/
         var list = template('category-list-right',data);
         //console.log(list);
+        /*category_right_in*/
         $("[data-type=category_list_right]").html(list);
-    },
+        init.forEach(function (value) {
+            console.log(value);
+            var list = template('category-list-right',value);
 
-    /*category_right_in*/
-    category_list_right_in:function () {
-        var data = brand_list.init_category(index);
-        //console.log(data);
-        var list = template('category-list-right',data);
-        //console.log(list);
-        $("[data-type=category_list_right]").html(list);
+        });
     }
 };
 
@@ -95,6 +92,6 @@ function init_category() {
 function init_menu() {
     var category_list;
     category_list = controls.querySelector('.mui-active').getAttribute("id");
-    console.log(category_list);
+    //console.log(category_list);
     init_category_right(category_list);
 }
