@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/mui.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/subpage.css" />
+
 </head>
 
 <body>
@@ -17,39 +18,36 @@
             <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <ul class="mui-table-view nmg">
-                        <li class="mui-table-view-cell mui-media">
-                            <img class="mui-media-object mui-pull-left radius50" src="images/Default-Avatar.jpg">
-                            <div class="mui-media-body margin-t12">
-                                <p class="font14 font-weight font-color-3">
-                                    <a class="font12 font-color-9" href="containers/login/login.html">login in</a> /
-                                    <a class="font12 font-color-9" href="containers/login/register.html">register</a>
-                                </p>
-                            </div>
+                        <li id="user_login" class="mui-table-view-cell mui-media">
                         </li>
                     </ul>
                     <ul class="mui-table-view margin-t12">
                         <li class="mui-table-view-cell height44">
                             <a href="index.html" class="">
                                 <s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left">
-
                                 </s>Home
                             </a>
                         </li>
                         <li class="mui-table-view-cell height44">
                             <a href="containers/type/brand-list.html" class="">
                                 <s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left">
-
                                 </s>Categories
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell height44">
+                            <a href="shopping-cart.html" class="">
+                                <s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left">
+                                </s>Cart
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell height44">
+                            <a href="my-order.html" class="">
+                                <s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left">
+                                </s>My Orders
                             </a>
                         </li>
                     </ul>
                     <ul class="mui-table-view margin-t12">
-                        <li class="mui-table-view-cell height44">
-                            <a href="shopping-cart.html" class=""><s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left"></s>Cart</a>
-                        </li>
-                        <li class="mui-table-view-cell height44">
-                            <a href="my-order.html" class=""><s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left"></s>My Orders</a>
-                        </li>
                         <li class="mui-table-view-cell height44">
                             <a href="wish-list.html" class=""><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left"></s>Wish List</a>
                         </li>
@@ -194,6 +192,7 @@
     <script src="js/common/jquery.min.js"></script>
     <script src="js/common/mui.min.js"></script>
     <script src="js/common/Sideslip.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/index.js"></script>
     <script src="js/common/template/template.js"></script>
     <script id="index-banner" type="text/html">
@@ -211,7 +210,7 @@
         {{/each}}
         <div class="mui-slider-item mui-slider-item-duplicate">
             <a href="#">
-                <img src="#">
+                <img src="images/banner.jpg">
             </a>
         </div>
     </script>
@@ -248,7 +247,6 @@
         </div>
     </script>
     <script id="index-footer-Sellers" type="text/html">
-
         <div class="mui-slider-item mui-slider-item-duplicate">
             <ul class="mui-table-view mui-grid-view">
                 {{each list as c i}}

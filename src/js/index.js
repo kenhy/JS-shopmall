@@ -8,6 +8,7 @@ function init_index_all() {
     console.log(data);
     index_footer_model(data);
     index_footer_superDeal(data);
+    login_status()
 }
 
 var init_index = {
@@ -50,6 +51,7 @@ function init_index_detail() {
     });
     return index;
 }
+
 //model
 function index_footer_model(data) {
     var index = data.models;
@@ -60,13 +62,57 @@ function index_footer_model(data) {
     $("[data-type=index-footer-Sellers]").html(list1);
     /*2*/
     var list2 = template('index-footer-Arrivals',index[1]);
-    console.log(list2);
+    //console.log(list2);
     $("[data-type=index-footer-Arrivals]").html(list2);
 }
+
 //superDeal
 function index_footer_superDeal(data) {
     var index = data.superDeal;
     //console.log(index);
+}
+
+//login 状态
+function login_status() {
+    var username = getCookie('userName'),
+        loginName = getCookie('loginName'),
+        imagePath = getCookie('imagePath'),
+        user_login = $('#user_login'),
+        tpl;
+    console.log(username);
+    if (username != ""){
+        console.log(username);
+        console.log(imagePath);
+        if(imagePath == "null"){
+            imagePath = "images/Default-Avatar.jpg";
+        }
+        tpl = '<a href="containers/mine/account.html">'+
+            '<img class="mui-media-object mui-pull-left radius50" src="'+ imagePath +'">'+
+            '<div class="mui-media-body">'+
+            '<p class="font14 font-weight font-color-3">'+ username +'</p>'+
+            '<p class="mui-ellipsis font-color-6 font12">'+ loginName +'</p>'+
+            '<p class="iconfont icon-vip ">'+
+            '<span class="font10 font-color-9">Membership</span>'+
+            '</p>'+
+            '</div>'+
+            '<s class="mui-navigate-right font18"></s>'+
+            '</a>';
+        console.log(tpl);
+        user_login.html(null);
+        user_login.html(tpl);
+    }else{
+        tpl = '<img class="mui-media-object mui-pull-left radius50" src="images/Default-Avatar.jpg">'+
+            '<div class="mui-media-body margin-t12">'+
+            '<p class="font14 font-weight font-color-3">'+
+            '<a class="font12 font-color-9" href="containers/login/login.html">login in</a> /'+
+            '<a class="font12 font-color-9" href="containers/login/register.html">register</a>'+
+            '</p>'+
+            '</div>';
+        console.log(tpl);
+        user_login.html(null);
+        user_login.html(tpl);
+    }
+
 }
 
 

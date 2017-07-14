@@ -19,13 +19,13 @@ function setCookieAndTime(name, value, date) {
 
 function getCookie(name) {
     if (document.cookie.length > 0) {
-        c_start = document.cookie.indexOf(name + "=")
-        if (c_start != -1) {
-            c_start = c_start + name.length + 1
-            c_end = document.cookie.indexOf(";", c_start)
-            if (c_end == -1)
-                c_end = document.cookie.length
-            return unescape(document.cookie.substring(c_start, c_end))
+        start = document.cookie.indexOf(name + "=");
+        if (start != -1) {
+            start = start + name.length + 1;
+            end = document.cookie.indexOf(";", start);
+            if (end == -1)
+                end = document.cookie.length;
+            return unescape(document.cookie.substring(start, end))
         }
     }
     return ""
@@ -56,4 +56,25 @@ function generateUUID() {
         setCookie("uuid", uuid);
     }
     return uuid;
+}
+
+Date.prototype.format = function(f) {
+    var o = {
+        "M+" : this.getMonth() + 1, // month
+        "d+" : this.getDate(), // day
+        "h+" : this.getHours(), // hour
+        "m+" : this.getMinutes(), // minute
+        "s+" : this.getSeconds(), // second
+        "q+" : Math.floor((this.getMonth() + 3) / 3), // quarter
+        "S" : this.getMilliseconds()
+        // millisecond
+    };
+    if (/(y+)/.test(f))
+        f = f.replace(RegExp.$1, (this.getFullYear() + "")
+            .substr(4 - RegExp.$1.length));
+    for ( var k in o)
+        if (new RegExp("(" + k + ")").test(f))
+            f = f.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k]
+                : ("00" + o[k]).substr(("" + o[k]).length));
+    return f;
 };
