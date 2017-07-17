@@ -9,11 +9,7 @@
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
     </head>
-
 	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-			<!--主界面部分-->
-			<div class="mui-inner-wrap">
 				<header class="mui-bar mui-bar-nav">
                     <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>					<!--<a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>-->
 					<h1 class="mui-title">My Account</h1>
@@ -23,7 +19,7 @@
 						<div class="mui-content">
 							<ul class="mui-table-view nmg">
 					            <li class="mui-table-view-cell mui-media">
-					                <a href="evaluate.html">
+					                <a id="count_index" href="evaluate.html">
 					                    <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
 					                    <div class="mui-media-body">
 					                        <p class="font14 font-weight font-color-3">USER WORD</p>
@@ -102,12 +98,10 @@
 				</div>
 				<!-- off-canvas backdrop -->
 				<div class="mui-off-canvas-backdrop"></div>
-			</div>
-		</div>
         <script src="../../js/common/jquery.min.js"></script>
 		<script src="../../js/common/mui.min.js"></script>
         <script src="../../js/home.js"></script>
-		<script>
+		<script type="text/javascript">
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});

@@ -5,7 +5,7 @@
 function init_index_all() {
     init_index.initBanner();
     var data = init_index_detail();
-    console.log(data);
+    //console.log(data);
     index_footer_model(data);
     index_footer_superDeal(data);
     login_status()
@@ -24,9 +24,9 @@ var init_index = {
                 client: "ios"
             },
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 var list = template('index-banner', data);
-                console.log(list);
+                //console.log(list);
                 $("[data-type=home-banner]").html(list);
 
             }
@@ -79,10 +79,10 @@ function login_status() {
         imagePath = getCookie('imagePath'),
         user_login = $('#user_login'),
         tpl;
-    console.log(username);
+    //console.log(username);
     if (username != ""){
-        console.log(username);
-        console.log(imagePath);
+        //console.log(username);
+        //console.log(imagePath);
         if(imagePath == "null"){
             imagePath = "images/Default-Avatar.jpg";
         }
@@ -97,7 +97,7 @@ function login_status() {
             '</div>'+
             '<s class="mui-navigate-right font18"></s>'+
             '</a>';
-        console.log(tpl);
+        //console.log(tpl);
         user_login.html(null);
         user_login.html(tpl);
     }else{
@@ -108,13 +108,11 @@ function login_status() {
             '<a class="font12 font-color-9" href="containers/login/register.html">register</a>'+
             '</p>'+
             '</div>';
-        console.log(tpl);
+        //console.log(tpl);
         user_login.html(null);
         user_login.html(tpl);
     }
-
 }
-
 
 
 

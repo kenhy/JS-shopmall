@@ -1,18 +1,10 @@
+/**
+ * Created by JonathanZhang on 2017/6/19.
+ */
+
 function setCookie(name, value) {
     var expdate = new Date(); // 初始化时间
     expdate.setTime(expdate.getTime() + 30 * 24 * 60 * 60 * 1000); // 时间
-    document.cookie = name + "=" + value + ";expires=" + expdate.toGMTString()
-        + ";path=/";
-}
-/**
- * 添加cookie并设置过期时间
- * @param name
- * @param value
- * @param date 过期时间,毫秒
- */
-function setCookieAndTime(name, value, date) {
-    var expdate = new Date(); // 初始化时间
-    expdate.setTime(expdate.getTime() + date); // 时间
     document.cookie = name + "=" + value + ";expires=" + expdate.toGMTString()
         + ";path=/";
 }
@@ -29,6 +21,15 @@ function getCookie(name) {
         }
     }
     return ""
+}
+
+function delCookie(name)
+{
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval=getCookie(name);
+    if(cval!=null)
+        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
 }
 
 function role(code, name) {
@@ -78,3 +79,20 @@ Date.prototype.format = function(f) {
                 : ("00" + o[k]).substr(("" + o[k]).length));
     return f;
 };
+
+function bindEvent(elem,type,selector,fn) {
+    if (fn == null) {
+        fn = selector;
+    }
+    elem.addEventListener(type,function (e) {
+        var target;
+        if (selector) {
+            target = e.target;
+            if (target.matches(selector)) {
+                fn.call(target,e);
+            }
+        }else {
+            fn(e);
+        }
+    })
+}

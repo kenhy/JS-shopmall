@@ -28,8 +28,8 @@
 			line-height: 44px;
 		}
 	</style>
+    <script src="../../js/home.js"></script>
 </head>
-
 <body>
 	<header class="mui-bar mui-bar-nav npd">
 		<a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left npd nmg text-c" href="../../index.html"></a>
@@ -53,7 +53,7 @@
 		<div id="item1" class="mui-control-content overflow-y mui-active">
 			<div class="mui-row mui-fullscreen" style=" z-index: 9; bottom: 44px; top: 1px;">
 				<div class="mui-col-xs-3 bakc-eee" style="width: 27%;">
-					<div onclick="init_menu()"  id="segmentedControls" data-type="category_list_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<div   id="segmentedControls" data-type="category_list_left" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
 						<!--left-->
 					</div>
 				</div>
@@ -71,12 +71,12 @@
 	<script src="../../js/common/api.js"></script>
     <script src="../../js/common/jquery.min.js"></script>
 	<script src="../../js/common/mui.min.js"></script>
-	<script src="../../js/common/Sideslip.js"></script>
 	<script src="../../js/common/template/template.js"></script>
+
 	<script src="../../js/brand/brand.js"></script>
 	<!--brand-list-->
 	<script id="brand-list" type="text/html">
-		<ul class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
+		<ul  class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
 			{{each data.listRecommend as c i}}
 			<li data-id="{{c.id}}" class="mui-table-view-cell mui-media">
 				<a href="#" class="npd">
@@ -99,7 +99,7 @@
 			<ul class="mui-table-view">
                 {{each listCategory as c i}}
 				<li id="content{{c.id}}" class="mui-table-view-cell mui-table-view-cell mui-collapse">
-					<a class="mui-navigate-right font18 " href="#">
+					<a href="javascript:void(0)" class=" mui-navigate-right font18 " >
                             <em class="font-weight font12">{{c.typeName}}</em>
                         </a>
 					<div data-type="{{c.id}}" class="mui-collapse-content npd">
@@ -132,6 +132,7 @@
 	<script type="text/javascript">
 		var controls = document.getElementById("segmentedControls");
 		var contents = document.getElementById("segmentedControlContents");
+
         mui.init({
 			//swipeBack: true //启用右滑关闭功能
 		});
@@ -142,6 +143,11 @@
 		init_category_right(default_category);
 		controls.querySelector('.mui-control-item').classList.add('mui-active');
 		contents.querySelector('.mui-control-content').classList.add('mui-active');
+        $(window).bind('hashchange', function() {
+            var category_list;
+            category_list = controls.querySelector('.mui-active').getAttribute("id");
+            init_category_right(category_list);
+        });
 	</script>
 </body>
 
