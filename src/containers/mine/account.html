@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../../css/mui.min.css">
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
+
     </head>
 	<body>
 				<header class="mui-bar mui-bar-nav">
@@ -18,16 +19,8 @@
 					<div class="mui-scroll">
 						<div class="mui-content">
 							<ul class="mui-table-view nmg">
-					            <li class="mui-table-view-cell mui-media">
-					                <a id="count_index" href="evaluate.html">
-					                    <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
-					                    <div class="mui-media-body">
-					                        <p class="font14 font-weight font-color-3">USER WORD</p>
-					                        <p class="mui-ellipsis font-color-6 font12">Rttmall@foxmail.com</p>
-					                        <p class="iconfont icon-vip "><span class="font10 font-color-9">Membership</span></p>
-					                    </div>
-					                    <s class="mui-navigate-right font18"></s>
-					                </a>
+					            <li id="user_msg" class="mui-table-view-cell mui-media">
+
 					            </li>
 					        </ul>
 					        <ul class="mui-table-view margin-t12 nmg">
@@ -101,10 +94,12 @@
         <script src="../../js/common/jquery.min.js"></script>
 		<script src="../../js/common/mui.min.js"></script>
         <script src="../../js/home.js"></script>
+        <script src="../../js/mine/account.js"></script>
 		<script type="text/javascript">
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
+            init_account.account_msg();
 		</script>
 	</body>
 

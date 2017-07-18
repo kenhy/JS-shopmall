@@ -73,7 +73,7 @@
 						</ul>
 					</div>
 				</div>
-			</aside>	
+			</aside>
 			<!--主界面部分-->
 			<div class="mui-inner-wrap">
 				<header class="mui-bar mui-bar-nav">
@@ -135,7 +135,7 @@
 										</div>
 									</li>
 								</ul>
-								
+
 							</div>
 						</div>
 						<div id="move-togger"></div>
@@ -145,8 +145,8 @@
 				<div class="mui-off-canvas-backdrop"></div>
 			</div>
 		</div>
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
 		<script type="text/javascript">
 			/*右上角菜单显示*/
 			mui.init();
@@ -159,7 +159,7 @@
 			mui('body').on('hidden', '.mui-popover', function(e) {
 				//console.log('hidden', e.detail.id);//detail为当前popover元素
 			});
-			
+
 			/*五星评价*/
 			var progressbar1 = mui('#star');
 			mui(progressbar1).progressbar().setProgress(0)/*默认开始值*/
@@ -186,7 +186,7 @@
 					}
 				}, Math.random() * 200 + 200);
 			}
-			
+
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
