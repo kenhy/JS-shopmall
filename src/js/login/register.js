@@ -36,7 +36,7 @@ var register = {
             $.ajax({
                 type:"POST",
                 url:RTTMALL_API.URL_REGISTER_LOGINNAME_VERIFY,
-                datatype:"json",
+                dataType:"json",
                 async:false,
                 cache:false,
                 data:{
@@ -44,14 +44,14 @@ var register = {
                 },
                 success:function (data) {
                     if (data != null) {
-                        console.log(data);
+                        //console.log(data);
                         if (data.data.exists) {
                             return show_register_tip("User already exists.");
                         }
                         else{
                             var pwd = $.md5(r_pwd).toUpperCase();
                             r_way = "email";
-                            console.log(r_way);
+                            //console.log(r_way);
                             var data = [r_email,pwd];
                             register.register_in(data,r_way);
                         }
@@ -95,7 +95,7 @@ var register = {
                 //console.log(list);
                 var pwd = $.md5(p_pwd).toUpperCase();
                 var data = [tel,pwd,code,list];
-                console.log(data);
+                //console.log(data);
                 register.register_in(data,r_way);
             } else {
                 return false;
@@ -143,7 +143,7 @@ var register = {
                     success: function (data) {
                         console.log(data);
                         if (data != null) {
-                            console.info(data);
+                            //console.info(data);
                             if (data.code != "1") {
                                 show_register_tip(data.msg);
                             } else {
