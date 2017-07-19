@@ -12,7 +12,8 @@
     </head>
 	<body>
 				<header class="mui-bar mui-bar-nav">
-                    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>					<!--<a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>-->
+                    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
+                    <a href="javascript:void(0)" class="mui-icon mui-pull-right iconfont icon-lingdang font20 font-color-9"></a>
 					<h1 class="mui-title">My Account</h1>
 				</header>
 				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
@@ -23,12 +24,12 @@
 
 					            </li>
 					        </ul>
-					        <ul class="mui-table-view margin-t12 nmg">
+					        <ul class="mui-table-view margin-t10 nmg">
 								<li class="mui-table-view-cell">
 							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-lingdang font18 margin-r10 font-color-9"></s>My Messages</a>
 							   </li>
 							</ul>
-							<ul class="mui-table-view margin-t12">
+							<ul class="mui-table-view margin-t10">
 								<li class="mui-table-view-cell">
 							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-icon17 font18 margin-r10 font-color-9"></s>My Orders</a>
 							   </li>
@@ -59,7 +60,7 @@
 								    </a>
 								</li>
 							</ul>
-							<ul class="mui-table-view margin-t12">
+							<ul class="mui-table-view margin-t10">
 								<li class="mui-table-view-cell line20">
 							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9"></s>My Coupons</a>
 							   </li>
@@ -69,22 +70,12 @@
 							   <li class="mui-table-view-cell line20">
 							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9"></s>Recently Viewed Items</a>
 							   </li>
-							   <li class="mui-table-view-cell line20">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-review font18 margin-r10 font-color-9"></s>Leave Feedback</a>
-							   </li>
-							   <li class="mui-table-view-cell line20">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9"></s>Invite Friend</a>
-							   </li>
-							   <li class="mui-table-view-cell line20">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-shezhi font18 margin-r10 font-color-9"></s>Settings</a>
-							   </li>
-							   <li class="mui-table-view-cell line20">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9"></s>Invite Friend</a>
-							   </li>
-							   <li class="mui-table-view-cell line20">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span><s class="iconfont icon-shezhi font18 margin-r10 font-color-9"></s>Settings</a>
-							   </li>
 							</ul>
+                            <ul class="mui-table-view mar-top">
+                                <li class="mui-table-view-cell">
+                                    <a id="sign_out" href="javascript:void(0)" class="text-c">Sign out</a>
+                                </li>
+                            </ul>
 						</div>
 						<div id="move-togger"></div>
 					</div>
@@ -93,13 +84,16 @@
 				<div class="mui-off-canvas-backdrop"></div>
         <script src="../../js/common/jquery.min.js"></script>
 		<script src="../../js/common/mui.min.js"></script>
-        <script src="../../js/home.js"></script>
+        <script src="../../js/main.js"></script>
         <script src="../../js/mine/account.js"></script>
 		<script type="text/javascript">
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
             init_account.account_msg();
+
+            var sign_out = $("#sign_out");
+            sign_out.on('click',init_account.login_out());
 		</script>
 	</body>
 

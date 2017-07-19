@@ -32,6 +32,14 @@ function delCookie(name)
         document.cookie= name + "="+cval+";expires="+exp.toGMTString();
 }
 
+function clearCookie(){
+    var keys=document.cookie.match(/[^ =;]+(?=\=)/g);
+    if (keys) {
+        for (var i = keys.length; i--;)
+            document.cookie=keys[i]+'=0;expires=' + new Date( 0).toUTCString()
+    }
+}
+
 function role(code, name) {
     this.code = code;
     this.name = name;
@@ -96,3 +104,13 @@ function bindEvent(elem,type,selector,fn) {
         }
     })
 }
+
+function login_check() {
+    var username = getCookie('userName');
+    if(username == ""){
+        window.location.go(-1);
+    }
+}
+
+
+

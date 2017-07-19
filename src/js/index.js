@@ -2,13 +2,14 @@
  * Created by JonathanZhang on 2017/7/11.
  */
 
+
 function init_index_all() {
     init_index.initBanner();
     var data = init_index_detail();
     //console.log(data);
     index_footer_model(data);
     index_footer_superDeal(data);
-    login_status()
+    login_status();
 }
 
 var init_index = {
@@ -102,10 +103,11 @@ function login_status() {
         user_login.html(tpl);
     }else{
         tpl = '<img class="mui-media-object mui-pull-left radius50" src="images/Default-Avatar.jpg">'+
-            '<div class="mui-media-body margin-t12">'+
+            '<div class="mui-media-body margin-t20">'+
             '<p class="font14 font-weight font-color-3">'+
-            '<a class="font12 font-color-9" href="containers/login/login.html">login in</a> /'+
-            '<a class="font12 font-color-9" href="containers/login/register.html">register</a>'+
+            '<a class="font16 font-color-9" href="containers/login/login.html">Login in</a>'+
+            '<a class="font16" href="javascript:void(0)"> | </a>'+
+            '<a class="font16 font-color-9" href="containers/login/register.html">Register</a>'+
             '</p>'+
             '</div>';
         //console.log(tpl);

@@ -1,5 +1,5 @@
 /**
- * Created by zhangjianan on 2017/7/18.
+ * Created by JonathanZhang on 2017/7/18.
  */
 var init_account = {
     account_msg:function () {
@@ -29,6 +29,13 @@ var init_account = {
             user_login.html(tpl);
         }else{
             alert('未登录');
+            location.href = "../../index.html";
         }
+    },
+    login_out:function () {
+        clearCookie();
+        location.href = "../../index.html";
     }
 };
+
+

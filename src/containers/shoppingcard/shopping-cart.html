@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Cart</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/base.css">
+		<link rel="stylesheet" href="../../css/subpage.css" />
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+				        <ul class="mui-table-view nmg">
+					       <li class="mui-table-view-cell mui-media">
+					            <a href="javascript:void(0);">
+					                <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
+					                <div class="mui-media-body margin-t12">
+					                    <p class="font14 font-weight font-color-3">Rttmall@foxmail.com</p>
+					                    <p class="iconfont icon-vip "><span class="font12 font-color-9">Membership</span></p>
+					                </div>
+					            </a>
+					        </li>
+					    </ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="home.html" class=""><s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left"></s>Home</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Type/brand-list.html" class=""><s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left"></s>Categories</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Mine/account.html" class=""><s class="iconfont icon-ren font18 margin-r10 font-color-9 mui-pull-left"></s>My Account</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../ShoppingCard/shopping-cart.html" class=""><s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left"></s>Cart</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Order/my-order.html" class=""><s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left"></s>My Orders</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/wish-list.html" class=""><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left"></s>Wish List</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Coupon/coupons.html" class=""><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../News/messages.html" class=""><s class="iconfont icon-lingdang font18 margin-r10 font-color-9 mui-pull-left"></s>My Messages</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="../Mine/my-evaluate.html" class=""><s class="iconfont icon-qipao font18 margin-r10 font-color-9 mui-pull-left"></s>My assessment</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Record/recently.html" class=""><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
+						   </li>
+						   <li class="mui-table-view-cell height44">
+						        <a href="" class=""><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>Invite Friends</a>
+						   </li>
+						</ul>
+						<ul class="mui-table-view margin-t12">
+							<li class="mui-table-view-cell height44">
+						        <a href="../Setting/settings.html" class=""><s class="iconfont icon-shezhi font18 margin-r10 font-color-9 mui-pull-left"></s>Settings</a>
+						 	</li>
+						</ul>
+					</div>
+				</div>
+			</aside><!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+					<a class="mui-icon mui-pull-right iconfont icon-lingdang font20 font-color-3 nmg"></a>
+					<a class="mui-icon mui-pull-right iconfont icon-shanchu font20 font-color-3"></a>
+					<h1 class="mui-title">Cart</h1>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-content">
+							<ul class="padding-b50">
+								<li class="mui-table-view border-t shopping-cart margin-b10">
+									<div class="font-color-3 bakc-fff padding-line44 height44">
+										<div class="mui-checkbox mui-left nmg bakc-fff">
+											<label class="font-color-9">China Commodity</label>
+											<input name="checkbox1" type="checkbox" checked="">
+										</div>
+									</div>
+									<ul class="mui-table-view-cell mui-media relative npd">
+										<li class="mui-table-view-cell shopping-goods" id="OA_task_1">
+											<div class="mui-slider-right mui-disabled">
+												<a class="mui-btn mui-btn-red mui-delete">删除</a>
+											</div>
+											<div class="mui-slider-handle">
+												<div class="mui-checkbox mui-left nmg npd select-button" style="z-index: 1;">
+													<label class="npd nmg"> </label>
+													<input name="checkbox1" type="checkbox" checked="">
+												</div>
+												<div class="select-goods">
+													<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+													<dl class="mui-media-body product-text relative">
+														<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+														<dd style="overflow: hidden;">
+															<p class="mui-pull-left">US $86.64</p>
+															<p class="font-weight color-red mui-pull-right">US $86.64</p>
+														</dd>
+														<dd class="hidden">
+															<p class="mui-pull-left font-color-3 font12" style="margin-top: 8px;">Red,32*32*9cm</p>
+															<div class="mui-numbox mui-pull-right" data-numbox-step="1" data-numbox-min="1" data-numbox-max="100" style="z-index: 99;">
+																<button class="mui-btn mui-numbox-btn-minus" type="button" disabled=""><s class="iconfont icon-jian mui-pull-left text-c"></s></button><input class="mui-numbox-input" type="number" data-numbox-max="100"><button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button"><s class="iconfont icon-jia mui-pull-left text-c"></s></button>
+															</div>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+										<li class="mui-table-view-cell shopping-goods">
+											<div class="mui-slider-right mui-disabled">
+												<a class="mui-btn mui-btn-red mui-delete">删除</a>
+											</div>
+											<div class="mui-slider-handle">
+												<div class="mui-checkbox mui-left nmg npd select-button" style="z-index: 1;">
+													<label class="npd nmg"> </label>
+													<input name="checkbox1" type="checkbox" checked="">
+												</div>
+												<div class="select-goods">
+													<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+													<dl class="mui-media-body product-text relative">
+														<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+														<dd style="overflow: hidden;">
+															<p class="mui-pull-left">US $86.64</p>
+															<p class="font-weight color-red mui-pull-right">US $86.64</p>
+														</dd>
+														<dd class="hidden">
+															<p class="mui-pull-left font-color-3 font12" style="margin-top: 8px;">Red,32*32*9cm</p>
+															<div class="mui-numbox mui-pull-right" data-numbox-step="1" data-numbox-min="1" data-numbox-max="100" style="z-index: 99;">
+																<button class="mui-btn mui-numbox-btn-minus" type="button" disabled=""><s class="iconfont icon-jian mui-pull-left text-c"></s></button><input class="mui-numbox-input" type="number" data-numbox-max="100"><button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button"><s class="iconfont icon-jia mui-pull-left text-c"></s></button>
+															</div>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="mui-table-view border-t shopping-cart margin-b10">
+									<div class="font-color-3 bakc-fff padding-line44 height44">
+										<div class="mui-checkbox mui-left nmg bakc-fff">
+											<label class="font-color-9">Trinidad and Tobago Commodity</label>
+											<input name="checkbox1" type="checkbox" checked="">
+										</div>
+									</div>
+									<ul class="mui-table-view-cell mui-media relative npd">
+										<li class="mui-table-view-cell shopping-goods" id="OA_task_1">
+											<div class="mui-slider-right mui-disabled">
+												<a class="mui-btn mui-btn-red mui-delete">删除</a>
+											</div>
+											<div class="mui-slider-handle">
+												<div class="mui-checkbox mui-left nmg npd select-button" style="z-index: 1;">
+													<label class="npd nmg"> </label>
+													<input name="checkbox1" type="checkbox" checked="">
+												</div>
+												<div class="select-goods">
+													<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+													<dl class="mui-media-body product-text relative">
+														<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+														<dd style="overflow: hidden;">
+															<p class="mui-pull-left">US $86.64</p>
+															<p class="font-weight color-red mui-pull-right">US $86.64</p>
+														</dd>
+														<dd class="hidden">
+															<p class="mui-pull-left font-color-3 font12" style="margin-top: 8px;">Red,32*32*9cm</p>
+															<div class="mui-numbox mui-pull-right" data-numbox-step="1" data-numbox-min="1" data-numbox-max="100" style="z-index: 99;">
+																<button class="mui-btn mui-numbox-btn-minus" type="button" disabled=""><s class="iconfont icon-jian mui-pull-left text-c"></s></button><input class="mui-numbox-input" type="number" data-numbox-max="100"><button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button"><s class="iconfont icon-jia mui-pull-left text-c"></s></button>
+															</div>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+										<li class="mui-table-view-cell shopping-goods" id="OA_task_1">
+											<div class="mui-slider-right mui-disabled">
+												<a class="mui-btn mui-btn-red mui-delete">删除</a>
+											</div>
+											<div class="mui-slider-handle">
+												<div class="mui-checkbox mui-left nmg npd select-button" style="z-index: 1;">
+													<label class="npd nmg"> </label>
+													<input name="checkbox1" type="checkbox" checked="">
+												</div>
+												<div class="select-goods">
+													<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+													<dl class="mui-media-body product-text relative">
+														<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+														<dd style="overflow: hidden;">
+															<p class="mui-pull-left">US $86.64</p>
+															<p class="font-weight color-red mui-pull-right">US $86.64</p>
+														</dd>
+														<dd class="hidden">
+															<p class="mui-pull-left font-color-3 font12" style="margin-top: 8px;">Red,32*32*9cm</p>
+															<div class="mui-numbox mui-pull-right" data-numbox-step="1" data-numbox-min="1" data-numbox-max="100" style="z-index: 99;">
+																<button class="mui-btn mui-numbox-btn-minus" type="button" disabled=""><s class="iconfont icon-jian mui-pull-left text-c"></s></button><input class="mui-numbox-input" type="number" data-numbox-max="100"><button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button"><s class="iconfont icon-jia mui-pull-left text-c"></s></button>
+															</div>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+										<li class="mui-table-view-cell shopping-goods" id="OA_task_1">
+											<div class="mui-slider-right mui-disabled">
+												<a class="mui-btn mui-btn-red mui-delete">删除</a>
+											</div>
+											<div class="mui-slider-handle">
+												<div class="mui-checkbox mui-left nmg npd select-button" style="z-index: 1;">
+													<label class="npd nmg"> </label>
+													<input name="checkbox1" type="checkbox" checked="">
+												</div>
+												<div class="select-goods">
+													<p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+													<dl class="mui-media-body product-text relative">
+														<dt class="nospace font14">This is the title. This is the title. This is the title. This is the title. This is the title. This is the title. </dt>
+														<dd style="overflow: hidden;">
+															<p class="mui-pull-left">US $86.64</p>
+															<p class="font-weight color-red mui-pull-right">US $86.64</p>
+														</dd>
+														<dd class="hidden">
+															<p class="mui-pull-left font-color-3 font12" style="margin-top: 8px;">Red,32*32*9cm</p>
+															<div class="mui-numbox mui-pull-right" data-numbox-step="1" data-numbox-min="1" data-numbox-max="100" style="z-index: 99;">
+																<button class="mui-btn mui-numbox-btn-minus" type="button" disabled=""><s class="iconfont icon-jian mui-pull-left text-c"></s></button><input class="mui-numbox-input" type="number" data-numbox-max="100"><button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button"><s class="iconfont icon-jia mui-pull-left text-c"></s></button>
+															</div>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div id="move-togger"></div>
+					</div>
+				</div>
+				<!-- off-canvas backdrop -->
+				<div class="buy-now bakc-fff hidden border-t">
+					<div class="font-color-3 bakc-fff mui-pull-left">
+						<div class="mui-checkbox mui-left bakc-fff margin-t5">
+							<label class="font-color-9">All</label>
+							<input name="checkbox1" type="checkbox" checked="">
+						</div>
+					</div>
+					<div class="mui-pull-right nmg npd">
+						<button class="radius4 buy-now-button nborder">Buy(2)</button>
+						<div class="mui-pull-left text-r">
+							<p>Total:<span class="color-red font-weight">US $2567.64</span></p>
+							<p class="font12">No postage</p>
+						</div>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script src="../../js/common/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/common/Sideslip.js" ></script>
+		<script type="text/javascript">
+			/*右上角菜单显示*/
+			mui.init();
+			mui.plusReady(function () {
+			});
+			mui('.mui-scroll-wrapper').scroll();
+			mui('body').on('shown', '.mui-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			mui('body').on('hidden', '.mui-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+
+			/*删除订单*/
+			(function($) {
+				//$.swipeoutOpen(el,direction)//打开指定列的滑动菜单，el:指定列的dom对象，direction：取值left|right，指定打开的是左侧或右侧滑动菜单
+				//$.swipeoutClose(el);//关闭指定列的滑动菜单，el:指定列的dom对象
+				//				setTimeout(function() {
+				//					$.swipeoutOpen(document.getElementById("OA_task_1").querySelector('li:last-child'), 'left');
+				//					setTimeout(function() {
+				//						$.swipeoutClose(document.getElementById("OA_task_1").querySelector('li:last-child'));
+				//					}, 1000);
+				//				}, 1000);
+				//第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+				$('.shopping-goods').on('tap', '.mui-delete', function(event) {
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认删除该条记录？', '删除宝贝', btnArray, function(e) {
+						if (e.index == 0) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+				var btnArray = ['确认', '取消'];
+			})(mui);
+
+			mui('body').on('tap','a',function(){
+			    window.top.location.href=this.href;
+			});
+		</script>
+	</body>
+
+</html>
