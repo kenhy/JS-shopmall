@@ -25,7 +25,6 @@ var init_account = {
                 '</div>'+
                 '<s class="mui-navigate-right font18"></s>'+
                 '</a>';
-
             user_login.html(null);
             user_login.html(tpl);
         }else{

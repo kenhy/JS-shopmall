@@ -12,75 +12,10 @@
 	</head>
 
 	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-			<!--侧滑菜单部分-->
-			<aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
-				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-				        <ul class="mui-table-view nmg">
-					       <li class="mui-table-view-cell mui-media">
-					            <a href="javascript:void(0);">
-					                <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
-					                <div class="mui-media-body margin-t12">
-					                    <p class="font14 font-weight font-color-3">Rttmall@foxmail.com</p>
-					                    <p class="iconfont icon-vip "><span class="font12 font-color-9">Membership</span></p>
-					                </div>
-					            </a>
-					        </li>
-					    </ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="home.html" class=""><s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left"></s>Home</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Type/brand-list.html" class=""><s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left"></s>Categories</a>
-						   </li>
-						</ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="../Mine/account.html" class=""><s class="iconfont icon-ren font18 margin-r10 font-color-9 mui-pull-left"></s>My Account</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../ShoppingCard/shopping-cart.html" class=""><s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left"></s>Cart</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Order/my-order.html" class=""><s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left"></s>My Orders</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Mine/wish-list.html" class=""><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left"></s>Wish List</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Coupon/coupons.html" class=""><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../News/messages.html" class=""><s class="iconfont icon-lingdang font18 margin-r10 font-color-9 mui-pull-left"></s>My Messages</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Mine/my-evaluate.html" class=""><s class="iconfont icon-qipao font18 margin-r10 font-color-9 mui-pull-left"></s>My assessment</a>
-						   </li>
-						</ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="../Record/recently.html" class=""><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="" class=""><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>Invite Friends</a>
-						   </li>
-						</ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="../Setting/settings.html" class=""><s class="iconfont icon-shezhi font18 margin-r10 font-color-9 mui-pull-left"></s>Settings</a>
-						 	</li>
-						</ul>
-					</div>
-				</div>
-			</aside>
-			<!--主界面部分-->
-			<div class="mui-inner-wrap">
-				<header class="mui-bar mui-bar-nav">
-					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-					<h1 class="mui-title">My Profile</h1>
-				</header>
+                <header class="mui-bar mui-bar-nav">
+                    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>					<!--<a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>-->
+                    <h1 class="mui-title">My Profile</h1>
+                </header>
 				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<div class="mui-content my-profile">
@@ -138,8 +73,7 @@
 				</div>
 				<!-- off-canvas backdrop -->
 				<div class="mui-off-canvas-backdrop"></div>
-			</div>
-		</div>
+
 		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
 				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
