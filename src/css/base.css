@@ -170,7 +170,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #cc
 .nmg{margin: 0 !important;}
 .npd{padding: 0 !important;}
 .nback{background: none !important;}
-.font10{font-size: 0.5em !important;}
+.font10{font-size: 10px !important;}
 .font12{font-size: 0.8em !important;}
 .font14{font-size: 1em !important;}
 .font16{font-size: 1.2em !important;}
