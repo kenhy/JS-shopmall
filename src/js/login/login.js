@@ -53,15 +53,15 @@ var login = {
                             console.log(data);
                             showLoginTip(data.msg);
                         }else {
-                            setCookie("token", data.data.token);
-                            setCookie("loginName", data.data.loginName);
-                            setCookie("userName", (data.data.userName));
-                            setCookie("customerId", data.data.customerId);
-                            setCookie("pwd", data.data.pwd);
+                            setCookie("token", data.data.token,1);
+                            setCookie("loginName", data.data.loginName,1);
+                            setCookie("userName", data.data.userName,1);
+                            setCookie("customerId", data.data.customerId,1);
+                            setCookie("pwd", data.data.pwd,1);
                             if(data.data.imagePath != null || data.data.imagePath != "" || data.data.imagePath != "null"){
-                                setCookie("imagePath", data.data.imagePath);
+                                setCookie("imagePath", data.data.imagePath,1);
                             }
-                            setCookie("role", data.data.role);
+                            setCookie("role", data.data.role,1);
                             location.href = "../../index.html";
                         }
                     }

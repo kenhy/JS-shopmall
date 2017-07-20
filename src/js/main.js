@@ -1,7 +1,8 @@
 /**
  * Created by JonathanZhang on 2017/6/19.
  */
-
+var host = location.protocol + "//";
+//设置cookie
 function setCookie(name, value) {
     var expdate = new Date(); // 初始化时间
     expdate.setTime(expdate.getTime() + 30 * 24 * 60 * 60 * 1000); // 时间
@@ -9,36 +10,23 @@ function setCookie(name, value) {
         + ";path=/";
 }
 
-function getCookie(name) {
-    if (document.cookie.length > 0) {
-        start = document.cookie.indexOf(name + "=");
-        if (start != -1) {
-            start = start + name.length + 1;
-            end = document.cookie.indexOf(";", start);
-            if (end == -1)
-                end = document.cookie.length;
-            return unescape(document.cookie.substring(start, end))
-        }
+//获取cookie
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
     }
-    return ""
+    return "";
 }
 
-function delCookie(name)
-{
-    var exp = new Date();
-    exp.setTime(exp.getTime() - 1);
-    var cval=getCookie(name);
-    if(cval!=null)
-        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+//清除cookie
+function delCookie(name) {
+    setCookie(name, "", -1);
 }
 
-function clearCookie(){
-    var keys=document.cookie.match(/[^ =;]+(?=\=)/g);
-    if (keys) {
-        for (var i = keys.length; i--;)
-            document.cookie=keys[i]+'=0;expires=' + new Date( 0).toUTCString()
-    }
-}
 
 function role(code, name) {
     this.code = code;
@@ -105,12 +93,11 @@ function bindEvent(elem,type,selector,fn) {
     })
 }
 
-function login_check() {
-    var username = getCookie('userName');
-    if(username == ""){
-        window.location.go(-1);
-    }
+function href_check() {
+    var href_check_item = $(".user_check");
+        href_check_item.attr("href","/containers/login/login.html");
 }
+
 
 
 

@@ -75,15 +75,33 @@ function index_footer_superDeal(data) {
 
 //login 状态
 function login_status() {
-    var username = getCookie('userName'),
-        loginName = getCookie('loginName'),
-        imagePath = getCookie('imagePath'),
+    var token = getCookie("token"),
+        username = getCookie("userName"),
+        loginName = getCookie("loginName"),
+        imagePath = getCookie("imagePath"),
         user_login = $('#user_login'),
+        index_chart = $('#index_chart'),
         tpl;
-    //console.log(username);
-    if (username != ""){
         //console.log(username);
-        //console.log(imagePath);
+
+    if (token == ""){
+    //console.log(username);
+    //console.log(imagePath);
+        href_check();
+        tpl = '<img class="mui-media-object mui-pull-left radius50" src="images/Default-Avatar.jpg">'+
+            '<div class="mui-media-body margin-t20">'+
+            '<p class="font14 font-weight font-color-3">'+
+            '<a class="font16 font-color-9" href="containers/login/login.html">Login in</a>'+
+            '<a class="font16" href="javascript:void(0)"> | </a>'+
+            '<a class="font16 font-color-9" href="containers/login/register.html">Register</a>'+
+            '</p>'+
+            '</div>';
+        //console.log(tpl);
+        user_login.html(null);
+        user_login.html(tpl);
+
+        index_chart.attr("href","containers/login/login.html");
+    }else{
         if(imagePath == "null"){
             imagePath = "images/Default-Avatar.jpg";
         }
@@ -101,18 +119,7 @@ function login_status() {
         //console.log(tpl);
         user_login.html(null);
         user_login.html(tpl);
-    }else{
-        tpl = '<img class="mui-media-object mui-pull-left radius50" src="images/Default-Avatar.jpg">'+
-            '<div class="mui-media-body margin-t20">'+
-            '<p class="font14 font-weight font-color-3">'+
-            '<a class="font16 font-color-9" href="containers/login/login.html">Login in</a>'+
-            '<a class="font16" href="javascript:void(0)"> | </a>'+
-            '<a class="font16 font-color-9" href="containers/login/register.html">Register</a>'+
-            '</p>'+
-            '</div>';
-        //console.log(tpl);
-        user_login.html(null);
-        user_login.html(tpl);
+        index_chart.attr("href","containers/shoppingcard/shopping-cart.html");
     }
 }
 

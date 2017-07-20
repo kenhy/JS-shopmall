@@ -8,7 +8,6 @@
 		<link rel="stylesheet" href="../../css/mui.min.css">
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
-
     </head>
 	<body>
 				<header class="mui-bar mui-bar-nav">
@@ -72,9 +71,7 @@
 							   </li>
 							</ul>
                             <ul class="mui-table-view mar-top">
-                                <li class="mui-table-view-cell">
-                                    <a id="sign_out" href="javascript:void(0)" class="text-c">Sign out</a>
-                                </li>
+                               <button id="sign_out" type="button" onclick="login_out()" class="mui-col-xs-12 mui-btn nborder npd line44 font16" >sign out</button>
                             </ul>
 						</div>
 						<div id="move-togger"></div>
@@ -90,10 +87,7 @@
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
-            init_account.account_msg();
 
-            var sign_out = $("#sign_out");
-            sign_out.on('click',init_account.login_out());
 		</script>
 	</body>
 

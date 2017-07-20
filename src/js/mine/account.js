@@ -1,6 +1,7 @@
 /**
  * Created by JonathanZhang on 2017/7/18.
  */
+
 var init_account = {
     account_msg:function () {
         var username = getCookie('userName'),
@@ -32,10 +33,22 @@ var init_account = {
             location.href = "../../index.html";
         }
     },
-    login_out:function () {
-        clearCookie();
-        location.href = "../../index.html";
+    account_list_init:function () {
+
     }
 };
 
+init_account.account_msg();
+
+
+function login_out() {
+    delCookie("token");
+    delCookie("loginName");
+    delCookie("userName");
+    delCookie("customerId");
+    delCookie("pwd");
+    delCookie("imagePath");
+    delCookie("role");
+    location.href = "../../index.html";
+}
 
