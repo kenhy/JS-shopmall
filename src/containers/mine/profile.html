@@ -182,6 +182,22 @@
 				</div>
 			</div>
 		</div>
+                <script id="countryAndPrefixTemplate" type="text/html">
+                    <li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
+                    {{each data.top as c i}}
+                    <li class="padding-line44 height44 border-b">
+                        <span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+                        <i>{{c.name}}</i>
+                    </li>
+                    {{/each}}
+                    <li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
+                    {{each data.list as c i}}
+                    <li class="padding-line44 height44 border-b">
+                        <span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+                        <i>{{c.name}}</i>
+                    </li>
+                    {{/each}}
+                </script>
         <script src="../../js/common/api.js"></script>
         <script src="../../js/common/jquery.min.js"></script>
         <script src="../../js/common/mui.min.js"></script>
@@ -194,23 +210,8 @@
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
+            set_account.initCountry();
 		</script>
-                <script id="countryAndPrefixTemplate" type="text/html">
-                    <li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
-                    {{each data.top as c i}}
-                    <li class="padding-line44 height44 border-b">
-                        <span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-                        <i>{{c.name}}</i>
-                    </li>
-                    {{/each}}
-                    <li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
-                    {{each data.list as c i}}
-                    <li class="padding-line44 height44 border-b">
-                        <span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-                        <i>{{c.name}}</i>
-                    </li>
-                    {{/each}}
-                </script>
 	</body>
 
 </html>

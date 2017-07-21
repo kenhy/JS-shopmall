@@ -50,6 +50,9 @@
     });
 })(mui);
 
+var country_flag = "css_cn";//getCookie("country");
+$("#country_type").addClass(country_flag);
+
 /*用户*/
 var set_account ={
     /*用户信息设置*/
@@ -90,7 +93,7 @@ var set_account ={
                 type: "get",
                 url: RTTMALL_API.URL_COUNTRY_HEADER,
                 dataType: "json",
-                async: true,
+                async: false,
                 cache: false,
                 data: {},
                 success: function (data) {
@@ -102,6 +105,7 @@ var set_account ={
                             // 注册填写电话号码国家列表
                             var list = template('countryAndPrefixTemplate',data);
                             $("[data-type=countryAndPrefix]").html(list);
+
                         }
                     }
                 }
@@ -111,16 +115,18 @@ var set_account ={
             // 注册填写电话号码国家列表
             var html = template('countryAndPrefixTemplate', JSON.parse(country));
             $("[data-type=countryAndPrefix]").html(html);
-        }
 
-        //赋值给页面
+        }
         $("[data-type=countryAndPrefix] li").on('tap',function() {
-            var value = $(this).find("em").attr("data-type");
+            $("#country_type").removeClass(country_flag);
+            var value = $(this).find("span").attr("data-type");
+            country_flag = value;
             console.log(value);
-            $("#country_type").addclass(value);
+            $("#country_type").addClass(value);
+            $("#National-flag").removeClass("mui-active");
             $(".mui-backdrop").hide();
-        })
+        });
     }
 };
 
-set_account.initCountry();
+
