@@ -29,13 +29,31 @@ var init_account = {
             user_login.html(null);
             user_login.html(tpl);
         }else{
-            alert('未登录');
-            location.href = "../../index.html";
+            alert('not login');
+            location.href = "/index.html";
         }
     },
-    account_list_init:function () {
-
+    account_list_init:function (){
+        var token = getCookie("token");
+        $.ajax({
+            type: "get",
+            url: URL_ACCOUNT_GET,
+            dataType: "json",
+            async: false,
+            cache: false,
+            data: {
+                client_token: token
+            },
+            success: function (data) {
+                if(code == "1"){
+                    console.log(data.data);
+                }else{
+                    console.log(data.msg);
+                }
+            }
+        });
     }
+
 };
 
 init_account.account_msg();
@@ -49,6 +67,6 @@ function login_out() {
     delCookie("pwd");
     delCookie("imagePath");
     delCookie("role");
-    location.href = "../../index.html";
+    location.href = "/index.html";
 }
 
