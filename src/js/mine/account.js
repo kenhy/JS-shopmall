@@ -34,10 +34,11 @@ var init_account = {
         }
     },
     account_list_init:function (){
+        var list;
         var token = getCookie("token");
         $.ajax({
             type: "get",
-            url: URL_ACCOUNT_GET,
+            url: RTTMALL_API.URL_ACCOUNT_GET,
             dataType: "json",
             async: false,
             cache: false,
@@ -45,20 +46,19 @@ var init_account = {
                 client_token: token
             },
             success: function (data) {
-                if(code == "1"){
-                    console.log(data.data);
+                if(data.code == "1"){
+                    list = data.data;
                 }else{
                     console.log(data.msg);
                 }
             }
         });
+        return list;
     }
-
 };
 
-init_account.account_msg();
 
-
+/*登出*/
 function login_out() {
     delCookie("token");
     delCookie("loginName");
@@ -69,4 +69,19 @@ function login_out() {
     delCookie("role");
     location.href = "/index.html";
 }
+
+/*会员判断*/
+function is_membership() {
+    var data = getCustomerRole();
+    var index = getCookie("role");
+    console.log(index);
+    console.log(data);
+}
+
+
+
+init_account.account_msg();
+is_membership();
+var list = getCustomerRole();
+console.log(list);
 

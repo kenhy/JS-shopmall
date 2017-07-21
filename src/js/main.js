@@ -93,9 +93,18 @@ function bindEvent(elem,type,selector,fn) {
     })
 }
 
+/*登录*/
 function href_check() {
     var href_check_item = $(".user_check");
         href_check_item.attr("href","/containers/login/login.html");
+}
+
+/*登录*/
+function getCustomerRole() {
+    var customerRole = [ new role("NOT_CERTIFIED", "Unauthenticated"),
+        new role("UNDER_REVIEW", "Pending"),
+        new role("VERIFIED", "Certified") ];
+    return customerRole;
 }
 
 

@@ -62,6 +62,7 @@ var login = {
                                 setCookie("imagePath", data.data.imagePath,1);
                             }
                             setCookie("role", data.data.role,1);
+                            Login_status = true;
                             location.href = "../../index.html";
                         }
                     }

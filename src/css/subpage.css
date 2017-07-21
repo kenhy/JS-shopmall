@@ -19,7 +19,7 @@
 .area-phone{position: absolute; left:114px;}
 .validation-box{position: relative;}
 .validation-num{ width: 100% !important; position: absolute; left: 0; z-index: 2;}
-.verificatione{position: absolute;right: 0; text-align: center; height: 44px; display:table; z-index: 5;}
+.verificatione{position: absolute;right: 0; text-align: center; height: 44px; display:table; z-index: 5;} 
 .verificatione-code{ vertical-align:middle;display:table-cell;line-height: 14px; padding: 0 5px !important; height: 45px; min-width: 70px;}
 .button-facebook { background:#4267b2 !important; height: 44px!important;}
 .button-twitter{background:#1da1f2 !important; height: 44px!important;}
@@ -105,7 +105,7 @@
 .mui-control-content ul dl dd.mui-pull-right{margin-top: 5px;}
 .mui-control-content ul dl dd.mui-pull-right:active{background: #EEEEEE !important;}
 .mui-control-content ul dl dd a{ width: 70px; text-align: center; display: block; line-height: 28px; font-size: 0.8em;}
-.mui-control-content ul dl dd a:hover{color: #FFFFFF;}
+.mui-control-content ul dl dd a:hover{color: #FFFFFF;} 
 .mui-popover{z-index: 10000;}
 .right-nav{ border: 1px #EEEEEE solid; margin-top: -6px;}
 .right-nav li{line-height: 26px; padding: 0 10px; border-bottom: 1px #EEEEEE solid;}
@@ -124,7 +124,6 @@
 .mui-row.mui-fullscreen>[class*="mui-col-"] { height: 100%;}
 .mui-col-xs-3.bakc-eee,.mui-control-content.overflow-y{ overflow-y: auto; height: 100%;}
 #segmentedControls .mui-control-item { width: 100%; border-left: 3px #EEEEEE solid;}
-#segmentedControls .mui-control-item img {width: 30px;display: block;margin: 5px auto;}
 #segmentedControls .mui-control-item.mui-active { background-color: #fff; border-left: 3px #c79f62 solid !important; color: #C79F62 !important;}
 .left-navigation{ padding:3px 0 8px; line-height: 13px !important; color: #202020 !important;}
 .left-navigation p{line-height: 34px; color: inherit;}
@@ -180,7 +179,7 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .select-button input{top: 50% !important; margin-top:-13px;}
 .select-goods{ position: absolute; top: 12px; left: 30px; right:0;}
 .buy-now{position: fixed; bottom: 0; left: 0; width: 100%; z-index: 3;padding: 7px 15px;}
-.buy-now .mui-checkbox{margin: 5px 0;}
+.buy-now .mui-checkbox{margin: 5px 0;} 
 .buy-now div.mui-pull-right{padding: 0 15px 0 0;}
 .buy-now-button{ width: 80px; padding: 6px 0; margin-left: 5px;}
 .buy-now div.mui-pull-right p{line-height: 16px;}
@@ -299,22 +298,19 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 /*首页*/
 .home-coupon img{width: 100%; display: block;}
 .time-limit{width: 100%;}
-.time-limit td:first-child{padding:8px 0 10px 0;}
-.time-limit td img{width: 80px; height: 80px;}
-.time-limit td:first-child img{display: block;width:140px; height: 140px; margin: auto;}
-.time-limit td:last-child img{ margin: 0 10px;}
-.time-limit td:last-child div{margin-top:20px}
-@media (max-width:320px) {
-	.time-limit td:first-child img {
-		width:100px; height: 100px;
-	}
-	.time-limit td img{
-		width: 60px; height: 60px;
-	}
-	.time-limit td:last-child div{
-		margin-top:10px;
-	}
-}
+.time-limit img{ display: block; width: 100%;}
+.time-limit dd{position: absolute;right: 0;top: 0;height: 100%;}
+.time-limit dd ul{ position: relative; width: 100%; height: 100%;} 
+.time-limit dd ul li{width: 100%;}
+.time-limit dd ul li:first-child{ position: absolute; top: 5%;}
+.time-limit dd ul li:last-child{ position: absolute; bottom: 5%;}
+.time-limit dd ul li:after{background: none;}
+.time-limit dd ul li img{width: 46%; max-width: 90px; margin-right: 5px;}
+.time-limit dd ul li .mui-media-body{position: absolute; top: 20%; left: 50%;}
+.LeftAndRightSlide{height: 135px !important; margin: 0 10px;}
+.LeftAndRightList{ height: inherit !important;}
+.LeftAndRightSlide a{ width: 80px; height: inherit; padding: 0 !important;}
+.LeftAndRightSlide a img{width: 100px; height: 100px; display: block;}
 /*搜索结果*/
 .triangle-down{	margin-top: 6px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #CCA77A;}
 #bestmatch{top: 80px !important; left: 0 !important;right: 0 !important; width: 101%;}
