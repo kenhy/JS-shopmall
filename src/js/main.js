@@ -99,7 +99,7 @@ function href_check() {
         href_check_item.attr("href","/containers/login/login.html");
 }
 
-/*登录*/
+/*会员*/
 function getCustomerRole() {
     var customerRole = [ new role("NOT_CERTIFIED", "Unauthenticated"),
         new role("UNDER_REVIEW", "Pending"),
@@ -107,6 +107,25 @@ function getCustomerRole() {
     return customerRole;
 }
 
+/*会员判断*/
+function is_membership() {
+    var data = getCustomerRole();
+    var index = getCookie("role");
+    var role_name = "";
+    if(index != ""){
+        for (var i= 0;i<data.length;i++){
+            if(data[i].code == index){
+                role_name = data[i].name;
+                console.log(data[i].name);
+                return;
+            }
+        }
+    }
+    else{
+        alert("error");
+    }
+    return role_name;
+}
 
 
 

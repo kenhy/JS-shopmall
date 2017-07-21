@@ -161,8 +161,7 @@ var RTTMALL_API = {
     URL_DEL_WISH : API_BASE_URL + "/my/delWish",
 
     URL_COLLECT_TOGGLE : API_BASE_URL + "/customer/collect/toggle",
-    URL_PRODUCT_ALL_BELONGS_CATETORY : API_BASE_URL
-    + "/category/allBelongsCatetory",
+    URL_PRODUCT_ALL_BELONGS_CATETORY : API_BASE_URL + "/category/allBelongsCatetory",
     URL_COUPON_FREE : API_BASE_URL + "/myCoupon/free",
     URL_COUPON : API_BASE_URL + "/coupon/list",
     URL_RECEIVE_COUPON : API_BASE_URL + "/myCoupon/receive",

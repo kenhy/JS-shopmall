@@ -232,7 +232,6 @@ var register = {
                 var html = template('countryAndPrefixTemplate', JSON.parse(country));
                 $("[data-type=countryAndPrefix]").html(html);
         }
-
         //赋值给文本框
         $("[data-type=countryAndPrefix] li").on('tap',function() {
             var value = $(this).find("em").attr("data-type");

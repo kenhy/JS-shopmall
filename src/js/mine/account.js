@@ -1,38 +1,11 @@
 /**
  * Created by JonathanZhang on 2017/7/18.
  */
+var member_role = is_membership();
+console.log(member_role);
 
 var init_account = {
-    account_msg:function () {
-        var username = getCookie('userName'),
-            loginName = getCookie('loginName'),
-            imagePath = getCookie('imagePath'),
-            user_login = $('#user_msg'),
-            tpl;
-        if (username != ""){
-            //console.log(username);
-            //console.log(imagePath);
-            if(imagePath == "null"){
-                imagePath = "../../images/Default-Avatar.jpg";
-            }
-            tpl = '<a href="profile.html">'+
-                '<img class="mui-media-object mui-pull-left radius50" src="'+ imagePath +'">'+
-                '<div class="mui-media-body">'+
-                '<p class="font14 font-weight font-color-3">'+ username +'</p>'+
-                '<p class="mui-ellipsis font-color-6 font12">'+ loginName +'</p>'+
-                '<p class="iconfont icon-vip ">'+
-                '<span class="font10 font-color-9">Membership</span>'+
-                '</p>'+
-                '</div>'+
-                '<s class="mui-navigate-right font18"></s>'+
-                '</a>';
-            user_login.html(null);
-            user_login.html(tpl);
-        }else{
-            alert('not login');
-            location.href = "/index.html";
-        }
-    },
+    /*用户信息获取*/
     account_list_init:function (){
         var list;
         var token = getCookie("token");
@@ -57,6 +30,37 @@ var init_account = {
     }
 };
 
+/*account用户载入*/
+function account_msg() {
+    var username = getCookie('userName'),
+        loginName = getCookie('loginName'),
+        imagePath = getCookie('imagePath'),
+        user_login = $('#user_msg'),
+        tpl;
+    if (username != ""){
+        //console.log(username);
+        //console.log(imagePath);
+        if(imagePath == "null"){
+            imagePath = "../../images/Default-Avatar.jpg";
+        }
+        tpl = '<a href="profile.html">'+
+            '<img class="mui-media-object mui-pull-left radius50" src="'+ imagePath +'">'+
+            '<div class="mui-media-body">'+
+            '<p class="font14 font-weight font-color-3">'+ username +'</p>'+
+            '<p class="mui-ellipsis font-color-6 font12">'+ loginName +'</p>'+
+            '<p class="iconfont icon-vip ">'+
+            '<span id="member_role" class="font10 font-color-9">Membership</span>'+
+            '</p>'+
+            '</div>'+
+            '<s class="mui-navigate-right font18"></s>'+
+            '</a>';
+        user_login.html(null);
+        user_login.html(tpl);
+    }else{
+        alert('not login');
+        location.href = "/index.html";
+    }
+}
 
 /*登出*/
 function login_out() {
@@ -70,18 +74,10 @@ function login_out() {
     location.href = "/index.html";
 }
 
-/*会员判断*/
-function is_membership() {
-    var data = getCustomerRole();
-    var index = getCookie("role");
-    console.log(index);
-    console.log(data);
-}
+
+
+account_msg();
 
 
 
-init_account.account_msg();
-is_membership();
-var list = getCustomerRole();
-console.log(list);
 
