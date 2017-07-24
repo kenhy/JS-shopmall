@@ -2,12 +2,6 @@
  * Created by zhangjianan on 2017/7/21.
  */
 
-(function($) {
-    $('.Cancellation-list').scroll({
-        indicators: true //是否显示滚动条
-    });
-})(mui);
-
 var country_flag = "css_cn";//getCookie("country");
 
 /*用户*/
@@ -58,8 +52,14 @@ var account_index ={
                 var list = template('my_msg',data);
                 console.log(list);
                 $("[data-type=my_msg]").html(list);
+                if(data.data.imagePath === undefined){
+                    $("#imgPath").attr('src',"../../images/Default-Avatar.jpg")
+                }else{
+                    setCookie('imagePath',data.imagePath);
+                }
                 $("#country_type").addClass(country_flag);
                 init_time();
+
             }
         });
     },
@@ -230,6 +230,12 @@ function init_time() {
                     picker.dispose();
                 });
             }, false);
+        });
+    })(mui);
+
+    (function($) {
+        $('.Cancellation-list').scroll({
+            indicators: true //是否显示滚动条
         });
     })(mui);
 }
