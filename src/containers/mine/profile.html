@@ -9,65 +9,18 @@
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
 		<link rel="stylesheet" href="../../css/country.css" />
-
     </head>
 
 	<body>
                 <header class="mui-bar mui-bar-nav">
-                    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>					<!--<a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>-->
+                    <a href="javascript:void(0)" id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></a>
+                    <a href="javascript:void(0)" class="mui-icon mui-pull-right  font20 font-color-9">save</a>
                     <h1 class="mui-title">My Profile</h1>
                 </header>
 				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
-						<div class="mui-content my-profile">
-							<ul class="mui-table-view nmg">
-					            <li class="mui-table-view-cell mui-media">
-					                <a href="#picture" >
-					                    <img class="mui-media-object margin-r20 mui-pull-right radius50" src="../../images/Default-Avatar.jpg">
-					                    <div class="mui-media-body">
-					                        <p class="font14 line44 font-color-3">My Photo</p>
-					                    </div>
-					                    <s class="mui-navigate-right font18"></s>
-					                </a>
-					            </li>
-					        </ul>
-					        <ul class="mui-table-view margin-t12">
-								<li class="mui-table-view-cell">
-							        <a href="#nickname"><span class="mui-navigate-right font18"></span>Nickname<em class="mui-pull-right margin-r20 font-color-9 text-r">Siberian Husck</em></a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="#realname"><span class="mui-navigate-right font18"></span>Contact Name<em class="mui-pull-right margin-r20 font-color-9 text-r">Siberian</em></a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="#gender"><span class="mui-navigate-right font18"></span>Gender<em class="mui-pull-right margin-r20 font-color-9 text-r">Husck</em></a>
-							   </li>
-							   <li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Date of Birth<button data-options='{"type":"date"}' class="btn mui-btn mui-btn-block nback nborder  margin-r20"><p id='result' class="ui-alert text-r mui-pull-right  margin-r10">April.7.2017</p></button>
-							        </a>
-							   </li>
-							</ul>
-							<ul class="mui-table-view margin-t12">
-								<li class="mui-table-view-cell National-flag">
-							        <a href="#National-flag"><span class="mui-navigate-right font18"></span>Country/Region<s id="country_type" class="ui-alert country-flag css_flag mui-pull-right Country-icon"></s></a>
-							  	</li>
-							  	<li></li>
-								<li class="mui-table-view-cell bakc-fff">
-									<a href="#street-popup"><span class="mui-navigate-right font18"></span>Street<em class="mui-pull-right margin-r20 font-color-9 text-r">Tobago</em></a>
-								</li>
-								<li class="mui-table-view-cell">
-									<a href="#my-address"><span class="mui-navigate-right font18"></span>Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite/Taiparo/#60port</em></a>
-								</li>
-							</ul>
-							<ul class="mui-table-view margin-t12">
-								<li class="mui-table-view-cell">
-							        <a href="#ship-address"><span class="mui-navigate-right font18"></span>Shipping Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite</em></a>
-								</li>
-							</ul>
-							<ul class="mui-table-view margin-t12">
-								<li class="mui-table-view-cell">
-							        <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Account and Security<em class="mui-pull-right margin-r20 font-color-9 text-r iconfont icon-unie65b font18"></em></a>
-								</li>
-							</ul>
+						<div data-type="my_msg" class="mui-content my-profile">
+
 						</div>
 						<div id="move-togger"></div>
 					</div>
@@ -80,10 +33,10 @@
 				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell"><a href="#">Take Phone</a></li>
-				<li class="mui-table-view-cell"><a href="#">Select from the album</a></li>
-			</ul>
+            <form action="../../js/common/php/class.upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="files[]" id="filer_input" multiple="multiple">
+                <input type="submit" value="Submit">
+            </form>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#picture"><b>Cancel</b></a></li>
 			</ul>
@@ -119,8 +72,8 @@
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell"><a href="#">Male</a></li>
-				<li class="mui-table-view-cell"><a href="#">Female</a></li>
+				<li class="mui-table-view-cell"><span >Male</span></li>
+				<li class="mui-table-view-cell"><span >Female</span></li>
 			</ul>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#gender"><b>Cancel</b></a></li>
@@ -198,6 +151,80 @@
                     </li>
                     {{/each}}
                 </script>
+                <script id="my_msg" type="text/html">
+                    <ul class="mui-table-view nmg">
+                        <li class="mui-table-view-cell mui-media">
+                            <a href="#picture" >
+                                <img class="mui-media-object margin-r20 mui-pull-right radius50" src="../../images/Default-Avatar.jpg">
+                                <div class="mui-media-body">
+                                    <p class="font14 line44 font-color-3">My Photo</p>
+                                </div>
+                                <s class="mui-navigate-right font18"></s>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a href="#nickname">
+                                <span class="mui-navigate-right font18"></span>
+                                Nickname
+                                <em class="mui-pull-right margin-r20 font-color-9 text-r">
+                                    {{data.userName}}
+                                </em>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a href="#realname">
+                                <span class="mui-navigate-right font18"></span>
+                                Contact Name
+                                <em class="mui-pull-right margin-r20 font-color-9 text-r">
+                                    {{data.firstName}} {{data.lastName}}
+                                </em>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a href="#gender">
+                                <span class="mui-navigate-right font18"></span>
+                                Gender
+                                <em class="mui-pull-right margin-r20 font-color-9 text-r">
+                                    {{data.sex}}
+                                </em>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a href="javascript:void(0)">
+                                <span class="mui-navigate-right font18"></span>
+                                Date of Birth
+                                <button data-options='{"type":"date"}' class="btn mui-btn mui-btn-block nback nborder  margin-r20">
+                                    <p id='result' class="ui-alert text-r mui-pull-right  margin-r10">
+                                        {{data.birthDay}}
+                                    </p>
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="mui-table-view margin-t12">
+                        <li class="mui-table-view-cell National-flag">
+                            <a href="#National-flag"><span class="mui-navigate-right font18"></span>Country/Region<s id="country_type" class="ui-alert country-flag css_flag mui-pull-right Country-icon"></s></a>
+                        </li>
+                        <li></li>
+                        <li class="mui-table-view-cell bakc-fff">
+                            <a href="#street-popup"><span class="mui-navigate-right font18"></span>Street<em class="mui-pull-right margin-r20 font-color-9 text-r">Tobago</em></a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a href="#my-address"><span class="mui-navigate-right font18"></span>Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite/Taiparo/#60port</em></a>
+                        </li>
+                    </ul>
+                    <ul class="mui-table-view margin-t12">
+                        <li class="mui-table-view-cell">
+                            <a href="#ship-address"><span class="mui-navigate-right font18"></span>Shipping Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite</em></a>
+                        </li>
+                    </ul>
+                    <ul class="mui-table-view margin-t12">
+                        <li class="mui-table-view-cell">
+                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Account and Security<em class="mui-pull-right margin-r20 font-color-9 text-r iconfont icon-unie65b font18"></em></a>
+                        </li>
+                    </ul>
+
+                </script>
         <script src="../../js/common/api.js"></script>
         <script src="../../js/common/jquery.min.js"></script>
         <script src="../../js/common/mui.min.js"></script>
@@ -210,8 +237,10 @@
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
-            set_account.initCountry();
+            account_index.initCountry();
+            account_index.account_get();
 		</script>
+
 	</body>
 
 </html>
