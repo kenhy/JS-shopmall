@@ -74,10 +74,4 @@ function login_out() {
     location.href = "/index.html";
 }
 
-
-
 account_msg();
-
-
-
-

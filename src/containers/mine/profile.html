@@ -9,38 +9,69 @@
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
 		<link rel="stylesheet" href="../../css/country.css" />
+        <link href="../../css/jquery.filer.css" type="text/css" rel="stylesheet" />
+        <link href="../../css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
+
+        <style>
+            .file {
+                position: relative;
+                display: inline-block;
+                border-radius: 4px;
+                padding: 4px 12px;
+                overflow: hidden;
+                text-decoration: none;
+                text-indent: 0;
+                line-height: 20px;
+            }
+            .file input {
+                position: absolute;
+                font-size: 100px;
+                right: 0;
+                top: 0;
+                opacity: 0;
+            }
+        </style>
+
     </head>
 
 	<body>
-                <header class="mui-bar mui-bar-nav">
-                    <a href="javascript:void(0)" id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></a>
-                    <a href="javascript:void(0)" class="mui-icon mui-pull-right  font20 font-color-9">save</a>
-                    <h1 class="mui-title">My Profile</h1>
-                </header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<div data-type="my_msg" class="mui-content my-profile">
-
-						</div>
-						<div id="move-togger"></div>
-					</div>
+		<!-- begin -->
+		<header class="mui-bar mui-bar-nav">
+			<a href="javascript:void(0)" id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></a>
+			<a href="javascript:void(0)" class="mui-icon mui-pull-right  font20 font-color-9">save</a>
+			<h1 class="mui-title">My Profile</h1>
+		</header>
+		<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div data-type="my_msg" class="mui-content my-profile">
+					<!-- user_msg -->
 				</div>
-				<!-- off-canvas backdrop -->
-				<div class="mui-off-canvas-backdrop"></div>
+				<div id="move-togger"></div>
+			</div>
+		</div>
+		<!-- off-canvas backdrop -->
+		<div class="mui-off-canvas-backdrop"></div>
+		<!-- end -->
 
+		<!-- picture -->
 		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
+				<input type="submit" class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok" value="Upload" />
 				<div class="mui-poppicker-clear"></div>
 			</div>
-            <form action="../../js/common/php/class.upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="files[]" id="filer_input" multiple="multiple">
-                <input type="submit" value="Submit">
-            </form>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="javascript:void(0)" class="file">选择文件
+                    <input type="file" name="files[]" id="input_file">
+                    </a>
+                </li>
+            </ul>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#picture"><b>Cancel</b></a></li>
 			</ul>
 		</div>
+
+		<!-- nickname -->
 		<div id="nickname" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
 				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
@@ -53,192 +84,251 @@
 				<li class="mui-table-view-cell"><a href="#nickname"><b>Cancel</b></a></li>
 			</ul>
 		</div>
+
+		<!-- realname -->
 		<div id="realname" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
 				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<div class="mui-table-view nback">
-				<input placeholder="First Name" type="text" value="" name=""/>
-				<input placeholder="Last Name" type="text" value="" name=""/>
+				<input placeholder="First Name" type="text" value="" name="" />
+				<input placeholder="Last Name" type="text" value="" name="" />
 			</div>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#realname"><b>Cancel</b></a></li>
 			</ul>
 		</div>
+		<!-- gender -->
 		<div id="gender" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell"><span >Male</span></li>
-				<li class="mui-table-view-cell"><span >Female</span></li>
+				<li class="mui-table-view-cell"><span>Male</span></li>
+				<li class="mui-table-view-cell"><span>Female</span></li>
 			</ul>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#gender"><b>Cancel</b></a></li>
 			</ul>
 		</div>
+
+		<!-- my-address -->
 		<div id="my-address" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
-				<button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel"><a href="#my-address" class="font-color-h"><b>Cancel</b></a></button>
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
+				<button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel">
+                    <a href="#my-address" class="font-color-h">
+                        <b>
+                            Cancel
+                        </b>
+                    </a>
+                </button>
+				<button href="#my-address" class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<div class="mui-table-view">
 				<textarea placeholder="Address"></textarea>
 			</div>
 		</div>
-		<div id="ship-address" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
-			<div class="mui-poppicker-header bakc-fff">
-				<button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel"><a href="#ship-address" class="font-color-h"><b>Cancel</b></a></button>
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
-				<div class="mui-poppicker-clear"></div>
-			</div>
-			<div class="mui-table-view">
-				<textarea placeholder="Shipping Address"></textarea>
-			</div>
-		</div>
 
+        <!-- street-popup -->
+        <div id="street-popup" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
+            <div class="mui-poppicker-header bakc-fff">
+                <button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel">
+                    <a href="#street-popup" class="font-color-h">
+                        <b>
+                            Cancel
+                        </b>
+                    </a>
+                </button>
+                <button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">
+                    Done
+                </button>
+                <div class="mui-poppicker-clear"></div>
+            </div>
+            <div class="mui-table-view">
+                <textarea placeholder="Shipping Address"></textarea>
+            </div>
+        </div>
+
+		<!-- National-flag -->
 		<div id="National-flag" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height">
 			<div class="mui-poppicker-header bakc-fff">
-				<a href="#National-flag" class=""><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">Done</button>
+                <button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel">
+                    <a href="#National-flag" class="font-color-h">
+                        <b>
+                            Cancel
+                        </b>
+                    </a>
+                </button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
-                <div class="mui-scroll-wrapper Cancellation-list npd">
-                    <div class="mui-scroll">
-                        <ul data-type="countryAndPrefix">
-                            <!--country-->
-                        </ul>
-                    </div>
-                </div>
-		</div>
-		<div id="street-popup" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height">
-			<div class="mui-poppicker-header bakc-fff">
-				<a href="#street-popup" class=""><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">Done</button>
-				<div class="mui-poppicker-clear"></div>
-			</div>
-			<div class="mui-scroll-wrapper Cancellation-list">
+			<div class="mui-scroll-wrapper Cancellation-list npd">
 				<div class="mui-scroll">
-					<ul>
-						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
-						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
-						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
-						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
-						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
-						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
-						<li class="padding-line44 height44">Trnidad<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
-						<li class="padding-line44 height44">St.Andrew<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s></li>
+					<ul data-type="countryAndPrefix">
+						<!--country-->
 					</ul>
 				</div>
 			</div>
 		</div>
-                <script id="countryAndPrefixTemplate" type="text/html">
-                    <li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
-                    {{each data.top as c i}}
-                    <li class="padding-line44 height44 border-b">
-                        <span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-                        <i>{{c.name}}</i>
-                    </li>
-                    {{/each}}
-                    <li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
-                    {{each data.list as c i}}
-                    <li class="padding-line44 height44 border-b">
-                        <span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-                        <i>{{c.name}}</i>
-                    </li>
-                    {{/each}}
-                </script>
-                <script id="my_msg" type="text/html">
-                    <ul class="mui-table-view nmg">
-                        <li class="mui-table-view-cell mui-media">
-                            <a href="#picture" >
-                                <img id="imgPath" class="mui-media-object margin-r20 mui-pull-right radius50" src="{{data.imgPath}}">
-                                <div class="mui-media-body">
-                                    <p class="font14 line44 font-color-3">My Photo</p>
-                                </div>
-                                <s class="mui-navigate-right font18"></s>
-                            </a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="#nickname">
-                                <span class="mui-navigate-right font18"></span>
-                                Nickname
-                                <em class="mui-pull-right margin-r20 font-color-9 text-r">
-                                    {{data.userName}}
-                                </em>
-                            </a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="#realname">
-                                <span class="mui-navigate-right font18"></span>
-                                Contact Name
-                                <em class="mui-pull-right margin-r20 font-color-9 text-r">
-                                    {{data.firstName}} {{data.lastName}}
-                                </em>
-                            </a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="#gender">
-                                <span class="mui-navigate-right font18"></span>
-                                Gender
-                                <em class="mui-pull-right margin-r20 font-color-9 text-r">
-                                    {{data.sex}}
-                                </em>
-                            </a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)">
-                                <span class="mui-navigate-right font18"></span>
-                                Date of Birth
-                                <button data-options='{"type":"date"}' class="btn mui-btn mui-btn-block nback nborder  margin-r20">
-                                    <p id='result' class="ui-alert text-r mui-pull-right  margin-r10">
-                                        {{data.birthDay}}
-                                    </p>
-                                </button>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="mui-table-view margin-t12">
-                        <li class="mui-table-view-cell National-flag">
-                            <a href="#National-flag"><span class="mui-navigate-right font18"></span>Country/Region<s id="country_type" class="ui-alert country-flag css_flag mui-pull-right Country-icon"></s></a>
-                        </li>
-                        <li></li>
-                        <li class="mui-table-view-cell bakc-fff">
-                            <a href="#street-popup"><span class="mui-navigate-right font18"></span>Street<em class="mui-pull-right margin-r20 font-color-9 text-r">Tobago</em></a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="#my-address"><span class="mui-navigate-right font18"></span>Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite/Taiparo/#60port</em></a>
-                        </li>
-                    </ul>
-                    <ul class="mui-table-view margin-t12">
-                        <li class="mui-table-view-cell">
-                            <a href="#ship-address"><span class="mui-navigate-right font18"></span>Shipping Address<em class="mui-pull-right margin-r20 font-color-9 text-r">Couva/Tabaquite</em></a>
-                        </li>
-                    </ul>
-                    <ul class="mui-table-view margin-t12">
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Account and Security<em class="mui-pull-right margin-r20 font-color-9 text-r iconfont icon-unie65b font18"></em></a>
-                        </li>
-                    </ul>
 
-                </script>
-        <script src="../../js/common/api.js"></script>
-        <script src="../../js/common/jquery.min.js"></script>
-        <script src="../../js/common/mui.min.js"></script>
-        <script src="../../js/common/template/template.js"></script>
+		<!--template-->
+		<script id="countryAndPrefixTemplate" type="text/html">
+			<li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
+			{{each data.top as c i}}
+			<li class="padding-line44 height44 border-b">
+				<span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+				<i>{{c.name}}</i>
+			</li>
+			{{/each}}
+			<li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
+			{{each data.list as c i}}
+			<li class="padding-line44 height44 border-b">
+				<span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+				<i>{{c.name}}</i>
+			</li>
+			{{/each}}
+		</script>
+
+		<!-- my_msg_template -->
+		<script id="my_msg" type="text/html">
+			<ul class="mui-table-view nmg">
+				<li class="mui-table-view-cell mui-media">
+					<a href="#picture">
+						<img id="imgPath" class="mui-media-object margin-r20 mui-pull-right radius50" src="{{data.imgPath}}">
+						<div class="mui-media-body">
+							<p class="font14 line44 font-color-3">My Photo</p>
+						</div>
+						<s class="mui-navigate-right font18"></s>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#nickname">
+                        <span class="mui-navigate-right font18"></span>
+                        Nickname
+                        <em id="username" class="mui-pull-right margin-r20 font-color-9 text-r">
+                            {{data.userName}}
+                        </em>
+                    </a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#realname">
+                        <span class="mui-navigate-right font18"></span>
+                        Contact Name
+                        <em id="names" data-firstName="{{data.firstName}}" data-lastName="{{data.lastName}}" class="mui-pull-right margin-r20 font-color-9 text-r">
+                           {{data.firstName}} {{data.lastName}}
+                        </em>
+                    </a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#gender">
+                        <span class="mui-navigate-right font18"></span>
+                        Gender
+                        <em id="sex" class="mui-pull-right margin-r20 font-color-9 text-r">
+                            {{data.sex}}
+                        </em>
+                    </a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="javascript:void(0)">
+                        <span class="mui-navigate-right font18"></span>
+                        Date of Birth
+                        <button data-options='{"type":"date"}' class="btn mui-btn mui-btn-block nback nborder  margin-r20">
+                            <p id='result' class="ui-alert text-r mui-pull-right  margin-r10">
+                                {{data.birthDay}}
+                            </p>
+                        </button>
+                    </a>
+				</li>
+			</ul>
+			<ul class="mui-table-view margin-t12">
+				<li class="mui-table-view-cell National-flag">
+					<a href="#National-flag">
+                        <span class="mui-navigate-right font18"></span>
+                        Country/Region
+                        <s id="country_type" data-type="{{data.countryId}}" class="ui-alert country-flag css_flag mui-pull-right Country-icon">
+                        </s>
+                    </a>
+				</li>
+				<li class="mui-table-view-cell bakc-fff">
+					<a href="#street-popup">
+                        <span class="mui-navigate-right font18"></span>
+                        City
+                        <em class="mui-pull-right margin-r20 font-color-9 text-r">
+                            Tobago
+                        </em>
+                    </a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#my-address">
+                        <span class="mui-navigate-right font18"></span>
+                        Address
+                        <em class="mui-pull-right margin-r20 font-color-9 text-r">
+                            {{data.Address}}
+                        </em>
+                    </a>
+				</li>
+			</ul>
+			<ul class="mui-table-view margin-t12">
+				<li class="mui-table-view-cell">
+					<a href="#">
+                        <span class="mui-navigate-right font18"></span>
+                        Shipping Address
+                        <em class="mui-pull-right margin-r20 font-color-9 text-r"></em>
+                    </a>
+				</li>
+			</ul>
+			<ul class="mui-table-view margin-t12">
+				<li class="mui-table-view-cell">
+					<a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Account and Security<em class="mui-pull-right margin-r20 font-color-9 text-r iconfont icon-unie65b font18"></em></a>
+				</li>
+			</ul>
+		</script>
+		<script src="../../js/common/api.js"></script>
+		<script src="../../js/common/jquery.min.js"></script>
+        <script src="../../js/common/jquery.filer.js"></script>
+		<script src="../../js/common/mui.min.js"></script>
+		<script src="../../js/common/template/template.js"></script>
 		<script src="../../js/common/mui.picker.min.js"></script>
 		<script src="../../js/common/mui.picker.js"></script>
-        <script src="../../js/main.js"></script>
-        <script src="../../js/mine/profile.js"></script>
+		<script src="../../js/main.js"></script>
+		<script src="../../js/mine/profile.js"></script>
 		<script>
-			mui('body').on('tap','a',function(){
-			    window.top.location.href=this.href;
+			mui('body').on('tap', 'a', function() {
+				window.top.location.href = this.href;
 			});
-            account_index.initCountry();
-            account_index.account_get();
+            $('#filer_input').filer({
+                limit: 3,
+                maxSize: 3,
+                extensions: ['jpg', 'jpeg', 'png', 'gif'],
+                changeInput: true,
+                showThumbs: true,
+                uploadFile: {
+                    url:RTTMALL_API.URL_ACCOUNT_UPLOADIMAGE,
+                    data: {},
+                    type: 'POST',
+                    enctype: 'multipart/form-data',
+                    beforeSend: function(){},
+                    success:function (data) {
+                        console.log(data);
+                    }
+                },
+                showThumbs:true,
+                appendTo:null,
+                files:[],
+                captions:{
+                    button: "Choose Files",
+                    feedback: "files were chosen",
+                    errors: {
+                        filesLimit: "Only {{fi-limit}} files are allowed to be uploaded.",
+                        filesType: "Only Images are allowed to be uploaded.",
+                        filesSize: "{{fi-name}} is too large! Please upload file up to {{fi-maxSize}} MB.",
+                        filesSizeAll: "Files you've choosed are too large! Please upload files up to {{fi-maxSize}} MB."
+                    }
+                }
+            });
+			account_index.initCountry();
+			account_index.account_get();
 		</script>
 
 	</body>

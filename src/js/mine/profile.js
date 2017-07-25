@@ -9,12 +9,13 @@ var account_index ={
     /*用户信息设置*/
     account_set:function () {
         var token = getCookie("token"),
-            userName = $("#userName"),
-            firstName = $("#firstName"),
-            birthday = $("#birthday"),
+            userName = $("#userName").innerText,
+            firstName = $("#names").attr("data-firstName"),
+            lastName = $("#names").attr("data-lastName"),
+            birthday = $("#result"),
             city = $("#city"),
             province = $("#province"),
-            countryId = $("#countryId"),
+            countryId = $("#country_type").attr("data-type"),
             imagePath = $("#imagePath"),
             sex = $("#sex");
         $.ajax({
@@ -33,6 +34,9 @@ var account_index ={
                 countryId:countryId,
                 imagePath:imagePath,
                 sex:sex
+            },
+            success:function (data) {
+
             }
         });
     },
@@ -96,40 +100,8 @@ var account_index ={
         }
     }
 };
-/**/
-function pushImg(obj) {
-    debugger;
-    var url = "upload/"; //访问控制器是upload，后面必须加'/'否则会报错"org.apache.catalina.connector.RequestFacade cannot be cast to org.springframework.web.multipart.Mult...",但是如果是多级的URL【例如XX/XXX/00/upload/0】又没问题了.
-    var param = $("#errorParameter").val();
 
-    var files = $("#imageFile").get(0).files[0]; //获取file控件中的内容
-
-    var fd = new FormData();
-    fd.append("userID", "1");
-    fd.append("errDeviceType", "001");
-    fd.append("errDeviceID", "11761b4a-57bf-11e5-aee9-005056ad65af");
-    fd.append("errType", "001");
-    fd.append("errContent", "XXXXXX");
-    fd.append("errPic", files);
-    $.ajax({
-        type: "POST",
-        contentType:false, //必须false才会避开jQuery对 formdata 的默认处理 , XMLHttpRequest会对 formdata 进行正确的处理
-        processData: false, //必须false才会自动加上正确的Content-Type
-        url: url,
-        data: fd,
-        success: function (msg) {
-            debugger;
-            var jsonString = JSON.stringify(msg);
-            $("#txtTd").text(jsonString);
-            alert(jsonString);
-        },
-        error: function (msg) {
-            debugger;
-            alert("error");
-        }
-    });
-}
-
+/*国家列表*/
 function country_list() {
     $("[data-type=countryAndPrefix] li").on('tap',function() {
         $("#country_type").removeClass(country_flag);
@@ -142,52 +114,6 @@ function country_list() {
     });
 }
 
-/*图片上传*/
-/*$(document).ready(function() {
-    $('#filer_input').filer({
-        uploadFile: {
-            url: "./php/ajax_upload_file.php",
-            data: null,
-            type: 'POST',
-            enctype: 'multipart/form-data',
-            synchron: true,
-            beforeSend: function(){},
-            success: function(data, itemEl, listEl, boxEl, newInputEl, inputEl, id){
-                var parent = itemEl.find(".jFiler-jProgressBar").parent(),
-                    new_file_name = JSON.parse(data),
-                    filerKit = inputEl.prop("jFiler");
-
-                filerKit.files_list[id].name = new_file_name;
-
-                itemEl.find(".jFiler-jProgressBar").fadeOut("slow", function(){
-                    $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");
-                });
-            },
-            error: function(el){
-                var parent = el.find(".jFiler-jProgressBar").parent();
-                el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
-                    $("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");
-                });
-            },
-            statusCode: null,
-            onProgress: null,
-            onComplete: null
-        },
-        captions: {
-            button: "Choose Files",
-            feedback: "Choose files To Upload",
-            feedback2: "files were chosen",
-            drop: "Drop file here to Upload",
-            removeConfirmation: "Are you sure you want to remove this file?",
-            errors: {
-                filesLimit: "Only {{fi-limit}} files are allowed to be uploaded.",
-                filesType: "Only Images are allowed to be uploaded.",
-                filesSize: "{{fi-name}} is too large! Please upload file up to {{fi-maxSize}} MB.",
-                filesSizeAll: "Files you've choosed are too large! Please upload files up to {{fi-maxSize}} MB."
-            }
-        }
-    });
-});*/
 
 /*选择时间*/
 function init_time() {
@@ -239,3 +165,5 @@ function init_time() {
         });
     })(mui);
 }
+
+
