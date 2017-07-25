@@ -9,34 +9,44 @@ var account_index ={
     /*用户信息设置*/
     account_set:function () {
         var token = getCookie("token"),
-            userName = $("#userName").innerText,
-            firstName = $("#names").attr("data-firstName"),
+            userName = $("#username").html(),
+            sex = $("#sex").children().html();
+        var sexs = 0;
+
+            /*firstName = $("#names").attr("data-firstName"),
             lastName = $("#names").attr("data-lastName"),
             birthday = $("#result"),
             city = $("#city"),
             province = $("#province"),
             countryId = $("#country_type").attr("data-type"),
-            imagePath = $("#imagePath"),
-            sex = $("#sex");
+            imagePath = $("#imagePath"),*/
+
+        /*firstName: firstName,
+         birthday:birthday,
+         city:city,
+         province:province,
+         countryId:countryId,
+         imagePath:imagePath,*/
+        if(sex == "Male"){
+            sexs = 0;
+        }else{
+            sexs = 1;
+        }
         $.ajax({
             type:"POST",
-            url: RTTMALL_API,
+            url: RTTMALL_API.URL_ACCOUNT_SET,
             dataType:"json",
-            async:false,
+            async:true,
             cache:false,
             data:{
                 client_token: token,
                 userName: userName,
-                firstName: firstName,
-                birthday:birthday,
-                city:city,
-                province:province,
-                countryId:countryId,
-                imagePath:imagePath,
-                sex:sex
-            },
-            success:function (data) {
+                sex:sexs
 
+            },
+            success:function () {
+                alert('yes');
+                window.location.reload();
             }
         });
     },
@@ -52,9 +62,9 @@ var account_index ={
                 client_token:token
             },
             success:function (data) {
-                console.log(data);
+                //console.log(data);
                 var list = template('my_msg',data);
-                console.log(list);
+                //console.log(list);
                 $("[data-type=my_msg]").html(list);
                 if(data.data.imagePath === undefined){
                     $("#imgPath").attr('src',"../../images/Default-Avatar.jpg")
@@ -166,4 +176,31 @@ function init_time() {
     })(mui);
 }
 
+function account_page_load() {
 
+    /*save*/
+    var save = $("#save_account");
+    save.bind('tap',account_index.account_set);
+
+    /*nickname*/
+    $("#b-nickname").on('tap',function () {
+        var list = $("#t-nickname").val();
+        var userName = $("#username");
+        userName.html(list);
+    });
+
+    /*sex*/
+    var l_gender = $("#l-gender").children();
+    console.log(l_gender);
+    l_gender.bind('tap',function () {
+        var list = $(this).html();
+        var sex = $("#sex");
+        sex.html(list);
+    });
+
+}
+
+
+account_index.initCountry();
+account_index.account_get();
+account_page_load();

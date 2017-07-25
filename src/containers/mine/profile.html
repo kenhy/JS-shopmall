@@ -38,7 +38,7 @@
 		<!-- begin -->
 		<header class="mui-bar mui-bar-nav">
 			<a href="javascript:void(0)" id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></a>
-			<a href="javascript:void(0)" class="mui-icon mui-pull-right  font20 font-color-9">save</a>
+			<a id="save_account" href="javascript:void(0)" class="mui-icon mui-pull-right  font20 font-color-9">save</a>
 			<h1 class="mui-title">My Profile</h1>
 		</header>
 		<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
@@ -74,11 +74,11 @@
 		<!-- nickname -->
 		<div id="nickname" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
+                <button  class="text-read mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok"><a id="b-nickname" href="#nickname">Done</a></button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<div class="mui-table-view">
-				<textarea placeholder="Nick Name"></textarea>
+				<textarea id="t-nickname"  placeholder="Nick Name"></textarea>
 			</div>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#nickname"><b>Cancel</b></a></li>
@@ -88,25 +88,26 @@
 		<!-- realname -->
 		<div id="realname" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
-				<button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
+                <button id="b-names" class="text-read mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok"><a href="#realname">Done</a></button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<div class="mui-table-view nback">
-				<input placeholder="First Name" type="text" value="" name="" />
-				<input placeholder="Last Name" type="text" value="" name="" />
+				<input id="t-firstname" placeholder="First Name" type="text" value="" name="FirstName" />
+				<input id="t-lastname" placeholder="Last Name" type="text" value="" name="LastName" />
 			</div>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#realname"><b>Cancel</b></a></li>
 			</ul>
 		</div>
+
 		<!-- gender -->
 		<div id="gender" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
 			<div class="mui-poppicker-header bakc-fff">
 				<div class="mui-poppicker-clear"></div>
 			</div>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell"><span>Male</span></li>
-				<li class="mui-table-view-cell"><span>Female</span></li>
+			<ul id="l-gender" class="mui-table-view">
+                <li href="#gender" class="mui-table-view-cell"><a href="#gender">Male</a></li>
+                <li href="#gender" class="mui-table-view-cell"><a href="#gender">Female</a></li>
 			</ul>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell"><a href="#gender"><b>Cancel</b></a></li>
@@ -123,7 +124,7 @@
                         </b>
                     </a>
                 </button>
-				<button href="#my-address" class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok">Done</button>
+                <button class="text-read mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok"><a href="#my-addresss">Done</a></button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<div class="mui-table-view">
@@ -206,9 +207,7 @@
 					<a href="#nickname">
                         <span class="mui-navigate-right font18"></span>
                         Nickname
-                        <em id="username" class="mui-pull-right margin-r20 font-color-9 text-r">
-                            {{data.userName}}
-                        </em>
+                        <em id="username" class="mui-pull-right margin-r20 font-color-9 text-r">{{data.userName}}</em>
                     </a>
 				</li>
 				<li class="mui-table-view-cell">
@@ -327,8 +326,7 @@
                     }
                 }
             });
-			account_index.initCountry();
-			account_index.account_get();
+
 		</script>
 
 	</body>
