@@ -9,8 +9,6 @@
 		<link rel="stylesheet" href="../../css/base.css">
 		<link rel="stylesheet" href="../../css/subpage.css" />
 		<link rel="stylesheet" href="../../css/country.css" />
-        <link href="../../css/jquery.filer.css" type="text/css" rel="stylesheet" />
-        <link href="../../css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
 
         <style>
             .file {
@@ -178,14 +176,14 @@
 			<li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
 			{{each data.top as c i}}
 			<li class="padding-line44 height44 border-b">
-				<span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+				<span data-type="css_{{c.countriesCode.toLowerCase()}}" data-id="{{c.id}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
 				<i>{{c.name}}</i>
 			</li>
 			{{/each}}
 			<li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
 			{{each data.list as c i}}
 			<li class="padding-line44 height44 border-b">
-				<span data-type="css_{{c.countriesCode.toLowerCase()}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+				<span data-type="css_{{c.countriesCode.toLowerCase()}}" data-id="{{c.id}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
 				<i>{{c.name}}</i>
 			</li>
 			{{/each}}
@@ -285,7 +283,7 @@
 		</script>
 		<script src="../../js/common/api.js"></script>
 		<script src="../../js/common/jquery.min.js"></script>
-        <script src="../../js/common/jquery.filer.js"></script>
+        <!--<script src="../../js/common/jquery.filer.js"></script>-->
 		<script src="../../js/common/mui.min.js"></script>
 		<script src="../../js/common/template/template.js"></script>
 		<script src="../../js/common/mui.picker.min.js"></script>
@@ -296,7 +294,7 @@
 			mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
 			});
-            $('#filer_input').filer({
+            /*$('#filer_input').filer({
                 limit: 3,
                 maxSize: 3,
                 extensions: ['jpg', 'jpeg', 'png', 'gif'],
@@ -325,8 +323,7 @@
                         filesSizeAll: "Files you've choosed are too large! Please upload files up to {{fi-maxSize}} MB."
                     }
                 }
-            });
-
+            });*/
 		</script>
 
 	</body>

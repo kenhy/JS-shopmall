@@ -1,8 +1,7 @@
 /**
  * Created by zhangjianan on 2017/7/21.
  */
-
-var country_flag = "css_cn";//getCookie("country");
+var country_flag = "";
 
 /*用户*/
 var account_index ={
@@ -10,23 +9,16 @@ var account_index ={
     account_set:function () {
         var token = getCookie("token"),
             userName = $("#username").html(),
-            sex = $("#sex").children().html();
-        var sexs = 0;
-
-            /*firstName = $("#names").attr("data-firstName"),
+            firstName = $("#names").attr("data-firstName"),
             lastName = $("#names").attr("data-lastName"),
-            birthday = $("#result"),
+            sex = $("#sex").children().html(),
+            countryId = $("#country_type").attr("data-country"),
+            sexs = 0;
+        console.log(countryId);
+            /*birthday = $("#result"),
             city = $("#city"),
             province = $("#province"),
-            countryId = $("#country_type").attr("data-type"),
             imagePath = $("#imagePath"),*/
-
-        /*firstName: firstName,
-         birthday:birthday,
-         city:city,
-         province:province,
-         countryId:countryId,
-         imagePath:imagePath,*/
         if(sex == "Male"){
             sexs = 0;
         }else{
@@ -41,8 +33,10 @@ var account_index ={
             data:{
                 client_token: token,
                 userName: userName,
+                firstName: firstName,
+                lastName: lastName,
+                countryId:countryId,
                 sex:sexs
-
             },
             success:function () {
                 alert('yes');
@@ -50,6 +44,7 @@ var account_index ={
             }
         });
     },
+    /*用户数据读取*/
     account_get :function () {
         var token = getCookie("token");
         $.ajax({
@@ -62,52 +57,50 @@ var account_index ={
                 client_token:token
             },
             success:function (data) {
-                //console.log(data);
+                console.log(data);
+                //sex loading
+                var sex = data.data.sex;
+                data.data.sex = sex_choose(sex);
+                //tep loading
                 var list = template('my_msg',data);
-                //console.log(list);
                 $("[data-type=my_msg]").html(list);
+                //flag loading
+                var css_flag = data.data.country.countriesCode.toLowerCase();
+                country_flag = "css_" + css_flag;
+                console.log(country_flag);
+                $("#country_type").addClass(country_flag);
+                //img loading
                 if(data.data.imagePath === undefined){
                     $("#imgPath").attr('src',"../../images/Default-Avatar.jpg")
                 }else{
                     setCookie('imagePath',data.imagePath);
                 }
-                $("#country_type").addClass(country_flag);
                 init_time();
-
             }
         });
     },
     /*国家列表*/
     initCountry : function(){
-        var country = getCookie("country");
-        if (country == "") {
-            $.ajax({
-                type: "GET",
-                url: RTTMALL_API.URL_COUNTRY_HEADER,
-                dataType: "json",
-                async: false,
-                cache: false,
-                success: function (data) {
-                    console.log(data);
-                    if (data != null) {
-                        if (data.code != "1") {
-                            alert(data.msg);
-                        } else {
-                            // 国家列表
-                            var list = template('countryAndPrefixTemplate',data);
-                            $("[data-type=countryAndPrefix]").html(list);
-                            country_list()
-                        }
+        $.ajax({
+            type: "GET",
+            url: RTTMALL_API.URL_COUNTRY_HEADER,
+            dataType: "json",
+            async: true,
+            cache: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.code != "1") {
+                        alert(data.msg);
+                    } else {
+                        // 国家列表
+                        var tep = template('countryAndPrefixTemplate',data);
+                        $("[data-type=countryAndPrefix]").html(tep);
+                        //生成列表
+                        country_list();
                     }
                 }
-            });
-        }
-        else {
-            // 国家列表
-            var html = template('countryAndPrefixTemplate', JSON.parse(country));
-            $("[data-type=countryAndPrefix]").html(html);
-            country_list()
-        }
+            }
+        });
     }
 };
 
@@ -116,9 +109,11 @@ function country_list() {
     $("[data-type=countryAndPrefix] li").on('tap',function() {
         $("#country_type").removeClass(country_flag);
         var value = $(this).find("span").attr("data-type");
+        var id = $(this).find("span").attr("data-id");
         country_flag = value;
         console.log(value);
         $("#country_type").addClass(value);
+        $("#country_type").attr('data-country',id);
         $("#National-flag").removeClass("mui-active");
         $(".mui-backdrop").hide();
     });
@@ -176,6 +171,7 @@ function init_time() {
     })(mui);
 }
 
+/*页面加载*/
 function account_page_load() {
 
     /*save*/
@@ -191,16 +187,38 @@ function account_page_load() {
 
     /*sex*/
     var l_gender = $("#l-gender").children();
-    console.log(l_gender);
+    //console.log(l_gender);
     l_gender.bind('tap',function () {
         var list = $(this).html();
         var sex = $("#sex");
         sex.html(list);
     });
 
+    /*names*/
+    var b_names = $("#b-names");
+    b_names.on('tap',function () {
+        var t_firstname = $('#t-firstname').val(),
+            t_lastname = $('#t-lastname').val(),
+            names = $('#names');
+        names.html(t_firstname + ' ' + t_lastname);
+        names.attr('data-firstName',t_firstname);
+        names.attr('data-lastName',t_lastname);
+    });
+
+    /**/
+
 }
 
+function sex_choose(index) {
+    if (index == '0'){
+        return 'Male';
+    }else if (index == '1'){
+        return 'Female';
+    }
+}
 
-account_index.initCountry();
 account_index.account_get();
+console.log()
+account_index.initCountry();
+
 account_page_load();
