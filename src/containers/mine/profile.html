@@ -122,31 +122,33 @@
                         </b>
                     </a>
                 </button>
-                <button class="text-read mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok"><a href="#my-addresss">Done</a></button>
+                <button id="b-address" class="text-read mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok"><a href="#my-addresss">Done</a></button>
 				<div class="mui-poppicker-clear"></div>
 			</div>
 			<div class="mui-table-view">
-				<textarea placeholder="Address"></textarea>
+				<textarea id="t-address" placeholder="Address"></textarea>
 			</div>
 		</div>
 
         <!-- street-popup -->
         <div id="street-popup" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee">
             <div class="mui-poppicker-header bakc-fff">
-                <button class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel">
+                <button  class="mui-btn nborder nback font-color-h font-weight font14 mui-poppicker-btn-cancel">
                     <a href="#street-popup" class="font-color-h">
                         <b>
                             Cancel
                         </b>
                     </a>
                 </button>
-                <button class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">
-                    Done
+                <button id="b-city" class="mui-btn nborder nback font-color-3 font14 mui-poppicker-btn-ok ">
+                    <a href="#street-popup">
+                        Done
+                    </a>
                 </button>
                 <div class="mui-poppicker-clear"></div>
             </div>
             <div class="mui-table-view">
-                <textarea placeholder="Shipping Address"></textarea>
+                <textarea id="t-city" placeholder="Shipping Address"></textarea>
             </div>
         </div>
 
@@ -251,8 +253,8 @@
 					<a href="#street-popup">
                         <span class="mui-navigate-right font18"></span>
                         City
-                        <em class="mui-pull-right margin-r20 font-color-9 text-r">
-                            Tobago
+                        <em id="city" class="mui-pull-right margin-r20 font-color-9 text-r">
+                            {{data.city}}
                         </em>
                     </a>
 				</li>
@@ -260,7 +262,7 @@
 					<a href="#my-address">
                         <span class="mui-navigate-right font18"></span>
                         Address
-                        <em class="mui-pull-right margin-r20 font-color-9 text-r">
+                        <em id="address" class="mui-pull-right margin-r20 font-color-9 text-r">
                             {{data.Address}}
                         </em>
                     </a>

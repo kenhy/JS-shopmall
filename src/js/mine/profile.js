@@ -13,6 +13,7 @@ var account_index ={
             lastName = $("#names").attr("data-lastName"),
             sex = $("#sex").children().html(),
             countryId = $("#country_type").attr("data-country"),
+            city = $("#city").html(),
             sexs = 0;
         console.log(countryId);
             /*birthday = $("#result"),
@@ -36,6 +37,8 @@ var account_index ={
                 firstName: firstName,
                 lastName: lastName,
                 countryId:countryId,
+                //address:address,
+                city:city,
                 sex:sexs
             },
             success:function () {
@@ -180,9 +183,9 @@ function account_page_load() {
 
     /*nickname*/
     $("#b-nickname").on('tap',function () {
-        var list = $("#t-nickname").val();
+        var t_nickname = $("#t-nickname").val();
         var userName = $("#username");
-        userName.html(list);
+        userName.html(t_nickname);
     });
 
     /*sex*/
@@ -197,16 +200,29 @@ function account_page_load() {
     /*names*/
     var b_names = $("#b-names");
     b_names.on('tap',function () {
-        var t_firstname = $('#t-firstname').val(),
-            t_lastname = $('#t-lastname').val(),
-            names = $('#names');
+        var t_firstname = $("#t-firstname").val(),
+            t_lastname = $("#t-lastname").val(),
+            names = $("#names");
         names.html(t_firstname + ' ' + t_lastname);
         names.attr('data-firstName',t_firstname);
         names.attr('data-lastName',t_lastname);
     });
 
-    /**/
+    /*city*/
+    var b_city = $("#b-city");
+    b_city.on('tap',function () {
+        var t_city = $("#t-city").val();
+        var city = $("#city");
+        city.html(t_city);
+    });
 
+    /*address*/
+    var b_address = $('#b-address');
+    b_address.on('tap',function () {
+        var t_address = $("#t-address").val();
+        var address = $("#address");
+        address.html(t_address);
+    });
 }
 
 function sex_choose(index) {
@@ -218,7 +234,5 @@ function sex_choose(index) {
 }
 
 account_index.account_get();
-console.log()
 account_index.initCountry();
-
 account_page_load();
