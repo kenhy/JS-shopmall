@@ -3,6 +3,9 @@
  */
 var member_role = is_membership();
 console.log(member_role);
+$(document).ready(function () {
+    account_msg();
+});
 
 var init_account = {
     /*用户信息获取*/
@@ -73,5 +76,3 @@ function login_out() {
     delCookie("role");
     location.href = "/index.html";
 }
-
-account_msg();

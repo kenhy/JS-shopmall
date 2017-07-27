@@ -10,6 +10,13 @@ $(document).ready(function () {
     login_status();
     initSuperDeals();
     timer();
+    var gallery = mui('.home-banner');
+    gallery.slider({
+        interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0;
+    });
+    mui('body').on('tap', 'a', function() {
+        window.top.location.href = this.href;
+    });
 });
 
 
@@ -20,7 +27,7 @@ var init_index = {
             type: "get",
             url: RTTMALL_API.URL_INDEX_BANNER,
             dataType: "json",
-            async: true,
+            async: false,
             cache: false,
             data: {
                 client: "ios"
@@ -122,7 +129,7 @@ function initSuperDeals() {
                         startTimer(data.data.beginTime);
                     }
                     var html = template('superDealsTemplate', data.data);
-                    //$("[data-type=superDealsMain]").html(html);
+                    $("[data-type=superDealsMain]").html(html);
                 }
             }
         }

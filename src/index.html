@@ -129,40 +129,6 @@
                                     </a>
                                 </p>
                                 <dl class="hidden time-limit relative">
-                                    <dt class="mui-col-xs-6 border-r">
-                                <div class="mui-table-view-cell mui-media">
-                                    <a href="#" class="nmg npd">
-                                        <img class="mui-media-object margin-b20" src="images/cat.jpg">
-                                        <div class="mui-media-body nmg line12 font10 text-c">
-                                            <p class="font-color-3 margin-t10 text-c">Get a US $3.00 Coupon</p>
-                                            <p class="color-red margin-t5">US $2.36 <s class="font-color-9 font10 line-through">us$5.00</s></p>
-                                        </div>
-                                    </a>
-                                </div>
-                                </dt>
-                                    <dd class="border-r mui-col-xs-6">
-                                        <ul>
-                                            <li class="mui-table-view-cell mui-media">
-                                                <a href="#" class="nmg npd">
-                                                <img class="mui-media-object mui-pull-left" src="images/cat.jpg">
-                                                <div class="mui-media-body line12 font10 text-l mui-pull-left">
-                                                    <p class="color-red margin-t5">US $2.36</p>
-                                                    <p class="font-color-9 font10 line-through">us$5.00</p>
-                                                </div>
-                                            </a>
-                                            </li>
-                                            <p style="height: 1px; background:#EEEEEE; width: 100%; position:absolute; top: 50%;"></p>
-                                            <li class="mui-table-view-cell mui-media">
-                                                <a href="#" class="nmg npd">
-                                                <img class="mui-media-object mui-pull-left" src="images/cat.jpg">
-                                                <div class="mui-media-body line12 font10 text-l mui-pull-left">
-                                                    <p class="color-red margin-t5">US $2.36</p>
-                                                    <p class="font-color-9 font10 line-through">us$5.00</p>
-                                                </div>
-                                            </a>
-                                            </li>
-                                        </ul>
-                                    </dd>
                                 </dl>
                             </div>
                             <!-- Best Sellers -->
@@ -249,16 +215,41 @@
                 </div>
             </li>
             {{/each}}
-        </script>
+            <dt class="mui-col-xs-6 border-r">
+            <div class="mui-table-view-cell mui-media">
+                <a href="#" class="nmg npd">
+                    <img class="mui-media-object margin-b20" src="images/cat.jpg">
+                    <div class="mui-media-body nmg line12 font10 text-c">
+                        <p class="font-color-3 margin-t10 text-c">Get a US $3.00 Coupon</p>
+                        <p class="color-red margin-t5">US $2.36 <s class="font-color-9 font10 line-through">us$5.00</s></p>
+                    </div>
+                </a>
+            </div>
+            </dt>
 
-        <script type="text/javascript">
-            var gallery = mui('.home-banner');
-            gallery.slider({
-                interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0;
-            });
-            mui('body').on('tap', 'a', function() {
-                window.top.location.href = this.href;
-            });
+            <dd class="border-r mui-col-xs-6">
+                <ul>
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="#" class="nmg npd">
+                            <img class="mui-media-object mui-pull-left" src="images/cat.jpg">
+                            <div class="mui-media-body line12 font10 text-l mui-pull-left">
+                                <p class="color-red margin-t5">US $2.36</p>
+                                <p class="font-color-9 font10 line-through">us$5.00</p>
+                            </div>
+                        </a>
+                    </li>
+                    <p style="height: 1px; background:#EEEEEE; width: 100%; position:absolute; top: 50%;"></p>
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="#" class="nmg npd">
+                            <img class="mui-media-object mui-pull-left" src="images/cat.jpg">
+                            <div class="mui-media-body line12 font10 text-l mui-pull-left">
+                                <p class="color-red margin-t5">US $2.36</p>
+                                <p class="font-color-9 font10 line-through">us$5.00</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </dd>
         </script>
     </body>
 
