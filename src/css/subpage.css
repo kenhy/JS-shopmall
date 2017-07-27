@@ -1,9 +1,10 @@
 @charset "utf-8";
 /*注册*/
+header a {width: 12%;display: block; margin: auto; text-align: center;}
 .mui-card .mui-control-content {padding: 10px;}
 .register{width: 88% !important; margin: auto;}
 .mui-input-row .mui-icon{ font-size: 20px; position: absolute; z-index: 1; top: 14px; left: 0; width: 38px; height: 38px; text-align: center; color: #ccc;}
-.mui-input-row .mui-icon-eye{left:initail;top:14px !important;}
+.mui-input-row .mui-icon-eye{left:initial;top:14px !important;}
 .service-title{width:100%;margin: auto;overflow: hidden;}
 .service-title li{float: left;font-size: 14px;font-weight: bold;text-align: center;position: relative;cursor: pointer;width: 50%;}
 .current{ padding: 5px 0;}
@@ -20,7 +21,7 @@
 .area-phone{position: absolute; left:114px;}
 .validation-box{position: relative;}
 .validation-num{ width: 100% !important; position: absolute; left: 0; z-index: 2;}
-.verificatione{position: absolute;right: 0; text-align: center; height: 44px; display:table; z-index: 5;} 
+.verificatione{position: absolute;right: 0; text-align: center; height: 44px; display:table; z-index: 5;}
 .verificatione-code{ vertical-align:middle;display:table-cell;line-height: 14px; padding: 0 5px !important; height: 45px; min-width: 70px;}
 .button-facebook { background:#4267b2 !important; height: 44px!important;}
 .button-twitter{background:#1da1f2 !important; height: 44px!important;}
@@ -106,7 +107,7 @@
 .mui-control-content ul dl dd.mui-pull-right{margin-top: 5px;}
 .mui-control-content ul dl dd.mui-pull-right:active{background: #EEEEEE !important;}
 .mui-control-content ul dl dd a{ width: 70px; text-align: center; display: block; line-height: 28px; font-size: 0.8em;}
-.mui-control-content ul dl dd a:hover{color: #FFFFFF;} 
+.mui-control-content ul dl dd a:hover{color: #FFFFFF;}
 .mui-popover{z-index: 10000;}
 .right-nav{ border: 1px #EEEEEE solid; margin-top: -6px;}
 .right-nav li{line-height: 26px; padding: 0 10px; border-bottom: 1px #EEEEEE solid;}
@@ -181,7 +182,7 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .select-button input{top: 50% !important; margin-top:-13px;}
 .select-goods{ position: absolute; top: 12px; left: 30px; right:0;}
 .buy-now{position: fixed; bottom: 0; left: 0; width: 100%; z-index: 3;padding: 7px 15px;}
-.buy-now .mui-checkbox{margin: 5px 0;} 
+.buy-now .mui-checkbox{margin: 5px 0;}
 .buy-now div.mui-pull-right{padding: 0 15px 0 0;}
 .buy-now-button{ width: 80px; padding: 6px 0; margin-left: 5px;}
 .buy-now div.mui-pull-right p{line-height: 16px;}
@@ -302,7 +303,7 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .time-limit{width: 100%;}
 .time-limit img{ display: block; width: 100%;}
 .time-limit dd{position: absolute;right: 0;top: 0;height: 100%;}
-.time-limit dd ul{ position: relative; width: 100%; height: 100%;} 
+.time-limit dd ul{ position: relative; width: 100%; height: 100%;}
 .time-limit dd ul li{width: 100%;}
 .time-limit dd ul li:first-child{ position: absolute; top: 5%;}
 .time-limit dd ul li:last-child{ position: absolute; bottom: 5%;}
