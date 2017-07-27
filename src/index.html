@@ -128,7 +128,7 @@
                                         <span class="mui-pull-right text-r">MORE</span>
                                     </a>
                                 </p>
-                                <dl class="hidden time-limit relative">
+                                <dl data-type="superDealsMain" class="hidden time-limit relative">
                                 </dl>
                             </div>
                             <!-- Best Sellers -->
@@ -200,28 +200,12 @@
         </script>
         <!--superDealsTemplate-->
         <script id="superDealsTemplate" type="text/html">
-            {{each productList as s i}}
-            <li class="col-sm-30 col-md-20 col-lg-15">
-                <div class="img-container">
-                    <a href="<%=request.getContextPath()%>/product/details.jsp?pid={{s.productId}}" target="_blank" class="superdeal-link"	><img src="{{s.mainImage}}?x-oss-process=image/resize,m_lfit,h_200,w_200"></a>
-                </div>
-                <div class="price-panel">
-                    <div class="price">
-                        <a href="<%=request.getContextPath()%>/product/details.jsp?pid={{s.productId}}" target="_blank" class="superdeal-link"><span>TTD$ {{s.superDealPrice.toFixed(2)}}</span> <del>TTD$ {{s.originalPrice.toFixed(2)}}</del></a>
-                    </div>
-                    <div class="discount">
-                        <a href="<%=request.getContextPath()%>/product/details.jsp?pid={{s.productId}}" target="_blank" class="superdeal-link"><span>{{ ((1 - s.superDealPrice / s.originalPrice) * 100).toFixed(1)}}% off</span></a>
-                    </div>
-                </div>
-            </li>
-            {{/each}}
             <dt class="mui-col-xs-6 border-r">
             <div class="mui-table-view-cell mui-media">
                 <a href="#" class="nmg npd">
-                    <img class="mui-media-object margin-b20" src="images/cat.jpg">
+                    <img class="mui-media-object margin-b20" src="{{productList[0].mainImage}}">
                     <div class="mui-media-body nmg line12 font10 text-c">
-                        <p class="font-color-3 margin-t10 text-c">Get a US $3.00 Coupon</p>
-                        <p class="color-red margin-t5">US $2.36 <s class="font-color-9 font10 line-through">us$5.00</s></p>
+                        <p class="color-red margin-t5">US ${{productList[0].superDealPrice.toFixed(2)}} <s class="font-color-9 font10 line-through">US ${{productList[0].originalPrice.toFixed(2)}}</s></p>
                     </div>
                 </a>
             </div>
@@ -230,20 +214,20 @@
                 <ul>
                     <li class="mui-table-view-cell mui-media">
                         <a href="#" class="nmg npd">
-                            <img class="mui-media-object mui-pull-left" src="images/cat.jpg">
+                            <img class="mui-media-object mui-pull-left" src="{{productList[1].mainImage}}">
                             <div class="mui-media-body line12 font10 text-l mui-pull-left">
-                                <p class="color-red margin-t5">US $2.36</p>
-                                <p class="font-color-9 font10 line-through">us$5.00</p>
+                                <p class="color-red margin-t5">US ${{productList[1].superDealPrice.toFixed(2)}}</p>
+                                <p class="font-color-9 font10 line-through">us ${{productList[1].originalPrice.toFixed(2)}}</p>
                             </div>
                         </a>
                     </li>
                     <p style="height: 1px; background:#EEEEEE; width: 100%; position:absolute; top: 50%;"></p>
                     <li class="mui-table-view-cell mui-media">
                         <a href="#" class="nmg npd">
-                            <img class="mui-media-object mui-pull-left" src="images/cat.jpg">
+                            <img class="mui-media-object mui-pull-left" src="{{productList[2].mainImage}}">
                             <div class="mui-media-body line12 font10 text-l mui-pull-left">
-                                <p class="color-red margin-t5">US $2.36</p>
-                                <p class="font-color-9 font10 line-through">us$5.00</p>
+                                <p class="color-red margin-t5">US ${{productList[2].superDealPrice.toFixed(2)}}</p>
+                                <p class="font-color-9 font10 line-through">us${{productList[2].originalPrice.toFixed(2)}}</p>
                             </div>
                         </a>
                     </li>
