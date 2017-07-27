@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<div id="chatwin" style="width: 440px; height: 460px"></div>
+</body>
+<!-- IE8及以下支持JSON -->
+<!--[if lt IE 9]>
+<script src="https://g.alicdn.com/aliww/ww/json/json.js" charset="utf-8"></script>
+<![endif]-->
+<!-- 自动适配移动端与pc端 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/common/api.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script src="https://g.alicdn.com/aliww/??h5.imsdk/2.1.0/scripts/yw/wsdk.js,h5.openim.kit/0.3.7/scripts/kit.js" charset="utf-8"></script>
+<script>
+    try {
+        var iframe = getUrlParam("iframe");
+        var param = iframe.split("_");
+        var w = param[1];
+        var h = param[3];
+        $("#chatwin").css("width", w + "px").css("height", h + "px");
+    } catch (e) {
+    }
+    window.onload = function() {
+        var chatAuth = getCookie("chat_auth");
+        var chatobj;
+        if (chatAuth != null && chatAuth != "") {
+            chatobj = JSON.parse(chatAuth);
+            chat(chatobj);
+        } else {
+            var token = getCookie("token");
+            $.post(RTTMALL_API.URL_IM_AUTH, {
+                client_token : token
+            }, function(response) {
+                if (response.code == "1") {
+                    var auth = response.data;
+                    chat(auth);
+                    setCookie("chat_auth", JSON.stringify(auth));
+                }
+            })
+        }
+    }
+    function chat(auth) {
+        WKIT.init({
+            uid : auth.uid,
+            appkey : 23639382,
+            groupId:161633192,
+            credential : auth.credential,
+            touid : 'rttservice',
+            container : document.getElementById('chatwin'),
+            hideLoginSuccess : true,
+            sendMsgToCustomService : true,
+            placeholder : "What can I do for you ? (Press Enter to send)",
+            welcomeMsg : "Welcome to RTTMALL",
+        });
+    }
+
+    function setCookie(name, value) {
+        var expdate = new Date(); // 初始化时间
+        expdate.setTime(expdate.getTime() + 24 * 60 * 60 * 1000); // 时间
+        document.cookie = name + "=" + value + ";expires="
+            + expdate.toGMTString() + ";path=/";
+    }
+    function getCookie(name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(name + "=")
+            if (c_start != -1) {
+                c_start = c_start + name.length + 1
+                c_end = document.cookie.indexOf(";", c_start)
+                if (c_end == -1)
+                    c_end = document.cookie.length
+                return unescape(document.cookie.substring(c_start, c_end))
+            }
+        }
+        return ""
+    }
+</script>
+</html>

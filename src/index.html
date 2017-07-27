@@ -120,7 +120,14 @@
                             </div>
                             <!--限时抢购-->
                             <div class="bakc-fff margin-t10">
-                                <p class="hidden padding-line44 font-color-3 border-be"><b>Super Deals start in</b><s class="color-red margin-l5">05:14:38</s><a href="flsah-deals.html"><span class="mui-pull-right text-r">MORE</span></a></p>
+                                <p class="hidden padding-line44  font-color-3 border-be"><b id="deit"></b>
+                                    <s class="color-red font16" data-role="hour"></s> :
+                                    <s class="color-red font16" data-role="minute"></s> :
+                                    <s class="color-red font16" data-role="second"></s>
+                                    <a href="flsah-deals.html">
+                                        <span class="mui-pull-right text-r">MORE</span>
+                                    </a>
+                                </p>
                                 <dl class="hidden time-limit relative">
                                     <dt class="mui-col-xs-6 border-r">
                                 <div class="mui-table-view-cell mui-media">
@@ -158,21 +165,15 @@
                                     </dd>
                                 </dl>
                             </div>
+                            <!-- Best Sellers -->
                             <div class="bakc-fff margin-t10">
-                                <p class="hidden padding-line44 font-color-3 border-be"><b>Best Sellers</b><a><span class="mui-pull-right text-r">MORE</span></a></p>
-                                <div class="mui-slider">
-                                    <div data-type="index-footer-Sellers" class="mui-slider-group mui-slider-loop">
-                                        <!-- Best Sellers -->
-                                    </div>
-                                </div>
+                                <p  class="hidden padding-line44  font-color-3 border-be"><b>Best Sellers</b><span class="mui-pull-right text-r">MORE</span></p>
+                                <div data-type="index-footer-Sellers" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted LeftAndRightSlide"></div>
                             </div>
+                            <!-- New Arrivals -->
                             <div class="bakc-fff margin-t10">
-                                <p class="hidden padding-line44 font-color-3 border-be"><b>New Arrivals</b><span class="mui-pull-right text-r">MORE</span></p>
-                                <div class="mui-slider">
-                                    <div data-type="index-footer-Arrivals" class="mui-slider-group mui-slider-loop">
-                                        <!-- New Arrivals -->
-                                    </div>
-                                </div>
+                                <p  class="hidden padding-line44  font-color-3 border-be"><b>New Arrivals</b><span class="mui-pull-right text-r">MORE</span></p>
+                                <div data-type="index-footer-Arrivals" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted LeftAndRightSlide"></div>
                             </div>
                         </div>
                         <div id="move-togger"></div>
@@ -189,7 +190,7 @@
         <script src="js/main.js"></script>
         <script src="js/index.js"></script>
         <script src="js/common/template/template.js"></script>
-        <!--template-->
+        <!--template index-banner-->
         <script id="index-banner" type="text/html">
             <div class="mui-slider-item mui-slider-item-duplicate">
                 <a href="#">
@@ -209,71 +210,48 @@
             </a>
             </div>
         </script>
+        <!--template index-footer-Arrivals -->
         <script id="index-footer-Arrivals" type="text/html">
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <ul class="mui-table-view mui-grid-view">
-                    {{each list as c i}}
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4">
-                        <a href="#"><img class="mui-media-object" src="{{c.mainImage}}"></a>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-            <!--2-->
-            <div class="mui-slider-item">
-                <ul class="mui-table-view mui-grid-view">
-                    {{each list as c i}}
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4">
-                        <a href="#"><img class="mui-media-object" src="{{c.mainImage}}"></a>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-            <!--3-->
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <ul class="mui-table-view mui-grid-view">
-                    {{each list as c i}}
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4">
-                        <a href="#"><img class="mui-media-object" src="{{c.mainImage}}"></a>
-                    </li>
-                    {{/each}}
-                </ul>
+            <div class="mui-scroll LeftAndRightList">
+                {{each list as c i}}
+                <a class="mui-control-item">
+                    <img class="mui-media-object" src="{{c.mainImage}}">
+                    <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
+                </a>
+                {{/each}}
             </div>
         </script>
+        <!--template index-footer-sellers-->
         <script id="index-footer-Sellers" type="text/html">
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <ul class="mui-table-view mui-grid-view">
-                    {{each list as c i}}
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4">
-                        <a href="#"><img class="mui-media-object" src="{{c.mainImage}}"></a>
-                    </li>
-                    {{/each}}
-                </ul>
+            <div class="mui-scroll LeftAndRightList">
+                {{each list as c i}}
+                <a class="mui-control-item">
+                    <img class="mui-media-object" src="{{c.mainImage}}">
+                    <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
+                </a>
+                {{/each}}
             </div>
-            <!--2-->
-            <div class="mui-slider-item">
-                <ul class="mui-table-view mui-grid-view">
-                    {{each list as c i}}
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4">
-                        <a href="#"><img class="mui-media-object" src="{{c.mainImage}}"></a>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-            <!--3-->
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <ul class="mui-table-view mui-grid-view">
-                    {{each list as c i}}
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4">
-                        <a href="#"><img class="mui-media-object" src="{{c.mainImage}}"></a>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
+        </script>
+        <!--superDealsTemplate-->
+        <script id="superDealsTemplate" type="text/html">
+            {{each productList as s i}}
+            <li class="col-sm-30 col-md-20 col-lg-15">
+                <div class="img-container">
+                    <a href="<%=request.getContextPath()%>/product/details.jsp?pid={{s.productId}}" target="_blank" class="superdeal-link"	><img src="{{s.mainImage}}?x-oss-process=image/resize,m_lfit,h_200,w_200"></a>
+                </div>
+                <div class="price-panel">
+                    <div class="price">
+                        <a href="<%=request.getContextPath()%>/product/details.jsp?pid={{s.productId}}" target="_blank" class="superdeal-link"><span>TTD$ {{s.superDealPrice.toFixed(2)}}</span> <del>TTD$ {{s.originalPrice.toFixed(2)}}</del></a>
+                    </div>
+                    <div class="discount">
+                        <a href="<%=request.getContextPath()%>/product/details.jsp?pid={{s.productId}}" target="_blank" class="superdeal-link"><span>{{ ((1 - s.superDealPrice / s.originalPrice) * 100).toFixed(1)}}% off</span></a>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
         </script>
 
         <script type="text/javascript">
-            init_index_all();
             var gallery = mui('.home-banner');
             gallery.slider({
                 interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0;
