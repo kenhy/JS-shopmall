@@ -62,6 +62,7 @@ var brand_list = {
         var init = data.listCategory;
         var list = template('category-list-right',data);
         $("[data-type=category_list_right]").html(list);
+        contents.querySelector('.content-open').classList.add('mui-active');
     }
 };
 
