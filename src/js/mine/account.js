@@ -1,8 +1,6 @@
 /**
  * Created by JonathanZhang on 2017/7/18.
  */
-var member_role = is_membership();
-console.log(member_role);
 $(document).ready(function () {
     account_msg();
 });
@@ -52,13 +50,14 @@ function account_msg() {
             '<p class="font14 font-weight font-color-3">'+ username +'</p>'+
             '<p class="mui-ellipsis font-color-6 font12">'+ loginName +'</p>'+
             '<p class="iconfont icon-vip ">'+
-            '<span id="member_role" class="font10 font-color-9">Membership</span>'+
+            '<span id="member_role" data-type="role" class="font10 font-color-9"></span>'+
             '</p>'+
             '</div>'+
             '<s class="mui-navigate-right font18"></s>'+
             '</a>';
         user_login.html(null);
         user_login.html(tpl);
+        is_membership();
     }else{
         alert('not login');
         location.href = "/index.html";

@@ -109,22 +109,77 @@ function getCustomerRole() {
 
 /*会员判断*/
 function is_membership() {
-    var data = getCustomerRole();
-    var index = getCookie("role");
-    var role_name = "";
-    if(index != ""){
-        for (var i= 0;i<data.length;i++){
-            if(data[i].code == index){
-                role_name = data[i].name;
-                console.log(data[i].name);
-                return;
-            }
+    var customerRole = getCustomerRole();
+    var role = getCookie("role");
+    if(role != ""){
+        if (role == customerRole[2].code) {
+            $(".icon-vip").css("color", "#cca77a");
+            $("[data-type=role]").html(customerRole[2].name);
+        } else if (role == customerRole[1].code) {
+            $("[data-type=role]").html(customerRole[1].name);
+        } else {
+            $("[data-type=role]").html(customerRole[0].name);
         }
     }
-    else{
+    else {
         alert("error");
     }
-    return role_name;
 }
 
+
+/*URL判断*/
+function Url_data() {
+    this.urlData = [];
+    this.top = 0;
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;
+}
+
+function push(elements) {
+    this.urlData[this.top++] = element;
+}
+
+function peek() {
+    return this.urlData[this.top-1];
+}
+
+function pop() {
+    return this.urlData[--this.top];
+}
+
+function clear() {
+    this.top = 0;
+}
+
+function length() {
+    return this.top;
+}
+
+var pathname_list = new Url_data();
+
+/*页面URL监听*/
+function pathname_listener() {
+    var pathname = window.location.pathname;
+    pathname_list.push(pathname);
+}
+
+/*url跳转*/
+function url_jump(index) {
+    var admin = window.protocol + "//" + window.hostname;
+    if (index==""){
+        /*index为空*/
+        window.location.href = admin;
+    }else if(index == "back"){
+        /*返回上一页
+         * 从URl栈中读取*/
+        pathname_list.pop();
+        var back_url = pathname_list.peek();
+        window.location.href = admin + back_url;
+    }else if(index == "index"){
+        /*返回主页*/
+        pathname_list.clear();
+        window.location.href = admin;
+    }
+}
 

@@ -174,8 +174,6 @@ function login_status() {
         //console.log(tpl);
         user_login.html(null);
         user_login.html(tpl);
-
-        index_chart.attr("href", "containers/login/login.html");
     } else {
         if (imagePath == "null") {
             imagePath = "images/Default-Avatar.jpg";
@@ -186,7 +184,7 @@ function login_status() {
             '<p class="font14 font-weight font-color-3">' + username + '</p>' +
             '<p class="mui-ellipsis font-color-6 font12">' + loginName + '</p>' +
             '<p class="iconfont icon-vip ">' +
-            '<span class="font10 font-color-9">Membership</span>' +
+            '<span data-type="role" class="font10 font-color-9"></span>' +
             '</p>' +
             '</div>' +
             '<s class="mui-navigate-right font18"></s>' +
@@ -194,7 +192,7 @@ function login_status() {
         //console.log(tpl);
         user_login.html(null);
         user_login.html(tpl);
-        index_chart.attr("href", "containers/shoppingcard/shopping-cart.html");
+        is_membership();
     }
 }
 

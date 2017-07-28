@@ -15,9 +15,7 @@ var account_index ={
             countryId = $("#country_type").attr("data-country"),
             city = $("#city").html(),
             sexs = 0;
-        console.log(countryId);
             /*birthday = $("#result"),
-            city = $("#city"),
             province = $("#province"),
             imagePath = $("#imagePath"),*/
         if(sex == "Male"){
@@ -73,7 +71,7 @@ var account_index ={
                 console.log(country_flag);
                 $("#country_type").addClass(country_flag);
                 //img loading
-                if(data.data.imagePath === undefined){
+                if(data.data.imagePath === undefined || data.data.imagePath === ""){
                     $("#imgPath").attr('src',"../../images/Default-Avatar.jpg")
                 }else{
                     setCookie('imagePath',data.imagePath);
@@ -114,7 +112,7 @@ function country_list() {
         var value = $(this).find("span").attr("data-type");
         var id = $(this).find("span").attr("data-id");
         country_flag = value;
-        console.log(value);
+        //console.log(value);
         $("#country_type").addClass(value);
         $("#country_type").attr('data-country',id);
         $("#National-flag").removeClass("mui-active");
