@@ -285,7 +285,6 @@
 		</script>
 		<script src="../../js/common/api.js"></script>
 		<script src="../../js/common/jquery.min.js"></script>
-        <!--<script src="../../js/common/jquery.filer.js"></script>-->
 		<script src="../../js/common/mui.min.js"></script>
 		<script src="../../js/common/template/template.js"></script>
 		<script src="../../js/common/mui.picker.min.js"></script>
@@ -296,36 +295,6 @@
 			mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
 			});
-            /*$('#filer_input').filer({
-                limit: 3,
-                maxSize: 3,
-                extensions: ['jpg', 'jpeg', 'png', 'gif'],
-                changeInput: true,
-                showThumbs: true,
-                uploadFile: {
-                    url:RTTMALL_API.URL_ACCOUNT_UPLOADIMAGE,
-                    data: {},
-                    type: 'POST',
-                    enctype: 'multipart/form-data',
-                    beforeSend: function(){},
-                    success:function (data) {
-                        console.log(data);
-                    }
-                },
-                showThumbs:true,
-                appendTo:null,
-                files:[],
-                captions:{
-                    button: "Choose Files",
-                    feedback: "files were chosen",
-                    errors: {
-                        filesLimit: "Only {{fi-limit}} files are allowed to be uploaded.",
-                        filesType: "Only Images are allowed to be uploaded.",
-                        filesSize: "{{fi-name}} is too large! Please upload file up to {{fi-maxSize}} MB.",
-                        filesSizeAll: "Files you've choosed are too large! Please upload files up to {{fi-maxSize}} MB."
-                    }
-                }
-            });*/
 		</script>
 
 	</body>
