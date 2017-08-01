@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Super Deals</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/subpage.css"/>
+    <style type="text/css">
+        .mui-control-content {
+            margin-top: 50px;
+        }
+
+        .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+            color: #fff !important;
+            border-color: #FFFFFF !important;
+        }
+
+        .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active p {
+            color: #FFFFFF !important;
+        }
+
+        .mui-segmented-control.mui-scroll-wrapper {
+            height: 48px;
+        }
+
+        .product-text {
+            height: 120px;
+        }
+
+        .product-size {
+            margin-right: 10px
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav bakc-fff">
+    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
+    <a id="remind_me" href="remind-me.html" class="user_check mui-icon iconfont icon-icon-remind mui-pull-right font22 font-color-9"></a>
+    <h1 class="mui-title">Super Deals</h1>
+</header>
+<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+<div style="position: fixed; top:44px; left: 0;z-index: 9;">
+    <div
+        class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted flsah-deals">
+        <div id="segmentedControl" data-type="dealsindex" class="mui-scroll">
+            <!-- super deals time-->
+        </div>
+    </div>
+</div>
+<div class="mui-scroll">
+    <div id="segmentedControlContents" data-type="superdealslist" class="mui-content">
+        <!-- super deals list -->
+    </div>
+    <div id="move-togger"></div>
+</div>
+</div>
+<!-- off-canvas backdrop -->
+<div class="mui-off-canvas-backdrop"></div>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
+<script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/template/template.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/superdeal.js"></script>
+
+<script type="text/javascript">
+    template.helper('dateFormat', function (timestamp) {
+        var date = new Date(new Number(timestamp));
+        return date.format("MM/dd hh:mm");
+    });
+</script>
+
+<!-- tpl Control -->
+<script id="dealsindex" type="text/html">
+    {{each list as p i}}
+    <a class="mui-control-item current" href="#item{{p.planId}}">{{p.title}}<p class="margin-t5">{{p.beginTime |
+        dateFormat}}</p></a>
+    {{/each}}
+</script>
+
+<!-- tpl list -->
+<script id="superdealslist" type="text/html">
+    {{each list as q i}}
+    <div id="item{{q.planId}}" class="mui-control-content">
+        {{if q.isNow }}
+        <p class="padding-line44">This round ends in:
+            <span data-type="countdown"  data-endTime="{{q.endTime}}" data-countdown="{{q.countdown}}" class="color-red">
+                00:00:00
+            </span>
+        </p>
+        {{else}}
+        <p class="padding-line44">New round starts in:
+            <span class="color-red">
+                {{q.beginTime | dateFormat}}
+            </span>
+        </p>
+        {{/if}}
+        <ul class="mui-table-view border-t margin-b10">
+            {{each q.productList as p i}}
+            <li class="mui-table-view-cell">
+                <p class="product-size mui-pull-left radius4 margin-t5"><img src="{{p.mainImage}}"></p>
+                <dl class="mui-media-body product-text relative">
+                    <dt class="nospace font14">{{p.name}}</dt>
+                    <dd>
+                        <p class="font-weight color-red">TTD$ {{p.superDealPrice.toFixed(2)}} /{{p.unit}}</p>
+                        <p class="line-through">TTD$ {{p.originalPrice.toFixed(2)}} /{{p.unit}}</p>
+                    </dd>
+                    <dd>
+                        <p class="mui-pull-right text-r bottom-right color-skyblue">REMIND ME</p>
+                    </dd>
+                </dl>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    var controls = document.getElementById('segmentedControl');
+    var contents = document.getElementById('segmentedControlContents');
+    /*右上角菜单显示*/
+    mui.init();
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
+    initSuperDeals();
+    controls.querySelector('.mui-control-item').classList.add('mui-active');
+    contents.querySelector('.mui-control-content').classList.add('mui-active');
+</script>
+</body>
+
+</html>
