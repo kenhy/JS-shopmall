@@ -88,8 +88,9 @@ var RTTMALL_API = {
     URL_INDEX_BANNER : API_BASE_URL + "/ad/banner",
     // 获取广告
     URL_AD : API_BASE_URL + "/ad",
-    // 首页Super Deals
+    // Super Deals
     URL_INDEX_SUPERDEALS : API_BASE_URL + "/super_deal/current",
+    URL_INDEX_SUPERDEALES_REMIND_ADD : API_BASE_URL + "/super_deal/remind/add",
     // 首页Super Deals
     URL_SUPERDEALS : API_BASE_URL + "/super_deal",
     // 首页系统公告

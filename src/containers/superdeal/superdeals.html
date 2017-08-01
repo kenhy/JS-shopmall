@@ -66,7 +66,7 @@
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
-<script src="../../js/superdeal.js"></script>
+<script src="../../js/superdeals/superdeal.js"></script>
 
 <script type="text/javascript">
     template.helper('dateFormat', function (timestamp) {
@@ -78,8 +78,9 @@
 <!-- tpl Control -->
 <script id="dealsindex" type="text/html">
     {{each list as p i}}
-    <a class="mui-control-item current" href="#item{{p.planId}}">{{p.title}}<p class="margin-t5">{{p.beginTime |
-        dateFormat}}</p></a>
+    <a class="mui-control-item current" href="#item{{p.planId}}">{{p.title}}
+        <p class="margin-t5">{{p.beginTime | dateFormat}}</p>
+    </a>
     {{/each}}
 </script>
 
@@ -111,7 +112,7 @@
                         <p class="line-through">TTD$ {{p.originalPrice.toFixed(2)}} /{{p.unit}}</p>
                     </dd>
                     <dd>
-                        <p class="mui-pull-right text-r bottom-right color-skyblue">REMIND ME</p>
+                        <a data-productid="{{superDealProductId}}" class="mui-pull-right text-r bottom-right color-skyblue">REMIND ME</a>
                     </dd>
                 </dl>
             </li>
@@ -124,7 +125,6 @@
 <script type="text/javascript">
     var controls = document.getElementById('segmentedControl');
     var contents = document.getElementById('segmentedControlContents');
-    /*右上角菜单显示*/
     mui.init();
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;

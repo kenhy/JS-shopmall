@@ -2,9 +2,8 @@
  * Created by zhangjianan on 2017/7/31.
  */
 
-/**
- * 初始化超级折扣
- */
+
+/*折扣初始化*/
 function initSuperDeals(){
     $.ajax({
         type:'POST',
@@ -18,6 +17,23 @@ function initSuperDeals(){
             var list_body = template("superdealslist",data.data);
             $("[data-type=superdealslist]").html(list_body);
             timer();
+        }
+    });
+}
+
+/*添加提醒*/
+function addRemind(index) {
+    var token = getCookie("token");
+    $.ajax({
+        url:URL_INDEX_SUPERDEALES_REMIND_ADD,
+        async:true,
+        data:{
+            client_token:token,
+            superDealProductId:index
+        },
+        success:function (data) {
+            console.log(data);
+
         }
     });
 }
