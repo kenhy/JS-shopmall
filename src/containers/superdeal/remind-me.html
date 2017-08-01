@@ -203,17 +203,27 @@
         pullRefresh : {
             container:"#refreshContainer",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
             up : {
-                height:30,//可选.默认50.触发上拉加载拖动距离
+                height:50,//可选.默认50.触发上拉加载拖动距离
                 auto:false,//可选,默认false.自动上拉加载一次
                 contentrefresh : "Loading...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
                 contentnomore:'-_- have nothing !!!',//可选，请求完毕若没有更多数据时显示的提醒内容；
-                callback : function () {
-                    return endPulldown(true);
-                    mui('#refreshContainer').pullRefresh().endPulldown();
-                }//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+                callback : function() {
+                    var self = this; // 这里的this == mui('#refreshContainer').pullRefresh()
+                    // 加载更多的内容
+                    loadMore(this);
+                } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
             }
         }
     });
+    var loadMore = function(pullRefresh) {
+        // 加载更多的内容到列表中
+        // TODO
+        // 如果没有更多数据了，则关闭上拉加载
+        pullRefresh.endPullupToRefresh(true);
+        // 如果有更多数据，则继续
+        pullRefresh.endPullupToRefresh(false);
+    };
+
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });

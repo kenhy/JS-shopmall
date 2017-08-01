@@ -25,7 +25,7 @@ function initSuperDeals(){
 function addRemind(index) {
     var token = getCookie("token");
     $.ajax({
-        url:URL_INDEX_SUPERDEALES_REMIND_ADD,
+        url:RTTMALL_API.URL_INDEX_SUPERDEALES_REMIND_ADD,
         async:true,
         data:{
             client_token:token,
@@ -33,7 +33,7 @@ function addRemind(index) {
         },
         success:function (data) {
             console.log(data);
-
+            alert(data.msg);
         }
     });
 }

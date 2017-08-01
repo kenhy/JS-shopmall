@@ -112,7 +112,7 @@
                         <p class="line-through">TTD$ {{p.originalPrice.toFixed(2)}} /{{p.unit}}</p>
                     </dd>
                     <dd>
-                        <a data-productid="{{superDealProductId}}" class="mui-pull-right text-r bottom-right color-skyblue">REMIND ME</a>
+                        <span data-productid="{{p.superDealProductId}}" class="remind-add mui-pull-right text-r bottom-right color-skyblue">REMIND ME</span>
                     </dd>
                 </dl>
             </li>
@@ -132,6 +132,12 @@
     initSuperDeals();
     controls.querySelector('.mui-control-item').classList.add('mui-active');
     contents.querySelector('.mui-control-content').classList.add('mui-active');
+    var add_remind = $(".remind-add");
+    add_remind.on('click',function () {
+        var index = this.getAttribute("data-productid");
+        console.log(index);
+        addRemind(index);
+    })
 </script>
 </body>
 
