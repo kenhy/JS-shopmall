@@ -2,8 +2,6 @@
  * Created by zhangjianan on 2017/7/31.
  */
 
-
-
 /**
  * 初始化超级折扣
  */
@@ -23,7 +21,6 @@ function initSuperDeals(){
         }
     });
 }
-
 
 function timer() {
     countdown();
@@ -63,7 +60,6 @@ function show_date_time(timerEndTime) {
             + formatTime(seconds);
     }
 }
-
 
 function formatTime(timeStr) {
     if (timeStr < 10)

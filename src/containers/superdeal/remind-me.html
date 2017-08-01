@@ -35,85 +35,54 @@
 
 
 <body>
+
 <header class="mui-bar mui-bar-nav">
     <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
     <h1 class="mui-title">Remind me</h1>
 </header>
+
 <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
     <div class="mui-scroll">
         <div class="mui-content">
-            <div>
-                <div class="padding-line44 bakc-fff font-weight font-color-9"><span class="color-red">22:00:00</span>
-                </div>
-                <ul class="mui-table-view border-t margin-b10">
-                    <li class="mui-table-view-cell">
-                        <p class="product-size mui-pull-left radius4 margin-t5"><img src="../../images/img.jpg"></p>
-                        <dl class="mui-media-body product-text relative">
-                            <dt class="nospace font14">This is the title. This is the title. This is the title. This is
-                                the title. This is the title. This is the title.
-                            </dt>
-                            <dd>
-                                <p class="font-weight color-red">US $86.64</p>
-                                <p class="line-through">US $86.64</p>
-                            </dd>
-                            <dd class="hidden">
-                                <p class="mui-pull-left text-l font12">popularity：60</p>
-                                <p class="mui-pull-right text-r color-red">Cancle reminder</p>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <p class="product-size mui-pull-left radius4 margin-t5"><img src="../../images/img.jpg"></p>
-                        <dl class="mui-media-body product-text relative">
-                            <dt class="nospace font14">This is the title. This is the title. This is the title. This is
-                                the title. This is the title. This is the title.
-                            </dt>
-                            <dd>
-                                <p class="font-weight color-red">US $86.64</p>
-                                <p class="line-through">US $86.64</p>
-                            </dd>
-                            <dd class="hidden">
-                                <p class="mui-pull-left text-l">popularity：60</p>
-                                <p class="mui-pull-right text-r color-red">Cancle reminder</p>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <div class="padding-line44 bakc-fff font-weight font-color-9">05-5:<span
-                    class="color-red">22:00:00</span></div>
-                <ul class="mui-table-view border-t margin-b10">
-                    <li class="mui-table-view-cell">
-                        <p class="product-size mui-pull-left radius4 margin-t5"><img src="../../images/img.jpg"></p>
-                        <dl class="mui-media-body product-text relative">
-                            <dt class="nospace font14">This is the title. This is the title. This is the title. This is
-                                the title. This is the title. This is the title.
-                            </dt>
-                            <dd>
-                                <p class="font-weight color-red">US $86.64</p>
-                                <p class="line-through">US $86.64</p>
-                            </dd>
-                            <dd class="hidden">
-                                <p class="mui-pull-left text-l">popularity：60</p>
-                                <p class="mui-pull-right text-r bottom-right color-red font12">Cancle reminder</p>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
-            </div>
+            <!-- remind-tpl -->
         </div>
         <div id="move-togger"></div>
     </div>
 </div>
+
 <!-- off-canvas backdrop -->
 <div class="mui-off-canvas-backdrop"></div>
+
 <script src="../../js/common/api.js"></script>
 <script src="../../js/common/jquery.min.js"></script>
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
-<script>
+<script id="remind-tpl" type="text/html">
+    <div id="">
+        <div class="padding-line44 bakc-fff font-weight font-color-9"><span class="color-red">22:00:00</span>
+        </div>
+        <ul class="mui-table-view border-t margin-b10">
+            <li class="mui-table-view-cell">
+                <p class="product-size mui-pull-left radius4 margin-t5"><img src="../../images/img.jpg"></p>
+                <dl class="mui-media-body product-text relative">
+                    <dt class="nospace font14">This is the title. This is the title. This is the title. This is
+                        the title. This is the title. This is the title.
+                    </dt>
+                    <dd>
+                        <p class="font-weight color-red">US $86.64</p>
+                        <p class="line-through">US $86.64</p>
+                    </dd>
+                    <dd class="hidden">
+                        <p class="mui-pull-left text-l font12">popularity：60</p>
+                        <p class="mui-pull-right text-r color-red">Cancle reminder</p>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</script>
+<script type="text/javascript">
     mui.init();
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
