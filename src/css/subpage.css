@@ -190,8 +190,7 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 	.buy-now button {
 		width:initial; padding:6px 12px;
 	}
-	.cart-btn-button{padding: 5px 10px !important;}
-}
+	.cart-btn-button{padding: 5px 10px !important;}}
 /*订单*/
 .order-details-text dd{ margin-left: 20px; margin-right: 20px;}
 .order-details-text dd p{margin-bottom: 5px; line-height: 18px;}
@@ -257,18 +256,15 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 @media (max-width:420px) {
 	.excellent-line {
 		width: 60%;
-	}
-}
+	}}
 @media (max-width:390px) {
 	.excellent-line {
 		width: 53%;
-	}
-}
+	}}
 @media (max-width:320px) {
 	.excellent-line {
 		width: 43%;
-	}
-}
+	}}
 .excellent-star p.fourstar{ width: 40px;}
 .excellent-star p.threestar{ width: 30px;}
 .excellent-star p.twostar{ width: 20px;}
@@ -350,8 +346,15 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .flsah-deals a.mui-control-item p{color: #DDDDDD !important;}
 .schedule{ width: 100%; height: 10px; border-radius:10px ; position: relative;}
 .schedule span{ width: 20%; height: 10px; border-radius:10px ; position: absolute;
-background-image:-webkit-linear-gradient(to right, #FE949C, #FE465F); background-image:linear-gradient(to right,#FE949C, #FE465F);
-}
+background-image:-webkit-linear-gradient(to right, #FE949C, #FE465F); background-image:linear-gradient(to right,#FE949C, #FE465F);}
+/*底栏*/
+.mobOpen{width: 100%;height: 40px;background:rgba(211, 143, 97, 0.8);padding-top: 5px;z-index:99;bottom:0;}
+.jueduidignwei{ position:relative;}
+.mobileLogo{width: 30px;height: 30px;margin-left: 4%;float:left;background:url(../images/mobileLogo.png) no-repeat center center;background-size: 30px 30px;}
+.mobileTitle{float:left;margin-left:3%;text-align: center;line-height: 33px;font-size: 17px;color:#000;}
+.mobileOpen{width: 26%;height: 31px;float: right;margin-right: 10%;text-align: center;line-height: 31px;font-size: 14px;border-radius: 11px;-webkit-border-radius:11x;-moz-border-radius:11px;cursor: pointer;background: #000;color: #e5bb87;font-weight: bold;}
+.removeOpen{width: 20px;height: 20px;border: 2px solid #000;float:left;margin-left: 20px;margin-top: 5px;font-size: 15px;text-align: center;border-radius:41px;-webkit-border-radius:41x;-moz-border-radius:41px;background:url(../images/x.png) no-repeat center center;background-size: 20px 20px;line-height: 17px;font-weight: 600;}
+
 
 
 

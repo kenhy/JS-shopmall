@@ -170,63 +170,9 @@
                 <div id="move-togger"></div>
             </div>
         </div>
+        <div id="footer_init"></div>
         <!-- off-canvas backdrop -->
         <div class="mui-off-canvas-backdrop"></div>
-    </div>
-</div>
-<div id="search-suggest" class="bakc-fff border-t searchhistory mui-hidden">
-    <div>
-        <dl>
-            <dt class="mui-table-view-cell font-color-3 bakc-eee">Search History</dt>
-            <dd>
-                <ul class="bakc-fff">
-                    <li class="padding-line44 height44 border-be margin-l10">记录1<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录2<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录3<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录4<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录5<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录6<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录7<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录8<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录9<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录10<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录11<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录12<span
-                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
-                    <li class="padding-line44 height44 border-be margin-l10">zuihou</li>
-                </ul>
-            </dd>
-            <dt class="mui-table-view-cell font-color-3 bakc-eee">Popular Search</dt>
-            <dd>
-                <ul class="bakc-fff">
-                    <li class="padding-line44 height44 border-be margin-l10">记录1</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录2</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录3</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录4</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录5</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录6</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录7</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录8</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录9</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录10</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录11</li>
-                    <li class="padding-line44 height44 border-be margin-l10">记录12</li>
-                    <li class="padding-line44 height44 border-be margin-l10">zuihou</li>
-                </ul>
-            </dd>
-        </dl>
-        <p class="mui-table-view-cell text-c font-color-3 bakc-fff clearhistory border radius4">Clear All History</p>
     </div>
 </div>
 <script src="js/common/api.js"></script>
@@ -314,15 +260,6 @@
             </li>
         </ul>
     </dd>
-</script>
-<script type="text/javascript">
-    $("#search-input").bind('keyup',function () {
-        $("#search-suggest").removeClass('mui-hidden');
-    });
-    $(".mui-icon-clear").on('click',function () {
-        console.log('a');
-        $("#search-suggest").addClass('mui-hidden');
-    });
 </script>
 </body>
 </html>

@@ -204,3 +204,21 @@ function downloadMobile() { //判断是ios还是android
 							}, 850);
 		}
 }
+
+function init_footer() {
+var tpl = '<footer class="footer" style="position: fixed; bottom: 0; left: 0; width: 100%; margin: 0; z-index: 999">'
+    +'<ul id="footer_ul">'
+    +'<li id="down_app">'
+    +'<div class="mobOpen">'
+    +'<div class="removeOpen" onClick="removeOpen()">X</div>'
+    +'<div class="mobileLogo"></div>'
+    +'<div class="mobileTitle">RTTMALL</div>'
+    +'<div class="mobileOpen" onClick="downloadMobile()">OPEN</div>'
+    +'</div>'
+    +'</li>'
+    +'</ul>'
+    +'</footer>';
+$("#footer_init").html(tpl);
+}
+
+init_footer();
