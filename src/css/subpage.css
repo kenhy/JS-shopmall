@@ -1,10 +1,9 @@
 @charset "utf-8";
 /*注册*/
-header a {width: 12%;display: block; margin: auto; text-align: center;}
+header a {width: 12%;display: block; margin: auto; text-align: center; height: 44px; line-height: 44px !important; padding: 0 !important;}
 .mui-card .mui-control-content {padding: 10px;}
 .register{width: 88% !important; margin: auto;}
 .mui-input-row .mui-icon{ font-size: 20px; position: absolute; z-index: 1; top: 14px; left: 0; width: 38px; height: 38px; text-align: center; color: #ccc;}
-.mui-input-row .mui-icon-eye{left:initial;top:14px !important;}
 .service-title{width:100%;margin: auto;overflow: hidden;}
 .service-title li{float: left;font-size: 14px;font-weight: bold;text-align: center;position: relative;cursor: pointer;width: 50%;}
 .current{ padding: 5px 0;}
@@ -300,6 +299,9 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .property .p-size li{height: 40px;line-height: 40px;}
 /*首页*/
 .home-coupon img{width: 100%; display: block;}
+.searchhistory{overflow-y: scroll; top: 44px; border-radius: 0 0 7px 7px !important ; position: fixed; z-index: 2; width: 100%;}
+.searchhistory dl{max-height: 300px; overflow-y: scroll;}
+.clearhistory{ width: 80%; z-index: 3; margin:15px auto;}
 .time-limit{width: 100%;}
 .time-limit img{ display: block; width: 100%;}
 .time-limit dd{position: absolute;right: 0;top: 0;height: 100%;}

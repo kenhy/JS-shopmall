@@ -1,248 +1,328 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>RttMall</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-        <link rel="stylesheet" href="css/mui.min.css">
-        <link rel="stylesheet" href="css/base.css">
-        <link rel="stylesheet" href="css/subpage.css" />
+<head>
+    <meta charset="utf-8">
+    <title>RttMall</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/subpage.css"/>
 
-    </head>
+</head>
 
-    <body>
-        <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-            <!--侧滑菜单部分-->
-            <aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
-                <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-                    <div class="mui-scroll">
-                        <ul class="mui-table-view nmg">
-                            <li id="user_login" class="mui-table-view-cell mui-media">
-                            </li>
-                        </ul>
-                        <ul class="mui-table-view margin-t12">
-                            <li class="mui-table-view-cell height44">
-                                <a href="index.html" class="">
-                                <s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left">
-                                </s>Home
-                            </a>
-                            </li>
-                            <li class="mui-table-view-cell height44">
-                                <a href="containers/type/brand-list.html" class="">
-                                <s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left">
-                                </s>Categories
-                            </a>
-                            </li>
-                            <li class="mui-table-view-cell height44">
-                                <a href="containers/shoppingcard/shopping-cart.html" class="user_check">
-                                <s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left">
-                                </s>Cart
-                            </a>
-                            </li>
-                            <li class="mui-table-view-cell height44">
-                                <a href="my-order.html" class="user_check">
-                                <s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left">
-                                </s>My Orders
-                            </a>
-                            </li>
-                            <li class="mui-table-view-cell height44">
-                                <a href="wish-list.html" class="user_check">
-                                <s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left">
-                                </s>Wish List
-                            </a>
-                            </li>
-                        </ul>
-                        <ul class="mui-table-view margin-t12">
-                            <li class="mui-table-view-cell height44">
-                                <a href="containers/coupon/coupons.html" class="user_check"><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
-                            </li>
-                            <li class="mui-table-view-cell height44">
-                                <a href="recently.html" class="user_check"><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
-                            </li>
-                        </ul>
-                        <ul class="mui-table-view margin-t12">
-                            <li class="mui-table-view-cell height44">
-                                <a href="./containers/message/chat.html">
-                                    <s class="iconfont icon-review font18 margin-r10 font-color-9"></s>
-                                    Leave Feedback
-                                </a>
-                            </li>
-                            <li class="mui-table-view-cell height44">
-                                <a href="" class="">
-                                    <s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>
-                                    Invite Friends
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-            <!--主界面部分-->
-            <div class="mui-inner-wrap">
-                <header class="mui-bar mui-bar-nav bakc-fff">
-                    <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-                    <a id="index_chart" href="containers/shoppingcard/shopping-cart.html" class="user_check mui-icon mui-pull-right iconfont icon-gouwuche2 font20 font-color-9"></a>
-                    <div class="nav-input radius4">
-                        <span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-                        <input placeholder="I'm looking for" type="text" class="mui-input-clear nback nborder nmg npd" />
-                    </div>
-                </header>
-                <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
-                    <div class="mui-scroll">
-                        <div class="mui-content">
-                            <div id="slider" class="mui-slider home-banner">
-                                <div data-type="home-banner" class="mui-slider-group mui-slider-loop">
-                                    <!--home-banner-->
-                                </div>
-                            </div>
-                            <!-- 4个图标 -->
-                            <ul class="mui-table-view mui-grid-view nback">
-                                <li class="mui-table-view-cell mui-media mui-col-xs-3">
-                                    <a href="containers/type/brand-list.html">
-                                <img class="mui-media-object" src="images/home/home-1.png">
-                                <div class="mui-media-body nmg line12 font10">All Categories</div>
-                                </a>
-                                </li>
-                                <li class="mui-table-view-cell mui-media mui-col-xs-3">
-                                    <a href="containers/coupon/coupons.html">
-                                <img class="mui-media-object" src="images/home/home-2.png">
-                                <div class="mui-media-body nmg line12 font10">Coupon</div>
-                                </a>
-                                </li>
-                                <li class="mui-table-view-cell mui-media mui-col-xs-3">
-                                    <a href="containers/type/brand-list.html#item2">
-                                <img class="mui-media-object" src="images/home/home-3.png">
-                                <div class="mui-media-body nmg line12 font10">The Brand</div>
-                                </a>
-                                </li>
-                                <li class="mui-table-view-cell mui-media mui-col-xs-3">
-                                    <a href="#">
-                                <img class="mui-media-object" src="images/home/home-4.png">
-                                <div class="mui-media-body nmg line12 font10">Other</div>
-                                </a>
-                                </li>
-                            </ul>
-                            <!--优惠券链接-->
-                            <div class="home-coupon  margin-t10">
-                                <a href="containers/coupon/new-coupons.html"><img src="images/home/home-coupon.jpg" /></a>
-                            </div>
-                            <!--限时抢购-->
-                            <div class="bakc-fff margin-t10">
-                                <p class="hidden padding-line44  font-color-3 border-be"><b id="deit"></b>
-                                    <s class="color-red font16" data-role="hour"></s> :
-                                    <s class="color-red font16" data-role="minute"></s> :
-                                    <s class="color-red font16" data-role="second"></s>
-                                    <a href="containers/superdeal/superdeals.html">
-                                        <span class="mui-pull-right text-r">MORE</span>
-                                    </a>
-                                </p>
-                                <dl data-type="superDealsMain" class="hidden time-limit relative">
-                                </dl>
-                            </div>
-                            <!-- Best Sellers -->
-                            <div class="bakc-fff margin-t10">
-                                <p  class="hidden padding-line44  font-color-3 border-be"><b>Best Sellers</b><span class="mui-pull-right text-r">MORE</span></p>
-                                <div data-type="index-footer-Sellers" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted LeftAndRightSlide"></div>
-                            </div>
-                            <!-- New Arrivals -->
-                            <div class="bakc-fff margin-t10">
-                                <p  class="hidden padding-line44  font-color-3 border-be"><b>New Arrivals</b><span class="mui-pull-right text-r">MORE</span></p>
-                                <div data-type="index-footer-Arrivals" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted LeftAndRightSlide"></div>
-                            </div>
-                        </div>
-                        <div id="move-togger"></div>
-                    </div>
-                </div>
-                <!-- off-canvas backdrop -->
-                <div class="mui-off-canvas-backdrop"></div>
-            </div>
-        </div>
-        <script src="js/common/api.js"></script>
-        <script src="js/common/jquery.min.js"></script>
-        <script src="js/common/mui.min.js"></script>
-        <script src="js/common/Sideslip.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/index.js"></script>
-        <script src="js/common/template/template.js"></script>
-        <!--template index-banner-->
-        <script id="index-banner" type="text/html">
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="#">
-               <img src="images/banner.jpg">
-            </a>
-            </div>
-            {{each data as c i}}
-            <div class="mui-slider-item">
-                <a href="#">
-                <img src="{{c.imagePath}}">
-            </a>
-            </div>
-            {{/each}}
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="#">
-                <img src="images/banner.jpg">
-            </a>
-            </div>
-        </script>
-        <!--template index-footer-Arrivals -->
-        <script id="index-footer-Arrivals" type="text/html">
-            <div class="mui-scroll LeftAndRightList">
-                {{each list as c i}}
-                <a class="mui-control-item">
-                    <img class="mui-media-object" src="{{c.mainImage}}">
-                    <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
-                </a>
-                {{/each}}
-            </div>
-        </script>
-        <!--template index-footer-sellers-->
-        <script id="index-footer-Sellers" type="text/html">
-            <div class="mui-scroll LeftAndRightList">
-                {{each list as c i}}
-                <a class="mui-control-item">
-                    <img class="mui-media-object" src="{{c.mainImage}}">
-                    <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
-                </a>
-                {{/each}}
-            </div>
-        </script>
-        <!--superDealsTemplate-->
-        <script id="superDealsTemplate" type="text/html">
-            <dt class="mui-col-xs-6 border-r">
-            <div class="mui-table-view-cell mui-media">
-                <a href="#" class="nmg npd">
-                    <img class="mui-media-object margin-b20" src="{{productList[0].mainImage}}">
-                    <div class="mui-media-body nmg line12 font10 text-c">
-                        <p class="color-red margin-t5">US ${{productList[0].superDealPrice.toFixed(2)}} <s class="font-color-9 font10 line-through">US ${{productList[0].originalPrice.toFixed(2)}}</s></p>
-                    </div>
-                </a>
-            </div>
-            </dt>
-            <dd class="border-r mui-col-xs-6">
-                <ul>
-                    <li class="mui-table-view-cell mui-media">
-                        <a href="#" class="nmg npd">
-                            <img class="mui-media-object mui-pull-left" src="{{productList[1].mainImage}}">
-                            <div class="mui-media-body line12 font10 text-l mui-pull-left">
-                                <p class="color-red margin-t5">US ${{productList[1].superDealPrice.toFixed(2)}}</p>
-                                <p class="font-color-9 font10 line-through">us ${{productList[1].originalPrice.toFixed(2)}}</p>
-                            </div>
+<style>
+    .mui-input-row .mui-icon.mui-icon-clear {
+        left: initial;
+    }
+</style>
+
+<body>
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--侧滑菜单部分-->
+    <aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
+        <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <ul class="mui-table-view nmg">
+                    <li id="user_login" class="mui-table-view-cell mui-media">
+                    </li>
+                </ul>
+                <ul class="mui-table-view margin-t12">
+                    <li class="mui-table-view-cell height44">
+                        <a href="index.html" class="">
+                            <s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left">
+                            </s>Home
                         </a>
                     </li>
-                    <p style="height: 1px; background:#EEEEEE; width: 100%; position:absolute; top: 50%;"></p>
-                    <li class="mui-table-view-cell mui-media">
-                        <a href="#" class="nmg npd">
-                            <img class="mui-media-object mui-pull-left" src="{{productList[2].mainImage}}">
-                            <div class="mui-media-body line12 font10 text-l mui-pull-left">
-                                <p class="color-red margin-t5">US ${{productList[2].superDealPrice.toFixed(2)}}</p>
-                                <p class="font-color-9 font10 line-through">us${{productList[2].originalPrice.toFixed(2)}}</p>
-                            </div>
+                    <li class="mui-table-view-cell height44">
+                        <a href="containers/type/brand-list.html" class="">
+                            <s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left">
+                            </s>Categories
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell height44">
+                        <a href="containers/shoppingcard/shopping-cart.html" class="user_check">
+                            <s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left">
+                            </s>Cart
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell height44">
+                        <a href="my-order.html" class="user_check">
+                            <s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left">
+                            </s>My Orders
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell height44">
+                        <a href="wish-list.html" class="user_check">
+                            <s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left">
+                            </s>Wish List
                         </a>
                     </li>
                 </ul>
+                <ul class="mui-table-view margin-t12">
+                    <li class="mui-table-view-cell height44">
+                        <a href="containers/coupon/coupons.html" class="user_check"><s
+                            class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
+                    </li>
+                    <li class="mui-table-view-cell height44">
+                        <a href="recently.html" class="user_check"><s
+                            class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently
+                            Viewed Items</a>
+                    </li>
+                </ul>
+                <ul class="mui-table-view margin-t12">
+                    <li class="mui-table-view-cell height44">
+                        <a href="./containers/message/chat.html">
+                            <s class="iconfont icon-review font18 margin-r10 font-color-9"></s>
+                            Leave Feedback
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell height44">
+                        <a href="" class="">
+                            <s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>
+                            Invite Friends
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <!--主界面部分-->
+    <div class="mui-inner-wrap">
+        <header class="mui-bar mui-bar-nav bakc-fff">
+            <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+            <a id="index_chart" href="containers/shoppingcard/shopping-cart.html"
+               class="user_check mui-icon mui-pull-right iconfont icon-gouwuche2 font20 font-color-9"></a>
+            <div class="nav-input mui-input-row  radius4" style="clear: none;">
+                <span class="iconfont icon-sousuo font18 mui-pull-left"></span>
+                <input id="search-input" placeholder="I'm looking for" type="text"
+                       class="mui-input-clear nback nborder nmg npd"/>
+            </div>
+        </header>
+        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="mui-content">
+                    <div id="slider" class="mui-slider home-banner">
+                        <div data-type="home-banner" class="mui-slider-group mui-slider-loop">
+                            <!--home-banner-->
+                        </div>
+                    </div>
+                    <!-- 4个图标 -->
+                    <ul class="mui-table-view mui-grid-view nback">
+                        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+                            <a href="containers/type/brand-list.html">
+                                <img class="mui-media-object" src="images/home/home-1.png">
+                                <div class="mui-media-body nmg line12 font10">All Categories</div>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+                            <a href="containers/coupon/coupons.html">
+                                <img class="mui-media-object" src="images/home/home-2.png">
+                                <div class="mui-media-body nmg line12 font10">Coupon</div>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+                            <a href="containers/type/brand-list.html#item2">
+                                <img class="mui-media-object" src="images/home/home-3.png">
+                                <div class="mui-media-body nmg line12 font10">The Brand</div>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+                            <a href="#">
+                                <img class="mui-media-object" src="images/home/home-4.png">
+                                <div class="mui-media-body nmg line12 font10">Other</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--优惠券链接-->
+                    <div class="home-coupon  margin-t10">
+                        <a href="containers/coupon/new-coupons.html"><img src="images/home/home-coupon.jpg"/></a>
+                    </div>
+                    <!--限时抢购-->
+                    <div class="bakc-fff margin-t10">
+                        <p class="hidden padding-line44  font-color-3 border-be"><b id="deit"></b>
+                            <s class="color-red font16" data-role="hour"></s> :
+                            <s class="color-red font16" data-role="minute"></s> :
+                            <s class="color-red font16" data-role="second"></s>
+                            <a href="containers/superdeal/superdeals.html">
+                                <span class="mui-pull-right text-r">MORE</span>
+                            </a>
+                        </p>
+                        <dl data-type="superDealsMain" class="hidden time-limit relative">
+                        </dl>
+                    </div>
+                    <!-- Best Sellers -->
+                    <div class="bakc-fff margin-t10">
+                        <p class="hidden padding-line44  font-color-3 border-be"><b>Best Sellers</b><span
+                            class="mui-pull-right text-r">MORE</span></p>
+                        <div data-type="index-footer-Sellers"
+                             class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted LeftAndRightSlide"></div>
+                    </div>
+                    <!-- New Arrivals -->
+                    <div class="bakc-fff margin-t10">
+                        <p class="hidden padding-line44  font-color-3 border-be"><b>New Arrivals</b><span
+                            class="mui-pull-right text-r">MORE</span></p>
+                        <div data-type="index-footer-Arrivals"
+                             class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted LeftAndRightSlide"></div>
+                    </div>
+                </div>
+                <div id="move-togger"></div>
+            </div>
+        </div>
+        <!-- off-canvas backdrop -->
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+</div>
+<div id="search-suggest" class="bakc-fff border-t searchhistory mui-hidden">
+    <div>
+        <dl>
+            <dt class="mui-table-view-cell font-color-3 bakc-eee">Search History</dt>
+            <dd>
+                <ul class="bakc-fff">
+                    <li class="padding-line44 height44 border-be margin-l10">记录1<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录2<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录3<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录4<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录5<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录6<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录7<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录8<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录9<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录10<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录11<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录12<span
+                        class="iconfont icon-tiaozhuan mui-pull-right"></span></li>
+                    <li class="padding-line44 height44 border-be margin-l10">zuihou</li>
+                </ul>
             </dd>
-        </script>
-    </body>
-
+            <dt class="mui-table-view-cell font-color-3 bakc-eee">Popular Search</dt>
+            <dd>
+                <ul class="bakc-fff">
+                    <li class="padding-line44 height44 border-be margin-l10">记录1</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录2</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录3</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录4</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录5</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录6</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录7</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录8</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录9</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录10</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录11</li>
+                    <li class="padding-line44 height44 border-be margin-l10">记录12</li>
+                    <li class="padding-line44 height44 border-be margin-l10">zuihou</li>
+                </ul>
+            </dd>
+        </dl>
+        <p class="mui-table-view-cell text-c font-color-3 bakc-fff clearhistory border radius4">Clear All History</p>
+    </div>
+</div>
+<script src="js/common/api.js"></script>
+<script src="js/common/jquery.min.js"></script>
+<script src="js/common/mui.min.js"></script>
+<script src="js/common/Sideslip.js"></script>
+<script src="js/main.js"></script>
+<script src="js/index.js"></script>
+<script src="js/common/template/template.js"></script>
+<!--template index-banner-->
+<script id="index-banner" type="text/html">
+    <div class="mui-slider-item mui-slider-item-duplicate">
+        <a href="#">
+            <img src="images/banner.jpg">
+        </a>
+    </div>
+    {{each data as c i}}
+    <div class="mui-slider-item">
+        <a href="#">
+            <img src="{{c.imagePath}}">
+        </a>
+    </div>
+    {{/each}}
+    <div class="mui-slider-item mui-slider-item-duplicate">
+        <a href="#">
+            <img src="images/banner.jpg">
+        </a>
+    </div>
+</script>
+<!--template index-footer-Arrivals -->
+<script id="index-footer-Arrivals" type="text/html">
+    <div class="mui-scroll LeftAndRightList">
+        {{each list as c i}}
+        <a class="mui-control-item">
+            <img class="mui-media-object" src="{{c.mainImage}}">
+            <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
+        </a>
+        {{/each}}
+    </div>
+</script>
+<!--template index-footer-sellers-->
+<script id="index-footer-Sellers" type="text/html">
+    <div class="mui-scroll LeftAndRightList">
+        {{each list as c i}}
+        <a class="mui-control-item">
+            <img class="mui-media-object" src="{{c.mainImage}}">
+            <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
+        </a>
+        {{/each}}
+    </div>
+</script>
+<!--superDealsTemplate-->
+<script id="superDealsTemplate" type="text/html">
+    <dt class="mui-col-xs-6 border-r">
+    <div class="mui-table-view-cell mui-media">
+        <a href="#" class="nmg npd">
+            <img class="mui-media-object margin-b20" src="{{productList[0].mainImage}}">
+            <div class="mui-media-body nmg line12 font10 text-c">
+                <p class="color-red margin-t5">US ${{productList[0].superDealPrice.toFixed(2)}} <s
+                    class="font-color-9 font10 line-through">US ${{productList[0].originalPrice.toFixed(2)}}</s></p>
+            </div>
+        </a>
+    </div>
+    </dt>
+    <dd class="border-r mui-col-xs-6">
+        <ul>
+            <li class="mui-table-view-cell mui-media">
+                <a href="#" class="nmg npd">
+                    <img class="mui-media-object mui-pull-left" src="{{productList[1].mainImage}}">
+                    <div class="mui-media-body line12 font10 text-l mui-pull-left">
+                        <p class="color-red margin-t5">US ${{productList[1].superDealPrice.toFixed(2)}}</p>
+                        <p class="font-color-9 font10 line-through">us ${{productList[1].originalPrice.toFixed(2)}}</p>
+                    </div>
+                </a>
+            </li>
+            <p style="height: 1px; background:#EEEEEE; width: 100%; position:absolute; top: 50%;"></p>
+            <li class="mui-table-view-cell mui-media">
+                <a href="#" class="nmg npd">
+                    <img class="mui-media-object mui-pull-left" src="{{productList[2].mainImage}}">
+                    <div class="mui-media-body line12 font10 text-l mui-pull-left">
+                        <p class="color-red margin-t5">US ${{productList[2].superDealPrice.toFixed(2)}}</p>
+                        <p class="font-color-9 font10 line-through">us${{productList[2].originalPrice.toFixed(2)}}</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </dd>
+</script>
+<script type="text/javascript">
+    $("#search-input").bind('keyup',function () {
+        $("#search-suggest").removeClass('mui-hidden');
+    });
+    $(".mui-icon-clear").on('click',function () {
+        console.log('a');
+        $("#search-suggest").addClass('mui-hidden');
+    });
+</script>
+</body>
 </html>
