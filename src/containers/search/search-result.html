@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Search result</title>
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <link rel="stylesheet" href="../../css/mui.min.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
@@ -16,7 +15,7 @@
     <!--主界面部分-->
     <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav">
-            <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+            <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
             <a id="menu" class="mui-icon mui-pull-right iconfont icon-shenglve font20 font-color-3"
                href="#topPopover"></a>
             <div class="nav-input radius4">
@@ -235,7 +234,7 @@
 <script type="text/html">
     <ul class="mui-table-view border-t nmg">
         <li class="mui-table-view-cell mui-media">
-            <a href="javascript:;">
+            <a href="javascript:(0)">
                 <p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
                 <dl class="mui-media-body product-text relative">
                     <dt class="nospace font14">

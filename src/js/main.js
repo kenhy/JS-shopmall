@@ -126,6 +126,28 @@ function is_membership() {
     }
 }
 
+/*跳转到细节*/
+function toDetails(productId) {
+    $.ajax({
+        type : "get",
+        url : RTTMALL_API.URL_PRODUCT_GETSKU,
+        dataType : "json",
+        async : true,
+        cache : false,
+        data : {
+            productId : productId
+        },
+        success : function(data) {
+            if (data != null) {
+                if (data.code != "1") {
+                    return;
+                }
+                window.location.href = domain + "/product/details.jsp?id="
+                    + data.data;
+            }
+        }
+    });
+}
 
 /*URL判断*/
 function Url_data() {
@@ -189,17 +211,13 @@ function downloadMobile() { //判断是ios还是android
 		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 		if (isAndroid) {
 			window.location.href = "rttmall://gxkj/shop/SplashActivity";
-			window
-					.setTimeout(
-							function() {
+			window.setTimeout(function() {
 								window.location.href = "http://img.rttmall.com/apk/RTTMALL.apk";
 							}, 850);
 		}
 		if (isiOS) {
 			window.location.href = "RTTMALL://com.xmgxkj.RTTMALL";
-			window
-					.setTimeout(
-							function() {
+			window.setTimeout(function() {
 								window.location.href = "https://itunes.apple.com/cn/app/rttmall/id1033048220?mt=8";
 							}, 850);
 		}

@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>RttMall</title>
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <link rel="stylesheet" href="css/mui.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/subpage.css"/>
@@ -62,13 +61,16 @@
                 </ul>
                 <ul class="mui-table-view margin-t12">
                     <li class="mui-table-view-cell height44">
-                        <a href="containers/coupon/coupons.html" class="user_check"><s
-                            class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
+                        <a href="containers/coupon/coupons.html" class="user_check">
+                            <s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>
+                            My Coupons
+                        </a>
                     </li>
                     <li class="mui-table-view-cell height44">
-                        <a href="recently.html" class="user_check"><s
-                            class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently
-                            Viewed Items</a>
+                        <a href="recently.html" class="user_check">
+                            <s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>
+                            Recently Viewed Items
+                        </a>
                     </li>
                 </ul>
                 <ul class="mui-table-view margin-t12">
@@ -96,8 +98,7 @@
                class="user_check mui-icon mui-pull-right iconfont icon-gouwuche2 font20 font-color-9"></a>
             <div class="nav-input mui-input-row  radius4" style="clear: none;">
                 <span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-                <input id="search-input" placeholder="I'm looking for" type="text"
-                       class="mui-input-clear nback nborder nmg npd"/>
+                <input id="search-input" placeholder="I'm looking for" type="text" class="mui-input-clear nback nborder nmg npd"/>
             </div>
         </header>
         <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
@@ -231,12 +232,12 @@
         <a href="#" class="nmg npd">
             <img class="mui-media-object margin-b20" src="{{productList[0].mainImage}}">
             <div class="mui-media-body nmg line12 font10 text-c">
-                <p class="color-red margin-t5">US ${{productList[0].superDealPrice.toFixed(2)}} <s
-                    class="font-color-9 font10 line-through">US ${{productList[0].originalPrice.toFixed(2)}}</s></p>
+                <p class="color-red margin-t5">US ${{productList[0].superDealPrice.toFixed(2)}}
+                    <s class="font-color-9 font10 line-through">US ${{productList[0].originalPrice.toFixed(2)}}</s>
+                </p>
             </div>
         </a>
     </div>
-    </dt>
     <dd class="border-r mui-col-xs-6">
         <ul>
             <li class="mui-table-view-cell mui-media">
@@ -261,5 +262,19 @@
         </ul>
     </dd>
 </script>
+<script type="text/javascript">
+    mui.init({
+        subpages:[{
+            url:'list.html',
+            id:'list.html',
+            styles:{
+                top:'45px',//mui标题栏默认高度为45px；
+                bottom:'0px'//默认为0px，可不定义；
+            }
+        }]
+    });
+</script>
 </body>
 </html>
+
+

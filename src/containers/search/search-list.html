@@ -45,40 +45,12 @@
             <div class="mui-scroll">
                 <div class="mui-content">
                     <p class="padding-line44">Search History</p>
-                    <ul class="mui-table-view">
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
-                        </li>
+                    <ul data-type="search_history" class="mui-table-view">
+                        <!-- history -->
                     </ul>
                     <p class="padding-line44">Popular Search</p>
-                    <ul class="mui-table-view">
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Computer</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Shoes</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Phone</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Apparel</a>
-                        </li>
-                        <li class="mui-table-view-cell">
-                            <a href="javascript:void(0)"><span class="mui-navigate-right font18"></span>Polo Shirts</a>
-                        </li>
+                    <ul data-type="search_populer" class="mui-table-view">
+                        <!-- popular -->
                     </ul>
                     <div class="padding-line44 bakc-fff">
                         <div class="mui-button-row line44 npd">
@@ -90,12 +62,33 @@
                 <div id="move-togger"></div>
             </div>
         </div>
+        <div id="footer_init"></div>
         <!-- off-canvas backdrop -->
         <div class="mui-off-canvas-backdrop"></div>
     </div>
 </div>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
 <script src="../../js/common/mui.min.js"></script>
-<script type="text/javascript" src="../../js/common/Sideslip.js"></script>
+<script src="../../js/common/template/template.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/common/Sideslip.js"></script>
+<script id="search_histrory" type="text/html">
+    <li class="mui-table-view-cell">
+        <a href="javascript:void(0)">
+            <span class="mui-navigate-right font18"></span>
+            Computer
+        </a>
+    </li>
+</script>
+<script id="search_populer" type="text/html">
+    <li class="mui-table-view-cell">
+        <a href="javascript:void(0)">
+            <span class="mui-navigate-right font18"></span>
+            Computer
+        </a>
+    </li>
+</script>
 <script>
     //清空历史记录弹窗
     var info = document.getElementById("info");
@@ -104,7 +97,6 @@
         mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function (e) {
         })
     });
-
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });

@@ -4,17 +4,17 @@
 
 
 /*折扣初始化*/
-function initSuperDeals(){
+function initSuperDeals() {
     $.ajax({
-        type:'POST',
-        data:{},
-        async:false,
-        url:RTTMALL_API.URL_SUPERDEALS,
-        success:function (data) {
-            console.log(data);
-            var list_header = template("dealsindex",data.data);
+        type: 'POST',
+        data: {},
+        async: false,
+        url: RTTMALL_API.URL_SUPERDEALS,
+        success: function (data) {
+            //console.log(data);
+            var list_header = template("dealsindex", data.data);
             $("[data-type=dealsindex]").html(list_header);
-            var list_body = template("superdealslist",data.data);
+            var list_body = template("superdealslist", data.data);
             $("[data-type=superdealslist]").html(list_body);
             timer();
         }
@@ -25,14 +25,14 @@ function initSuperDeals(){
 function addRemind(index) {
     var token = getCookie("token");
     $.ajax({
-        url:RTTMALL_API.URL_INDEX_SUPERDEALES_REMIND_ADD,
-        async:true,
-        data:{
-            client_token:token,
-            superDealProductId:index
+        url: RTTMALL_API.URL_INDEX_SUPERDEALES_REMIND_ADD,
+        async: true,
+        data: {
+            client_token: token,
+            superDealProductId: index
         },
-        success:function (data) {
-            console.log(data);
+        success: function (data) {
+            //console.log(data);
             alert(data.msg);
         }
     });
@@ -44,16 +44,16 @@ function timer() {
 }
 
 function countdown() {
-    $("[data-type=countdown]").each(function(index) {
-        var endTime = $(this).attr("data-countdown");
-        time = show_date_time(endTime);
-        if (time == "close") {
-            $(this).attr("data-type", "close");
-            $(this).html("Close");
-        } else {
-            $(this).html(time);
-        }
-    });
+    var obj = $("[data-type=countdown]");
+    var endTime = obj.attr("data-countdown");
+    var time = show_date_time(endTime);
+    if (time == "close") {
+        obj.attr("data-type", "close");
+        obj.html("Close");
+    } else {
+        obj.html(time);
+        obj.attr("data-countdown", endTime - 1000);
+    }
 }
 
 function show_date_time(timerEndTime) {
@@ -72,8 +72,7 @@ function show_date_time(timerEndTime) {
     if (hrsold < 0) {
         return "close";
     } else {
-        return formatTime(hrsold) + ":" + formatTime(minsold) + ":"
-            + formatTime(seconds);
+        return formatTime(hrsold) + ":" + formatTime(minsold) + ":" + formatTime(seconds);
     }
 }
 

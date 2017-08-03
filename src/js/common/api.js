@@ -91,6 +91,7 @@ var RTTMALL_API = {
     // Super Deals
     URL_INDEX_SUPERDEALS : API_BASE_URL + "/super_deal/current",
     URL_INDEX_SUPERDEALES_REMIND_ADD : API_BASE_URL + "/super_deal/remind/add",
+    URL_INDEX_SUPERDEALES_REMIND_LIST : API_BASE_URL + "/super_deal/remind/list",
     // 首页Super Deals
     URL_SUPERDEALS : API_BASE_URL + "/super_deal",
     // 首页系统公告
