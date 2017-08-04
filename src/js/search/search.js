@@ -1,6 +1,7 @@
 /**
  * Created by zhangjianan on 2017/7/28.
  */
+init_hotkeyword();
 
 var productSearch = {};
 
@@ -81,13 +82,11 @@ function order() {
                 showProduct();
                 var html = template('pageTemplate', data.data.page);
                 $("[data-type=pageNumber]").html(html);
-
                 $("[data-type=pageNumber]").find("[data-type=goPage]").each(
                     function (index) {
                         $(this).click(
                             function () {
-                                productSearch.pageNum = $(this).attr(
-                                    "data-page");
+                                productSearch.pageNum = $(this).attr("data-page");
                                 $('html,body').animate({
                                     scrollTop: 0
                                 }, 1);
@@ -97,4 +96,21 @@ function order() {
             }
         }
     });
+}
+
+function init_hotkeyword() {
+    $.ajax({
+        type:"get",
+        url: RTTMALL_API.URL_INDEX_HOTKEYWORDS,
+        dataType:"json",
+        async:true,
+        cache:false,
+        data:{},
+        success:function (data) {
+            console.log(data);
+            var html = template('search_populer',data);
+            $("[data-type=search_populer]").html(html);
+        }
+    });
+
 }

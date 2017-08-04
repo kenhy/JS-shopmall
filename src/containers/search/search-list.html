@@ -73,6 +73,7 @@
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/common/Sideslip.js"></script>
+<script src="../../js/search/search.js"></script>
 <script id="search_histrory" type="text/html">
     <li class="mui-table-view-cell">
         <a href="javascript:void(0)">
@@ -82,12 +83,14 @@
     </li>
 </script>
 <script id="search_populer" type="text/html">
+    {{each data as p i}}
     <li class="mui-table-view-cell">
         <a href="javascript:void(0)">
             <span class="mui-navigate-right font18"></span>
-            Computer
+            {{p.name}}
         </a>
     </li>
+    {{/each}}
 </script>
 <script>
     //清空历史记录弹窗

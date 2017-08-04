@@ -119,7 +119,7 @@ header a {width: 12%;display: block; margin: auto; text-align: center; height: 4
 .new-coupon p{top: 50%; margin-top: -11px; font-size: 3.2em;}
 .Coupon-bg{background:url(../images/Coupon-bg.png) no-repeat; width:100%; height: 100%; margin: auto; position: fixed; top: 0; bottom: 0;}
 /*产品分类*/
-.nav-input{ width: 76%; margin: auto; border: 0.5px #D1D1D1 solid; line-height: 34px; margin: 4px auto;color: #C79F62; position: relative;}
+.nav-input{ width: 76%; margin: auto; border: 0.5px #D1D1D1 solid; line-height: 34px; margin: 4px auto;color: #C79F62; position: relative; height: 37px;}
 .nav-input span.icon-sousuo{ position: absolute; top: 2px; left: 8px;}
 .nav-input input{height: 34px; padding-left: 36px !important;}
 .mui-row.mui-fullscreen>[class*="mui-col-"] { height: 100%;}
@@ -294,6 +294,8 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .border2{border-color:#cca77a;}
 .property .p-size li{height: 40px;line-height: 40px;}
 /*首页*/
+.nav-logo{width: 59%;margin:4px auto;height: 37px; clear: initial;}
+.nav-logo img{ height: 32px;}
 .home-coupon img{width: 100%; display: block;}
 .searchhistory{overflow-y: scroll; top: 44px; border-radius: 0 0 7px 7px !important ; position: fixed; z-index: 2; width: 100%;}
 .searchhistory dl{max-height: 300px; overflow-y: scroll;}
@@ -354,11 +356,4 @@ background-image:-webkit-linear-gradient(to right, #FE949C, #FE465F); background
 .mobileTitle{float:left;margin-left:3%;text-align: center;line-height: 33px;font-size: 17px;color:#000;}
 .mobileOpen{width: 26%;height: 31px;float: right;margin-right: 10%;text-align: center;line-height: 31px;font-size: 14px;border-radius: 11px;-webkit-border-radius:11x;-moz-border-radius:11px;cursor: pointer;background: #000;color: #e5bb87;font-weight: bold;}
 .removeOpen{width: 20px;height: 20px;border: 2px solid #000;float:left;margin-left: 20px;margin-top: 5px;font-size: 15px;text-align: center;border-radius:41px;-webkit-border-radius:41x;-moz-border-radius:41px;background:url(../images/x.png) no-repeat center center;background-size: 20px 20px;line-height: 17px;font-weight: 600;}
-
-
-
-
-
-
-
 
