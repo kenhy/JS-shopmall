@@ -107,10 +107,8 @@ function init_hotkeyword() {
         cache:false,
         data:{},
         success:function (data) {
-            console.log(data);
             var html = template('search_populer',data);
             $("[data-type=search_populer]").html(html);
         }
     });
-
 }

@@ -1,6 +1,7 @@
 /**
  * Created by JonathanZhang on 2017/7/11.
  */
+
 $(document).ready(function () {
     init_index.initBanner();
     var data = init_index_detail();
@@ -18,7 +19,6 @@ $(document).ready(function () {
         window.top.location.href = this.href;
     });
 });
-
 
 var init_index = {
     //初始化首页轮播图
@@ -195,6 +195,4 @@ function login_status() {
         is_membership();
     }
 }
-
-
 

@@ -1,6 +1,7 @@
 /**
  * Created by JonathanZhang on 2017/6/19.
  */
+
 var host = location.protocol + "//";
 //设置cookie
 function setCookie(name, value) {

@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Search</title>
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <link rel="stylesheet" href="../../css/mui.min.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
@@ -54,8 +53,7 @@
                     </ul>
                     <div class="padding-line44 bakc-fff">
                         <div class="mui-button-row line44 npd">
-                            <button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">Clear All History
-                            </button>
+                            <button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">Clear All History</button>
                         </div>
                     </div>
                 </div>
@@ -72,7 +70,6 @@
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
-<script src="../../js/common/Sideslip.js"></script>
 <script src="../../js/search/search.js"></script>
 <script id="search_histrory" type="text/html">
     <li class="mui-table-view-cell">
@@ -82,6 +79,7 @@
         </a>
     </li>
 </script>
+
 <script id="search_populer" type="text/html">
     {{each data as p i}}
     <li class="mui-table-view-cell">
@@ -92,6 +90,7 @@
     </li>
     {{/each}}
 </script>
+
 <script>
     //清空历史记录弹窗
     var info = document.getElementById("info");
