@@ -20,11 +20,6 @@ function initProductSearch() {
     // setCookie("productSearch", JSON.stringify(cProductSearch));
 }
 
-function updateProductSearch() {
-    setCookie("productSearch", JSON.stringify(productSearch));
-}
-
-
 function search() {
     $("[data-type=scroll]").attr("src", $("[data-type=scroll]").attr("data-src") + "?id=" + Math.random());
     $("[data-type=scroll]").show();
@@ -44,40 +39,7 @@ function search() {
             brandsId: productSearch.brandsId
         },
         success: function (data) {
-            if (data != null) {
-                // console.info(data);
-                data.data.domain = domain;
-                productSearch.searchData = data.data;
-                productSearch.totalPage = data.data.page.totalPage;
-                /*
-                 * $("[data-type=result_div]").html("Home > All Categories > " +
-                 * keyword + " 867,071 Results ");
-                 */
-                if (productSearch.keyword != null) {
-                    $("[data-type=keyword]").html("\"" + productSearch.keyword + "\"");
-                }
-                $("[data-type=result_num]").html(productSearch.searchData.totalElement);
-                initRelatedCategory();
-                showProduct();
-                var html = template('pageTemplate', data.data.page);
-                $("[data-type=pageNumber]").html(html);
-                $("[data-type=pageNumber]").find("[data-type=goPage]").each(
-                    function (index) {
-                        $(this).click(
-                            function () {
-                                var targetPage = $(this).attr(
-                                    "data-page");
-                                if (targetPage > 0) {
-                                    productSearch.pageNum = $(this)
-                                        .attr("data-page");
-                                    $('html,body').animate({
-                                        scrollTop: 0
-                                    }, 1);
-                                    order();
-                                }
-                            });
-                    });
-            }
+
         }
     });
 }
@@ -85,12 +47,6 @@ function search() {
  * 排序
  */
 function order() {
-    $("[data-type=scroll]").attr("src", $("[data-type=scroll]").attr("data-src") + "?id=" + Math.random());
-    $("[data-type=scroll]").show();
-    var forderType = 0;
-    if (productSearch.orderName == "price") {
-        forderType = productSearch.orderType;
-    }
     var param = {};
     param.keywords = productSearch.keyword;
     param.category = productSearch.category;

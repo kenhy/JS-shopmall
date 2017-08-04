@@ -9,8 +9,7 @@ var RTTMALL_API = {
     URL_PRODUCT_REVIEW_COUNT : API_BASE_URL + "/product/review/count",
     URL_PRODUCT_REVIEW_SCORE : API_BASE_URL + "/product/review/score",
     // 每周热销TOP10
-    URL_PRODUCT_BESTSELLING_WEEKLY : API_BASE_URL
-    + "/product/bestselling/weekly",
+    URL_PRODUCT_BESTSELLING_WEEKLY : API_BASE_URL + "/product/bestselling/weekly",
     // 品类热销TOP10
     URL_PRODUCT_BESTSELLING : API_BASE_URL + "/product/bestselling",
     // 品类点击TOP20
@@ -91,6 +90,7 @@ var RTTMALL_API = {
     // Super Deals
     URL_INDEX_SUPERDEALS : API_BASE_URL + "/super_deal/current",
     URL_INDEX_SUPERDEALES_REMIND_ADD : API_BASE_URL + "/super_deal/remind/add",
+    URL_INDEX_SUPERDEALES_REMIND_DEl : API_BASE_URL + "/super_deal/remind/del",
     URL_INDEX_SUPERDEALES_REMIND_LIST : API_BASE_URL + "/super_deal/remind/list",
     // 首页Super Deals
     URL_SUPERDEALS : API_BASE_URL + "/super_deal",
@@ -137,10 +137,8 @@ var RTTMALL_API = {
     URL_ACCOUNT_EMAIL_GET : API_BASE_URL + "/account/getEmail",
     URL_ACCOUNT_EMAIL_BIND : API_BASE_URL + "/email/bind",
     URL_ACCOUNT_EMAIL_BIND_SENDEMAIL : API_BASE_URL + "/email/bind/sendEmail",
-    URL_ACCOUNT_EMAIL_CHANGE_SENDEMAIL : API_BASE_URL
-    + "/email/change/sendEmail",
-    URL_ACCOUNT_EMAIL_CHANGE_CODE_VERIFY : API_BASE_URL
-    + "/email/change/code/verify",
+    URL_ACCOUNT_EMAIL_CHANGE_SENDEMAIL : API_BASE_URL + "/email/change/sendEmail",
+    URL_ACCOUNT_EMAIL_CHANGE_CODE_VERIFY : API_BASE_URL + "/email/change/code/verify",
     URL_ACCOUNT_EMAIL_CHANGE : API_BASE_URL + "/email/change",
     // 修改手机号码
     URL_ACCOUNT_PHONE_GET : API_BASE_URL + "/account/getPhone",

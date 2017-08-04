@@ -58,11 +58,17 @@
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/superdeals/reamind.js"></script>
+<script type="text/javascript">
+    template.helper('dateFormat', function (timestamp) {
+        var date = new Date(new Number(timestamp));
+        return date.format("MM/dd hh:mm");
+    });
+</script>
 <script id="remind-tpl" type="text/html">
     {{each data as p i}}
     <div id="">
         <div class="padding-line44 bakc-fff font-weight font-color-9" data-endTime="{{beginTime}}">
-            <span class="color-red">22:00:00</span>
+            <span class="color-red">{{p.beginTime | dateFormat}}</span>
         </div>
         {{each p.superDealProduct as q i}}
         <ul class="mui-table-view border-t margin-b10">
@@ -75,12 +81,12 @@
                         {{q.name}}
                     </dt>
                     <dd>
-                        <p class="font-weight color-red">US $86.64</p>
-                        <p class="line-through">US $86.64</p>
+                        <p class="font-weight color-red">TTD$ {{q.superDealPrice.toFixed(2)}} /{{p.unit}}</p>
+                        <p class="line-through">TTD$ {{q.originalPrice.toFixed(2)}} /{{p.unit}}</p>
                     </dd>
                     <dd class="hidden">
                         <p class="mui-pull-left text-l font12">popularity：60</p>
-                        <p class="mui-pull-right text-r color-red">Cancle reminder</p>
+                        <span class="cancle-reminder mui-pull-right text-r color-red" data-productid="{{q.superDealProductId}}">Cancle reminder</span>
                     </dd>
                 </dl>
             </li>
@@ -118,6 +124,7 @@
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
+
 </script>
 </body>
 
