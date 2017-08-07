@@ -36,9 +36,28 @@
                 </div>
             </div>
         </div>
-        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+        <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
             <div class="mui-scroll">
-                <div class="mui-content">
+                <!-- search -->
+                <div id="search" class="mui-scroll">
+                    <div class="mui-content">
+                        <p class="padding-line44">Search History</p>
+                        <ul data-type="search_history" class="mui-table-view">
+                            <!-- history -->
+                        </ul>
+                        <p class="padding-line44">Popular Search</p>
+                        <ul data-type="search_populer" class="mui-table-view">
+                            <!-- popular -->
+                        </ul>
+                        <div class="padding-line44 bakc-fff">
+                            <div class="mui-button-row line44 npd">
+                                <button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">Clear All History</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- list -->
+                <div id="list" class="mui-content">
                     <div class="padding-line44 hidden bakc-fff bestmatch">
                         <a href="#bestmatch">
                             <p class="mui-pull-left font-color-h">
@@ -56,7 +75,6 @@
                         </p>
                     </div>
                     <!-- page index-->
-
                 </div>
                 <div id="move-togger"></div>
             </div>
@@ -190,13 +208,27 @@
                 </div>
             </div>
         </div>
-        <!-- off-canvas backdrop -->
-        <div class="mui-off-canvas-backdrop"></div>
+        <div id="footer_init"></div>
     </div>
 </div>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
 <script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/template/template.js"></script>
 <script src="../../js/common/Sideslip.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/search/search.js"></script>
 <script type="text/javascript">
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
+    //清空历史记录弹窗
+    var info = document.getElementById("info");
+    document.getElementById("confirmBtn").addEventListener('tap', function () {
+        var btnArray = ['No', 'Yes'];
+        mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function (e) {
+        })
+    });
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
@@ -255,6 +287,26 @@
             </a>
         </li>
     </ul>
+</script>
+<!--search_history-->
+<script id="search_history" type="text/html">
+    <li class="mui-table-view-cell">
+        <a href="javascript:void(0)">
+            <span class="mui-navigate-right font18"></span>
+            Computer
+        </a>
+    </li>
+</script>
+<!--search_populer-->
+<script id="search_populer" type="text/html">
+    {{each data as p i}}
+    <li class="mui-table-view-cell">
+        <a href="javascript:void(0)">
+            <span class="mui-navigate-right font18"></span>
+            {{p.name}}
+        </a>
+    </li>
+    {{/each}}
 </script>
 
 </body>

@@ -224,6 +224,8 @@ function downloadMobile() { //判断是ios还是android
 		}
 }
 
+/*
+* 底部app跳转*/
 function init_footer() {
 var tpl = '<footer class="footer" style="position: fixed; bottom: 0; left: 0; width: 100%; margin: 0; z-index: 999">'
     +'<ul id="footer_ul">'
@@ -239,5 +241,16 @@ var tpl = '<footer class="footer" style="position: fixed; bottom: 0; left: 0; wi
     +'</footer>';
 $("#footer_init").html(tpl);
 }
+
+/*字符转义*/
+var escapeHtml = function(str) {
+    if(!str) return '';
+    str = str.replace(/</g,'&lt;');//替换成html实体
+    str = str.replace(/>/g,'&gt;');
+    str = str.replace(/"/g,'&quto');
+    str = str.replace(/'/g,'&39');
+    str = str.replace(/ /g,'&32'); //遵循书写规则，可以不做转义
+    return str;
+};
 
 init_footer();
