@@ -318,7 +318,7 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .triangle-down{	margin-top: 6px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #CCA77A;}
 #bestmatch{top: 80px !important; left: 0 !important;right: 0 !important; width: 101%;}
 #bestmatch li{padding-left: 40px;}
-.bestmatch{z-index: 999;}
+.bestmatch{z-index:3; position: fixed;top: 44px; left: 0; width: 100%;}
 #filterbox{top: 0 !important; left: inherit !important; right:0 !important; width:78%; height: 100%; border-radius: 0;}
 #filterbox header{padding:0 15px;}
 .filterbox-list{margin-top: 44px;}
@@ -334,6 +334,8 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .Graphical li{border-right: 0.6px #eee solid;border-bottom: 0.6px #eee solid;}
 .Graphical dt.nospace{ height: 34px; margin-bottom: 5px;}
 .Graphical-size img{width: 100%;}
+#list{margin-top: 89px; padding-bottom: 90px;}
+#input_search{z-index: 6; margin-top: 44px; position: fixed;top: 0;}
 /*退货*/
 .refundbtn{padding: 1px 12px !important;}
 .reason-for-return{height: 100px; padding: 5px 10px;}
