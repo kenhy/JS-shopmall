@@ -1,24 +1,29 @@
 /**
  * Created by zhangjianan on 2017/7/28.
  */
-init_hotkeyword();
 
-var productSearch = {};
+/*keyword日后可以做实时查询*/
+var keyword = document.querySelector("#input_keyword").addEventListener("input",function(){
+    console.log(this.value);
+    return this.value;
+},true);
 
-function initProductSearch() {
-    var cProductSearch = {};
-    cProductSearch.keyword = getKeyword();
-    cProductSearch.category = getUrlParam("category");
-    cProductSearch.brandsId = getUrlParam("brandsId");
-    cProductSearch.pageNum = 1;
-    cProductSearch.pageSize = 40;
-    cProductSearch.view = 2;
-    cProductSearch.orderName = "none";
-    cProductSearch.orderType = 1;
-    cProductSearch.searchData = [];
-    cProductSearch.totalPage = 0;
-    productSearch = cProductSearch;
-}
+var productSearch = {},
+    input_type = false,
+    input_cancel = document.querySelector("#input_cancel"),
+    input_in = document.querySelector("#input_keyword"),
+    input_search = document.querySelector("#input_search");
+
+input_cancel.addEventListener("tap",function () {
+    input_cancel.setAttribute("class",".mui-hidden");
+    input_search.setAttribute("class",".mui-hidden");
+});
+
+input_in.addEventListener("input",function () {
+    input_cancel.removeAttribute("class",".mui-hidden");
+    input_search.removeAttribute("class",".mui-hidden");
+});
+
 
 function search() {
     var token = getCookie("token");
@@ -30,21 +35,20 @@ function search() {
         cache: false,
         data: {
             client_token: token,
-            keywords: productSearch.keyword,
+            keywords: productSearch.keywords,
             category: productSearch.category,
             pageNum: productSearch.pageNum,
             pageSize: productSearch.pageSize,
             brandsId: productSearch.brandsId
         },
         success: function (data) {
-
+            console.log(data);
         }
     });
 }
 /**
  * 排序
  */
-
 
 function init_hotkeyword() {
     $.ajax({
@@ -61,7 +65,12 @@ function init_hotkeyword() {
     });
 }
 
-function getKeyword() {
+init_hotkeyword();
 
+
+
+/*获取keyword*/
+function getKeyword() {
+    var keyword = document.querySelector("#keyword").value;
 }
 

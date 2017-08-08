@@ -16,30 +16,16 @@
     <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav">
             <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
-            <a id="menu" class="mui-icon mui-pull-right iconfont icon-shenglve font20 font-color-3"
-               href="#topPopover"></a>
+            <span id="input_cancel" class="mui-icon mui-pull-right iconfont icon-shibai font20 font-color-3 mui-hidden"></span>
             <div class="nav-input radius4">
-                <span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-                <input placeholder="I'm looking for" type="text" class="nback nborder nmg npd"/>
+                <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
+                <input id="input_keyword" placeholder="I'm looking for" type="text" class=" nback nborder nmg npd"/>
             </div>
         </header>
-        <div id="topPopover" class="mui-popover" style="z-index: 99999">
-            <div class="mui-popover-arrow none"></div>
-            <div class="mui-scroll-wrapper nmg">
-                <div class="mui-scroll" style="width: initial; right: 0;">
-                    <ul class="mui-table-view radius4 right-nav">
-                        <li><a href="#">Messages</a></li>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Feedback</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
             <div class="mui-scroll">
                 <!-- search -->
-                <div id="search" class="mui-scroll">
+                <div id="input_search" class="mui-scroll mui-hidden">
                     <div class="mui-content">
                         <p class="padding-line44">Search History</p>
                         <ul data-type="search_history" class="mui-table-view">
