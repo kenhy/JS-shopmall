@@ -28,7 +28,6 @@ function delCookie(name) {
     setCookie(name, "", -1);
 }
 
-
 function role(code, name) {
     this.code = code;
     this.name = name;

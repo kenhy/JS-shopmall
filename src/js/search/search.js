@@ -8,25 +8,35 @@ var keyword = document.querySelector("#input_keyword").addEventListener("input",
     return this.value;
 },true);
 
+/*keyword查询*/
 var productSearch = {},
     input_type = false,
-    input_cancel = document.querySelector("#input_cancel"),
-    input_in = document.querySelector("#input_keyword"),
-    input_search = document.querySelector("#input_search");
+    input_cancel = $("#input_cancel"),
+    input_in = $("#input_keyword"),
+    input_search = $("#input_search"),
+    content_list = $("#contentlist");
 
-input_cancel.addEventListener("tap",function () {
-    input_cancel.setAttribute("class",".mui-hidden");
-    input_search.setAttribute("class",".mui-hidden");
+input_cancel.hide();
+input_search.hide();
+
+input_cancel.on("tap",function () {
+    input_cancel.hide();
+    input_search.hide();
 });
 
-input_in.addEventListener("input",function () {
-    input_cancel.removeAttribute("class",".mui-hidden");
-    input_search.removeAttribute("class",".mui-hidden");
+input_in.bind("keyup",function () {
+    input_cancel.show();
+    input_search.show();
 });
 
+input_in.bind("search", function() {
+    search();
+});
 
-function search() {
-    var token = getCookie("token");
+/*搜索*/
+function search(pageNum,pageSize) {
+    var token = getCookie("token"),
+        keywords = input_in.val();
     $.ajax({
         type: "get",
         url: RTTMALL_API.URL_PRODUCT_SEARCH,
@@ -35,14 +45,15 @@ function search() {
         cache: false,
         data: {
             client_token: token,
-            keywords: productSearch.keywords,
-            category: productSearch.category,
-            pageNum: productSearch.pageNum,
-            pageSize: productSearch.pageSize,
-            brandsId: productSearch.brandsId
+            keywords: keywords,
+            pageSize: '7'
         },
         success: function (data) {
+            input_cancel.hide();
+            input_search.hide();
             console.log(data);
+            var html = template('search_list',data.data);
+            $("[data-type=search_list]").html(html);
         }
     });
 }
