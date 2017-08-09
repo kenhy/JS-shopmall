@@ -1,6 +1,8 @@
 /**
  * Created by JonathanZhang on 2017/6/19.
  */
+var domain = document.domain;
+console.log(domain);
 
 //设置cookie
 function setCookie(name, value) {
@@ -127,6 +129,7 @@ function is_membership() {
 
 /*跳转到细节*/
 function toDetails(productId) {
+    var id =escapeHtml(productId);
     $.ajax({
         type : "get",
         url : RTTMALL_API.URL_PRODUCT_GETSKU,
@@ -134,15 +137,14 @@ function toDetails(productId) {
         async : true,
         cache : false,
         data : {
-            productId : productId
+            productId : id
         },
         success : function(data) {
             if (data != null) {
                 if (data.code != "1") {
                     return;
                 }
-                window.location.href = domain + "/product/details.html?id="
-                    + data.data;
+                window.location.href = domain + "/product/details.html?id=" + data.data;
             }
         }
     });
