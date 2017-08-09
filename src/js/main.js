@@ -141,22 +141,24 @@ function toDetails(productId) {
         },
         success : function(data) {
             console.log(data)
-            /*if (data != null) {
+            if (data != null) {
                 if (data.code != "1") {
                     return;
                 }
                 window.location.href = domain + "/product/details.html?id=" + data.data;
-            }*/
+            }
         }
     });
 }
+
+
 
 function downloadMobile() { //判断是ios还是android
 		var u = navigator.userAgent;
 		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
 		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 		if (isAndroid) {
-			window.location.href = "rttmall://gxkj/shop/SplashActivity";
+			window.location.href = "RTTMALL://gxkj/shop/SplashActivity";
 			window.setTimeout(function() {
 								window.location.href = "http://img.rttmall.com/apk/RTTMALL.apk";
 							}, 850);

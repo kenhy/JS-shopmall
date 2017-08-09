@@ -33,6 +33,10 @@ input_in.bind("search", function() {
     search(keywords);
 });
 
+$('.jump_detil').on('click',function () {
+    console.log(this.attr('[data-id]'));
+});
+
 /*搜索*/
 function search(keywords) {
     var token = getCookie("token");
@@ -48,7 +52,7 @@ function search(keywords) {
             pageSize: '7'
         },
         success: function (data) {
-            setCookie('nextpage',data.page.nextPage);
+            setCookie('nextpage','data.page.nextPage');
             input_cancel.hide();
             input_search.hide();
             console.log(data);

@@ -1,309 +1,314 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Search result</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="../../css/mui.min.css">
-		<link rel="stylesheet" href="../../css/base.css">
-		<link rel="stylesheet" href="../../css/subpage.css" />
-	</head>
+<head>
+    <meta charset="utf-8">
+    <title>Search result</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/subpage.css"/>
+</head>
 
-	<body>
+<body>
 
-		<div class="mui-inner-wrap">
-			<header class="mui-bar mui-bar-nav">
-				<span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
-				<span id="input_cancel" class="mui-icon mui-pull-right iconfont icon-shibai font20 font-color-3"></span>
-				<div class="nav-input radius4">
-					<form action='' onsubmit="return false;">
-						<span class="iconfont icon-sousuo font18 mui-pull-left "></span>
-						<input id="input_keyword" placeholder="I'm looking for" type="search" class="text-l nback nborder nmg npd" />
-					</form>
-				</div>
-			</header>
+<div class="mui-inner-wrap">
+    <header class="mui-bar mui-bar-nav">
+        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
+              onclick="history.go(-1)"></span>
+        <span id="input_cancel" class="mui-icon mui-pull-right iconfont icon-shibai font20 font-color-3"></span>
+        <div class="nav-input radius4">
+            <form action='' onsubmit="return false;">
+                <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
+                <input id="input_keyword" placeholder="I'm looking for" type="search"
+                       class="text-l nback nborder nmg npd"/>
+            </form>
+        </div>
+    </header>
 
-			<!-- search -->
-			<div id="input_search" class="mui-scroll">
-				<div class="mui-content">
-					<p class="padding-line44">Search History</p>
-					<ul data-type="search_history" class="mui-table-view">
-						<!-- history -->
-					</ul>
-					<p class="padding-line44">Popular Search</p>
-					<ul data-type="search_populer" class="mui-table-view">
-						<!-- popular -->
-					</ul>
-					<div class="padding-line44 bakc-fff">
-						<div class="mui-button-row line44 npd">
-							<button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">
-                                    Clear All History
-                                </button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- list -->
-			<div class="padding-line44 hidden bakc-fff bestmatch">
-				<a href="#bestmatch">
-					<p class="mui-pull-left font-color-h">
-						<s class="iconfont icon-jiaohuan font20 mui-pull-left margin-r5"></s>
-						<em class="mui-pull-left">Best Match</em>
-						<s class="triangle-down margin-l5 mui-pull-left"></s>
-					</p>
-				</a>
-				<p class="mui-pull-right">
-					<s class="iconfont icon-fenlei font20 margin-r10 mui-pull-left"></s>
-					<a class="hidden" href="#filterbox">
-						<s class="iconfont icon-shaixuan font22 padding-l10 border-l mui-pull-left font-color-h"></s> Filter
-					</a>
-				</p>
-			</div>
-			<div id="refreshContainer" class="mui-scroll-wrapper">
-				<div id="list" class="mui-content mui-scroll">
+    <!-- search -->
+    <div id="input_search" class="mui-scroll">
+        <div class="mui-content">
+            <p class="padding-line44">Search History</p>
+            <ul data-type="search_history" class="mui-table-view">
+                <!-- history -->
+            </ul>
+            <p class="padding-line44">Popular Search</p>
+            <ul data-type="search_populer" class="mui-table-view">
+                <!-- popular -->
+            </ul>
+            <div class="padding-line44 bakc-fff">
+                <div class="mui-button-row line44 npd">
+                    <button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">
+                        Clear All History
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- list -->
+    <div class="padding-line44 hidden bakc-fff bestmatch">
+        <a href="#bestmatch">
+            <p class="mui-pull-left font-color-h">
+                <s class="iconfont icon-jiaohuan font20 mui-pull-left margin-r5"></s>
+                <em class="mui-pull-left">Best Match</em>
+                <s class="triangle-down margin-l5 mui-pull-left"></s>
+            </p>
+        </a>
+        <p class="mui-pull-right">
+            <s class="iconfont icon-fenlei font20 margin-r10 mui-pull-left"></s>
+            <a class="hidden" href="#filterbox">
+                <s class="iconfont icon-shaixuan font22 padding-l10 border-l mui-pull-left font-color-h"></s> Filter
+            </a>
+        </p>
+    </div>
+    <div id="refreshContainer" class="mui-scroll-wrapper">
+        <div id="list" class="mui-content mui-scroll">
+            <div data-type="search_list">
 
-					<div data-type="search_list">
+            </div>
+            <!-- page index-->
+        </div>
+    </div>
 
-					</div>
-					<!-- page index-->
-				</div>
-			</div>
+    <div id="bestmatch" class="mui-popover">
+        <div class="mui-popover-arrow none"></div>
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <ul class="bakc-fff">
+                    <li class="padding-line44 border-t font-color-9">
+                        Number of orders
+                        <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h"></s>
+                    </li>
+                    <li class="padding-line44 border-t font-color-9">
+                        Price(Low to High)
+                        <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
+                    </li>
+                    <li class="padding-line44 border-t font-color-9">
+                        Price(High to Low)
+                        <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
+                    </li>
+                    <li class="padding-line44 border-t font-color-9">
+                        New product
+                        <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="filterbox" class="mui-popover bakc-eee">
+        <div class="mui-popover-arrow none"></div>
+        <div class="mui-scroll-wrapper nmg">
+            <div class="mui-scroll">
+                <header class="mui-bar mui-bar-nav border-be">
+                    <a href="#" class="mui-action-back mui-btn mui-btn-link mui-pull-left font12 font-color-3">
+                        Reset
+                    </a>
+                    <a href="" class="mui-action-back mui-btn mui-btn-link mui-pull-right font12 font-color-3">
+                        Done
+                    </a>
+                    <h1 class="mui-title">Filter</h1>
+                </header>
+                <ul class="filterbox-list">
+                    <li class="padding-line44 border-be hidden bakc-fff price">
+                        <p class="hidden mui-col-xs-5 mui-pull-left">Price</p>
+                        <div class="hidden mui-col-xs-7 mui-pull-left">
+                            <input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Max."/>
+                            <em class="mui-pull-right iconfont icon-jian font10" style="color: #EEEEEE;"></em>
+                            <input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Min."/>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell border-be hidden margin-t10 bakc-fff mui-input-row mui-checkbox">
+                        <label>Free shipping</label>
+                        <input name="checkbox1" value="" type="checkbox" />
+                    </li>
+                    <li class="mui-table-view noradius bakc-fff brand-logo">
+                        <div class="mui-table-view-cell mui-collapse noradius bakc-fff">
+                            <a class="mui-navigate-right noradius bakc-fff border-be" href="#">Brand</a>
+                            <div class="mui-collapse-content">
+                                <div id="slider" class="mui-slider">
+                                    <div class="mui-slider-group mui-slider-loop">
+                                        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                                        <div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
+                                            <a href="#">
+                                                <img src="../../images/home/yuantiao.jpg">
+                                            </a>
+                                            <a href="#">
+                                                <img src="../../images/home/yuantiao.jpg">
+                                            </a>
+                                        </div>
+                                        <!-- 第一张 -->
+                                        <div class="mui-slider-item mui-col-xs-3">
+                                            <a href="#">
+                                                <img src="../../images/home/shuijiao.jpg">
+                                            </a>
+                                            <a href="#">
+                                                <img src="../../images/home/shuijiao.jpg">
+                                            </a>
+                                        </div>
+                                        <!-- 第二张 -->
+                                        <div class="mui-slider-item mui-col-xs-3">
+                                            <a href="#">
+                                                <img src="../../images/home/muwu.jpg">
+                                            </a>
+                                            <a href="#">
+                                                <img src="../../images/home/muwu.jpg">
+                                            </a>
+                                        </div>
+                                        <!-- 第三张 -->
+                                        <div class="mui-slider-item mui-col-xs-3">
+                                            <a href="#">
+                                                <img src="../../images/home/cbd.jpg">
+                                            </a>
+                                            <a href="#">
+                                                <img src="../../images/home/cbd.jpg">
+                                            </a>
+                                        </div>
+                                        <!-- 第四张 -->
+                                        <div class="mui-slider-item mui-col-xs-3">
+                                            <a href="#">
+                                                <img src="../../images/home/yuantiao.jpg">
+                                            </a>
+                                            <a href="#">
+                                                <img src="../../images/home/yuantiao.jpg">
+                                            </a>
+                                        </div>
+                                        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                                        <div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
+                                            <a href="#">
+                                                <img src="../../images/home/shuijiao.jpg">
+                                            </a>
+                                            <a href="#">
+                                                <img src="../../images/home/shuijiao.jpg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell bakc-fff">
+                        <a class="" href="#">Categories</a>
+                    </li>
+                    <li class="mui-table-view-cell bakc-fff">
+                        <a class="font-color-9" href="#">Apparel for Women</a>
+                    </li>
+                    <li class="mui-table-view-cell bakc-fff">
+                        <a class="font-color-9" href="#">Apparel for Men</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer_init"></div>
+</div>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
+<script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/template/template.js"></script>
+<script src="../../js/common/Sideslip.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/search/search.js"></script>
+<script type="text/javascript">
+    //清空历史记录弹窗
+    var info = document.getElementById("info");
+    document.getElementById("confirmBtn").addEventListener('tap', function () {
+        var btnArray = ['No', 'Yes'];
+        mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function (e) {
+        })
+    });
+    mui.init({
+        pullRefresh: {
+            container: "#refreshContainer", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up: {
+                height: 50, //可选.默认50.触发上拉加载拖动距离
+                auto: false, //可选,默认false.自动上拉加载一次
+                contentrefresh: "Loading...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+                contentnomore: '-_- have nothing !!!', //可选，请求完毕若没有更多数据时显示的提醒内容；
+                callback: function () {
+                    alert(1);
+                }
+            }
+        }
+    });
+    /*function pullupRefresh () {
+     var list = "";
+     var pagenum = '2';
+     setTimeout(function(){
+     },1000);
+     $.ajax({
+     type: "get",
+     url: RTTMALL_API.URL_PRODUCT_SEARCH,
+     dataType: "json",
+     async: true,
+     cache: false,
+     data: {
+     client_token: token,
+     keywords: keywords,
+     pageSize: '5'
+     },
+     success:function (data) {
+     if (data.data.list === []){
+     // 如果没有更多数据了，则关闭上拉加载
+     pullRefresh.endPullupToRefresh(true);
+     }else{
+     append();
+     mui('#refreshContainer').pullRefresh().endPulldownToRefresh()；
+     }
+     }
+     })
+     };*/
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
+</script>
+<script id="search_list" type="text/html">
+    <ul class="mui-table-view border-t nmg">
+        {{each list as p i}}
+        <li class="mui-table-view-cell mui-media">
+            <a class="jump_detil" data-id="{{p.id}}" href="javascript:(0)">
+                <p class="product-size mui-pull-left radius4"><img src="{{p.mainImagePath}}"></p>
+                <dl class="mui-media-body product-text relative">
+                    <dt class="nospace font14">
+                        {{p.productName}}
+                    </dt>
+                    <dd>
+                        <p class="font-weight color-red font16">US ${{p.bottomPrice}}</p>
+                        <p class="line-through">US ${{p.highestPrice}}</p>
+                    </dd>
+                    <dd class="hidden">
+                        <p class="mui-pull-left font12 color-white back-red radius4">
+                            <s class="mui-icon mui-icon-arrowthindown mui-pull-left font20 font-weight"></s>
+                            {{((p.highestPrice-p.bottomPrice)/p.highestPrice*100).toFixed()}}%
+                        </p>
+                        <p class="mui-pull-right font12">order: {{p.saleNum}}</p>
+                    </dd>
+                </dl>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+<!--search_history-->
+<script id="search_history" type="text/html">
+    <li class="mui-table-view-cell">
+        <a href="javascript:void(0)">
+            <span class="mui-navigate-right font18"></span> Computer
+        </a>
+    </li>
+</script>
+<!--search_populer-->
+<script id="search_populer" type="text/html">
+    {{each data as p i}}
+    <li class="mui-table-view-cell">
+        <a href="javascript:void(0)">
+            <span class="mui-navigate-right font18"></span> {{p.name}}
+        </a>
+    </li>
+    {{/each}}
+</script>
 
-			<div id="bestmatch" class="mui-popover">
-				<div class="mui-popover-arrow none"></div>
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<ul class="bakc-fff">
-							<li class="padding-line44 border-t font-color-9">
-								Number of orders
-								<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h"></s>
-							</li>
-							<li class="padding-line44 border-t font-color-9">
-								Price(Low to High)
-								<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
-							</li>
-							<li class="padding-line44 border-t font-color-9">
-								Price(High to Low)
-								<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
-							</li>
-							<li class="padding-line44 border-t font-color-9">
-								New product
-								<s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div id="filterbox" class="mui-popover bakc-eee">
-				<div class="mui-popover-arrow none"></div>
-				<div class="mui-scroll-wrapper nmg">
-					<div class="mui-scroll">
-						<header class="mui-bar mui-bar-nav border-be">
-							<a href="#" class="mui-action-back mui-btn mui-btn-link mui-pull-left font12 font-color-3">
-								Reset
-							</a>
-							<a href="" class="mui-action-back mui-btn mui-btn-link mui-pull-right font12 font-color-3">
-								Done
-							</a>
-							<h1 class="mui-title">Filter</h1>
-						</header>
-						<ul class="filterbox-list">
-							<li class="padding-line44 border-be hidden bakc-fff price">
-								<p class="hidden mui-col-xs-5 mui-pull-left">Price</p>
-								<div class="hidden mui-col-xs-7 mui-pull-left">
-									<input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Max." />
-									<em class="mui-pull-right iconfont icon-jian font10" style="color: #EEEEEE;"></em>
-									<input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Min." />
-								</div>
-							</li>
-							<li class="mui-table-view-cell border-be hidden margin-t10 bakc-fff mui-input-row mui-checkbox">
-								<label>Free shipping</label>
-								<input name="checkbox1" value="" type="checkbox">
-							</li>
-							<li class="mui-table-view noradius bakc-fff brand-logo">
-								<div class="mui-table-view-cell mui-collapse noradius bakc-fff">
-									<a class="mui-navigate-right noradius bakc-fff border-be" href="#">Brand</a>
-									<div class="mui-collapse-content">
-										<div id="slider" class="mui-slider">
-											<div class="mui-slider-group mui-slider-loop">
-												<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-												<div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
-													<a href="#">
-														<img src="../../images/home/yuantiao.jpg">
-													</a>
-													<a href="#">
-														<img src="../../images/home/yuantiao.jpg">
-													</a>
-												</div>
-												<!-- 第一张 -->
-												<div class="mui-slider-item mui-col-xs-3">
-													<a href="#">
-														<img src="../../images/home/shuijiao.jpg">
-													</a>
-													<a href="#">
-														<img src="../../images/home/shuijiao.jpg">
-													</a>
-												</div>
-												<!-- 第二张 -->
-												<div class="mui-slider-item mui-col-xs-3">
-													<a href="#">
-														<img src="../../images/home/muwu.jpg">
-													</a>
-													<a href="#">
-														<img src="../../images/home/muwu.jpg">
-													</a>
-												</div>
-												<!-- 第三张 -->
-												<div class="mui-slider-item mui-col-xs-3">
-													<a href="#">
-														<img src="../../images/home/cbd.jpg">
-													</a>
-													<a href="#">
-														<img src="../../images/home/cbd.jpg">
-													</a>
-												</div>
-												<!-- 第四张 -->
-												<div class="mui-slider-item mui-col-xs-3">
-													<a href="#">
-														<img src="../../images/home/yuantiao.jpg">
-													</a>
-													<a href="#">
-														<img src="../../images/home/yuantiao.jpg">
-													</a>
-												</div>
-												<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-												<div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
-													<a href="#">
-														<img src="../../images/home/shuijiao.jpg">
-													</a>
-													<a href="#">
-														<img src="../../images/home/shuijiao.jpg">
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="mui-table-view-cell bakc-fff">
-								<a class="" href="#">Categories</a>
-							</li>
-							<li class="mui-table-view-cell bakc-fff">
-								<a class="font-color-9" href="#">Apparel for Women</a>
-							</li>
-							<li class="mui-table-view-cell bakc-fff">
-								<a class="font-color-9" href="#">Apparel for Men</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div id="footer_init"></div>
-		</div>
-		<script src="../../js/common/api.js"></script>
-		<script src="../../js/common/jquery.min.js"></script>
-		<script src="../../js/common/mui.min.js"></script>
-		<script src="../../js/common/template/template.js"></script>
-		<script src="../../js/common/Sideslip.js"></script>
-		<script src="../../js/main.js"></script>
-		<script src="../../js/search/search.js"></script>
-		<script type="text/javascript">
-			//清空历史记录弹窗
-			var info = document.getElementById("info");
-			document.getElementById("confirmBtn").addEventListener('tap', function() {
-				var btnArray = ['No', 'Yes'];
-				mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function(e) {})
-			});
-			mui.init({
-				pullRefresh: {
-					container: "#refreshContainer", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
-					up: {
-						height: 20, //可选.默认50.触发上拉加载拖动距离
-						auto: false, //可选,默认false.自动上拉加载一次
-						contentrefresh: "Loading...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-						contentnomore: '-_- have nothing !!!', //可选，请求完毕若没有更多数据时显示的提醒内容；
-						callback: function() {
-							alert(1);
-						}
-					}
-				}
-			});
-			/*function pullupRefresh () {
-			    var list = "";
-			    var pagenum = '2';
-			    setTimeout(function(){
-			    },1000);
-			    $.ajax({
-			        type: "get",
-			        url: RTTMALL_API.URL_PRODUCT_SEARCH,
-			        dataType: "json",
-			        async: true,
-			        cache: false,
-			        data: {
-			            client_token: token,
-			            keywords: keywords,
-			            pageSize: '5'
-			        },
-			        success:function (data) {
-			            if (data.data.list === []){
-			                // 如果没有更多数据了，则关闭上拉加载
-			                pullRefresh.endPullupToRefresh(true);
-			            }else{
-			                append();
-			                mui('#refreshContainer').pullRefresh().endPulldownToRefresh()；
-			            }
-			        }
-			    })
-			};*/
-			mui('body').on('tap', 'a', function() {
-				window.top.location.href = this.href;
-			});
-		</script>
-		<script id="search_list" type="text/html">
-			<ul class="mui-table-view border-t nmg">
-				{{each list as p i}}
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:(0)">
-						<p class="product-size mui-pull-left radius4"><img src="{{p.mainImagePath}}"></p>
-						<dl class="mui-media-body product-text relative">
-							<dt class="nospace font14">
-                    {{p.productName}}
-                </dt>
-							<dd>
-								<p class="font-weight color-red font16">US ${{p.bottomPrice}}</p>
-								<p class="line-through">US ${{p.highestPrice}}</p>
-							</dd>
-							<dd class="hidden">
-								<p class="mui-pull-left font12 color-white back-red radius4">
-									<s class="mui-icon mui-icon-arrowthindown mui-pull-left font20 font-weight"></s> {{((p.highestPrice-p.bottomPrice)/p.highestPrice*100).toFixed()}}%
-								</p>
-								<p class="mui-pull-right font12">order: {{p.saleNum}}</p>
-							</dd>
-						</dl>
-					</a>
-				</li>
-				{{/each}}
-		</script>
-		<!--search_history-->
-		<script id="search_history" type="text/html">
-			<li class="mui-table-view-cell">
-				<a href="javascript:void(0)">
-					<span class="mui-navigate-right font18"></span> Computer
-				</a>
-			</li>
-		</script>
-		<!--search_populer-->
-		<script id="search_populer" type="text/html">
-			{{each data as p i}}
-			<li class="mui-table-view-cell">
-				<a href="javascript:void(0)">
-					<span class="mui-navigate-right font18"></span> {{p.name}}
-				</a>
-			</li>
-			{{/each}}
-		</script>
-
-	</body>
+</body>
 
 </html>
