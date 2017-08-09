@@ -48,8 +48,10 @@ function search(keywords) {
             pageSize: '7'
         },
         success: function (data) {
+            setCookie('nextpage',data.page.nextPage);
             input_cancel.hide();
             input_search.hide();
+            console.log(data);
             var input = $("#input_keyword");
             input.blur();
             var html = template('search_list',data.data);

@@ -129,7 +129,7 @@ function is_membership() {
 
 /*跳转到细节*/
 function toDetails(productId) {
-    var id =escapeHtml(productId);
+    var id = escapeHtml(productId);
     $.ajax({
         type : "get",
         url : RTTMALL_API.URL_PRODUCT_GETSKU,
@@ -137,15 +137,16 @@ function toDetails(productId) {
         async : true,
         cache : false,
         data : {
-            productId : id
+            proId : id
         },
         success : function(data) {
-            if (data != null) {
+            console.log(data)
+            /*if (data != null) {
                 if (data.code != "1") {
                     return;
                 }
                 window.location.href = domain + "/product/details.html?id=" + data.data;
-            }
+            }*/
         }
     });
 }
