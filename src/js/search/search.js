@@ -4,7 +4,7 @@
 
 /*keyword日后可以做实时查询*/
 var keyword = document.querySelector("#input_keyword").addEventListener("input",function(){
-    console.log(this.value);
+    //console.log(this.value);
     return this.value;
 },true);
 
@@ -16,9 +16,8 @@ var productSearch = {},
     input_search = $("#input_search"),
     content_list = $("#contentlist");
 
-input_cancel.hide();
-input_search.hide();
-
+/*
+* 事件状态绑定*/
 input_cancel.on("tap",function () {
     input_cancel.hide();
     input_search.hide();
@@ -30,13 +29,13 @@ input_in.bind("keyup",function () {
 });
 
 input_in.bind("search", function() {
-    search();
+    keywords = input_in.val();
+    search(keywords);
 });
 
 /*搜索*/
-function search(pageNum,pageSize) {
-    var token = getCookie("token"),
-        keywords = input_in.val();
+function search(keywords) {
+    var token = getCookie("token");
     $.ajax({
         type: "get",
         url: RTTMALL_API.URL_PRODUCT_SEARCH,
@@ -51,12 +50,14 @@ function search(pageNum,pageSize) {
         success: function (data) {
             input_cancel.hide();
             input_search.hide();
-            console.log(data);
+            var input = $("#input_keyword");
+            input.blur();
             var html = template('search_list',data.data);
             $("[data-type=search_list]").html(html);
         }
     });
 }
+
 /**
  * 排序
  */
@@ -77,11 +78,3 @@ function init_hotkeyword() {
 }
 
 init_hotkeyword();
-
-
-
-/*获取keyword*/
-function getKeyword() {
-    var keyword = document.querySelector("#keyword").value;
-}
-

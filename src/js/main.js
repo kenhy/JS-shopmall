@@ -2,7 +2,6 @@
  * Created by JonathanZhang on 2017/6/19.
  */
 
-var host = location.protocol + "//";
 //设置cookie
 function setCookie(name, value) {
     var expdate = new Date(); // 初始化时间
@@ -142,67 +141,11 @@ function toDetails(productId) {
                 if (data.code != "1") {
                     return;
                 }
-                window.location.href = domain + "/product/details.jsp?id="
+                window.location.href = domain + "/product/details.html?id="
                     + data.data;
             }
         }
     });
-}
-
-/*URL判断*/
-function Url_data() {
-    this.urlData = [];
-    this.top = 0;
-    this.push = push;
-    this.pop = pop;
-    this.peek = peek;
-}
-
-function push(elements) {
-    this.urlData[this.top++] = element;
-}
-
-function peek() {
-    return this.urlData[this.top-1];
-}
-
-function pop() {
-    return this.urlData[--this.top];
-}
-
-function clear() {
-    this.top = 0;
-}
-
-function length() {
-    return this.top;
-}
-
-var pathname_list = new Url_data();
-
-/*页面URL监听*/
-function pathname_listener() {
-    var pathname = window.location.pathname;
-    pathname_list.push(pathname);
-}
-
-/*url跳转*/
-function url_jump(index) {
-    var admin = window.protocol + "//" + window.hostname;
-    if (index==""){
-        /*index为空*/
-        window.location.href = admin;
-    }else if(index == "back"){
-        /*返回上一页
-         * 从URl栈中读取*/
-        pathname_list.pop();
-        var back_url = pathname_list.peek();
-        window.location.href = admin + back_url;
-    }else if(index == "index"){
-        /*返回主页*/
-        pathname_list.clear();
-        window.location.href = admin;
-    }
 }
 
 function downloadMobile() { //判断是ios还是android
