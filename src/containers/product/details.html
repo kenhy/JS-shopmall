@@ -244,7 +244,8 @@
     mui('#offCanvasContentScroll').scroll();
     /*五星评价*/
     var progressbar1 = mui('#star');
-    mui(progressbar1).progressbar().setProgress(0)/*默认开始值*/
+    mui(progressbar1).progressbar().setProgress(0);
+    /*默认开始值*/
     progressbar1.on('tap', 'a', function() {
         mui(progressbar1).progressbar().setProgress(this.getAttribute('data-progress'));
     });

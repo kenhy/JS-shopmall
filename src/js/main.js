@@ -4,6 +4,25 @@
 var domain = document.domain;
 console.log(domain);
 
+/*
+* 通用事件绑定*/
+function bindEvent(elem,type,selector,fn) {
+    if (fn == null) {
+        fn = selector;
+    }
+    elem.addEventListener(type,function (e) {
+        var target;
+        if (selector) {
+            target = e.target;
+            if (target.matches(selector)) {
+                fn.call(target,e);
+            }
+        }else {
+            fn(e);
+        }
+    })
+}
+
 //设置cookie
 function setCookie(name, value) {
     var expdate = new Date(); // 初始化时间
@@ -77,23 +96,6 @@ Date.prototype.format = function(f) {
     return f;
 };
 
-function bindEvent(elem,type,selector,fn) {
-    if (fn == null) {
-        fn = selector;
-    }
-    elem.addEventListener(type,function (e) {
-        var target;
-        if (selector) {
-            target = e.target;
-            if (target.matches(selector)) {
-                fn.call(target,e);
-            }
-        }else {
-            fn(e);
-        }
-    })
-}
-
 /*登录*/
 function href_check() {
     var href_check_item = $(".user_check");
@@ -127,7 +129,7 @@ function is_membership() {
     }
 }
 
-/*跳转到细节*/
+/*细节*/
 function toDetails(productId) {
     var id = escapeHtml(productId);
     $.ajax({
@@ -140,7 +142,7 @@ function toDetails(productId) {
             proId : id
         },
         success : function(data) {
-            console.log(data)
+            console.log(data);
             if (data != null) {
                 if (data.code != "1") {
                     return;
@@ -150,7 +152,6 @@ function toDetails(productId) {
         }
     });
 }
-
 
 
 function downloadMobile() { //判断是ios还是android
@@ -169,6 +170,10 @@ function downloadMobile() { //判断是ios还是android
 								window.location.href = "https://itunes.apple.com/cn/app/rttmall/id1033048220?mt=8";
 							}, 850);
 		}
+}
+
+function removeOpen() {
+    $("#footer_init").html('');
 }
 
 /*
