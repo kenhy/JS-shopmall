@@ -10,7 +10,7 @@ var brand_list = {
             url:RTTMALL_API.URL_BRANDS,
             dataType:"json",
             async:true,
-            cache:false,
+            cache:true,
             data:{},
             success:function (data) {
                 //console.log(data)

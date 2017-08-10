@@ -71,9 +71,10 @@
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/search/search.js"></script>
-
-
-<script>
+<script type="text/javascript">
+    mui.init();
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
     //清空历史记录弹窗
     var info = document.getElementById("info");
     document.getElementById("confirmBtn").addEventListener('tap', function () {

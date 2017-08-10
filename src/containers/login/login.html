@@ -1,96 +1,109 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Sign in</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-        <link rel="stylesheet" href="../../css/mui.min.css">
-        <link rel="stylesheet" href="../../css/base.css" />
-        <link rel="stylesheet" href="../../css/subpage.css" />
-        <style>
-            .mui-input-group .mui-input-row {
-                height: 50px;
-            }
+<head>
+    <meta charset="utf-8">
+    <title>Sign in</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/base.css"/>
+    <link rel="stylesheet" href="../../css/subpage.css"/>
+    <style>
+        .mui-input-group .mui-input-row {
+            height: 50px;
+        }
 
-            .mui-input-row input {
-                margin-left: 28px;
-                margin-top: 3px;
-            }
+        .mui-input-row input {
+            margin-left: 28px;
+            margin-top: 3px;
+        }
 
-            .mui-input-row .mui-icon.mui-icon-eye {
-                color: #999999;
-                left: initial;
-                margin-top: 4px;
-            }
+        .mui-input-row .mui-icon.mui-icon-eye {
+            color: #999999;
+            left: initial;
+            margin-top: 4px;
+        }
 
-        </style>
-    </head>
+    </style>
+</head>
 
-    <body>
-        <header class="mui-bar mui-bar-nav bakc-fff">
-            <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
-            <h1 class="mui-title">Sign in</h1>
-        </header>
-        <div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
-            <div class="">
-                <div class="mui-content">
-                    <div class="mui-control-content mui-active register">
-                        <div class="mui-scroll-wrapper visible">
-                            <div class="mui-scroll">
-                                <form class="mui-input-group mui-table-view nback margin-t5">
-                                    <div class="mui-input-row bakc-fff">
-                                        <p class="mui-icon mui-icon-email bakc-fff"></p>
-                                        <input id="userNo" type="text" class="" placeholder="Email">
-                                    </div>
-                                    <div class="mui-input-row bakc-fff">
-                                        <p class="mui-icon mui-icon-locked bakc-fff" ></p>
-                                        <input id="pwd" type="Password"  class="mui-input-password" placeholder="Password" >
-                                    </div>
-                                    <div id=""></div>
-                                    <div class="mui-button-row margin-t20 line44 npd">
-                                        <button id="submit_login" type="button" class="mui-col-xs-12 mui-btn nborder npd line44 font16">Sign in</button>
-                                    </div>
-                                    <div class="margin-t12 text-c padding-b20">
-                                        <a href="forgot-password.html" class="text-r font-color-3 font12 mui-pull-right">Forget Password?</a>
-                                    </div>
-                                    <div id="error_msg" class="margin-t5 color-red text-c"> </div>
-                                    <div class="margin-t10">
-                                        <div class="mui-col-xs-12 mui-btn  nborder margin-t5 npd  button-facebook line44 color-white">
-                                            <span class="iconfont icon-facebook span-facebook span-margin  mui-pull-left"></span>
-                                            <p class="mui-pull-left color-white font14 margin-l20">Sign in with Facebook</p>
-                                        </div>
-                                        <div class="mui-col-xs-12 mui-btn nborder margin-t5  npd button-twitter line44 color-white">
-                                            <span class="iconfont icon-twitter span-twitter span-margin mui-pull-left "></span>
-                                            <p class="mui-pull-left color-white font14 margin-l20">Sign in with Twitter</p>
-                                        </div>
-                                        <div class="mui-col-xs-12 mui-btn margin-t5 border-color-d npd button-google hidden bakc-fff">
-                                            <span class="span-google mui-pull-left span-margin"></span>
-                                            <p class="mui-pull-left  font-color-9 margin-t10 font14 margin-l20">Sign in with Google</p>
-                                        </div>
-                                    </div>
-                                </form>
+<body>
+<header class="mui-bar mui-bar-nav bakc-fff">
+    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
+    <h1 class="mui-title">Sign in</h1>
+</header>
+<div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
+    <div class="">
+        <div class="mui-content">
+            <div class="mui-control-content mui-active register">
+                <div class="mui-scroll-wrapper visible">
+                    <div class="mui-scroll">
+                        <form class="mui-input-group mui-table-view nback margin-t5">
+                            <div class="mui-input-row bakc-fff">
+                                <p class="mui-icon mui-icon-email bakc-fff"></p>
+                                <input id="userNo" type="text" class="" placeholder="Email">
                             </div>
-                        </div>
+                            <div class="mui-input-row bakc-fff">
+                                <p class="mui-icon mui-icon-locked bakc-fff"></p>
+                                <input id="pwd" type="Password" class="mui-input-password" placeholder="Password">
+                            </div>
+                            <div id=""></div>
+                            <div class="mui-button-row margin-t20 line44 npd">
+                                <button id="submit_login" type="button"
+                                        class="mui-col-xs-12 mui-btn nborder npd line44 font16">Sign in
+                                </button>
+                            </div>
+                            <div class="margin-t12 text-c padding-b20">
+                                <a href="forgot-password.html" class="text-r font-color-3 font12 mui-pull-right">Forget
+                                    Password?</a>
+                            </div>
+                            <div id="error_msg" class="margin-t5 color-red text-c"></div>
+                            <div class="margin-t10">
+                                <div
+                                    class="mui-col-xs-12 mui-btn  nborder margin-t5 npd  button-facebook line44 color-white">
+                                    <span
+                                        class="iconfont icon-facebook span-facebook span-margin  mui-pull-left"></span>
+                                    <p class="mui-pull-left color-white font14 margin-l20">Sign in with Facebook</p>
+                                </div>
+                                <div
+                                    class="mui-col-xs-12 mui-btn nborder margin-t5  npd button-twitter line44 color-white">
+                                    <span class="iconfont icon-twitter span-twitter span-margin mui-pull-left "></span>
+                                    <p class="mui-pull-left color-white font14 margin-l20">Sign in with Twitter</p>
+                                </div>
+                                <div
+                                    class="mui-col-xs-12 mui-btn margin-t5 border-color-d npd button-google hidden bakc-fff">
+                                    <span class="span-google mui-pull-left span-margin"></span>
+                                    <p class="mui-pull-left  font-color-9 margin-t10 font14 margin-l20">Sign in with
+                                        Google</p>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div id="move-togger"></div>
-            </div>
-            <div class="bottom-sign-in">
-                <p class="font14 font-color-3">No Account?<a href="register.html" class="font-weight underline font-color-3">Register</a></p>
             </div>
         </div>
-        <script src="../../js/common/mui.min.js"></script>
-        <script src="../../js/common/api.js"></script>
-        <script src="../../js/common/jquery.min.js"></script>
-        <script src="../../js/common/jquery.md5.js"></script>
-        <script src="../../js/login/login.js"></script>
-        <script src="../../js/main.js"></script>
-        <script type="text/javascript">
-            mui('body').on('tap', 'a', function() {
-                window.top.location.href = this.href;
-            });
-        </script>
-    </body>
+        <div id="move-togger"></div>
+    </div>
+    <div class="bottom-sign-in">
+        <p class="font14 font-color-3">No Account?<a href="register.html" class="font-weight underline font-color-3">Register</a>
+        </p>
+    </div>
+</div>
+<script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
+<script src="../../js/common/jquery.md5.js"></script>
+<script src="../../js/login/login.js"></script>
+<script src="../../js/main.js"></script>
+<script type="text/javascript">
+    mui.init();
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
+</script>
+</body>
 
 </html>

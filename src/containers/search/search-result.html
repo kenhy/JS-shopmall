@@ -15,8 +15,7 @@
 
 <div class="mui-inner-wrap">
     <header class="mui-bar mui-bar-nav">
-        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
-              onclick="history.go(-1)"></span>
+        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
         <span id="input_cancel" class="mui-icon mui-pull-right iconfont icon-shibai font20 font-color-3"></span>
         <div class="nav-input radius4">
             <form action='' onsubmit="return false;">
@@ -207,11 +206,13 @@
 <script src="../../js/common/jquery.min.js"></script>
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
-<script src="../../js/common/Sideslip.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/search/search.js"></script>
 <script type="text/javascript">
     //清空历史记录弹窗
+    mui.init();
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
     var info = document.getElementById("info");
     document.getElementById("confirmBtn").addEventListener('tap', function () {
         var btnArray = ['No', 'Yes'];
@@ -232,33 +233,33 @@
             }
         }
     });
-    /*function pullupRefresh () {
-     var list = "";
-     var pagenum = '2';
-     setTimeout(function(){
-     },1000);
-     $.ajax({
-     type: "get",
-     url: RTTMALL_API.URL_PRODUCT_SEARCH,
-     dataType: "json",
-     async: true,
-     cache: false,
-     data: {
-     client_token: token,
-     keywords: keywords,
-     pageSize: '5'
-     },
-     success:function (data) {
-     if (data.data.list === []){
-     // 如果没有更多数据了，则关闭上拉加载
-     pullRefresh.endPullupToRefresh(true);
-     }else{
-     append();
-     mui('#refreshContainer').pullRefresh().endPulldownToRefresh()；
-     }
-     }
-     })
-     };*/
+    /*function pullupRefresh() {
+        var list = "";
+        var pagenum = '2';
+        setTimeout(function () {
+        }, 1000);
+        $.ajax({
+            type: "get",
+            url: RTTMALL_API.URL_PRODUCT_SEARCH,
+            dataType: "json",
+            async: true,
+            cache: false,
+            data: {
+                client_token: token,
+                keywords: keywords,
+                pageSize: '5'
+            },
+            success: function (data) {
+                if (data.data.list === []) {
+                    // 如果没有更多数据了，则关闭上拉加载
+                    pullRefresh.endPullupToRefresh(true);
+                } else {
+                    append();
+                    mui('#refreshContainer').pullRefresh().endPulldownToRefresh()；
+                }
+            }
+        })
+    };*/
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
