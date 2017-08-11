@@ -85,15 +85,20 @@ function init_hotkeyword() {
 /*得到details*/
 function get_detail() {
     // 获取父节点，并为它添加一个click事件
-    var index = document.getElementsByClassName('.mui-table-view.border-t.nmg');
-    index.addEventListener("click",function(e) {
-        // 检查事件源e.targe是否为Li
-        if(e.target && e.target.nodeName.toUpperCase == "LI") {
-            // 真正的处理过程在这里
-            console.log(this);
-        }
-    });
+    var index = document.querySelector('.mui-table-view.border-t.nmg');
     console.log(index);
+    index.addEventListener('click',function(e){
+        if(e.target && e.target.nodeName.toUpperCase()=="A"){/*判断目标事件是否为li*/
+            alert('click');
+        }
+    },false);
 }
 
+function itemDone(e) {
+//Remove item from the list
+    var target,elParent,elGrandparent;
+    target = e.target;
+    elParent = target.parentNode;
+
+}
 init_hotkeyword();
