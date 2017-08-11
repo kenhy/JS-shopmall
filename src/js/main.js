@@ -129,29 +129,6 @@ function is_membership() {
     }
 }
 
-/*细节*/
-function toDetails(productId) {
-    var id = escapeHtml(productId);
-    $.ajax({
-        type : "get",
-        url : RTTMALL_API.URL_PRODUCT_GETSKU,
-        dataType : "json",
-        async : true,
-        cache : false,
-        data : {
-            proId : id
-        },
-        success : function(data) {
-            console.log(data);
-            if (data != null) {
-                if (data.code != "1") {
-                    return;
-                }
-                window.location.href = domain + "/product/details.html?id=" + data.data;
-            }
-        }
-    });
-}
 
 
 function downloadMobile() { //判断是ios还是android
