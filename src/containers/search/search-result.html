@@ -18,8 +18,7 @@
         position: absolute;
         left:0;
         right:0;
-        top:0;
-        bottom:0;
+        top:100%;
         margin: auto;
         line-height:56px;
         color:#fff;
@@ -32,6 +31,9 @@
         -webkit-border-radius:20px;
         border-radius:20px;
         filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    }
+    .loading_in{
+        display: none;
     }
 </style>
 
@@ -57,7 +59,6 @@
             <ul data-type="search_history" class="mui-table-view">
                 <!-- history -->
             </ul>
-            <div id="loading" class="loading">Loading...</div>
             <p class="padding-line44">Popular Search</p>
             <ul data-type="search_populer" class="mui-table-view">
                 <!-- popular -->
@@ -73,29 +74,32 @@
 
     </div>
     <!-- list -->
-    <div class="padding-line44 hidden bakc-fff bestmatch">
-        <a href="#bestmatch">
-            <p class="mui-pull-left font-color-h">
-                <s class="iconfont icon-jiaohuan font20 mui-pull-left margin-r5"></s>
-                <em class="mui-pull-left">Best Match</em>
-                <s class="triangle-down margin-l5 mui-pull-left"></s>
-            </p>
-        </a>
-        <p class="mui-pull-right">
-            <s class="iconfont icon-fenlei font20 margin-r10 mui-pull-left"></s>
-            <a class="hidden" href="#filterbox">
-                <s class="iconfont icon-shaixuan font22 padding-l10 border-l mui-pull-left font-color-h"></s> Filter
+    <div id="content_list">
+        <div class="padding-line44 hidden bakc-fff bestmatch">
+            <a href="#bestmatch">
+                <p class="mui-pull-left font-color-h">
+                    <s class="iconfont icon-jiaohuan font20 mui-pull-left margin-r5"></s>
+                    <em class="mui-pull-left">Best Match</em>
+                    <s class="triangle-down margin-l5 mui-pull-left"></s>
+                </p>
             </a>
-        </p>
-
-    </div>
-    <div id="refreshContainer" class="mui-scroll-wrapper">
-        <div id="list" class="mui-content mui-scroll">
-            <div data-type="search_list">
-
-            </div>
+            <p class="mui-pull-right">
+                <s class="iconfont icon-fenlei font20 margin-r10 mui-pull-left"></s>
+                <a class="hidden" href="#filterbox">
+                    <s class="iconfont icon-shaixuan font22 padding-l10 border-l mui-pull-left font-color-h"></s> Filter
+                </a>
+            </p>
 
         </div>
+        <div id="refreshContainer" class="mui-scroll-wrapper">
+            <div id="list" class="mui-content mui-scroll">
+                <div data-type="search_list">
+
+                </div>
+                <div id="loading" class="loading">Loading...</div>
+            </div>
+        </div>
+
     </div>
 
     <div id="bestmatch" class="mui-popover">
