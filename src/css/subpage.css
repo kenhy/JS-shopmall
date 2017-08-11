@@ -214,7 +214,6 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .payment-btn{ width: 80%; margin:20px auto;;}
 .payment-btn button{width: 47%;}
 /*商品详情*/
-#slider.mui-slider{overflow: initial;}
 .mui-slider-indicator{bottom:25px ;}
 .Attention-sharing{position: absolute; bottom: 0; right: 10px; z-index: 1;}
 .Attention-sharing p{ width: 40px; line-height: 40px;height: 40px; margin: 0 6px;}
