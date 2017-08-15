@@ -40,7 +40,7 @@
                 }
             })
         }
-    }
+    };
     function chat(auth) {
         WKIT.init({
             uid : auth.uid,
@@ -52,7 +52,7 @@
             hideLoginSuccess : true,
             sendMsgToCustomService : true,
             placeholder : "What can I do for you ? (Press Enter to send)",
-            welcomeMsg : "Welcome to RTTMALL",
+            welcomeMsg : "Welcome to RTTMALL"
         });
     }
 
@@ -64,12 +64,12 @@
     }
     function getCookie(name) {
         if (document.cookie.length > 0) {
-            c_start = document.cookie.indexOf(name + "=")
+            c_start = document.cookie.indexOf(name + "=");
             if (c_start != -1) {
-                c_start = c_start + name.length + 1
-                c_end = document.cookie.indexOf(";", c_start)
+                c_start = c_start + name.length + 1 ;
+                c_end = document.cookie.indexOf(";", c_start);
                 if (c_end == -1)
-                    c_end = document.cookie.length
+                    c_end = document.cookie.length;
                 return unescape(document.cookie.substring(c_start, c_end))
             }
         }

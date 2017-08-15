@@ -15,7 +15,7 @@ var RTTMALL_API = {
     // 品类点击TOP20
     URL_PRODUCT_HOTVIEW : API_BASE_URL + "/product/hotView",
     URL_PRODUCT_HOTVIEW_ADD : API_BASE_URL + "/product/hotView/add",
-    URL_PRODUCT_GETSKU : API_BASE_URL + "/product/sku/get",
+    URL_PRODUCT_GETSKU : API_BASE_URL + "/product/sku/app",
     URL_PRODUCT_SKU_CHANGE : API_BASE_URL + "/product/skuAttr/change",
     URL_PRODUCT_AD : API_BASE_URL + "/ad/recommend",
     URL_PRODUCT_SEARCH : API_BASE_URL + "/product/search",

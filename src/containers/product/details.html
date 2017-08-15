@@ -4,257 +4,23 @@
 <head>
     <meta charset="utf-8">
     <title>Commodity details</title>
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <link rel="stylesheet" href="../../css/mui.min.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
-
 </head>
 
 <body>
 <header class="mui-bar mui-bar-nav bakc-fff">
     <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
-    <a id="menu" class="mui-icon mui-pull-right iconfont icon-shenglve font20" href="#topPopover"></a>
     <a href="javascript:void(0);" class="mui-icon iconfont icon-gouwuche2 mui-pull-right nmg"></a>
     <h1 class="mui-title"></h1>
 </header>
-<div id="topPopover" class="mui-popover">
-    <div class="mui-popover-arrow none"></div>
-    <div class="mui-scroll-wrapper nmg">
-        <div class="mui-scroll" style="width: initial; right: 0;">
-            <ul class="mui-table-view radius4 right-nav">
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Feedback</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
 <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
     <div class="mui-scroll">
         <div class="mui-content padding-b50">
-            <div id="slider" class="mui-slider padding-b20 bakc-fff" style="z-index: initial;">
-                <div class="mui-slider-group mui-slider-loop">
-                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-                    <div class="mui-slider-item mui-slider-item-duplicate">
-                        <a href="#">
-                            <img src="../../images/img.jpg">
-                        </a>
-                    </div>
-                    <!-- 第一张 -->
-                    <div class="mui-slider-item hidden">
-                        <a href="#">
-                            <img src="../../images/img.jpg">
-                        </a>
-                    </div>
-                    <!-- 第二张 -->
-                    <div class="mui-slider-item hidden">
-                        <a href="#">
-                            <img src="../../images/Default-Avatar.jpg">
-                        </a>
-                    </div>
-                    <!-- 第三张 -->
-                    <div class="mui-slider-item hidden">
-                        <a href="#">
-                            <img src="../../images/cat.jpg">
-                        </a>
-                    </div>
-                    <!-- 第四张 -->
-                    <div class="mui-slider-item hidden">
-                        <a href="#">
-                            <img src="../../images/12454545.jpg">
-                        </a>
-                    </div>
-                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-                    <div class="mui-slider-item mui-slider-item-duplicate">
-                        <a href="#">
-                            <img src="../../images/Default-Avatar.jpg">
-                        </a>
-                    </div>
-                </div>
-                <script>
-                    var div = document.getElementsByClassName("mui-slider-item ");
-                    for (var i = 0; i < div.length; i++) {
-                        var d = div[i];
-                        var width = d.offsetWidth;
-                        d.style.height = width + "px";
-                    }
-                </script>
-                <div class="mui-slider-indicator text-l margin-l10">
-                    <div class="mui-indicator mui-active"></div>
-                    <div class="mui-indicator"></div>
-                    <div class="mui-indicator"></div>
-                    <div class="mui-indicator"></div>
-                </div>
-                <div class="Attention-sharing">
-                    <p class="iconfont icon-guanzhu1 mui-pull-left radius50 border bakc-fff text-c font18"></p>
-                    <p class="iconfont icon-fenxiang mui-pull-left radius50 border bakc-fff text-c font18"></p>
-                </div>
-            </div>
-            <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
-                <div class="top-left">
-                    <h4 class="font-weight font16">Flash Deals</h4>
-                    <s class="line-through font12">US$89.99</s>
-                </div>
-                <b class="text-c font18">US$9.99</b>
-                <div class="count-down color-white font12 text-c">April 28 began spike</div>
-            </div>
-            <div class="bakc-fff padding-line44" style="padding-bottom: 0;">
-                <div class="description">
-                    <h5 class="font-color-3 text-c line18">Toyouth Sweaters 2017 Spring New Women Vintage Solid Color
-                        Long Sleeve Casual Turtleneck Pullovers Sweater</h5>
-                    <b class="color-red font-weight text-c line20 margin-t10 font16">US $9.99</b>
-                    <s class="line-through font-color-9 font12 text-c">US $562.22</s>
-                    <div class="hidden d-activity text-c">
-                        <em class="timed-spike color-white radius4  text-c margin-r5 font12 line18 text-c">NEW</em>
-                        <em class="timed-spike color-white radius4  text-c margin-r5 font12 line18 text-c">HOT</em>
-                        <em class="timed-spike color-white radius4  text-c  font12 line18 text-c"><s
-                            class="mui-icon mui-icon-arrowthindown font18 font-weight"></s>45%</em>
-                    </div>
-                </div>
-                <ul class="hidden margin-t20 border-t border-be padding-t10 padding-b10">
-                    <li class="mui-col-xs-4 mui-pull-left text-l relative">
-                        <div class="hidden">
-                            <h4 class="no-font-weight font16 mui-pull-left">4.8</h4>
-                            <div class="excellent-star mui-pull-left score-star">
-                                <p class="fourstar"></p>
-                            </div>
-                        </div>
-                        <p class="font12">Feedback</p>
-                    </li>
-                    <li class="mui-col-xs-4 mui-pull-left text-c border-l border-r">
-                        <h4 class="no-font-weight font16">216</h4>
-                        <p class="font12">orders</p>
-                    </li>
-                    <li class="mui-col-xs-4 mui-pull-left text-r">
-                        <h4 class="no-font-weight font16">568</h4>
-                        <p class="font12">Wish Lost</p>
-                    </li>
-                </ul>
-            </div>
-            <ul class="attribute-list margin-t10 bakc-fff" style="padding: 0 15px;">
-                <li class="mui-table-view">
-                    <a href="javascript:void(0)" class="font-color-3 hidden"><span
-                        class="mui-navigate-right font18 mui-pull-right right-4"></span><s
-                        class="mui-pull-right font-color-h mar-right">Select</s>Color</a>
-                </li>
-                <li class="cart-btn hidden">
-                    <button class="mui-pull-right buy-now-button nborder font12">BUY NOW</button>
-                    <button class="mui-pull-right cart-btn-button nback font12 font-color-h">ADD TO CART</button>
-                </li>
-            </ul>
-            <div class="feedback-main">
-                <p class="mui-table-view-cell margin-t10 bakc-fff padding-line44 font-color-3">
-                    <a href="javascript:void(0)">Feedback(666)<span class="mui-pull-right font-color-9">More</span></a>
-                </p>
-                <dl class="more-comments bakc-fff hidden relative border-be">
-                    <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
-                        <img src="../../images/Default-Avatar.jpg">
-                    </dt>
-                    <dd>
-                        <ul style="margin-left: 60px;">
-                            <li class="hidden">
-                                <h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">
-                                    Feedback(666)</h4>
-                                <div class="mui-pull-left mui-pull-right evaluate-stars">
-                                    <p></p>
-                                </div>
-                            </li>
-                            <li class="hidden margin-t5">
-                                <p class="mui-pull-left font12 margin-r10">22 Apr 2017</p>
-                                <p class="mui-pull-left font12 margin-r10">Color:PSB</p>
-                            </li>
-                            <li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter. in fact,
-                                thin jersey. the cool summer weather. minus a star for a long delivery-almost two
-                                months. that is good for growth ordered
-                            </li>
-                            <li class="margin-t10">
-                                <ul class="hidden">
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/img.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/img2.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/img3.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/cat.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/Default-Avatar.jpg"></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-                <dl class="more-comments bakc-fff hidden relative border-be">
-                    <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
-                        <img src="../../images/Default-Avatar.jpg">
-                    </dt>
-                    <dd>
-                        <ul style="margin-left: 60px;">
-                            <li class="hidden">
-                                <h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">
-                                    Feedback(666)</h4>
-                                <div class="mui-pull-left mui-pull-right evaluate-stars">
-                                    <p></p>
-                                </div>
-                            </li>
-                            <li class="hidden margin-t5">
-                                <p class="mui-pull-left font12 margin-r10">22 Apr 2017</p>
-                                <p class="mui-pull-left font12 margin-r10">Color:PSB</p>
-                            </li>
-                            <li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter. in fact,
-                                thin jersey. the cool summer weather. minus a star for a long delivery-almost two
-                                months. that is good for growth ordered
-                            </li>
-                            <li class="margin-t10">
-                                <ul class="hidden">
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/img.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/img2.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/img3.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/cat.jpg"></li>
-                                    <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
-                                        src="../../images/Default-Avatar.jpg"></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-                <p class="mui-table-view-cell text-c bakc-fff font-color-3">View All</p>
-            </div>
-            <div class="margin-t10">
-                <p class=" mui-table-view-cell bakc-fff font-color-3">Buyer Protection</p>
-                <dl class="mui-table-view-cell bakc-fff hidden ">
-                    <dt class="head-portrait mui-pull-left hidden buyer-img">
-                        <img src="../../images/buyer.png"/>
-                    </dt>
-                    <dd>
-                        <ul style="margin-left: 42px;">
-                            <li class="line16 font-color-3">
-                                <p class="font-color-3">Buyer Protection<br/>Protecting your purchase from click to
-                                    delivery</p>
-                                <br/>
-                                <p class="font-color-3">Welcome to RTTMALL buyer Protection<br/>We want you to shop with
-                                    confidence.<br/>That's why we provide guarantees that ensure you'll receive your
-                                    item on time and as described.</p>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-                <div class="bakc-fff border-be ptb-lr">
-                    <p class="font-color-3">On time delivery 60 days</p>
-                    <p>Full refunf if product isn't received in 60 days</p>
-                </div>
-                <p class="mui-table-view-cell text-c bakc-fff font-color-3">View Details</p>
-            </div>
-            <div class="mui-table-view-cell text-c bakc-fff margin-t10 ptb-lr">
-                <span class="iconfont icon-shang font18"></span>
-                <p class="font-color-3">swipe up view item description</p>
+            <div data-type="details">
+
             </div>
             <div id="move-togger"></div>
         </div>
@@ -271,7 +37,222 @@
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
-<script src="../../js/details/details.js"></script>
+<script src="../../js/details/details.js" defer></script>
+<script id="details" type="text/html">
+    <div id="slider" class="mui-slider padding-b20 bakc-fff" style="z-index: initial;">
+        <div class="mui-slider-group mui-slider-loop">
+            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                    <img src="{{showImages[0].bigImage}}">
+                </a>
+            </div>
+
+            <!-- 循环 -->
+            {{each showImages as p i}}
+            <div class="mui-slider-item hidden">
+                <a href="#">
+                    <img src="{{p.bigImage}}">
+                </a>
+            </div>
+            {{/each}}
+
+            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                    <img src="{{showImages[0].bigImage}}">
+                </a>
+            </div>
+        </div>
+
+        <div class="mui-slider-indicator text-l margin-l10">
+            {{each showImages as p i}}
+            <div class="mui-indicator"></div>
+            {{/each showImages}}
+        </div>
+        <div class="Attention-sharing">
+            <p class="iconfont icon-guanzhu1 mui-pull-left radius50 border bakc-fff text-c font18"></p>
+            <p class="iconfont icon-fenxiang mui-pull-left radius50 border bakc-fff text-c font18"></p>
+        </div>
+    </div>
+    {{if }}
+    <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
+        <div class="top-left">
+            <h4 class="font-weight font16">Flash Deals</h4>
+            <s class="line-through font12">US$89.99</s>
+        </div>
+        <b class="text-c font18">US$9.99</b>
+        <div class="count-down color-white font12 text-c">April 28 began spike</div>
+    </div>
+    {{/if}}
+    <div class="bakc-fff padding-line44" style="padding-bottom: 0;">
+        <div class="description">
+            <h5 class="font-color-3 text-c line18">
+                {{name}}
+            </h5>
+            <b class="color-red font-weight text-c line20 margin-t10 font16">TTD ${{specialPrice}}</b>
+            <s class="line-through font-color-9 font12 text-c">TTD ${{highestPrice}}</s>
+            <div class="hidden d-activity text-c">
+                <em class="timed-spike color-white radius4  text-c margin-r5 font12 line18 text-c">NEW</em>
+                <em class="timed-spike color-white radius4  text-c margin-r5 font12 line18 text-c">HOT</em>
+                <em class="timed-spike color-white radius4  text-c  font12 line18 text-c">
+                    <s class="mui-icon mui-icon-arrowthindown font18 font-weight"></s>45%
+                </em>
+            </div>
+        </div>
+        <ul class="hidden margin-t20 border-t border-be padding-t10 padding-b10">
+            <li class="mui-col-xs-4 mui-pull-left text-l relative">
+                <div class="hidden">
+                    <h4 class="no-font-weight font16 mui-pull-left">4.8</h4>
+                    <div class="excellent-star mui-pull-left score-star">
+                        <p class="fourstar"></p>
+                    </div>
+                </div>
+                <p class="font12">Feedback</p>
+            </li>
+            <li class="mui-col-xs-4 mui-pull-left text-c border-l border-r">
+                <h4 class="no-font-weight font16">216</h4>
+                <p class="font12">orders</p>
+            </li>
+            <li class="mui-col-xs-4 mui-pull-left text-r">
+                <h4 class="no-font-weight font16">568</h4>
+                <p class="font12">Wish Lost</p>
+            </li>
+        </ul>
+    </div>
+    <ul class="attribute-list margin-t10 bakc-fff" style="padding: 0 15px;">
+        <li class="mui-table-view">
+            <a href="javascript:void(0)" class="font-color-3 hidden">
+                <span class="mui-navigate-right font18 mui-pull-right right-4"></span>
+                <s class="mui-pull-right font-color-h mar-right">Select</s>
+                Color
+            </a>
+        </li>
+        <li class="cart-btn hidden">
+            <button class="mui-pull-right buy-now-button nborder font12">BUY NOW</button>
+            <button class="mui-pull-right cart-btn-button nback font12 font-color-h">ADD TO CART</button>
+        </li>
+    </ul>
+    <div class="feedback-main">
+        <p class="mui-table-view-cell margin-t10 bakc-fff padding-line44 font-color-3">
+            <a href="javascript:void(0)">Feedback(666)<span class="mui-pull-right font-color-9">More</span></a>
+        </p>
+        <dl class="more-comments bakc-fff hidden relative border-be">
+            <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
+                <img src="../../images/Default-Avatar.jpg">
+            </dt>
+            <dd>
+                <ul style="margin-left: 60px;">
+                    <li class="hidden">
+                        <h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">
+                            Feedback(666)</h4>
+                        <div class="mui-pull-left mui-pull-right evaluate-stars">
+                            <p></p>
+                        </div>
+                    </li>
+                    <li class="hidden margin-t5">
+                        <p class="mui-pull-left font12 margin-r10">22 Apr 2017</p>
+                        <p class="mui-pull-left font12 margin-r10">Color:PSB</p>
+                    </li>
+                    <li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter. in fact,
+                        thin jersey. the cool summer weather. minus a star for a long delivery-almost two
+                        months. that is good for growth ordered
+                    </li>
+                    <li class="margin-t10">
+                        <ul class="hidden">
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/img.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/img2.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/img3.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/cat.jpg">
+                            </li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
+                                <img src="../../images/Default-Avatar.jpg">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="more-comments bakc-fff hidden relative border-be">
+            <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
+                <img src="../../images/Default-Avatar.jpg">
+            </dt>
+            <dd>
+                <ul style="margin-left: 60px;">
+                    <li class="hidden">
+                        <h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">
+                            Feedback(666)</h4>
+                        <div class="mui-pull-left mui-pull-right evaluate-stars">
+                            <p></p>
+                        </div>
+                    </li>
+                    <li class="hidden margin-t5">
+                        <p class="mui-pull-left font12 margin-r10">22 Apr 2017</p>
+                        <p class="mui-pull-left font12 margin-r10">Color:PSB</p>
+                    </li>
+                    <li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter. in fact,
+                        thin jersey. the cool summer weather. minus a star for a long delivery-almost two
+                        months. that is good for growth ordered
+                    </li>
+                    <li class="margin-t10">
+                        <ul class="hidden">
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                src="../../images/img.jpg"></li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                src="../../images/img2.jpg"></li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                src="../../images/img3.jpg"></li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                src="../../images/cat.jpg"></li>
+                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                src="../../images/Default-Avatar.jpg"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <p class="mui-table-view-cell text-c bakc-fff font-color-3">View All</p>
+    </div>
+    <div class="margin-t10">
+        <p class=" mui-table-view-cell bakc-fff font-color-3">Buyer Protection</p>
+        <dl class="mui-table-view-cell bakc-fff hidden ">
+            <dt class="head-portrait mui-pull-left hidden buyer-img">
+                <img src="../../images/buyer.png"/>
+            </dt>
+            <dd>
+                <ul style="margin-left: 42px;">
+                    <li class="line16 font-color-3">
+                        <p class="font-color-3">Buyer Protection<br/>Protecting your purchase from click to delivery</p>
+                        <br/>
+                        <p class="font-color-3">
+                            Welcome to RTTMALL buyer Protection<br/>
+                            We want you to shop with confidence.<br/>
+                            That's why we provide guarantees that ensure you'll receive your item on time and as
+                            described.
+                        </p>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <div class="bakc-fff border-be ptb-lr">
+            <p class="font-color-3">On time delivery 60 days</p>
+            <p>Full refunf if product isn't received in 60 days</p>
+        </div>
+        <p class="mui-table-view-cell text-c bakc-fff font-color-3">View Details</p>
+    </div>
+    <div class="mui-table-view-cell text-c bakc-fff margin-t10 ptb-lr">
+        <span class="iconfont icon-shang font18"></span>
+        <p class="font-color-3">swipe up view item description</p>
+    </div>
+</script>
 <script>
     mui.init();
     mui('#offCanvasSideScroll').scroll();

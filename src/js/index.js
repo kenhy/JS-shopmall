@@ -157,11 +157,10 @@ function login_status() {
         index_chart = $('#index_chart'),
         tpl;
     //console.log(username);
-
     if (token == "") {
         //console.log(username);
         //console.log(imagePath);
-        setCookie("login_status", "false");
+        setCookie("login_status","false");
         href_check();
         tpl = '<img class="mui-media-object mui-pull-left radius50" src="images/Default-Avatar.jpg">' +
             '<div class="mui-media-body margin-t20">' +

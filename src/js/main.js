@@ -138,14 +138,14 @@ function downloadMobile() { //判断是ios还是android
 		if (isAndroid) {
 			window.location.href = "RTTMALL://gxkj/shop/SplashActivity";
 			window.setTimeout(function() {
-								window.location.href = "http://img.rttmall.com/apk/RTTMALL.apk";
-							}, 850);
+                window.location.href = "http://img.rttmall.com/apk/RTTMALL.apk";
+            }, 850);
 		}
 		if (isiOS) {
 			window.location.href = "RTTMALL://com.xmgxkj.RTTMALL";
 			window.setTimeout(function() {
-								window.location.href = "https://itunes.apple.com/cn/app/rttmall/id1033048220?mt=8";
-							}, 850);
+                window.location.href = "https://itunes.apple.com/cn/app/rttmall/id1033048220?mt=8";
+            }, 850);
 		}
 }
 

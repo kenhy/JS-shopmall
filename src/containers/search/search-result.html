@@ -88,19 +88,16 @@
                     <s class="iconfont icon-shaixuan font22 padding-l10 border-l mui-pull-left font-color-h"></s> Filter
                 </a>
             </p>
-
         </div>
         <div id="refreshContainer" class="mui-scroll-wrapper">
             <div id="list" class="mui-content mui-scroll">
                 <div data-type="search_list">
-
+                    <!-- search_list -->
                 </div>
                 <div id="loading" class="loading">Loading...</div>
             </div>
         </div>
-
     </div>
-
     <div id="bestmatch" class="mui-popover">
         <div class="mui-popover-arrow none"></div>
         <div class="mui-scroll-wrapper">
@@ -298,7 +295,7 @@
     <ul class="mui-table-view border-t nmg">
         {{each list as p i}}
         <li class="mui-table-view-cell mui-media">
-            <a class="jump_detil" data-id="{{p.id}}" href="{{domain}}/containers/product/details.html?id={{p.id}}&">
+            <a class="jump_detil" data-id="{{p.id}}" href="{{domain}}/containers/product/details.html?id={{p.id}}">
                 <p class="product-size mui-pull-left radius4"><img src="{{p.mainImagePath}}"></p>
                 <dl class="mui-media-body product-text relative">
                     <dt class="nospace font14">
