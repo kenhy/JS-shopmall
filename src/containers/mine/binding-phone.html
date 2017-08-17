@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Binding Phone NO</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/subpage.css" />
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<a href="" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left npd nmg"></a>
+					<h1 class="mui-title">Binding Phone NO</h1>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-content">
+							<div class="mui-control-content register mui-active">
+								<form class="mui-input-group mui-table-view nback margin-t12 hidden">
+									<div class="mui-input-row bakc-fff hidden">
+										<input type="text" class="" placeholder="Phone number">
+									</div>
+									<div class="mui-input-row margin-t12 phone-number hidden">
+										<input type="text" class="validation-num bakc-fff" placeholder="Verificatione Code">
+										<p class="verificatione button-h font10">
+											<span class="verificatione-code">Get Verificatione Code</span>
+										</p>
+									</div>
+									<div class="mui-button-row line44 npd margin-t12">
+									    <button type="button" class="mui-col-xs-12 mui-btn nborder npd line44 font12" >Submit</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div id="move-togger"></div>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
+		<script type="text/javascript">
+			mui('body').on('tap','a',function(){
+			    window.top.location.href=this.href;
+			});
+		</script>
+	</body>
+
+</html>
