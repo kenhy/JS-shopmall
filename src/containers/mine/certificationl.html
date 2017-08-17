@@ -40,6 +40,7 @@
 									<dd class="font12"><span class="mui-pull-left mui-block">3.</span><p class="hidden font-color-3 font12">The platform certification completely free.</p></dd>
 								</div>
 							</div>
+                            <button id="zhangsan" type="button" class="mui-col-xs-12 mui-btn nborder npd line44 font12" >Submit</button>
 						</div>
 						<div id="move-togger"></div>
 					</div>
@@ -48,12 +49,16 @@
 			</div>
 		</div>
 		<script src="../../js/common/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
 		<script type="text/javascript">
 			mui('body').on('tap','a',function(){
 			    window.top.location.href=this.href;
 			});
+			document.getElementById('zhangsan').addEventListener('touchend',function () {
+                alert(1);
+            })
 		</script>
 	</body>
 
 </html>
+
+
