@@ -23,6 +23,7 @@ $(document).ready(function () {
 var init_index = {
     //初始化首页轮播图
     initBanner: function () {
+        var image_length;
         $.ajax({
             type: "get",
             url: RTTMALL_API.URL_INDEX_BANNER,
@@ -33,13 +34,16 @@ var init_index = {
                 client: "ios"
             },
             success: function (data) {
-                //console.log(data);
+                console.log(data);
+                image_length = data.data.length-1;
+                console.log(image_length);
                 var list = template('index-banner', data);
                 //console.log(list);
                 $("[data-type=home-banner]").html(list);
 
             }
         });
+        return Number(image_length);
     }
 };
 
@@ -119,7 +123,7 @@ function initSuperDeals() {
         data: {},
         success: function (data) {
             if (data != null) {
-                console.log(data);
+                //console.log(data);
                 if (data.data.productList != null && data.data.productList.length > 0) {
                     if (data.data.isNow) {
                         $("#deit").text("Deal ends in:");

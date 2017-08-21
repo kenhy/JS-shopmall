@@ -71,8 +71,8 @@ var account_index ={
                 console.log(country_flag);
                 $("#country_type").addClass(country_flag);
                 //img loading
-                if(data.data.imagePath === undefined || data.data.imagePath === ""){
-                    $("#imgPath").attr('src',"../../images/Default-Avatar.jpg")
+                if(data.data.imagePath == "null"){
+                    $("#imgPath").attr("src","../../images/Default-Avatar.jpg")
                 }else{
                     setCookie('imagePath',data.imagePath);
                 }

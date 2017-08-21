@@ -24,6 +24,7 @@ var init_account = {
                     list = data.data;
                 }else{
                     console.log(data.msg);
+                    confirm(data.msg);
                 }
             }
         });

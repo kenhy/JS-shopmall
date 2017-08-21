@@ -37,7 +37,6 @@
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
-<script src="../../js/details/details.js" defer></script>
 <script id="details" type="text/html">
     <div id="slider" class="mui-slider padding-b20 bakc-fff" style="z-index: initial;">
         <div class="mui-slider-group mui-slider-loop">
@@ -97,7 +96,7 @@
                 <em class="timed-spike color-white radius4  text-c margin-r5 font12 line18 text-c">NEW</em>
                 <em class="timed-spike color-white radius4  text-c margin-r5 font12 line18 text-c">HOT</em>
                 <em class="timed-spike color-white radius4  text-c  font12 line18 text-c">
-                    <s class="mui-icon mui-icon-arrowthindown font18 font-weight"></s>45%
+                    <s class="mui-icon mui-icon-arrowthindown font18 font-weight"></s>{{((highestPrice-bottomPrice)/highestPrice*100).toFixed()}}%
                 </em>
             </div>
         </div>
@@ -112,7 +111,7 @@
                 <p class="font12">Feedback</p>
             </li>
             <li class="mui-col-xs-4 mui-pull-left text-c border-l border-r">
-                <h4 class="no-font-weight font16">216</h4>
+                <h4 class="no-font-weight font16">{{}}</h4>
                 <p class="font12">orders</p>
             </li>
             <li class="mui-col-xs-4 mui-pull-left text-r">
@@ -138,6 +137,7 @@
         <p class="mui-table-view-cell margin-t10 bakc-fff padding-line44 font-color-3">
             <a href="javascript:void(0)">Feedback(666)<span class="mui-pull-right font-color-9">More</span></a>
         </p>
+        <!-- 评论 -->
         <dl class="more-comments bakc-fff hidden relative border-be">
             <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
                 <img src="../../images/Default-Avatar.jpg">
@@ -181,49 +181,7 @@
                 </ul>
             </dd>
         </dl>
-        <dl class="more-comments bakc-fff hidden relative border-be">
-            <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
-                <img src="../../images/Default-Avatar.jpg">
-            </dt>
-            <dd>
-                <ul style="margin-left: 60px;">
-                    <li class="hidden">
-                        <h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">
-                            Feedback(666)</h4>
-                        <div class="mui-pull-left mui-pull-right evaluate-stars">
-                            <p></p>
-                        </div>
-                    </li>
-                    <li class="hidden margin-t5">
-                        <p class="mui-pull-left font12 margin-r10">22 Apr 2017</p>
-                        <p class="mui-pull-left font12 margin-r10">Color:PSB</p>
-                    </li>
-                    <li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter. in fact,
-                        thin jersey. the cool summer weather. minus a star for a long delivery-almost two
-                        months. that is good for growth ordered
-                    </li>
-                    <li class="margin-t10">
-                        <ul class="hidden">
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
-                                <img src="../../images/img.jpg">
-                            </li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
-                                <img src="../../images/img2.jpg">
-                            </li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
-                                <img src="../../images/img3.jpg">
-                            </li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
-                                <img src="../../images/cat.jpg">
-                            </li>
-                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;">
-                                <img src="../../images/Default-Avatar.jpg">
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </dd>
-        </dl>
+        <!-- end -->
         <p class="mui-table-view-cell text-c bakc-fff font-color-3">View All</p>
     </div>
     <div class="margin-t10">
@@ -265,7 +223,8 @@
     </div>
 
 </script>
-<script>
+<script src="../../js/details/details.js"></script>
+<script type="text/javascript" defer>
     mui.init();
     mui('#offCanvasSideScroll').scroll();
     mui('#offCanvasContentScroll').scroll();

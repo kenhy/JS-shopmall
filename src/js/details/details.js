@@ -36,6 +36,7 @@ function getMessage(url_message) {
                 client : client
             },
             success : function(data) {
+                console.log(data);
                 var list = template('details',data.data);
                 $("[data-type=details]").html(list);
                 $("#productDes").html(data.data.productDetail.productDes)
@@ -44,3 +45,8 @@ function getMessage(url_message) {
     }
 )(url_message_id);
 
+(function pinglun_show(url_message_id) {
+    var skuid = url_message_id,
+
+    }
+)(url_message_id);
