@@ -59,7 +59,7 @@
                 <!-- history -->
             </ul>
             <p class="padding-line44">Popular Search</p>
-            <ul data-type="search_populer" class="mui-table-view">
+            <ul id="search_popular" data-type="search_populer" class="mui-table-view">
                 <!-- popular -->
             </ul>
             <div class="padding-line44 bakc-fff">
@@ -330,7 +330,7 @@
 <script id="search_populer" type="text/html">
     {{each data as p i}}
     <li class="mui-table-view-cell">
-        <a href="javascript:void(0)">
+        <a data-name="{{p.name}}" href="javascript:void(0)">
             <span class="mui-navigate-right font18"></span> {{p.name}}
         </a>
     </li>

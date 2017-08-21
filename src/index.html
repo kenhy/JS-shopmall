@@ -180,24 +180,24 @@
 <script src="js/common/jquery.min.js"></script>
 <script src="js/common/mui.min.js"></script>
 <script src="js/common/template/template.js"></script>
-<script src="js/main.js"></script>
-<script src="js/index.js"></script>
+<script src="js/main.js" ></script>
+<script src="js/index.js" ></script>
 <!--template index-banner-->
 <script id="index-banner" type="text/html">
     <div class="mui-slider-item mui-slider-item-duplicate">
-        <a href="#">
+        <a href="{{data[5].targetPath}}">
             <img src="{{data[5].imagePath}}">
         </a>
     </div>
     {{each data as c i}}
     <div class="mui-slider-item">
-        <a href="#">
+        <a href="{{c.targetPath}}">
             <img src="{{c.imagePath}}">
         </a>
     </div>
     {{/each}}
     <div class="mui-slider-item mui-slider-item-duplicate">
-        <a href="#">
+        <a href="{{data[0].targetPath}}">
             <img src="{{data[0].imagePath}}">
         </a>
     </div>
@@ -206,7 +206,7 @@
 <script id="index-footer-Arrivals" type="text/html">
     <div class="mui-scroll LeftAndRightList">
         {{each list as c i}}
-        <a class="mui-control-item">
+        <a class="mui-control-item" href="containers/product/details.html?id={{c.productId}}">
             <img class="mui-media-object" src="{{c.mainImage}}">
             <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
         </a>
@@ -217,7 +217,7 @@
 <script id="index-footer-Sellers" type="text/html">
     <div class="mui-scroll LeftAndRightList">
         {{each list as c i}}
-        <a class="mui-control-item">
+        <a class="mui-control-item" href="containers/product/details.html?id={{c.productId}}">
             <img class="mui-media-object" src="{{c.mainImage}}">
             <p class="mui-media-body text-l font-color-3 margin-l10">US ${{c.specialPrice}}</p>
         </a>

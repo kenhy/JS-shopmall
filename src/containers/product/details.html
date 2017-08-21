@@ -20,7 +20,7 @@
     <div class="mui-scroll">
         <div class="mui-content padding-b50">
             <div data-type="details">
-
+                <!---->
             </div>
             <div id="move-togger"></div>
         </div>
@@ -226,7 +226,6 @@
 <script src="../../js/details/details.js"></script>
 <script type="text/javascript" defer>
     mui.init();
-    mui('#offCanvasSideScroll').scroll();
     mui('#offCanvasContentScroll').scroll();
     /*五星评价*/
     var progressbar1 = mui('#star');
@@ -264,6 +263,8 @@
         var width = d.offsetWidth;
         d.style.height = width + "px";
     }
+</script>
+<script type="text/javascript" defer>
     mui.init({
         pullRefresh: {
             container: "#refreshContainer", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等

@@ -8,33 +8,44 @@ var keyword = document.querySelector("#input_keyword").addEventListener("input",
     return this.value;
 },true);
 
-/*keyword查询*/
+/* keyword查询 */
 var productSearch = {},
     input_type = false,
     input_cancel = $("#input_cancel"),
     input_in = $("#input_keyword"),
     input_search = $("#input_search"),
     content_list = $("#content_list"),
+    search_popular = document.querySelector("#search_popular");
     content_loading = $("#loading");
 
-/*
-* 事件状态绑定*/
+
+/* 事件状态绑定 */
 input_cancel.on("tap",function () {
     input_cancel.hide();
     input_search.hide();
 });
 
+/* 文字输入事件绑定 */
 input_in.bind("textInput",function () {
     input_cancel.show();
     input_search.show();
     content_loading.show();
 });
 
+/*输入*/
 input_in.on("search", function() {
     keywords = input_in.val();
     search(keywords);
 });
 
+//页面自定义事件绑定
+bindEvent(search_popular,'tap','a',function () {
+    //console.log(this);
+    var index = this.getAttribute('data-name');
+    input_search.val(index);
+    search(index);
+    //console.log(index);
+});
 
 /*搜索*/
 function search(keywords) {
@@ -64,9 +75,7 @@ function search(keywords) {
     });
 }
 
-/**
- * 排序
- */
+/* 排序 */
 function init_hotkeyword() {
     $.ajax({
         type:"get",
@@ -76,6 +85,7 @@ function init_hotkeyword() {
         cache:false,
         data:{},
         success:function (data) {
+            //console.log(data);
             var html = template('search_populer',data);
             $("[data-type=search_populer]").html(html);
         }
@@ -88,18 +98,10 @@ function get_detail() {
     var index = document.querySelector('.mui-table-view.border-t.nmg');
     console.log(index);
     index.addEventListener('click',function(e){
-        if(e.target && e.target.nodeName.toUpperCase()=="A"){/*判断目标事件是否为li*/
+        if(e.target && e.target.nodeName.toUpperCase()=="A"){/*判断目标事件是否为*/
             alert('click');
         }
     },false);
-}
-
-function itemDone(e) {
-//Remove item from the list
-    var target,elParent,elGrandparent;
-    target = e.target;
-    elParent = target.parentNode;
-
 }
 
 /*函数加载*/

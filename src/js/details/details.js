@@ -22,8 +22,9 @@ function getMessage(url_message) {
     return value[0];
 }
 
+/*detail显示*/
 (function details_show(url_message_id) {
-        var skuId = url_message_id,
+        var proId = url_message_id,
             client = "web";
         $.ajax({
             type : "post",
@@ -32,7 +33,7 @@ function getMessage(url_message) {
             async : true,
             cache : false,
             data : {
-                skuId : skuId,
+                proId : proId,
                 client : client
             },
             success : function(data) {
@@ -45,8 +46,9 @@ function getMessage(url_message) {
     }
 )(url_message_id);
 
-(function pinglun_show(url_message_id) {
+/*评论*/
+/*(function pinglun_show(url_message_id) {
     var skuid = url_message_id,
 
     }
-)(url_message_id);
+)(url_message_id);*/

@@ -59,7 +59,7 @@ function init_index_detail() {
         data: {},
         success: function (data) {
             index = data.data;
-            //console.log(data);
+            console.log(data);
         }
     });
     return index;
