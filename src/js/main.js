@@ -87,12 +87,13 @@ Date.prototype.format = function(f) {
         // millisecond
     };
     if (/(y+)/.test(f))
-        f = f.replace(RegExp.$1, (this.getFullYear() + "")
-            .substr(4 - RegExp.$1.length));
+        f = f.replace(RegExp.$1,
+            (this.getFullYear() + "").substr(4 - RegExp.$1.length));
     for ( var k in o)
         if (new RegExp("(" + k + ")").test(f))
-            f = f.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k]
-                : ("00" + o[k]).substr(("" + o[k]).length));
+            f = f.replace(RegExp.$1, RegExp.$1.length == 1
+                ?
+                o[k] : ("00" + o[k]).substr(("" + o[k]).length));
     return f;
 };
 

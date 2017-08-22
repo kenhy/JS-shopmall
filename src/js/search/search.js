@@ -42,7 +42,7 @@ input_in.on("search", function() {
 bindEvent(search_popular,'tap','a',function () {
     //console.log(this);
     var index = this.getAttribute('data-name');
-    input_search.val(index);
+    input_in.val(index);
     search(index);
     //console.log(index);
 });
@@ -69,6 +69,7 @@ function search(keywords) {
             console.log(data);
             var html = template('search_list',data.data);
             $("[data-type=search_list]").html(html);
+            pagenum = data.data.page.nextPage;
             content_loading.hide();
             get_detail();
         }

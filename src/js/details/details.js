@@ -41,6 +41,7 @@ function getMessage(url_message) {
                 var list = template('details',data.data);
                 $("[data-type=details]").html(list);
                 $("#productDes").html(data.data.productDetail.productDes)
+                $("#productDes").hide();
             }
         });
     }

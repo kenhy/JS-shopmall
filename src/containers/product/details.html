@@ -215,10 +215,12 @@
         <p class="mui-table-view-cell text-c bakc-fff font-color-3">View Details</p>
     </div>
     <div class="mui-table-view-cell text-c bakc-fff margin-t10 ptb-lr">
-        <span class="iconfont icon-shang font18"></span>
-        <p class="font-color-3">swipe up view item description</p>
-        <div id="">
-
+        <div id="show_details">
+            <span class="iconfont icon-shang font18"></span>
+            <p class="font-color-3">swipe up view item description</p>
+        </div>
+        <div id="productDes">
+            <!-- details-->
         </div>
     </div>
 
@@ -266,19 +268,40 @@
 </script>
 <script type="text/javascript" defer>
     mui.init({
-        pullRefresh: {
-            container: "#refreshContainer", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
-            up: {
+        pullRefresh : {
+            container:"#refreshContainer",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up:{
                 height: 50, //可选.默认50.触发上拉加载拖动距离
                 auto: false, //可选,默认false.自动上拉加载一次
                 contentrefresh: "Loading...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
                 contentnomore: '-_- have nothing !!!', //可选，请求完毕若没有更多数据时显示的提醒内容；
-                callback: function () {
-                    alert(1);
-                }
+                callback : function() {
+                    var self = this; // 这里的this == mui('#refreshContainer').pullRefresh()
+                    // 加载更多的内容
+                    loadMore(this);
+                } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
             }
         }
     });
+
+    //
+    var list_state = false;
+    var loadMore = function(pullRefresh) {
+        // 加载更多的内容到列表中
+        if (list_state == false){
+            // 如果有更多数据，则继续
+            pullRefresh.endPullupToRefresh(false);
+            $("#productDes").show();
+            $("#show_details").hide();
+            list_state = true;
+        }else{
+            // 如果没有更多数据了，则关闭上拉加载
+            pullRefresh.endPullupToRefresh(true);
+        }
+
+
+    };
+
 </script>
 </body>
 

@@ -235,62 +235,7 @@
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/search/search.js"></script>
-<script type="text/javascript">
-    //清空历史记录弹窗
-    mui.init();
-    mui('#offCanvasSideScroll').scroll();
-    mui('#offCanvasContentScroll').scroll();
-    var info = document.getElementById("info");
-    document.getElementById("confirmBtn").addEventListener('tap', function () {
-        var btnArray = ['No', 'Yes'];
-        mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function (e) {
-        })
-    });
-    mui.init({
-        pullRefresh: {
-            container: "#refreshContainer", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
-            up: {
-                height: 50, //可选.默认50.触发上拉加载拖动距离
-                auto: false, //可选,默认false.自动上拉加载一次
-                contentrefresh: "Loading...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-                contentnomore: '-_- have nothing !!!', //可选，请求完毕若没有更多数据时显示的提醒内容；
-                callback: function () {
-                    alert(1);
-                }
-            }
-        }
-    });
-    /*function pullupRefresh() {
-        var list = "";
-        var pagenum = '2';
-        setTimeout(function () {
-        }, 1000);
-        $.ajax({
-            type: "get",
-            url: RTTMALL_API.URL_PRODUCT_SEARCH,
-            dataType: "json",
-            async: true,
-            cache: false,
-            data: {
-                client_token: token,
-                keywords: keywords,
-                pageSize: '5'
-            },
-            success: function (data) {
-                if (data.data.list === []) {
-                    // 如果没有更多数据了，则关闭上拉加载
-                    pullRefresh.endPullupToRefresh(true);
-                } else {
-                    append();
-                    mui('#refreshContainer').pullRefresh().endPulldownToRefresh()；
-                }
-            }
-        })
-    };*/
-    mui('body').on('tap', 'a', function () {
-        window.top.location.href = this.href;
-    });
-</script>
+<!--search_list-->
 <script id="search_list" type="text/html">
     <ul class="mui-table-view border-t nmg">
         {{each list as p i}}
@@ -337,7 +282,66 @@
     {{/each}}
 </script>
 <script type="text/javascript">
+    //清空历史记录弹窗
+    mui.init();
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    var pagenum;
+    var info = document.getElementById("info");
+    document.getElementById("confirmBtn").addEventListener('tap', function () {
+        var btnArray = ['No', 'Yes'];
+        mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function (e) {
+        })
+    });
+    mui.init({
+        pullRefresh : {
+            container:"#refreshContainer",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up:{
+                height: 50, //可选.默认50.触发上拉加载拖动距离
+                auto: false, //可选,默认false.自动上拉加载一次
+                contentrefresh: "Loading...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+                contentnomore: '-_- have nothing !!!', //可选，请求完毕若没有更多数据时显示的提醒内容；
+                callback : function() {
+                    var self = this; // 这里的this == mui('#refreshContainer').pullRefresh()
+                    // 加载更多的内容
+                    loadMore(this);
+                } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+            }
+        }
+    });
+    var loadMore = function(pullRefresh) {
+        var token = getCookie('token');
+        var keywords = input_in.val();
+        $.ajax({
+            type: "get",
+            url: RTTMALL_API.URL_PRODUCT_SEARCH,
+            dataType: "json",
+            async: true,
+            cache: false,
+            data: {
+                client_token: token,
+                keywords: keywords,
+                pageNum: pagenum,
+                pageSize: '5'
+            },
+            success: function (data) {
+                if (data.data.page.nextPage == data.data.page.currentPage) {
+                    // 如果没有更多数据了，则关闭上拉加载
+                    pullRefresh.endPullupToRefresh(true);
+                } else {
+                    console.log(data);
+                    var html = template('search_list',data.data);
+                    pagenum = data.data.page.nextPage;
+                    $("[data-type=search_list]").append(html);
+                    pullRefresh.endPullupToRefresh(false);
+                }
+            }
+        })
+    };
 
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
 </script>
 </body>
 
