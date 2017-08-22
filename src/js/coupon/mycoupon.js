@@ -29,6 +29,8 @@ function initMyCoupon() {
                     return;
                 }
                 var couponData = data.data;
+                var item1 = template('Unused',couponData);
+                $("[data-type=Unused]").html(item1);
             }
         }, "json");
 }
