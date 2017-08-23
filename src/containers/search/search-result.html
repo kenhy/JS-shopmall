@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Search result</title>
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <link rel="stylesheet" href="../../css/mui.min.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
@@ -24,7 +23,7 @@
         color:#fff;
         padding-left:60px;
         font-size:15px;
-        background: #000 url(http://img.my.csdn.net/uploads/201211/14/1352886927_7549.gif) no-repeat 10px 50%;
+        background: #000 url(../../images/loading.gif) no-repeat 10px 50%;
         opacity: 0.7;
         z-index:999;
         -moz-border-radius:20px;
@@ -41,7 +40,7 @@
 
 <div class="mui-inner-wrap">
     <header class="mui-bar mui-bar-nav">
-        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
+        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="location.replace(document.referrer)"></span>
         <span id="input_cancel" class="mui-icon mui-pull-right iconfont icon-shibai font20 font-color-3"></span>
         <div class="nav-input radius4">
             <form action='' onsubmit="return false;">
@@ -90,6 +89,7 @@
             </p>
         </div>
         <div id="refreshContainer" class="mui-scroll-wrapper">
+            <div id='toTop'><img src="../../images/1.png"></div>
             <div id="list" class="mui-content mui-scroll">
                 <div data-type="search_list">
                     <!-- search_list -->
@@ -311,7 +311,6 @@
     });
     var loadMore = function(pullRefresh) {
         var token = getCookie('token');
-        var keywords = input_in.val();
         $.ajax({
             type: "get",
             url: RTTMALL_API.URL_PRODUCT_SEARCH,
@@ -320,7 +319,7 @@
             cache: false,
             data: {
                 client_token: token,
-                keywords: keywords,
+                keywords: prohash,
                 pageNum: pagenum,
                 pageSize: '5'
             },

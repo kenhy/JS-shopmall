@@ -15,9 +15,13 @@ var productSearch = {},
     input_in = $("#input_keyword"),
     input_search = $("#input_search"),
     content_list = $("#content_list"),
-    search_popular = document.querySelector("#search_popular");
-    content_loading = $("#loading");
+    search_popular = document.querySelector("#search_popular"),
+    content_loading = $("#loading"),
+    prohash = window.location.hash;
 
+if(prohash == ""){
+    input_cancel.hide();
+}
 
 /* 事件状态绑定 */
 input_cancel.on("tap",function () {
@@ -25,9 +29,17 @@ input_cancel.on("tap",function () {
     input_search.hide();
 });
 
+/*hash监听*/
+var hashchanges = document.addEventListener('hashchange',function () {
+    return prohash;
+});
+
 /* 文字输入事件绑定 */
-input_in.bind("textInput",function () {
-    input_cancel.show();
+input_in.bind("tap",function () {
+    if(prohash != ""){
+        input_cancel.show();
+    }
+    prohash = "";
     input_search.show();
     content_loading.show();
 });
@@ -35,6 +47,7 @@ input_in.bind("textInput",function () {
 /*输入*/
 input_in.on("search", function() {
     keywords = input_in.val();
+    window.location.hash = keywords;
     search(keywords);
 });
 
@@ -42,6 +55,7 @@ input_in.on("search", function() {
 bindEvent(search_popular,'tap','a',function () {
     //console.log(this);
     var index = this.getAttribute('data-name');
+    window.location.hash = index;
     input_in.val(index);
     search(index);
     //console.log(index);
@@ -71,7 +85,6 @@ function search(keywords) {
             $("[data-type=search_list]").html(html);
             pagenum = data.data.page.nextPage;
             content_loading.hide();
-            get_detail();
         }
     });
 }
@@ -93,17 +106,6 @@ function init_hotkeyword() {
     });
 }
 
-/*得到details*/
-function get_detail() {
-    // 获取父节点，并为它添加一个click事件
-    var index = document.querySelector('.mui-table-view.border-t.nmg');
-    console.log(index);
-    index.addEventListener('click',function(e){
-        if(e.target && e.target.nodeName.toUpperCase()=="A"){/*判断目标事件是否为*/
-            alert('click');
-        }
-    },false);
-}
 
 /*函数加载*/
 init_hotkeyword();

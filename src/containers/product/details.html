@@ -5,14 +5,20 @@
     <meta charset="utf-8">
     <title>Commodity details</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="toTop" content="true">
     <link rel="stylesheet" href="../../css/mui.min.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
+    <style>
+        #productDes img {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
 <header class="mui-bar mui-bar-nav bakc-fff">
-    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
+    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="location.replace(document.referrer)"></span>
     <a href="javascript:void(0);" class="mui-icon iconfont icon-gouwuche2 mui-pull-right nmg"></a>
     <h1 class="mui-title"></h1>
 </header>
@@ -20,7 +26,7 @@
     <div class="mui-scroll">
         <div class="mui-content padding-b50">
             <div data-type="details">
-                <!---->
+                <!--details-->
             </div>
             <div id="move-togger"></div>
         </div>
@@ -283,8 +289,7 @@
             }
         }
     });
-
-    //
+    //详情
     var list_state = false;
     var loadMore = function(pullRefresh) {
         // 加载更多的内容到列表中
@@ -298,10 +303,7 @@
             // 如果没有更多数据了，则关闭上拉加载
             pullRefresh.endPullupToRefresh(true);
         }
-
-
     };
-
 </script>
 </body>
 
