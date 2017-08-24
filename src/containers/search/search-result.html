@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Search result</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="stylesheet" href="../../css/mui.min.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
@@ -89,8 +90,7 @@
             </p>
         </div>
         <div id="refreshContainer" class="mui-scroll-wrapper">
-            <div id='toTop'><img src="../../images/1.png"></div>
-            <div id="list" class="mui-content mui-scroll">
+            <div id="list" class="mui-content mui-scroll npm">
                 <div data-type="search_list">
                     <!-- search_list -->
                 </div>
@@ -311,6 +311,7 @@
     });
     var loadMore = function(pullRefresh) {
         var token = getCookie('token');
+        var input_keywords = window.location.hash;
         $.ajax({
             type: "get",
             url: RTTMALL_API.URL_PRODUCT_SEARCH,
@@ -319,7 +320,7 @@
             cache: false,
             data: {
                 client_token: token,
-                keywords: prohash,
+                keywords: input_keywords,
                 pageNum: pagenum,
                 pageSize: '5'
             },

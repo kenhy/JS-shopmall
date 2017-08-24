@@ -9,14 +9,14 @@ var geturl = window.location.href,
 
 function getMessage(url_message) {
     var index = url_message;
-    if(index.indexOf("?") != -1){
+    if (index.indexOf("?") != -1) {
         var str = index.substr(1),
             strs = str.split("&"),
             key = new Array(strs.length),
             value = new Array(strs.length);
-        for(var i=0;i<strs.length;i++){
-            key[i]=strs[i].split("=")[0];
-            value[i]=strs[i].split("=")[1];
+        for (var i = 0; i < strs.length; i++) {
+            key[i] = strs[i].split("=")[0];
+            value[i] = strs[i].split("=")[1];
         }
     }
     return value[0];
@@ -27,25 +27,24 @@ function getMessage(url_message) {
         var proId = url_message_id,
             client = "web";
         $.ajax({
-            type : "post",
-            url : RTTMALL_API.URL_PRODUCT_GETSKU,
-            dataType : "json",
-            async : true,
-            cache : false,
-            data : {
-                proId : proId,
-                client : client
+            type: "POST",
+            url: RTTMALL_API.URL_PRODUCT_GETSKU,
+            dataType: "json",
+            async: true,
+            cache: false,
+            data: {
+                proId: proId,
+                client: client
             },
-            success : function(data) {
+            success: function (data) {
                 console.log(data);
-                var list = template('details',data.data);
+                var list = template('details', data.data);
                 $("[data-type=details]").html(list);
-                $("#productDes").html(data.data.productDetail.productDes)
+                $("#productDes").html(data.data.productDetail.productDes);
                 $("#productDes").hide();
             }
         });
-    }
-)(url_message_id);
+    })(url_message_id);
 
 /*评论*/
 /*(function pinglun_show(url_message_id) {

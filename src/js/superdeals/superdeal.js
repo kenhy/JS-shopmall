@@ -11,7 +11,7 @@ function initSuperDeals() {
         async: false,
         url: RTTMALL_API.URL_SUPERDEALS,
         success: function (data) {
-            //console.log(data);
+            console.log(data);
             var list_header = template("dealsindex", data.data);
             $("[data-type=dealsindex]").html(list_header);
             var list_body = template("superdealslist", data.data);
@@ -26,6 +26,7 @@ function addRemind(index) {
     var token = getCookie("token");
     $.ajax({
         url: RTTMALL_API.URL_INDEX_SUPERDEALES_REMIND_ADD,
+        type:"POST",
         async: true,
         data: {
             client_token: token,

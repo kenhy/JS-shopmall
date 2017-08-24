@@ -8,6 +8,7 @@ var keyword = document.querySelector("#input_keyword").addEventListener("input",
     return this.value;
 },true);
 
+
 /* keyword查询 */
 var productSearch = {},
     input_type = false,
@@ -18,6 +19,8 @@ var productSearch = {},
     search_popular = document.querySelector("#search_popular"),
     content_loading = $("#loading"),
     prohash = window.location.hash;
+
+window.location.hash="";
 
 if(prohash == ""){
     input_cancel.hide();
@@ -35,11 +38,11 @@ var hashchanges = document.addEventListener('hashchange',function () {
 });
 
 /* 文字输入事件绑定 */
-input_in.bind("tap",function () {
+input_in.on("tap",function () {
     if(prohash != ""){
         input_cancel.show();
     }
-    prohash = "";
+    window.location.hash = "";
     input_search.show();
     content_loading.show();
 });
@@ -48,6 +51,7 @@ input_in.bind("tap",function () {
 input_in.on("search", function() {
     keywords = input_in.val();
     window.location.hash = keywords;
+    input_search.show();
     search(keywords);
 });
 
@@ -57,6 +61,7 @@ bindEvent(search_popular,'tap','a',function () {
     var index = this.getAttribute('data-name');
     window.location.hash = index;
     input_in.val(index);
+    content_loading.show();
     search(index);
     //console.log(index);
 });

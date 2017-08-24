@@ -34,7 +34,3 @@ function initMyCoupon() {
             }
         }, "json");
 }
-
-var unixTimestamp = new Date( 1477386005*1000 ) ;
-commonTime = unixTimestamp.toLocaleString();
-alert(commonTime);

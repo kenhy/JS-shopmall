@@ -227,4 +227,15 @@ function formatTime(timeStr) {
     return timeStr;
 }
 
+/*登录状态监测*/
+function all_login_status(){
+    var token = getCookie("token");
+    if (token == "") {
+        //console.log(username);
+        //console.log(imagePath);
+        href_check();
+    }
+}
+
 init_footer();
+all_login_status();

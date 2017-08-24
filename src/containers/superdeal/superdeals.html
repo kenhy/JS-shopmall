@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Super Deals</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="stylesheet" href="../../css/mui.min.css" />
     <link rel="stylesheet" href="../../css/base.css" />
     <link rel="stylesheet" href="../../css/subpage.css" />
@@ -39,7 +40,7 @@
 
 <body>
 <header class="mui-bar mui-bar-nav bakc-fff">
-    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
+    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.back();"></span>
     <a id="remind_me" href="remind-me.html" class="user_check mui-icon iconfont icon-icon-remind mui-pull-right font22 font-color-9"></a>
     <h1 class="mui-title">Super Deals</h1>
 </header>
@@ -103,6 +104,7 @@
         <ul class="mui-table-view border-t margin-b10">
             {{each q.productList as p i}}
             <li class="mui-table-view-cell">
+                <a href="{{domain}}/containers/product/details.html?id={{p.productId}}">
                 <p class="product-size mui-pull-left radius4 margin-t5"><img src="{{p.mainImage}}"></p>
                 <dl class="mui-media-body product-text relative">
                     <dt class="nospace font14">{{p.name}}</dt>
@@ -114,6 +116,7 @@
                         <span data-productid="{{p.superDealProductId}}" class="remind-add mui-pull-right text-r bottom-right color-skyblue">REMIND ME</span>
                     </dd>
                 </dl>
+                </a>
             </li>
             {{/each}}
         </ul>

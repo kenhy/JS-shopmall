@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Commodity details</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <meta name="toTop" content="true">
-    <link rel="stylesheet" href="../../css/mui.min.css">
-    <link rel="stylesheet" href="../../css/base.css">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/base.css"/>
     <link rel="stylesheet" href="../../css/subpage.css"/>
     <style>
         #productDes img {
@@ -80,13 +80,22 @@
             <p class="iconfont icon-fenxiang mui-pull-left radius50 border bakc-fff text-c font18"></p>
         </div>
     </div>
-    {{if superDealBO.status = 0}}
+    {{if superDealBO.status == 1}}
     <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
         <div class="top-left">
             <h4 class="font-weight font16">Flash Deals</h4>
             <s class="line-through font12">TTD $89.99</s>
         </div>
-        <b class="text-c font18">TTD $9.99</b>
+        <b class="text-c font18">TTD ${{superDealBO.superDealProduct.superDealPrice}}</b>
+        <div class="count-down color-white font12 text-c">April 28 began spike</div>
+    </div>
+    {{else if superDealBO.status == 2}}
+    <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
+        <div class="top-left">
+            <h4 class="font-weight font16">Flash Deals</h4>
+            <s class="line-through font12">TTD $89.99</s>
+        </div>
+        <b class="text-c font18">TTD $123</b>
         <div class="count-down color-white font12 text-c">April 28 began spike</div>
     </div>
     {{else}}
@@ -109,7 +118,7 @@
         <ul class="hidden margin-t20 border-t border-be padding-t10 padding-b10">
             <li class="mui-col-xs-4 mui-pull-left text-l relative">
                 <div class="hidden">
-                    <h4 class="no-font-weight font16 mui-pull-left">4.8</h4>
+                    <h4 class="no-font-weight font16 mui-pull-left">5</h4>
                     <div class="excellent-star mui-pull-left score-star">
                         <p class="fourstar"></p>
                     </div>
@@ -117,7 +126,7 @@
                 <p class="font12">Feedback</p>
             </li>
             <li class="mui-col-xs-4 mui-pull-left text-c border-l border-r">
-                <h4 class="no-font-weight font16">{{}}</h4>
+                <h4 class="no-font-weight font16">{{saleNum}}</h4>
                 <p class="font12">orders</p>
             </li>
             <li class="mui-col-xs-4 mui-pull-left text-r">
@@ -133,10 +142,6 @@
                 <s class="mui-pull-right font-color-h mar-right">Select</s>
                 Color
             </a>
-        </li>
-        <li class="cart-btn hidden">
-            <button class="mui-pull-right buy-now-button nborder font12">BUY NOW</button>
-            <button class="mui-pull-right cart-btn-button nback font12 font-color-h">ADD TO CART</button>
         </li>
     </ul>
     <div class="feedback-main">
@@ -265,7 +270,7 @@
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
-    var div = document.getElementsByClassName("mui-slider-item ");
+    var div = document.getElementsByClassName("mui-slider-item");
     for (var i = 0; i < div.length; i++) {
         var d = div[i];
         var width = d.offsetWidth;
@@ -285,7 +290,8 @@
                     var self = this; // 这里的this == mui('#refreshContainer').pullRefresh()
                     // 加载更多的内容
                     loadMore(this);
-                } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+                }
+                //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
             }
         }
     });
