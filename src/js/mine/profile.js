@@ -57,7 +57,7 @@ var account_index ={
                 client_token:token
             },
             success:function (data) {
-                console.log(data);
+                //console.log(data);
                 //sex loading
                 var sex = data.data.sex;
                 data.data.sex = sex_choose(sex);

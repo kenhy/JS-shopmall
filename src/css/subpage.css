@@ -306,6 +306,10 @@ li.mui-table-view-cell.mui-table-view-cell.mui-collapse{padding: 12px 15px;}
 .time-limit dd ul li{width: 100%;}
 .time-limit dd ul li:first-child{ position: absolute; top: 5%;}
 .time-limit dd ul li:last-child{ position: absolute; bottom: 5%;}
+@media (max-width:768px) {
+	.time-limit dd ul li img{ max-width: 140px !important;}
+	.time-limit dd ul li .mui-media-body{top: 28%;}
+	}
 .time-limit dd ul li:after{background: none;}
 .time-limit dd ul li img{width: 46%; max-width: 90px; margin-right: 5px;}
 .time-limit dd ul li .mui-media-body{position: absolute; top: 20%; left: 50%;}
