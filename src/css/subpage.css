@@ -361,4 +361,3 @@ background-image:-webkit-linear-gradient(to right, #FE949C, #FE465F); background
 .mobileTitle{float:left;margin-left:3%;text-align: center;line-height: 33px;font-size: 17px;color:#000;}
 .mobileOpen{width: 26%;height: 31px;float: right;margin-right: 10%;text-align: center;line-height: 31px;font-size: 14px;border-radius: 11px;-webkit-border-radius:11x;-moz-border-radius:11px;cursor: pointer;background: #000;color: #e5bb87;font-weight: bold;}
 .removeOpen{width: 20px;height: 20px;border: 2px solid #000;float:left;margin-left: 20px;margin-top: 5px;font-size: 15px;text-align: center;border-radius:41px;-webkit-border-radius:41x;-moz-border-radius:41px;background:url(../images/x.png) no-repeat center center;background-size: 20px 20px;line-height: 17px;font-weight: 600;}
-
