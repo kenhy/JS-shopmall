@@ -74,7 +74,7 @@ var account_index ={
                 if(data.data.imagePath == "null"){
                     $("#imgPath").attr("src","../../images/Default-Avatar.jpg")
                 }else{
-                    setCookie('imagePath',data.imagePath);
+                    setCookie('imagePath',data.data.imagePath);
                 }
                 init_time();
             }

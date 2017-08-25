@@ -17,12 +17,11 @@ var productSearch = {},
     input_search = $("#input_search"),
     content_list = $("#content_list"),
     search_popular = document.querySelector("#search_popular"),
-    content_loading = $("#loading"),
-    prohash = window.location.hash;
+    content_loading = $("#loading");
 
 window.location.hash="";
 
-if(prohash == ""){
+if(window.location.hash == ""){
     input_cancel.hide();
 }
 
@@ -39,7 +38,7 @@ var hashchanges = document.addEventListener('hashchange',function () {
 
 /* 文字输入事件绑定 */
 input_in.on("tap",function () {
-    if(prohash != ""){
+    if(window.location.hash != ""){
         input_cancel.show();
     }
     window.location.hash = "";

@@ -104,19 +104,19 @@
         <ul class="mui-table-view border-t margin-b10">
             {{each q.productList as p i}}
             <li class="mui-table-view-cell">
-                <a href="{{domain}}/containers/product/details.html?id={{p.productId}}">
                 <p class="product-size mui-pull-left radius4 margin-t5"><img src="{{p.mainImage}}"></p>
                 <dl class="mui-media-body product-text relative">
+                    <a href="{{domain}}/containers/product/details.html?id={{p.productId}}">
                     <dt class="nospace font14">{{p.name}}</dt>
                     <dd>
                         <p class="font-weight color-red">TTD$ {{p.superDealPrice.toFixed(2)}} /{{p.unit}}</p>
                         <p class="line-through">TTD$ {{p.originalPrice.toFixed(2)}} /{{p.unit}}</p>
                     </dd>
+                    </a>
                     <dd>
                         <span data-productid="{{p.superDealProductId}}" class="remind-add mui-pull-right text-r bottom-right color-skyblue">REMIND ME</span>
                     </dd>
                 </dl>
-                </a>
             </li>
             {{/each}}
         </ul>

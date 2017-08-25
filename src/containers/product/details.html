@@ -80,22 +80,22 @@
             <p class="iconfont icon-fenxiang mui-pull-left radius50 border bakc-fff text-c font18"></p>
         </div>
     </div>
-    {{if superDealBO.status == 1}}
-    <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
-        <div class="top-left">
-            <h4 class="font-weight font16">Flash Deals</h4>
-            <s class="line-through font12">TTD $89.99</s>
-        </div>
-        <b class="text-c font18">TTD ${{superDealBO.superDealProduct.superDealPrice}}</b>
-        <div class="count-down color-white font12 text-c">April 28 began spike</div>
-    </div>
-    {{else if superDealBO.status == 2}}
+    {{if superDealBO.status == 2}}
     <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
         <div class="top-left">
             <h4 class="font-weight font16">Flash Deals</h4>
             <s class="line-through font12">TTD $89.99</s>
         </div>
         <b class="text-c font18">TTD $123</b>
+        <div class="count-down color-white font12 text-c">April 28 began spike</div>
+    </div>
+    {{else if superDealBO.status == 1}}
+    <div class="timed-spike padding-line44 color-white relative" style="margin-top: -20px;">
+        <div class="top-left">
+            <h4 class="font-weight font16">Flash Deals</h4>
+            <s class="line-through font12">TTD $89.99</s>
+        </div>
+        <b class="text-c font18">TTD ${{superDealBO.superDealProduct.superDealPrice}}</b>
         <div class="count-down color-white font12 text-c">April 28 began spike</div>
     </div>
     {{else}}
