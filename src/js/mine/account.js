@@ -23,7 +23,7 @@ var init_account = {
                 if(data.code == "1"){
                     list = data.data;
                 }else{
-                    console.log(data.msg);
+                    //console.log(data.msg);
                     confirm(data.msg);
                 }
             }

@@ -8,7 +8,6 @@ var keyword = document.querySelector("#input_keyword").addEventListener("input",
     return this.value;
 },true);
 
-
 /* keyword查询 */
 var productSearch = {},
     input_type = false,
@@ -84,7 +83,7 @@ function search(keywords) {
             pageSize: '7'
         },
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             var html = template('search_list',data.data);
             $("[data-type=search_list]").html(html);
             pagenum = data.data.page.nextPage;
@@ -109,7 +108,6 @@ function init_hotkeyword() {
         }
     });
 }
-
 
 /*函数加载*/
 init_hotkeyword();

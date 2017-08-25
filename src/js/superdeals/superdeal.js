@@ -2,7 +2,6 @@
  * Created by zhangjianan on 2017/7/31.
  */
 
-
 /*折扣初始化*/
 function initSuperDeals() {
     $.ajax({
@@ -11,7 +10,7 @@ function initSuperDeals() {
         async: false,
         url: RTTMALL_API.URL_SUPERDEALS,
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             var list_header = template("dealsindex", data.data);
             $("[data-type=dealsindex]").html(list_header);
             var list_body = template("superdealslist", data.data);

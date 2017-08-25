@@ -16,8 +16,7 @@ var account_index ={
             city = $("#city").html(),
             sexs = 0;
             /*birthday = $("#result"),
-            province = $("#province"),
-            imagePath = $("#imagePath"),*/
+            province = $("#province"),*/
         if(sex == "Male"){
             sexs = 0;
         }else{
@@ -68,7 +67,7 @@ var account_index ={
                 //flag loading
                 var css_flag = data.data.country.countriesCode.toLowerCase();
                 country_flag = "css_" + css_flag;
-                console.log(country_flag);
+                //console.log(country_flag);
                 $("#country_type").addClass(country_flag);
                 //img loading
                 if(data.data.imagePath == "null"){
