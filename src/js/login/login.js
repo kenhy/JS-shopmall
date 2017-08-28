@@ -57,8 +57,7 @@ var login = {
                             setCookie("loginName", data.data.loginName,1);
                             setCookie("userName", data.data.userName,1);
                             setCookie("customerId", data.data.customerId,1);
-                            setCookie("pwd", data.data.pwd,1);
-                            if(data.data.imagePath != null){
+                            if(data.data.imagePath != undefined){
                                 setCookie("imagePath", data.data.imagePath,1);
                             }
                             setCookie("role", data.data.role,1);

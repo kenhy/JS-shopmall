@@ -2,10 +2,16 @@
  * Created by JonathanZhang on 2017/6/19.
  */
 var domain = document.domain;
-console.log(domain);
 
-/*
-* 通用事件绑定*/
+/* 输入跳转 */
+function lesson_input() {
+    var input_in = document.getElementById('input_in');
+    input_in.addEventListener("click",function () {
+        window.location.href = "http://" + domain + "/containers/search/search-list.html";
+    });
+}
+
+/* 通用事件绑定 */
 function bindEvent(elem,type,selector,fn) {
     if (fn == null) {
         fn = selector;
@@ -23,7 +29,7 @@ function bindEvent(elem,type,selector,fn) {
     })
 }
 
-//设置cookie
+/*设置cookie*/
 function setCookie(name, value) {
     var expdate = new Date(); // 初始化时间
     expdate.setTime(expdate.getTime() + 30 * 24 * 60 * 60 * 1000); // 时间
@@ -31,7 +37,7 @@ function setCookie(name, value) {
         + ";path=/";
 }
 
-//获取cookie
+/*获取cookie*/
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -43,10 +49,11 @@ function getCookie(cname) {
     return "";
 }
 
-//清除cookie
+/*清除cookie*/
 function delCookie(name) {
     setCookie(name, "", -1);
 }
+
 
 function role(code, name) {
     this.code = code;

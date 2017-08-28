@@ -45,36 +45,11 @@
 <div class="mui-inner-wrap">
     <header class="mui-bar mui-bar-nav">
         <a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" href="../../index.html"></a>
-        <span id="input_cancel" class="mui-icon mui-pull-right iconfont icon-shibai font20 font-color-3"></span>
         <div class="nav-input radius4">
-            <form action='' onsubmit="return false;">
-                <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
-                <input id="input_keyword" placeholder="I'm looking for" type="search" class="text-l nback nborder nmg npd"/>
-            </form>
+            <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
+            <input id="input_in" placeholder="I'm looking for" type="search" class="text-l nback nborder nmg npd"/>
         </div>
     </header>
-
-    <!-- search -->
-    <div id="input_search" class="mui-scroll">
-        <div class="mui-content">
-            <p class="padding-line44">Search History</p>
-            <ul data-type="search_history" class="mui-table-view">
-                <!-- history -->
-            </ul>
-            <p class="padding-line44">Popular Search</p>
-            <ul id="search_popular" data-type="search_populer" class="mui-table-view">
-                <!-- popular -->
-            </ul>
-            <div class="padding-line44 bakc-fff">
-                <div class="mui-button-row line44 npd">
-                    <button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">
-                        Clear All History
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    </div>
     <!-- list -->
     <div id="content_list">
         <div class="padding-line44 hidden bakc-fff bestmatch">
@@ -97,10 +72,11 @@
                 <div data-type="search_list">
                     <!-- search_list -->
                 </div>
-                <div id="loading" class="loading">Loading...</div>
+
             </div>
         </div>
     </div>
+    <div id="loading" class="loading">Loading...</div>
     <div id="bestmatch" class="mui-popover">
         <div class="mui-popover-arrow none"></div>
         <div class="mui-scroll-wrapper">
@@ -266,37 +242,12 @@
         {{/each}}
     </ul>
 </script>
-<!--search_history-->
-<script id="search_history" type="text/html">
-    <li class="mui-table-view-cell">
-        <a href="javascript:void(0)">
-            <span class="mui-navigate-right font18"></span> Computer
-        </a>
-    </li>
-</script>
-<!--search_populer-->
-<script id="search_populer" type="text/html">
-    {{each data as p i}}
-    <li class="mui-table-view-cell">
-        <a data-name="{{p.name}}" href="javascript:void(0)">
-            <span class="mui-navigate-right font18"></span> {{p.name}}
-        </a>
-    </li>
-    {{/each}}
-</script>
 <!--page-->
 <script type="text/javascript">
     //清空历史记录弹窗
     mui.init();
     mui('#offCanvasSideScroll').scroll();
     mui('#offCanvasContentScroll').scroll();
-    var pagenum;
-    var info = document.getElementById("info");
-    document.getElementById("confirmBtn").addEventListener('tap', function () {
-        var btnArray = ['No', 'Yes'];
-        mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function (e) {
-        })
-    });
     mui.init({
         pullRefresh : {
             container:"#refreshContainer",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -315,7 +266,7 @@
     });
     var loadMore = function(pullRefresh) {
         var token = getCookie('token');
-        var input_keywords = window.location.hash;
+        var list = url_message_id;
         $.ajax({
             type: "get",
             url: RTTMALL_API.URL_PRODUCT_SEARCH,
@@ -324,9 +275,9 @@
             cache: false,
             data: {
                 client_token: token,
-                keywords: input_keywords,
+                keywords: list,
                 pageNum: pagenum,
-                pageSize: '5'
+                pageSize: '7'
             },
             success: function (data) {
                 if (data.data.page.nextPage == data.data.page.currentPage) {
@@ -346,6 +297,7 @@
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
+    lesson_input();
 </script>
 </body>
 

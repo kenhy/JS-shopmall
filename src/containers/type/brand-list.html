@@ -35,7 +35,7 @@
 		<a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left npd nmg text-c" href="../../index.html"></a>
 		<div class="nav-input radius4">
 			<span class="iconfont icon-sousuo font18 mui-pull-left"></span>
-			<input placeholder="I'm looking for" type="text" class="nback nborder nmg npd" />
+            <input id="input_in" placeholder="I'm looking for" type="search" class="text-l nback nborder nmg npd"/>
 		</div>
 	</header>
 	<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
@@ -149,6 +149,7 @@
             category_list = controls.querySelector('.mui-active').getAttribute("id");
             init_category_right(category_list);
         });
+        lesson_input();
 	</script>
 </body>
 

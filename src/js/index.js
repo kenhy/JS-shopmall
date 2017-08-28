@@ -163,7 +163,7 @@ function login_status() {
     //console.log(username);
     if (token == "") {
         //console.log(username);
-        //console.log(imagePath);
+
         setCookie("login_status","false");
         href_check();
         tpl = '<img class="mui-media-object mui-pull-left radius50" src="images/Default-Avatar.jpg">' +
@@ -178,9 +178,12 @@ function login_status() {
         user_login.html(null);
         user_login.html(tpl);
     } else {
-        if (imagePath == "null") {
-            imagePath = "images/Default-Avatar.jpg";
+        console.log(imagePath);
+        if (imagePath === undefined) {
+            var imagePath = "images/Default-Avatar.jpg";
+            console.log(imagePath);
         }
+        console.log(imagePath);
         tpl = '<a href="containers/mine/account.html">' +
             '<img class="mui-media-object mui-pull-left radius50" src="' + imagePath + '">' +
             '<div class="mui-media-body">' +

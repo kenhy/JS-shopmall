@@ -3,111 +3,56 @@
  */
 
 /*keyword日后可以做实时查询*/
-var keyword = document.querySelector("#input_keyword").addEventListener("input",function(){
-    console.log(this.value);
-    return this.value;
-},true);
+// var keyword = document.querySelector("#input_keyword").addEventListener("input",function(){
+//     console.log(this.value);
+//     return this.value;
+// },true);
 
-/* keyword查询 */
-var productSearch = {},
-    input_type = false,
-    input_cancel = $("#input_cancel"),
-    input_in = $("#input_keyword"),
-    input_search = $("#input_search"),
-    content_list = $("#content_list"),
-    search_popular = document.querySelector("#search_popular"),
+var geturl = window.location.href,
+    url = escapeHtml(geturl),
+    reg = /^(http?:)\/\/([^\/]+)(\/[^\?]*)(\?[^#]*)?(#.*)?/,
+    arr = url.match(reg),
+    url_message_id = getMessage(arr[4]),
     content_loading = $("#loading");
 
-window.location.hash="";
-
-if(window.location.hash == ""){
-    input_cancel.hide();
+function getMessage(url_message) {
+    var index = url_message;
+    if (index.indexOf("?") != -1) {
+        var str = index.substr(1),
+            strs = str.split("&"),
+            key = new Array(strs.length),
+            value = new Array(strs.length);
+        for (var i = 0; i < strs.length; i++) {
+            key[i] = strs[i].split("=")[0];
+            value[i] = strs[i].split("=")[1];
+        }
+    }
+    return value[0];
 }
 
-/* 事件状态绑定 */
-input_cancel.on("tap",function () {
-    input_cancel.hide();
-    input_search.hide();
-});
-
-/*hash监听*/
-var hashchanges = document.addEventListener('hashchange',function () {
-    return prohash;
-});
-
-/* 文字输入事件绑定 */
-input_in.on("tap",function () {
-    if(window.location.hash != ""){
-        input_cancel.show();
-    }
-    window.location.hash = "";
-    input_search.show();
-    content_loading.show();
-});
-
-/*输入*/
-input_in.on("search", function() {
-    keywords = input_in.val();
-    window.location.hash = keywords;
-    input_search.show();
-    search(keywords);
-});
-
-//页面自定义事件绑定
-bindEvent(search_popular,'tap','a',function () {
-    //console.log(this);
-    var index = this.getAttribute('data-name');
-    window.location.hash = index;
-    input_in.val(index);
-    content_loading.show();
-    search(index);
-    //console.log(index);
-});
 
 /*搜索*/
-function search(keywords) {
-    var token = getCookie("token");
-    input_cancel.hide();
-    input_search.hide();
-    var input = $("#input_keyword");
-    input.blur();
-    $.ajax({
-        type: "get",
-        url: RTTMALL_API.URL_PRODUCT_SEARCH,
-        dataType: "json",
-        async: true,
-        cache: false,
-        data: {
-            client_token: token,
-            keywords: keywords,
-            pageSize: '7'
-        },
-        success: function (data) {
-            //console.log(data);
-            var html = template('search_list',data.data);
-            $("[data-type=search_list]").html(html);
-            pagenum = data.data.page.nextPage;
-            content_loading.hide();
-        }
-    });
-}
+(function search(url_message_id) {
+        var token = getCookie("token");
+        $.ajax({
+            type: "get",
+            url: RTTMALL_API.URL_PRODUCT_SEARCH,
+            dataType: "json",
+            async: true,
+            cache: false,
+            data: {
+                client_token: token,
+                keywords: url_message_id,
+                pageSize: '7'
+            },
+            success: function (data) {
+                //console.log(data);
+                var html = template('search_list',data.data);
+                $("[data-type=search_list]").html(html);
+                pagenum = data.data.page.nextPage;
+                content_loading.hide();
+            }
+        });
+    }
+)(url_message_id);
 
-/* 排序 */
-function init_hotkeyword() {
-    $.ajax({
-        type:"get",
-        url: RTTMALL_API.URL_INDEX_HOTKEYWORDS,
-        dataType:"json",
-        async:true,
-        cache:false,
-        data:{},
-        success:function (data) {
-            //console.log(data);
-            var html = template('search_populer',data);
-            $("[data-type=search_populer]").html(html);
-        }
-    });
-}
-
-/*函数加载*/
-init_hotkeyword();

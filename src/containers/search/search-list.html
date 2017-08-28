@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Search result</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/subpage.css"/>
+    <style>
+        .mui-popup-title + .mui-popup-text {
+            font-weight: 600;
+            font-size: 15px;
+            font-family: "arial, helvetica, sans-serif";
+        }
+
+        .mui-popup-button {
+            color: #333;
+        }
+
+        .mui-popup-button:first-child {
+            font-weight: bold;
+        }
+
+        .mui-popup-button.mui-popup-button-bold {
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="mui-inner-wrap">
+    <header class="mui-bar mui-bar-nav">
+        <a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" href="../../index.html"></a>
+        <div class="nav-input radius4">
+            <form action='' onsubmit="return false;">
+              <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
+              <input id="input_keyword" placeholder="I'm looking for" type="search" class="text-l nback nborder nmg npd"/>
+            </form>
+        </div>
+    </header>
+    <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper bakc-fff">
+        <!-- search -->
+        <div id="input_search" class="mui-scroll">
+            <div class="mui-content">
+                <p class="padding-line44">Search History</p>
+                <ul data-type="search_history" class="mui-table-view">
+                    <!-- history -->
+                </ul>
+                <p class="padding-line44">Popular Search</p>
+                <ul id="search_popular" data-type="search_populer" class="mui-table-view">
+                    <!-- popular -->
+                </ul>
+                <div class="padding-line44 bakc-fff">
+                    <div class="mui-button-row line44 npd">
+                        <button type="button" id="confirmBtn" class="mui-col-xs-12 mui-btn npd line44 bakc-fff font-color-3 border-color-d">
+                            Clear All History
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- off-canvas backdrop -->
+    <div class="mui-off-canvas-backdrop"></div>
+</div>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
+<script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/template/template.js"></script>
+<script src="../../js/main.js"></script>
+<!--search_history-->
+<script id="search_history" type="text/html">
+    <li class="mui-table-view-cell">
+        <a href="javascript:void(0)">
+            <span class="mui-navigate-right font18"></span> Computer
+        </a>
+    </li>
+</script>
+<!--search_populer-->
+<script id="search_populer" type="text/html">
+    {{each data as p i}}
+    <li class="mui-table-view-cell">
+        <a href="search-result.html?list={{p.name}}">
+            <span class="mui-navigate-right font18"></span> {{p.name}}
+        </a>
+    </li>
+    {{/each}}
+</script>
+<!--page-->
+<script type="text/javascript" defer>
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    //清空历史记录弹窗
+    var info = document.getElementById("info");
+    document.getElementById("confirmBtn").addEventListener('tap', function () {
+        var btnArray = ['No', 'Yes'];
+        mui.confirm('Are you sure you want to remove all search history and recentle biewed items?', ' ', btnArray, function (e) {
+        })
+    });
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
+    var input_search = $("#input_keyword"),
+        search_populer = document.querySelector("#search_popular");
+    var keyword = document.querySelector("#input_keyword").addEventListener("input",function(){
+        console.log(this.value);
+        return this.value;
+    },true);
+    /*输入*/
+    input_search.on("search", function() {
+        var keyword = $("#input_keyword").val();
+        window.location.href = "http://" + domain + "/containers/search/search-result.html" + '?list=' + keyword;
+    });
+    /* 排序 */
+    function init_hotkeyword() {
+        $.ajax({
+            type:"get",
+            url: RTTMALL_API.URL_INDEX_HOTKEYWORDS,
+            dataType:"json",
+            async:true,
+            cache:false,
+            data:{},
+            success:function (data) {
+                //console.log(data);
+                var html = template('search_populer',data);
+                $("[data-type=search_populer]").html(html);
+            }
+        });
+    }
+
+    /*函数加载*/
+    init_hotkeyword();
+</script>
+</body>
+
+</html>
