@@ -74,7 +74,6 @@
 	<script src="../../js/common/template/template.js"></script>
     <script src="../../js/main.js"></script>
 	<script src="../../js/brand/brand.js"></script>
-    <script src="../../js/search/search.js"></script>
 	<!--brand-list-->
 	<script id="brand-list" type="text/html">
 		<ul  class="mui-table-view mui-grid-view mui-grid-9 nborder nback brand-logo">
@@ -105,12 +104,14 @@
                         </a>
 					<div data-type="{{c.id}}" class="mui-collapse-content npd">
                         {{each c.listSon as d i}}
-                        <dl class="hidden right-classification mar-left">
-                            <dt class="mui-pull-left"><img src="{{d.imgPath}}" /></dt>
-                            <dd class="mui-pull-left">
-                                {{d.typeName}}
-                            </dd>
-                        </dl>
+                        <a href="../search/search-result.html?list={{d.typeName}}">
+                            <dl class="hidden right-classification mar-left">
+                                <dt class="mui-pull-left"><img src="{{d.imgPath}}" /></dt>
+                                <dd class="mui-pull-left">
+                                    {{d.typeName}}
+                                </dd>
+                            </dl>
+                        </a>
                         <p class="border-b mar-left"></p>
                         {{/each}}
 					</div>

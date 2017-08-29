@@ -10,22 +10,8 @@
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
     <style>
-        .mui-popup-title + .mui-popup-text {
-            font-weight: 600;
-            font-size: 15px;
-            font-family: "arial, helvetica, sans-serif";
-        }
-
-        .mui-popup-button {
-            color: #333;
-        }
-
-        .mui-popup-button:first-child {
-            font-weight: bold;
-        }
-
-        .mui-popup-button.mui-popup-button-bold {
-            font-weight: normal;
+        #search_popular li>*{
+            height: 44px;
         }
     </style>
 </head>
@@ -68,8 +54,8 @@
     <div class="mui-off-canvas-backdrop"></div>
 </div>
 <script src="../../js/common/api.js"></script>
-<script src="../../js/common/jquery.min.js"></script>
 <script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
 <!--search_history-->
@@ -106,16 +92,12 @@
     });
     var input_search = $("#input_keyword"),
         search_populer = document.querySelector("#search_popular");
-    var keyword = document.querySelector("#input_keyword").addEventListener("input",function(){
-        console.log(this.value);
-        return this.value;
-    },true);
     /*输入*/
     input_search.on("search", function() {
         var keyword = $("#input_keyword").val();
         window.location.href = "http://" + domain + "/containers/search/search-result.html" + '?list=' + keyword;
     });
-    /* 排序 */
+    /*hotkeyword*/
     function init_hotkeyword() {
         $.ajax({
             type:"get",
@@ -128,10 +110,13 @@
                 //console.log(data);
                 var html = template('search_populer',data);
                 $("[data-type=search_populer]").html(html);
+
             }
         });
     }
-
+    setTimeout(function () {
+        input_search.focus();
+    });
     /*函数加载*/
     init_hotkeyword();
 </script>

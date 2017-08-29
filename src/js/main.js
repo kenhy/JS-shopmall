@@ -7,6 +7,7 @@ var domain = document.domain;
 function lesson_input() {
     var input_in = document.getElementById('input_in');
     input_in.addEventListener("click",function () {
+        event.preventDefault();
         window.location.href = "http://" + domain + "/containers/search/search-list.html";
     });
 }
