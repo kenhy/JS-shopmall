@@ -1,170 +1,191 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Register</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="../../css/mui.min.css">
-		<link rel="stylesheet" href="../../css/base.css" />
-		<link rel="stylesheet" href="../../css/subpage.css" />
-		<link rel="stylesheet" href="../../css/country.css">
-		<style type="text/css">
-			.mui-input-group .mui-input-row {
-				height: 50px;
-			}
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/base.css"/>
+    <link rel="stylesheet" href="../../css/subpage.css"/>
+    <link rel="stylesheet" href="../../css/country.css">
+    <style type="text/css">
+        .mui-input-group .mui-input-row {
+            height: 50px;
+        }
 
-			.mui-input-row input {
-				margin-left: 28px;
-			}
+        .mui-input-row input {
+            margin-left: 28px;
+        }
 
-			.icon-yanzhengma {
-				font-size: 20px;
-				position: absolute;
-				z-index: 3;
-				top: 14px;
-				left: 0;
-				width: 38px;
-				height: 38px;
-				text-align: center;
-				color: #ccc;
-			}
-		</style>
+        .icon-yanzhengma {
+            font-size: 20px;
+            position: absolute;
+            z-index: 3;
+            top: 14px;
+            left: 0;
+            width: 38px;
+            height: 38px;
+            text-align: center;
+            color: #ccc;
+        }
+    </style>
 
-	</head>
+</head>
 
-	<body>
-		<header class="mui-bar mui-bar-nav bakc-fff">
-			<span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
-			<h1 class="mui-title">Register</h1>
-		</header>
-		<div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
-			<div class="">
-				<div class="mui-content bakc-fff">
-					<div class="mui-content register bakc-fff">
-						<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-							<a class="mui-control-item mui-active current font-color-9" href="#item1">Email<s></s></a>
-							<a class="mui-control-item font-color-9 current" href="#item2">Phone<s></s></a>
-						</div>
-					</div>
-					<div id="item1" class="mui-control-content register  mui-active">
-						<form class="mui-input-group mui-table-view nback margin-t12">
-							<div class="mui-input-row bakc-fff">
-								<p class="mui-icon mui-icon-email bakc-fff"></p>
-								<input id="r_email" type="text" class="" placeholder="Email">
-							</div>
-							<div class="mui-input-row bakc-fff">
-								<p class="mui-icon mui-icon-locked bakc-fff"></p>
-								<input id="r_pwd" type="password" class="" placeholder="Password(6 characters or above)">
-							</div>
-							<div class="mui-input-row bakc-fff">
-								<p class="mui-icon mui-icon-locked bakc-fff"></p>
-								<input id="r_pwd2" type="password" class="" placeholder="Confirm password">
-							</div>
-							<div class="mui-checkbox mui-left">
-								<label class="font12">Read RttMall Free <a href="javascript:void(0)" class="underline font-color-3">Membership Agreement</a></label>
-								<input id="agreement_email" name="checkbox1" type="checkbox" checked>
-							</div>
-							<div class="mui-button-row line44 npd">
-								<button id="submit_register_email" type="button" class="mui-col-xs-12 mui-btn nborder npd line44 font14">Agree&Create Account</button>
-							</div>
-						</form>
-					</div>
-					<div id="item2" class="mui-control-content register ">
-						<form class="mui-input-group mui-table-view nback margin-t12 hidden">
-							<div class="phone-number">
-								<a href="#Areacode-phone">
-									<p class="area-code bakc-fff line44 text-l">
-										<a href="#Areacode-phone">
-                                        <s class="iconfont icon-icon031 font22 mui-pull-left margin-l5" style="color: #DDDDDD;"></s>
+<body>
+<div class="offCanvasWrapper">
+    <header class="mui-bar mui-bar-nav bakc-fff">
+        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
+              onclick="history.go(-1)"></span>
+        <h1 class="mui-title">Register</h1>
+    </header>
+    <div class="mui-content mui-scroll-wrapper bakc-fff" style="overflow-x: hidden;">
+        <div class="">
+            <div class="mui-content bakc-fff">
+                <div class="mui-content register bakc-fff">
+                    <div id="segmentedControl"
+                         class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+                        <a class="mui-control-item mui-active current font-color-9" href="#item1">Email<s></s></a>
+                        <a class="mui-control-item font-color-9 current" href="#item2">Phone<s></s></a>
+                    </div>
+                </div>
+                <div id="item1" class="mui-control-content register  mui-active">
+                    <form class="mui-input-group mui-table-view nback margin-t12">
+                        <div class="mui-input-row bakc-fff">
+                            <p class="mui-icon mui-icon-email bakc-fff"></p>
+                            <input id="r_email" type="text" class="" placeholder="Email">
+                        </div>
+                        <div class="mui-input-row bakc-fff">
+                            <p class="mui-icon mui-icon-locked bakc-fff"></p>
+                            <input id="r_pwd" type="password" class="" placeholder="Password(6 characters or above)">
+                        </div>
+                        <div class="mui-input-row bakc-fff">
+                            <p class="mui-icon mui-icon-locked bakc-fff"></p>
+                            <input id="r_pwd2" type="password" class="" placeholder="Confirm password">
+                        </div>
+                        <div class="mui-checkbox mui-left">
+                            <label class="font12">Read RttMall Free <a href="javascript:void(0)"
+                                                                       class="underline font-color-3">Membership
+                                Agreement</a></label>
+                            <input id="agreement_email" name="checkbox1" type="checkbox" checked>
+                        </div>
+                        <div class="mui-button-row line44 npd">
+                            <button id="submit_register_email" type="button"
+                                    class="mui-col-xs-12 mui-btn nborder npd line44 font14">Agree&Create Account
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div id="item2" class="mui-control-content register ">
+                    <form class="mui-input-group mui-table-view nback margin-t12 hidden">
+                        <div class="phone-number">
+                            <a href="#Areacode-phone">
+                                <p class="area-code bakc-fff line44 text-l">
+                                    <a href="#Areacode-phone">
+                                        <s class="iconfont icon-icon031 font22 mui-pull-left margin-l5"
+                                           style="color: #DDDDDD;"></s>
                                         <i id="prefix" class="mui-pull-left"></i>
                                         <em class="mui-icon mui-icon-arrowdown font16 mui-pull-right line44 margin-r5"></em>
-                                        </a>
-									</p>
-								</a>
-								<input id="tel" type="text" class="area-phone bakc-fff border-be" placeholder="Tel">
-							</div>
-							<div class="margin-t12 phone-number">
-								<p class="iconfont icon-yanzhengma bakc-fff"></p>
-								<input id="tel-code" type="text" class="validation-num border-be" placeholder="Verificatione Code" style="margin-left: 28px;">
-								<p class="verificatione button-h font12">
-									<input id="code_btn" type="button" class="verificatione-code button-h" value="Send" />
-								</p>
-							</div>
-							<div class="mui-input-row bakc-fff margin-t12 hidden">
-								<p class="mui-icon mui-icon-locked bakc-fff"></p>
-								<input id="p_pwd" type="password" class="" placeholder="Password(6 characters or above)">
-							</div>
-							<div class=" mui-checkbox mui-left">
-								<label class="font12">Read RttMall Free <a href="javascript:void(0)" class="underline font-color-3">Membership Agreement</a></label>
-								<input id="agreement_phone" name="checkbox1" type="checkbox" checked>
-							</div>
-							<div class="mui-button-row line44 npd">
-								<button id="submit_register_phone" type="button" class="mui-col-xs-12 mui-btn nborder npd line44 font14">Agree&Create Account</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div id="error_msg" class="text-c color-red margin-t5"></div>
-				<div id="move-togger"></div>
-			</div>
-			<div class="bottom-sign-in">
-				<p class="font14 font-color-3">Have an account?<a href="login.html" class="font-weight underline font-color-3">Sign In</a></p>
-			</div>
-		</div>
-		<div id="Areacode-phone" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height border-t">
-			<div class="mui-poppicker-header bakc-fff hidden">
-				<a id="cancel-phone" href="#Areacode-phone" class="hidden"><button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel</button></a>
-			</div>
-			<div class="mui-indexed-list-bar">
-				<a href="#">top</a>
-				<a href="#">#</a>
-			</div>
-			<div class="mui-scroll-wrapper Cancellation-list npd">
-				<div class="mui-scroll">
-					<ul data-type="countryAndPrefix">
-						<!--country-->
-					</ul>
-				</div>
-			</div>
-		</div>
-		<script src="../../js/common/api.js"></script>
-		<script src="../../js/common/jquery.min.js"></script>
-		<script src="../../js/common/mui.min.js"></script>
-		<script src="../../js/common/template/template.js"></script>
-		<script src="../../js/common/jquery.md5.js"></script>
-		<script src="../../js/login/register.js"></script>
-		<script id="countryAndPrefixTemplate" type="text/html">
-			<li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
-			{{each data.top as c i}}
-			<li class="padding-line44 height44 border-b">
-				<span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-				<i>{{c.name}}</i>
-				<em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
-			</li>
-			{{/each}}
-			<li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
-			{{each data.list as c i}}
-			<li class="padding-line44 height44 border-b">
-				<span data-type="{{c.countriesCode}}" class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
-				<i>{{c.name}}</i>
-				<em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
-			</li>
-			{{/each}}
-		</script>
-		<script type="text/javascript">
-			(function($) {
-				$('.Cancellation-list').scroll({
-					indicators: true //是否显示滚动条
-				});
-			})(mui);
+                                    </a>
+                                </p>
+                            </a>
+                            <input id="tel" type="tel" class="area-phone bakc-fff border-be" placeholder="Tel">
+                        </div>
+                        <div class="margin-t12 phone-number">
+                            <p class="iconfont icon-yanzhengma bakc-fff"></p>
+                            <input id="tel-code" type="number" class="validation-num border-be"
+                                   placeholder="Verificatione Code" style="margin-left: 28px;">
+                            <p class="verificatione button-h font12">
+                                <input id="code_btn" type="button" class="verificatione-code button-h" value="Send"/>
+                            </p>
+                        </div>
+                        <div class="mui-input-row bakc-fff margin-t12 hidden">
+                            <p class="mui-icon mui-icon-locked bakc-fff"></p>
+                            <input id="p_pwd" type="password" class="" placeholder="Password(6 characters or above)">
+                        </div>
+                        <div class=" mui-checkbox mui-left">
+                            <label class="font12">Read RttMall Free <a href="javascript:void(0)"
+                                                                       class="underline font-color-3">Membership
+                                Agreement</a></label>
+                            <input id="agreement_phone" name="checkbox1" type="checkbox" checked>
+                        </div>
+                        <div class="mui-button-row line44 npd">
+                            <button id="submit_register_phone" type="button"
+                                    class="mui-col-xs-12 mui-btn nborder npd line44 font14">Agree&Create Account
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="error_msg" class="text-c color-red margin-t5"></div>
+            <div id="move-togger"></div>
+        </div>
+        <div class="bottom-sign-in">
+            <p class="font14 font-color-3">Have an account?<a href="login.html"
+                                                              class="font-weight underline font-color-3">Sign In</a></p>
+        </div>
+    </div>
+    <div id="Areacode-phone" class="mui-popover mui-popover-action mui-popover-bottom bakc-eee Popup-height border-t">
+        <div class="mui-poppicker-header bakc-fff hidden">
+            <a id="cancel-phone" href="#Areacode-phone" class="hidden">
+                <button class="mui-btn nborder nback font14 mui-poppicker-btn-cancel font-color-h font-weight">Cancel
+                </button>
+            </a>
+        </div>
+        <div class="mui-indexed-list-bar">
+            <a href="#">top</a>
+            <a href="#">#</a>
+        </div>
+        <div class="mui-scroll-wrapper Cancellation-list npd">
+            <div class="mui-scroll">
+                <ul data-type="countryAndPrefix">
+                    <!--country-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
+<script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/template/template.js"></script>
+<script src="../../js/common/jquery.md5.js"></script>
+<script src="../../js/login/register.js"></script>
+<script id="countryAndPrefixTemplate" type="text/html">
+    <li data-group="top" class="mui-table-view-divider bakc-fff">top</li>
+    {{each data.top as c i}}
+    <li class="padding-line44 height44 border-b">
+        <span data-type="{{c.countriesCode}}"
+              class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+        <i>{{c.name}}</i>
+        <em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
+    </li>
+    {{/each}}
+    <li data-group="#" class="mui-table-view-divider  bakc-fff">Country & Territories (A-Z)</li>
+    {{each data.list as c i}}
+    <li class="padding-line44 height44 border-b">
+        <span data-type="{{c.countriesCode}}"
+              class="ui-alert mui-pull-left margin-r10 css_flag css_{{c.countriesCode.toLowerCase()}}"></span>
+        <i>{{c.name}}</i>
+        <em data-type="{{c.prefix}}" class="mui-pull-right margin-r20">{{c.prefix}}</em>
+    </li>
+    {{/each}}
+</script>
+<script type="text/javascript">
+    (function ($) {
+        $('.Cancellation-list').scroll({
+            indicators: true //是否显示滚动条
+        });
+    })(mui);
 
-			mui('body').on('tap', 'a', function() {
-				window.top.location.href = this.href;
-			});
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
 
-			register.initCountry();
-		</script>
-	</body>
+    register.initCountry();
+</script>
+</body>
 
 </html>

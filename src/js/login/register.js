@@ -285,7 +285,7 @@ var register = {
                     if (data.data != null){
                         show_register_tip(data.msg);
                     }else{
-                        alert("successed_2");
+                        alert("phone_register_error");
                     }
                 }
             });

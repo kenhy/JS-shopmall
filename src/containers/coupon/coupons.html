@@ -4,38 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Coupons</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <link href="../../css/mui.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/subpage.css"/>
 </head>
 <body>
-<header class="mui-bar mui-bar-nav bakc-fff">
-    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.go(-1)"></span>
-    <a href="my-coupons.html" class="mui-icon mui-pull-right iconfont icon-youhuiquan font20 nmg"></a>
-    <h1 class="mui-title">Coupon Center</h1>
-</header>
-<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
-    <div class="mui-scroll">
-        <div class="mui-content">
-            <div class="mui-content register">
-                <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-                    <a class="mui-control-item mui-active current font-color-9" href="#item1">Time Limit<s></s></a>
-                    <a class="mui-control-item font-color-9 current" href="#item2">Featured<s></s></a>
+<div class="offCanvasWrapper">
+    <header class="mui-bar mui-bar-nav bakc-fff">
+        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
+              onclick="history.go(-1)"></span>
+        <a href="my-coupons.html" class="mui-icon mui-pull-right iconfont icon-youhuiquan font20 nmg"></a>
+        <h1 class="mui-title">Coupon Center</h1>
+    </header>
+    <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <div class="mui-content">
+                <div class="mui-content register">
+                    <div id="segmentedControl"
+                         class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+                        <a class="mui-control-item mui-active current font-color-9" href="#item1">Time Limit<s></s></a>
+                        <a class="mui-control-item font-color-9 current" href="#item2">Featured<s></s></a>
+                    </div>
+                </div>
+                <div id="item1" data-type="item1" class="mui-control-content mui-active register margin-t12">
+                    <!-- item1 -->
+                </div>
+                <div id="item2" data-type="item2" class="mui-control-content register margin-t12">
+                    <!-- item2 -->
                 </div>
             </div>
-            <div id="item1" data-type="item1" class="mui-control-content mui-active register margin-t12">
-                <!-- item1 -->
-            </div>
-            <div id="item2" data-type="item2" class="mui-control-content register margin-t12">
-                <!-- item2 -->
-            </div>
+            <div id="move-togger"></div>
         </div>
-        <div id="move-togger"></div>
     </div>
+    <!-- off-canvas backdrop -->
+    <div class="mui-off-canvas-backdrop"></div>
 </div>
-<!-- off-canvas backdrop -->
-<div class="mui-off-canvas-backdrop"></div>
 <script src="../../js/common/mui.min.js"></script>
 <script type="text/javascript">
     mui('body').on('tap', 'a', function () {
@@ -58,8 +63,10 @@
                     </dd>
                     <dd class="mui-pull-right back-green radius4"><a class="color-white">Save pass</a></dd>
                 </dl>
-                <p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
-                <p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
+                <p class="bakc-eee radius50"
+                   style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
+                <p class="bakc-eee radius50"
+                   style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
             </div>
         </li>
         <li class="bakc-fff margin-b10">
@@ -77,8 +84,10 @@
                         <a class="color-white">Save pass</a>
                     </dd>
                 </dl>
-                <p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
-                <p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
+                <p class="bakc-eee radius50"
+                   style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
+                <p class="bakc-eee radius50"
+                   style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
             </div>
         </li>
     </ul>
@@ -99,8 +108,10 @@
                     </dd>
                     <dd class="mui-pull-right back-green radius4"><a class="color-white">Save pass</a></dd>
                 </dl>
-                <p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
-                <p class="bakc-eee radius50" style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
+                <p class="bakc-eee radius50"
+                   style="width: 25px; height: 25px; position: absolute; left: -13px;; top: 13px;"></p>
+                <p class="bakc-eee radius50"
+                   style="width: 25px; height: 25px; position: absolute; right: -13px;; top: 13px;"></p>
             </div>
         </li>
     </ul>
