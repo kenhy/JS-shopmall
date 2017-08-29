@@ -41,8 +41,8 @@ function account_msg() {
         tpl;
     if (username != ""){
         //console.log(username);
-        //console.log(imagePath);
-        if(imagePath == "null"){
+        console.log(imagePath);
+        if(imagePath == "" || imagePath == undefined){
             imagePath = "../../images/Default-Avatar.jpg";
         }
         tpl = '<a href="profile.html">'+

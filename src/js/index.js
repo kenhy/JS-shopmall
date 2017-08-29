@@ -179,7 +179,7 @@ function login_status() {
         user_login.html(tpl);
     } else {
         console.log(imagePath);
-        if (imagePath == "") {
+        if (imagePath == "" || imagePath == undefined) {
             var imagePath = "images/Default-Avatar.jpg";
             console.log(imagePath);
         }

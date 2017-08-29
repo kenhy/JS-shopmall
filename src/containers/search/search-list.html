@@ -110,15 +110,16 @@
                 //console.log(data);
                 var html = template('search_populer',data);
                 $("[data-type=search_populer]").html(html);
-
             }
         });
     }
-    setTimeout(function () {
+    $(document).ready(function () {
+        /*函数加载*/
+        init_hotkeyword();
         input_search.focus();
     });
-    /*函数加载*/
-    init_hotkeyword();
+
+
 </script>
 </body>
 

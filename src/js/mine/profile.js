@@ -57,7 +57,7 @@ var account_index ={
                 client_token:token
             },
             success:function (data) {
-                //console.log(data);
+                console.log(data);
                 //sex loading
                 var sex = data.data.sex;
                 data.data.sex = sex_choose(sex);
@@ -70,7 +70,7 @@ var account_index ={
                 //console.log(country_flag);
                 $("#country_type").addClass(country_flag);
                 //img loading
-                if(data.data.imagePath == "null"){
+                if(data.data.imagePath == "" || data.data.imagePath == undefined){
                     $("#imgPath").attr("src","../../images/Default-Avatar.jpg")
                 }else{
                     setCookie('imagePath',data.data.imagePath);
