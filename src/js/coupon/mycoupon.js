@@ -29,8 +29,22 @@ function initMyCoupon() {
                     return;
                 }
                 var couponData = data.data;
-                var item1 = template('Unused',couponData);
-                $("[data-type=Unused]").html(item1);
+                if(couponData.availableCoupon.length == 0){
+                    console.info('availableCoupon none');
+                }else{
+                    var item1 = template('Unused',couponData);
+                    $("[data-type=Unused]").html(item1);
+                }
+                if(couponData.usedCoupon.length == 0){
+                    console.info('usedCoupon none');
+                }else{
+
+                }
+                if(couponData.expiredCoupon.length == 0){
+                    console.info('expiredCoupon none');
+                }else{
+
+                }
             }
         }, "json");
 }

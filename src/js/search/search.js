@@ -30,6 +30,7 @@ function getMessage(url_message) {
     return value[0];
 }
 
+$("#input_in").val(url_message_id);
 
 /*搜索*/
 (function search(url_message_id) {

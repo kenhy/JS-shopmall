@@ -6,10 +6,10 @@ var domain = document.domain;
 /* 输入跳转 */
 function lesson_input() {
     var input_in = document.getElementById('input_in');
-    input_in.addEventListener("click",function () {
-        event.preventDefault();
+    input_in.addEventListener("tap",function (ev) {
+        ev.preventDefault();
         window.location.href = "http://" + domain + "/containers/search/search-list.html";
-    });
+    },true);
 }
 
 /* 通用事件绑定 */

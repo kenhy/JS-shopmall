@@ -32,7 +32,11 @@
         border-radius:20px;
         filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
     }
-
+    #input_in{
+        width: 100%;
+        color: #C7A062;
+        text-align: center;
+    }
 </style>
 
 <body>
@@ -41,7 +45,7 @@
         <a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" href="../../index.html"></a>
         <div class="nav-input radius4">
             <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
-            <input id="input_in" placeholder="I'm looking for" type="search" class="text-l nback nborder nmg npd"/>
+            <input id="input_in" type="button" class="text-l nback nborder nmg npd"/>
         </div>
     </header>
     <!-- list -->
@@ -290,6 +294,7 @@
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
+
     lesson_input();
 </script>
 </body>
