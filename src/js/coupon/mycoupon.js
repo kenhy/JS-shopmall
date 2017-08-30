@@ -38,12 +38,14 @@ function initMyCoupon() {
                 if(couponData.usedCoupon.length == 0){
                     console.info('usedCoupon none');
                 }else{
-
+                    var item1 = template('Unused',couponData);
+                    $("[data-type=Unused]").html(item1);
                 }
                 if(couponData.expiredCoupon.length == 0){
                     console.info('expiredCoupon none');
                 }else{
-
+                    var item1 = template('Unused',couponData);
+                    $("[data-type=Unused]").html(item1);
                 }
             }
         }, "json");
