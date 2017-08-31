@@ -1,236 +1,199 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>rating-feedback</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="../../css/mui.min.css">
-		<link rel="stylesheet" href="../../css/base.css">
-		<link rel="stylesheet" href="../../css/subpage.css" />
-		<script type="text/javascript" src="../../js/jquery.min.js"></script>
-		<script type="text/javascript" src="../../js/jquery.raty.min.js"></script>
-	</head>
+<head>
+    <meta charset="utf-8">
+    <title>rating-feedback</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/subpage.css"/>
+</head>
 
-	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-			<!--侧滑菜单部分-->
-			<aside id="offCanvasSide" class="mui-off-canvas-left bakc-eee">
-				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-				        <ul class="mui-table-view nmg">
-					       <li class="mui-table-view-cell mui-media">
-					            <a href="javascript:void(0);">
-					                <img class="mui-media-object mui-pull-left radius50" src="../../images/Default-Avatar.jpg">
-					                <div class="mui-media-body margin-t12">
-					                    <p class="font14 font-weight font-color-3">Rttmall@foxmail.com</p>
-					                    <p class="iconfont icon-vip "><span class="font12 font-color-9">Membership</span></p>
-					                </div>
-					            </a>
-					        </li>
-					    </ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="home.html" class=""><s class="iconfont icon-icon font18 margin-r10 font-color-9 mui-pull-left"></s>Home</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Type/brand-list.html" class=""><s class="iconfont icon-fenlei font18 margin-r10 font-color-9 mui-pull-left"></s>Categories</a>
-						   </li>
-						</ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="../Mine/account.html" class=""><s class="iconfont icon-ren font18 margin-r10 font-color-9 mui-pull-left"></s>My Account</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../ShoppingCard/shopping-cart.html" class=""><s class="iconfont icon-gouwuche2 font18 margin-r10 font-color-9 mui-pull-left"></s>Cart</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Order/my-order.html" class=""><s class="iconfont icon-icon17 font18 margin-r10 font-color-9 mui-pull-left"></s>My Orders</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Mine/wish-list.html" class=""><s class="iconfont icon-xinyuandan font18 margin-r10 font-color-9 mui-pull-left"></s>Wish List</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Coupon/coupons.html" class=""><s class="iconfont icon-youhuiquan font18 margin-r10 font-color-9 mui-pull-left"></s>My Coupons</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../News/messages.html" class=""><s class="iconfont icon-lingdang font18 margin-r10 font-color-9 mui-pull-left"></s>My Messages</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="../Mine/my-evaluate.html" class=""><s class="iconfont icon-qipao font18 margin-r10 font-color-9 mui-pull-left"></s>My assessment</a>
-						   </li>
-						</ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="../Record/recently.html" class=""><s class="iconfont icon-liulanlishi font18 margin-r10 font-color-9 mui-pull-left"></s>Recently Viewed Items</a>
-						   </li>
-						   <li class="mui-table-view-cell height44">
-						        <a href="" class=""><s class="iconfont icon-fenxiang font18 margin-r10 font-color-9 mui-pull-left"></s>Invite Friends</a>
-						   </li>
-						</ul>
-						<ul class="mui-table-view margin-t12">
-							<li class="mui-table-view-cell height44">
-						        <a href="../Setting/settings.html" class=""><s class="iconfont icon-shezhi font18 margin-r10 font-color-9 mui-pull-left"></s>Settings</a>
-						 	</li>
-						</ul>
-					</div>
-				</div>
-			</aside>	
-			<!--主界面部分-->
-			<div class="mui-inner-wrap">
-				<header class="mui-bar mui-bar-nav bakc-eee">
-					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-					<h1 class="mui-title">Rating & Feedback</h1>
-				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<div class="mui-content">
-							<div class="hidden back-fb score-all">
-								<div class="comment-score mui-pull-left text-c">
-									<p class="font-color-3 font24 font-weight">4.8<span class="font10 no-font-weight">/5</span></p>
-									<div class="excellent-star score-star">
-										<p class=""></p>
-									</div>
-									<p class="line16">2888 ratings</p>
-								</div>
-								<div class="comment-data mui-pull-left">
-									<ul class="comment-data-star-list border-l">
-										<li class="hidden relative">
-											<div class="excellent-star mui-pull-left">
-												<p></p>
-											</div>
-											<div class="excellent-line mui-pull-left">
-												<p class="fiveline"></p>
-											</div>
-											<p class="excellent-text mui-pull-left">18888</p>
-										</li>
-										<li class="hidden relative">
-											<div class="excellent-star mui-pull-left">
-												<p class="fourstar"></p>
-											</div>
-											<div class="excellent-line mui-pull-left">
-												<p class="fourline"></p>
-											</div>
-											<p class="excellent-text mui-pull-left">1888</p>
-										</li>
-										<li class="hidden relative">
-											<div class="excellent-star mui-pull-left">
-												<p class="threestar"></p>
-											</div>
-											<div class="excellent-line mui-pull-left">
-												<p class="threeline"></p>
-											</div>
-											<p class="excellent-text mui-pull-left">1888</p>
-										</li>
-										<li class="hidden relative">
-											<div class="excellent-star mui-pull-left">
-												<p class="twostar"></p>
-											</div>
-											<div class="excellent-line mui-pull-left">
-												<p class="twoline"></p>
-											</div>
-											<p class="excellent-text mui-pull-left">1888</p>
-										</li>
-										<li class="hidden relative">
-											<div class="excellent-star mui-pull-left">
-												<p class="onestar"></p>
-											</div>
-											<div class="excellent-line mui-pull-left">
-												<p class="oneline"></p>
-											</div>
-											<p class="excellent-text mui-pull-left">1888</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="hidden back-fb score-all border-t">
-								<dl class="one-to-five">
-									<dt class="text-c hidden font12">
-										<p class="color-red border mui-pull-left">ALL(1288)</p>
-										<p class="font-color-9 border mui-pull-left"><img src="../../images/photo.png" />(9)</p>
-									</dt>
-									<dl class="hidden">
-										<p class="border mui-pull-left"><span class="star-one "></span></p>
-										<p class="border mui-pull-left"><span class="star-two"></span></p>
-										<p class="border mui-pull-left"><span class="star-three "></span></p>
-										<p class="border mui-pull-left"><span class="star-four"></span></p>
-										<p class="border mui-pull-left"><span class="star-five"></span></p>
-									</dl>
-								</dl>
-							</div>
-							<div class="back-fb padding-line44 border-t">Sort by default</div>
-							<div class="bakc-fff  border-t">
-								<dl class="more-comments bakc-fff hidden relative border-be">
-									<dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
-										<img src="../../images/Default-Avatar.jpg">
-									</dt>
-									<dd>
-										<ul style="margin-left: 60px;">
-											<li class="hidden">
-												<h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">Feedback(666)</h4>
-												<div class="mui-pull-left mui-pull-right evaluate-stars">
-													<p></p>
-												</div>
-											</li>
-											<li class="hidden margin-t5">
-												<p class="mui-pull-left font12 margin-r10">22 Apr 2017</p><p class="mui-pull-left font12 margin-r10">Color:PSB</p>
-											</li>
-											<li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter. in fact, thin jersey. the cool summer weather. minus a star for a long delivery-almost two months. that is good for growth ordered</li>
-											<li class="margin-t10">
-												<ul class="hidden">
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/img.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/img2.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/img3.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/cat.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/Default-Avatar.jpg"></li>
-												</ul>
-											</li>
-										</ul>
-									</dd>
-								</dl>
-								<dl class="more-comments bakc-fff hidden relative border-be">
-									<dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
-										<img src="../../images/Default-Avatar.jpg">
-									</dt>
-									<dd>
-										<ul style="margin-left: 60px;">
-											<li class="hidden">
-												<h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">Feedback(666)</h4>
-												<div class="mui-pull-left mui-pull-right evaluate-stars">
-													<p></p>
-												</div>
-											</li>
-											<li class="hidden margin-t5">
-												<p class="mui-pull-left font12 margin-r10">22 Apr 2017</p><p class="mui-pull-left font12 margin-r10">Color:PSB</p>
-											</li>
-											<li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter. in fact, thin jersey. the cool summer weather. minus a star for a long delivery-almost two months. that is good for growth ordered</li>
-											<li class="margin-t10">
-												<ul class="hidden">
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/img.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/img2.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/img3.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/cat.jpg"></li>
-													<li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img src="../../images/Default-Avatar.jpg"></li>
-												</ul>
-											</li>
-										</ul>
-									</dd>
-								</dl>
-							</div>
-						<div id="move-togger"></div>
-					</div>
-				</div>
-				<!-- off-canvas backdrop -->
-				<div class="mui-off-canvas-backdrop"></div>
-			</div>
-		</div>
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/Sideslip.js" ></script>
-		<script type="text/javascript">
-			mui('body').on('tap','a',function(){
-			    window.top.location.href=this.href;
-			});
-		</script>
-	</body>
+<body>
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--主界面部分-->
+    <div class="mui-inner-wrap">
+        <header class="mui-bar mui-bar-nav bakc-eee">
+            <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+            <h1 class="mui-title">Rating & Feedback</h1>
+        </header>
+        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="mui-content">
+                    <div class="hidden back-fb score-all">
+                        <div class="comment-score mui-pull-left text-c">
+                            <p class="font-color-3 font24 font-weight">4.8<span class="font10 no-font-weight">/5</span>
+                            </p>
+                            <div class="excellent-star score-star">
+                                <p class=""></p>
+                            </div>
+                            <p class="line16">2888 ratings</p>
+                        </div>
+                        <div class="comment-data mui-pull-left">
+                            <ul class="comment-data-star-list border-l">
+                                <li class="hidden relative">
+                                    <div class="excellent-star mui-pull-left">
+                                        <p></p>
+                                    </div>
+                                    <div class="excellent-line mui-pull-left">
+                                        <p class="fiveline"></p>
+                                    </div>
+                                    <p class="excellent-text mui-pull-left">18888</p>
+                                </li>
+                                <li class="hidden relative">
+                                    <div class="excellent-star mui-pull-left">
+                                        <p class="fourstar"></p>
+                                    </div>
+                                    <div class="excellent-line mui-pull-left">
+                                        <p class="fourline"></p>
+                                    </div>
+                                    <p class="excellent-text mui-pull-left">1888</p>
+                                </li>
+                                <li class="hidden relative">
+                                    <div class="excellent-star mui-pull-left">
+                                        <p class="threestar"></p>
+                                    </div>
+                                    <div class="excellent-line mui-pull-left">
+                                        <p class="threeline"></p>
+                                    </div>
+                                    <p class="excellent-text mui-pull-left">1888</p>
+                                </li>
+                                <li class="hidden relative">
+                                    <div class="excellent-star mui-pull-left">
+                                        <p class="twostar"></p>
+                                    </div>
+                                    <div class="excellent-line mui-pull-left">
+                                        <p class="twoline"></p>
+                                    </div>
+                                    <p class="excellent-text mui-pull-left">1888</p>
+                                </li>
+                                <li class="hidden relative">
+                                    <div class="excellent-star mui-pull-left">
+                                        <p class="onestar"></p>
+                                    </div>
+                                    <div class="excellent-line mui-pull-left">
+                                        <p class="oneline"></p>
+                                    </div>
+                                    <p class="excellent-text mui-pull-left">1888</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hidden back-fb score-all border-t">
+                        <dl class="one-to-five">
+                            <dt class="text-c hidden font12">
+                            <p class="color-red border mui-pull-left">ALL(1288)</p>
+                            <p class="font-color-9 border mui-pull-left"><img src="../../images/photo.png"/>(9)</p>
+                            </dt>
+                            <dl class="hidden">
+                                <p class="border mui-pull-left"><span class="star-one "></span></p>
+                                <p class="border mui-pull-left"><span class="star-two"></span></p>
+                                <p class="border mui-pull-left"><span class="star-three "></span></p>
+                                <p class="border mui-pull-left"><span class="star-four"></span></p>
+                                <p class="border mui-pull-left"><span class="star-five"></span></p>
+                            </dl>
+                        </dl>
+                    </div>
+                    <div class="back-fb padding-line44 border-t">Sort by default</div>
+                    <div class="bakc-fff  border-t">
+                        <dl class="more-comments bakc-fff hidden relative border-be">
+                            <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
+                                <img src="../../images/Default-Avatar.jpg">
+                            </dt>
+                            <dd>
+                                <ul style="margin-left: 60px;">
+                                    <li class="hidden">
+                                        <h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">
+                                            Feedback(666)</h4>
+                                        <div class="mui-pull-left mui-pull-right evaluate-stars">
+                                            <p></p>
+                                        </div>
+                                    </li>
+                                    <li class="hidden margin-t5">
+                                        <p class="mui-pull-left font12 margin-r10">22 Apr 2017</p>
+                                        <p class="mui-pull-left font12 margin-r10">Color:PSB</p>
+                                    </li>
+                                    <li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter.
+                                        in fact, thin jersey. the cool summer weather. minus a star for a long
+                                        delivery-almost two months. that is good for growth ordered
+                                    </li>
+                                    <li class="margin-t10">
+                                        <ul class="hidden">
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/img.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/img2.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/img3.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/cat.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/Default-Avatar.jpg"></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl class="more-comments bakc-fff hidden relative border-be">
+                            <dt class="head-portrait mui-pull-left radius50 hidden margin-r10">
+                                <img src="../../images/Default-Avatar.jpg">
+                            </dt>
+                            <dd>
+                                <ul style="margin-left: 60px;">
+                                    <li class="hidden">
+                                        <h4 class="no-font-weight font-color-3 font14 mui-pull-left margin-t5">
+                                            Feedback(666)</h4>
+                                        <div class="mui-pull-left mui-pull-right evaluate-stars">
+                                            <p></p>
+                                        </div>
+                                    </li>
+                                    <li class="hidden margin-t5">
+                                        <p class="mui-pull-left font12 margin-r10">22 Apr 2017</p>
+                                        <p class="mui-pull-left font12 margin-r10">Color:PSB</p>
+                                    </li>
+                                    <li class="line16 margin-t5 font-color-3">A good set. but the photo looks tighter.
+                                        in fact, thin jersey. the cool summer weather. minus a star for a long
+                                        delivery-almost two months. that is good for growth ordered
+                                    </li>
+                                    <li class="margin-t10">
+                                        <ul class="hidden">
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/img.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/img2.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/img3.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/cat.jpg"></li>
+                                            <li class="mui-pull-left comment-picture radius4" style="height: 88px;"><img
+                                                src="../../images/Default-Avatar.jpg"></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div id="move-togger"></div>
+                </div>
+            </div>
+            <!-- off-canvas backdrop -->
+            <div class="mui-off-canvas-backdrop"></div>
+        </div>
+    </div>
+</div>
+<script src="../../js/common/api.js"></script>
+<script src="../../js/common/jquery.min.js"></script>
+<script src="../../js/common/jquery.raty.min.js"></script>
+<script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/template/template.js"></script>
+<script src="../../js/main.js"></script>
+<script type="text/javascript">
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
+</script>
+</body>
 
 </html>

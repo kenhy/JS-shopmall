@@ -137,16 +137,16 @@
     </div>
     <ul class="attribute-list margin-t10 bakc-fff" style="padding: 0 15px;">
         <li class="mui-table-view">
-            <a href="javascript:void(0)" class="font-color-3 hidden">
+            <a href="product-options.html" class="font-color-3 hidden">
                 <span class="mui-navigate-right font18 mui-pull-right right-4"></span>
                 <s class="mui-pull-right font-color-h mar-right">Select</s>
-                Color
+                Options
             </a>
         </li>
     </ul>
     <div class="feedback-main">
         <p class="mui-table-view-cell margin-t10 bakc-fff padding-line44 font-color-3">
-            <a href="javascript:void(0)">Feedback(666)<span class="mui-pull-right font-color-9">More</span></a>
+            <a href="rating-feedback.html">Feedback(666)<span class="mui-pull-right font-color-9">More</span></a>
         </p>
         <!-- 评论 -->
         <dl class="more-comments bakc-fff hidden relative border-be">
@@ -292,6 +292,9 @@
         }
     });
     //详情
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
     var list_state = false;
     var loadMore = function(pullRefresh) {
         // 加载更多的内容到列表中
