@@ -15,8 +15,9 @@
 <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
     <!--主界面部分-->
     <div class="mui-inner-wrap">
-        <header class="mui-bar mui-bar-nav bakc-eee">
-            <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+        <header class="mui-bar mui-bar-nav bakc-fff">
+        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="location.replace(document.referrer)">
+        </span>
             <h1 class="mui-title">Rating & Feedback</h1>
         </header>
         <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
@@ -190,6 +191,9 @@
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
 <script type="text/javascript">
+    mui.init();
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
