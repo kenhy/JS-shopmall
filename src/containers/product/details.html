@@ -237,8 +237,8 @@
     </div>
 
 </script>
-<script src="../../js/details/details.js"></script>
-<script type="text/javascript" defer>
+<script src="../../js/details/details.js" ></script>
+<script type="text/javascript">
     mui.init();
     mui('#offCanvasContentScroll').scroll();
     /*五星评价*/
@@ -248,6 +248,7 @@
     progressbar1.on('tap', 'a', function () {
         mui(progressbar1).progressbar().setProgress(this.getAttribute('data-progress'));
     });
+
     /**
      * 通过随机数模拟业务进度，真实业务中需根据实际进度修改
      * @param {Object} container
@@ -271,12 +272,6 @@
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
-    var div = document.getElementsByClassName("mui-slider-item");
-    for (var i = 0; i < div.length; i++) {
-        var d = div[i];
-        var width = d.offsetWidth;
-        d.style.height = width + "px";
-    }
 </script>
 <script type="text/javascript" defer>
     mui.init({
