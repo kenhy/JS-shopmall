@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 function initMyCoupon() {
     var token = getCookie("token");
-    $.post(RTTMALL_API.URL_COUPON_MINE, {
+    $.post(RTTMALL_API.URL_COUPON_MINE,{
             client_token : token
         },
         function(data) {
@@ -27,25 +27,26 @@ function initMyCoupon() {
             if (data != null) {
                 if (data.code != "1") {
                     return;
-                }
-                var couponData = data.data;
-                if(couponData.availableCoupon.length == 0){
-                    console.info('availableCoupon none');
-                }else{
-                    var item1 = template('Unused',couponData);
-                    $("[data-type=Unused]").html(item1);
-                }
-                if(couponData.usedCoupon.length == 0){
-                    console.info('usedCoupon none');
-                }else{
-                    var item1 = template('Unused',couponData);
-                    $("[data-type=Unused]").html(item1);
-                }
-                if(couponData.expiredCoupon.length == 0){
-                    console.info('expiredCoupon none');
-                }else{
-                    var item1 = template('Unused',couponData);
-                    $("[data-type=Unused]").html(item1);
+                }else {
+                    var couponData = data.data;
+                    if(couponData.availableCoupon.length == 0){
+                        console.info('availableCoupon none');
+                    }else{
+                        var item1 = template('Unused',couponData);
+                        $("[data-type=Unused]").html(item1);
+                    }
+                    if(couponData.usedCoupon.length == 0){
+                        console.info('usedCoupon none');
+                    }else{
+                        var item2 = template('Used',couponData);
+                        $("[data-type=Used]").html(item2);
+                    }
+                    if(couponData.expiredCoupon.length == 0){
+                        console.info('expiredCoupon none');
+                    }else{
+                        var item3 = template('Expried',couponData);
+                        $("[data-type=Expried]").html(item3);
+                    }
                 }
             }
         }, "json");
