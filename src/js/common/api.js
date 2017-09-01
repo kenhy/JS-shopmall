@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2017/7/3.
+ * Created by zhangjianan on 2017/7/3.
  */
 var API_BASE_URL = "http://diy.rttshop.com/apipro";
 var RTTMALL_API = {
@@ -25,6 +25,7 @@ var RTTMALL_API = {
     URL_PRODUCT_BROWSING : API_BASE_URL + "/browsing/product",
     URL_PRODUCT_BROWSING_ADD : API_BASE_URL + "/browsing/product/add",
 
+    /*购物车*/
     URL_CART_ADD : API_BASE_URL + "/cart/add",
     URL_CART : API_BASE_URL + "/cart",
     URL_CART_CHECKED : API_BASE_URL + "/cart/checked",
@@ -34,44 +35,50 @@ var RTTMALL_API = {
     URL_CART_REMOVE : API_BASE_URL + "/cart/remove",
     URL_CART_REMOVE_LIST : API_BASE_URL + "/cart/remove/list",
 
-    // 获取快递信息
+    /*获取快递信息*/
     URL_SHIPPING : API_BASE_URL + "/shipping",
 
-    // 登陆
+    /*登陆*/
     URL_LOGIN : API_BASE_URL + "/sign",
-    // 注册
+
+    /*注册*/
     URL_REGISTER_SENDEMAIL : API_BASE_URL + "/register/sendEmail",
     URL_REGISTER_SENDCODE : API_BASE_URL + "/register/code/send",
     URL_REGISTER_CODE_VERIFY : API_BASE_URL + "/register/code/verify",
     URL_REGISTER : API_BASE_URL + "/register/app",
     URL_REGISTER_LOGINNAME_VERIFY : API_BASE_URL + "/register/loginName/verify",
-    // 忘记密码
+
+    /*忘记密码*/
     URL_PWD_FORGET : API_BASE_URL + "/sign/pwd/forget",
     URL_PWD_FORGET_CODE_VERIFY : API_BASE_URL + "/sign/pwd/forget/code/verify",
     URL_PWD_RESET : API_BASE_URL + "/sign/pwd/reset",
-    // 修改密码
+
+    /*修改密码*/
     URL_PWD_UPDATE : API_BASE_URL + "/sign/pwd/update",
     URL_PAY_PWD_UPDATE : API_BASE_URL + "/pay/pwd/update",
 
-    // 语言列表
+    /*语言列表*/
     URL_LANGUAGE : API_BASE_URL + "/language",
-    // 国家列表
+
+    /*国家列表*/
     URL_COUNTRY : API_BASE_URL + "/country/all",
     URL_COUNTRY_HEADER : API_BASE_URL + "/header/country/all",
     URL_COUNTRY_LIST : API_BASE_URL + "/country/list",
-    // 货币列表
+
+    /*货币列表*/
     URL_EXCHANGERATE : API_BASE_URL + "/exchangeRate",
-    // 服务网点列表
+
+    /*服务网点列表*/
     URL_SERVICE_NETWORK : API_BASE_URL + "/network/service",
 
-
-    //APP分类页
+    /*APP分类页*/
     URL_CATEGORY: API_BASE_URL + "/category/all",
-    // 搜索输入框备选分类
+
+    /*搜索输入框备选分类*/
     URL_CATEGORY_HEADER_SEARCH : API_BASE_URL + "/category/header/search",
-    // 获取某分类下子类以及子类的子类
+    /*获取某分类下子类以及子类的子类*/
     URL_CATEGORY_SON : API_BASE_URL + "/category/get",
-    // 获取某分类下分类广告
+    /*获取某分类下分类广告*/
     URL_CATEGORY_AD_CATEGORY : API_BASE_URL + "/category/ad/category",
     // 获取某分类下商品广告
     URL_CATEGORY_AD_RECOMMEND : API_BASE_URL + "/category/ad/recommend",
@@ -133,14 +140,16 @@ var RTTMALL_API = {
     URL_ACCOUNT_SAFETYSETTING : API_BASE_URL + "/account/safetySetting",
     URL_ACCOUNT_UPLOADIMAGE : API_BASE_URL + "/account/uploadImage",
     URL_ACCOUNT_ROLE_APPLY : API_BASE_URL + "/role/apply",
-    // 修改邮箱
+
+    /*修改邮箱*/
     URL_ACCOUNT_EMAIL_GET : API_BASE_URL + "/account/getEmail",
     URL_ACCOUNT_EMAIL_BIND : API_BASE_URL + "/email/bind",
     URL_ACCOUNT_EMAIL_BIND_SENDEMAIL : API_BASE_URL + "/email/bind/sendEmail",
     URL_ACCOUNT_EMAIL_CHANGE_SENDEMAIL : API_BASE_URL + "/email/change/sendEmail",
     URL_ACCOUNT_EMAIL_CHANGE_CODE_VERIFY : API_BASE_URL + "/email/change/code/verify",
     URL_ACCOUNT_EMAIL_CHANGE : API_BASE_URL + "/email/change",
-    // 修改手机号码
+
+    /*修改手机号码*/
     URL_ACCOUNT_PHONE_GET : API_BASE_URL + "/account/getPhone",
     URL_ACCOUNT_PHONE_BIND : API_BASE_URL + "/phone/bind",
     URL_ACCOUNT_PHONE_BIND_CODE_SEND : API_BASE_URL + "/phone/bind/code/send",
@@ -167,12 +176,14 @@ var RTTMALL_API = {
     URL_RECEIVE_COUPON : API_BASE_URL + "/myCoupon/receive",
     URL_COUPON_MINE : API_BASE_URL + "/myCoupon/list",
     URL_CUSTOMER_ADDBILL : API_BASE_URL + "/customer/addBill",
-    // 支付
+
+    /*支付*/
     URL_PAY_DHPAY_PREPAY : API_BASE_URL + "/dhpay/prepay",
     URL_PAY_WECHATPAYMENT : API_BASE_URL + "/weChatPayment",
     URL_PAY_WECHATPAYMENT_QUERY : API_BASE_URL + "/weChatPayment/checkPay",
     // URL_PAY_ONLINE_LIST : API_BASE_URL + "/pay/online/list",
-    // 用户订阅
+
+    /*用户订阅*/
     URL_SUBSCRIBE : API_BASE_URL + "/subscribe",
     URL_HELP : API_BASE_URL + "/help"
 };
