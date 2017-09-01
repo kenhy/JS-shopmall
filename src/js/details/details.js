@@ -41,14 +41,9 @@ function getMessage(url_message) {
                 var list = template('details', data.data);
                 $("[data-type=details]").html(list);
                 /*图片*/
-                var div = document.getElementsByClassName("mui-slider-item ");
-                for (var i = 0 ; i < div.length ; i ++) {
-                    var d = div[i];
-                    var width = d.offsetWidth;
-                    d.style.height = width+"px";
-                }
-                $("#productDes").html(data.data.productDetail.productDes);
-                $("#productDes").hide();
+                var details_doc = $("#productDes");
+                details_doc.html(data.data.productDetail.productDes);
+                details_doc.hide();
             }
         });
     })(url_message_id);

@@ -31,18 +31,88 @@
             <div id="move-togger"></div>
         </div>
     </div>
-    <div class="hidden bakc-fff buy-now border-t">
-        <button class="mui-pull-right buy-now-button nborder font12">BUY NOW</button>
-        <button class="mui-pull-right cart-btn-button nback font12 font-color-h">ADD TO CART</button>
-    </div>
     <!-- off-canvas backdrop -->
     <div class="mui-off-canvas-backdrop"></div>
+</div>
+<!--options-->
+<div id="offCanvasContentScroll" style="display: none" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll padding-b50">
+        <div class="mui-content">
+            <ul data-type="option-index" class="border-t back-fb">
+
+            </ul>
+            <ul data-type="option-check">
+                <li class="bakc-fff padding-line44 property border-be">
+                    <p class=" line16">Color</p>
+                    <ul class="hidden p-color">
+                        <li class="mui-pull-left"><img src="../../images/cat.jpg"/></li>
+                        <li class="mui-pull-left"><img src="../../images/Default-Avatar.jpg"/></li>
+                        <li class="mui-pull-left"><img src="../../images/img.jpg"/></li>
+                        <li class="mui-pull-left"><img src="../../images/img2.jpg"/></li>
+                        <li class="mui-pull-left"><img src="../../images/12454545.jpg"/></li>
+                        <li class="mui-pull-left"><img src="../../images/img2.jpg"/></li>
+                        <li class="mui-pull-left"><img src="../../images/img3.jpg"/></li>
+                    </ul>
+                </li>
+                <li class="bakc-fff padding-line44 property">
+                    <p class=" line16">Size</p>
+                    <ul class="hidden p-size">
+                        <li class="mui-pull-left border text-c">S</li>
+                        <li class="mui-pull-left border text-c">M</li>
+                        <li class="mui-pull-left border text-c">L</li>
+                        <li class="mui-pull-left border text-c">XL</li>
+                        <li class="mui-pull-left border text-c">XXL</li>
+                        <li class="mui-pull-left border text-c">XXXL</li>
+                    </ul>
+                </li>
+                <li class="mui-table-view">
+                    <p class="mui-table-view-cell">
+                        <a href="javascript:void(0)" class="">
+                            <span class="mui-navigate-right font18"></span>In stock
+                        </a>
+                    </p>
+                </li>
+                <li class="bakc-fff padding-line44 property border-be">
+                    <p class="line16">Quantity</p>
+                    <div class="mui-numbox margin-t20" data-numbox-step="1" data-numbox-min="1" data-numbox-max="100" style="z-index: 99;">
+                        <button class="mui-btn mui-numbox-btn-minus" type="button" disabled="">
+                            <s class="iconfont icon-jian mui-pull-left text-c"></s>
+                        </button>
+                        <input class="mui-numbox-input" type="number" data-numbox-max="100"/>
+                        <button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button">
+                            <s class="iconfont icon-jia mui-pull-left text-c"></s>
+                        </button>
+                    </div>
+                </li>
+                <li class="bakc-fff padding-line44 property coupon-list">
+                    <!--<div class="mui-table-view">
+                    <a href="javascript:void(0)" class=" font-color-3">
+                    <span class="mui-navigate-right font18 mui-pull-right right-4"></span>
+                    <s class="iconfont icon-youhuiquan font18 mui-pull-right font-color-h mar-right" style="line-height: 24px;"></s>
+                    Discounts&Coupons
+                    </a>
+                    </div>--><!--优惠券-->
+                    <div class="mui-table-view-table">
+                        <a href="javascript:void(0)">
+                            <p>Shipping:<span class="font-color-3">US$8.00</span></p>
+                            <p class="line16">To trinidad and Tobago via RTTMALL Standard Shipping</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="hidden bakc-fff buy-now border-t" >
+    <button class="mui-pull-right buy-now-button nborder font12">BUY NOW</button>
+    <button class="mui-pull-right cart-btn-button nback font12 font-color-h">ADD TO CART</button>
 </div>
 <script src="../../js/common/api.js"></script>
 <script src="../../js/common/jquery.min.js"></script>
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
+<script src="../../js/details/details.js" defer></script>
 <script id="details" type="text/html">
     <div id="slider" class="mui-slider padding-b20 bakc-fff" style="z-index: initial;">
         <div class="mui-slider-group mui-slider-loop">
@@ -237,7 +307,21 @@
     </div>
 
 </script>
-<script src="../../js/details/details.js" ></script>
+<script id="option-index" type="text/html">
+    <li class="padding-line44">
+        <a href="javascript:;">
+            <p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+            <dl class="mui-media-body product-text relative">
+                <dt class="nospace font14">
+                    {{}}
+                </dt>
+                <dd>
+                    <p class="font-weight color-red font16">US $86.64</p>
+                </dd>
+            </dl>
+        </a>
+    </li>
+</script>
 <script type="text/javascript">
     mui.init();
     mui('#offCanvasContentScroll').scroll();
