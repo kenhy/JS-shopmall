@@ -42,167 +42,171 @@
 </style>
 
 <body>
-
-<header class="mui-bar mui-bar-nav">
-    <a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" href="../../index.html"></a>
-    <div class="nav-input radius4">
-        <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
-        <input id="input_in" type="button" class="text-l nback nborder nmg npd"/>
-    </div>
-</header>
-<!-- list -->
-<div id="content_list">
-    <div class="padding-line44 hidden bakc-fff bestmatch">
-        <a href="#bestmatch">
-            <p class="mui-pull-left font-color-h">
-                <s class="iconfont icon-jiaohuan font20 mui-pull-left margin-r5"></s>
-                <em class="mui-pull-left">Best Match</em>
-                <s class="triangle-down margin-l5 mui-pull-left"></s>
-            </p>
-        </a>
-        <p class="mui-pull-right">
-            <s class="iconfont icon-fenlei font20 margin-r10 mui-pull-left"></s>
-            <a class="hidden" href="#filterbox">
-                <s class="iconfont icon-shaixuan font22 padding-l10 border-l mui-pull-left font-color-h"></s> Filter
-            </a>
-        </p>
-    </div>
-    <div id="refreshContainer" class="mui-scroll-wrapper">
-        <div id="list" class="mui-content mui-scroll npm">
-            <div data-type="search_list">
-                <!-- search_list -->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <div class="mui-inner-wrap">
+        <header class="mui-bar mui-bar-nav">
+            <a id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" href="../../index.html"></a>
+            <div class="nav-input radius4">
+                <span class="iconfont icon-sousuo font18 mui-pull-left "></span>
+                <input id="input_in" type="button" class="text-l nback nborder nmg npd"/>
             </div>
-
-        </div>
-    </div>
-</div>
-<div id="loading" class="loading">Loading...</div>
-<div id="bestmatch" class="mui-popover">
-    <div class="mui-popover-arrow none"></div>
-    <div class="mui-scroll-wrapper">
-        <div class="mui-scroll">
-            <ul class="bakc-fff">
-                <li class="padding-line44 border-t font-color-9">
-                    Number of orders
-                    <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h"></s>
-                </li>
-                <li class="padding-line44 border-t font-color-9">
-                    Price(Low to High)
-                    <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
-                </li>
-                <li class="padding-line44 border-t font-color-9">
-                    Price(High to Low)
-                    <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
-                </li>
-                <li class="padding-line44 border-t font-color-9">
-                    New product
-                    <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div id="filterbox" class="mui-popover bakc-eee">
-    <div class="mui-popover-arrow none"></div>
-    <div class="mui-scroll-wrapper nmg">
-        <div class="mui-scroll">
-            <header class="mui-bar mui-bar-nav border-be">
-                <a href="#" class="mui-action-back mui-btn mui-btn-link mui-pull-left font12 font-color-3">
-                    Reset
+        </header>
+        <!-- list -->
+        <div id="content_list">
+            <div class="padding-line44 hidden bakc-fff bestmatch">
+                <a href="#bestmatch">
+                    <p class="mui-pull-left font-color-h">
+                        <s class="iconfont icon-jiaohuan font20 mui-pull-left margin-r5"></s>
+                        <em class="mui-pull-left">Best Match</em>
+                        <s class="triangle-down margin-l5 mui-pull-left"></s>
+                    </p>
                 </a>
-                <a href="" class="mui-action-back mui-btn mui-btn-link mui-pull-right font12 font-color-3">
-                    Done
-                </a>
-                <h1 class="mui-title">Filter</h1>
-            </header>
-            <ul class="filterbox-list">
-                <li class="padding-line44 border-be hidden bakc-fff price">
-                    <p class="hidden mui-col-xs-5 mui-pull-left">Price</p>
-                    <div class="hidden mui-col-xs-7 mui-pull-left">
-                        <input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Max."/>
-                        <em class="mui-pull-right iconfont icon-jian font10" style="color: #EEEEEE;"></em>
-                        <input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Min."/>
+                <p class="mui-pull-right">
+                    <s class="iconfont icon-fenlei font20 margin-r10 mui-pull-left"></s>
+                    <a class="hidden" href="#filterbox">
+                        <s class="iconfont icon-shaixuan font22 padding-l10 border-l mui-pull-left font-color-h"></s>
+                        Filter
+                    </a>
+                </p>
+            </div>
+            <div id="refreshContainer" class="mui-scroll-wrapper">
+                <div id="list" class="mui-content mui-scroll npm">
+                    <div data-type="search_list">
+                        <!-- search_list -->
                     </div>
-                </li>
-                <li class="mui-table-view-cell border-be hidden margin-t10 bakc-fff mui-input-row mui-checkbox">
-                    <label>Free shipping</label>
-                    <input name="checkbox1" value="" type="checkbox"/>
-                </li>
-                <li class="mui-table-view noradius bakc-fff brand-logo">
-                    <div class="mui-table-view-cell mui-collapse noradius bakc-fff">
-                        <a class="mui-navigate-right noradius bakc-fff border-be" href="#">Brand</a>
-                        <div class="mui-collapse-content">
-                            <div id="slider" class="mui-slider">
-                                <div class="mui-slider-group mui-slider-loop">
-                                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-                                    <div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
-                                        <a href="#">
-                                            <img src="../../images/home/yuantiao.jpg">
-                                        </a>
-                                        <a href="#">
-                                            <img src="../../images/home/yuantiao.jpg">
-                                        </a>
-                                    </div>
-                                    <!-- 第一张 -->
-                                    <div class="mui-slider-item mui-col-xs-3">
-                                        <a href="#">
-                                            <img src="../../images/home/shuijiao.jpg">
-                                        </a>
-                                        <a href="#">
-                                            <img src="../../images/home/shuijiao.jpg">
-                                        </a>
-                                    </div>
-                                    <!-- 第二张 -->
-                                    <div class="mui-slider-item mui-col-xs-3">
-                                        <a href="#">
-                                            <img src="../../images/home/muwu.jpg">
-                                        </a>
-                                        <a href="#">
-                                            <img src="../../images/home/muwu.jpg">
-                                        </a>
-                                    </div>
-                                    <!-- 第三张 -->
-                                    <div class="mui-slider-item mui-col-xs-3">
-                                        <a href="#">
-                                            <img src="../../images/home/cbd.jpg">
-                                        </a>
-                                        <a href="#">
-                                            <img src="../../images/home/cbd.jpg">
-                                        </a>
-                                    </div>
-                                    <!-- 第四张 -->
-                                    <div class="mui-slider-item mui-col-xs-3">
-                                        <a href="#">
-                                            <img src="../../images/home/yuantiao.jpg">
-                                        </a>
-                                        <a href="#">
-                                            <img src="../../images/home/yuantiao.jpg">
-                                        </a>
-                                    </div>
-                                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-                                    <div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
-                                        <a href="#">
-                                            <img src="../../images/home/shuijiao.jpg">
-                                        </a>
-                                        <a href="#">
-                                            <img src="../../images/home/shuijiao.jpg">
-                                        </a>
+
+                </div>
+            </div>
+        </div>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="bestmatch" class="mui-popover">
+            <div class="mui-popover-arrow none"></div>
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="bakc-fff">
+                        <li class="padding-line44 border-t font-color-9">
+                            Number of orders
+                            <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h"></s>
+                        </li>
+                        <li class="padding-line44 border-t font-color-9">
+                            Price(Low to High)
+                            <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
+                        </li>
+                        <li class="padding-line44 border-t font-color-9">
+                            Price(High to Low)
+                            <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
+                        </li>
+                        <li class="padding-line44 border-t font-color-9">
+                            New product
+                            <s class="mui-icon mui-icon-checkmarkempty mui-pull-right font-color-h none"></s>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="filterbox" class="mui-popover bakc-eee">
+            <div class="mui-popover-arrow none"></div>
+            <div class="mui-scroll-wrapper nmg">
+                <div class="mui-scroll">
+                    <header class="mui-bar mui-bar-nav border-be">
+                        <a href="#" class="mui-action-back mui-btn mui-btn-link mui-pull-left font12 font-color-3">
+                            Reset
+                        </a>
+                        <a href="" class="mui-action-back mui-btn mui-btn-link mui-pull-right font12 font-color-3">
+                            Done
+                        </a>
+                        <h1 class="mui-title">Filter</h1>
+                    </header>
+                    <ul class="filterbox-list">
+                        <li class="padding-line44 border-be hidden bakc-fff price">
+                            <p class="hidden mui-col-xs-5 mui-pull-left">Price</p>
+                            <div class="hidden mui-col-xs-7 mui-pull-left">
+                                <input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Max."/>
+                                <em class="mui-pull-right iconfont icon-jian font10" style="color: #EEEEEE;"></em>
+                                <input class="border mui-pull-right mui-col-xs-5 line20 text-c" placeholder="Min."/>
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell border-be hidden margin-t10 bakc-fff mui-input-row mui-checkbox">
+                            <label>Free shipping</label>
+                            <input name="checkbox1" value="" type="checkbox"/>
+                        </li>
+                        <li class="mui-table-view noradius bakc-fff brand-logo">
+                            <div class="mui-table-view-cell mui-collapse noradius bakc-fff">
+                                <a class="mui-navigate-right noradius bakc-fff border-be" href="#">Brand</a>
+                                <div class="mui-collapse-content">
+                                    <div id="slider" class="mui-slider">
+                                        <div class="mui-slider-group mui-slider-loop">
+                                            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                                            <div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
+                                                <a href="#">
+                                                    <img src="../../images/home/yuantiao.jpg">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="../../images/home/yuantiao.jpg">
+                                                </a>
+                                            </div>
+                                            <!-- 第一张 -->
+                                            <div class="mui-slider-item mui-col-xs-3">
+                                                <a href="#">
+                                                    <img src="../../images/home/shuijiao.jpg">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="../../images/home/shuijiao.jpg">
+                                                </a>
+                                            </div>
+                                            <!-- 第二张 -->
+                                            <div class="mui-slider-item mui-col-xs-3">
+                                                <a href="#">
+                                                    <img src="../../images/home/muwu.jpg">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="../../images/home/muwu.jpg">
+                                                </a>
+                                            </div>
+                                            <!-- 第三张 -->
+                                            <div class="mui-slider-item mui-col-xs-3">
+                                                <a href="#">
+                                                    <img src="../../images/home/cbd.jpg">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="../../images/home/cbd.jpg">
+                                                </a>
+                                            </div>
+                                            <!-- 第四张 -->
+                                            <div class="mui-slider-item mui-col-xs-3">
+                                                <a href="#">
+                                                    <img src="../../images/home/yuantiao.jpg">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="../../images/home/yuantiao.jpg">
+                                                </a>
+                                            </div>
+                                            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                                            <div class="mui-slider-item mui-slider-item-duplicate mui-col-xs-3">
+                                                <a href="#">
+                                                    <img src="../../images/home/shuijiao.jpg">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="../../images/home/shuijiao.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="mui-table-view-cell bakc-fff">
-                    <a class="" href="#">Categories</a>
-                </li>
-                <li class="mui-table-view-cell bakc-fff">
-                    <a class="font-color-9" href="#">Apparel for Women</a>
-                </li>
-                <li class="mui-table-view-cell bakc-fff">
-                    <a class="font-color-9" href="#">Apparel for Men</a>
-                </li>
-            </ul>
+                        </li>
+                        <li class="mui-table-view-cell bakc-fff">
+                            <a class="" href="#">Categories</a>
+                        </li>
+                        <li class="mui-table-view-cell bakc-fff">
+                            <a class="font-color-9" href="#">Apparel for Women</a>
+                        </li>
+                        <li class="mui-table-view-cell bakc-fff">
+                            <a class="font-color-9" href="#">Apparel for Men</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -247,6 +251,7 @@
     mui.init();
     mui('#offCanvasSideScroll').scroll();
     mui('#offCanvasContentScroll').scroll();
+    mui('#refreshContainer').scroll();
     mui.init({
         pullRefresh: {
             container: "#refreshContainer",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等

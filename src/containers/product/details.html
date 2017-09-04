@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Commodity details</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <link rel="stylesheet" href="../../css/mui.min.css"/>
     <link rel="stylesheet" href="../../css/base.css"/>
     <link rel="stylesheet" href="../../css/subpage.css"/>
@@ -17,95 +17,101 @@
 </head>
 
 <body>
-<header class="mui-bar mui-bar-nav bakc-fff">
-    <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="location.replace(document.referrer)"></span>
-    <a href="javascript:void(0);" class="mui-icon iconfont icon-gouwuche2 mui-pull-right nmg"></a>
-    <h1 class="mui-title"></h1>
-</header>
-<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
-    <div class="mui-scroll">
-        <div class="mui-content padding-b50">
-            <div data-type="details">
-                <!--details-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <div class="mui-inner-wrap">
+        <header class="mui-bar mui-bar-nav bakc-fff">
+        <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
+              onclick="location.replace(document.referrer)"></span>
+            <a href="javascript:void(0);" class="mui-icon iconfont icon-gouwuche2 mui-pull-right nmg"></a>
+            <h1 class="mui-title"></h1>
+        </header>
+        <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="mui-content padding-b50">
+                    <div data-type="details">
+                        <!--details-->
+                    </div>
+                    <div id="move-togger"></div>
+                </div>
             </div>
-            <div id="move-togger"></div>
+            <!-- off-canvas backdrop -->
+            <div class="mui-off-canvas-backdrop"></div>
         </div>
-    </div>
-    <!-- off-canvas backdrop -->
-    <div class="mui-off-canvas-backdrop"></div>
-</div>
-<!--options-->
-<div id="offCanvasContentScroll" style="display: none" class="mui-content mui-scroll-wrapper">
-    <div class="mui-scroll padding-b50">
-        <div class="mui-content">
-            <ul data-type="option-index" class="border-t back-fb">
+        <!--options-->
+        <div id="offCanvasContentScroll" style="display: none" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll padding-b50">
+                <div class="mui-content">
+                    <ul data-type="option-index" class="border-t back-fb">
 
-            </ul>
-            <ul data-type="option-check">
-                <li class="bakc-fff padding-line44 property border-be">
-                    <p class=" line16">Color</p>
-                    <ul class="hidden p-color">
-                        <li class="mui-pull-left"><img src="../../images/cat.jpg"/></li>
-                        <li class="mui-pull-left"><img src="../../images/Default-Avatar.jpg"/></li>
-                        <li class="mui-pull-left"><img src="../../images/img.jpg"/></li>
-                        <li class="mui-pull-left"><img src="../../images/img2.jpg"/></li>
-                        <li class="mui-pull-left"><img src="../../images/12454545.jpg"/></li>
-                        <li class="mui-pull-left"><img src="../../images/img2.jpg"/></li>
-                        <li class="mui-pull-left"><img src="../../images/img3.jpg"/></li>
                     </ul>
-                </li>
-                <li class="bakc-fff padding-line44 property">
-                    <p class=" line16">Size</p>
-                    <ul class="hidden p-size">
-                        <li class="mui-pull-left border text-c">S</li>
-                        <li class="mui-pull-left border text-c">M</li>
-                        <li class="mui-pull-left border text-c">L</li>
-                        <li class="mui-pull-left border text-c">XL</li>
-                        <li class="mui-pull-left border text-c">XXL</li>
-                        <li class="mui-pull-left border text-c">XXXL</li>
+                    <ul data-type="option-check">
+                        <li class="bakc-fff padding-line44 property border-be">
+                            <p class=" line16">Color</p>
+                            <ul class="hidden p-color">
+                                <li class="mui-pull-left"><img src="../../images/cat.jpg"/></li>
+                                <li class="mui-pull-left"><img src="../../images/Default-Avatar.jpg"/></li>
+                                <li class="mui-pull-left"><img src="../../images/img.jpg"/></li>
+                                <li class="mui-pull-left"><img src="../../images/img2.jpg"/></li>
+                                <li class="mui-pull-left"><img src="../../images/12454545.jpg"/></li>
+                                <li class="mui-pull-left"><img src="../../images/img2.jpg"/></li>
+                                <li class="mui-pull-left"><img src="../../images/img3.jpg"/></li>
+                            </ul>
+                        </li>
+                        <li class="bakc-fff padding-line44 property">
+                            <p class=" line16">Size</p>
+                            <ul class="hidden p-size">
+                                <li class="mui-pull-left border text-c">S</li>
+                                <li class="mui-pull-left border text-c">M</li>
+                                <li class="mui-pull-left border text-c">L</li>
+                                <li class="mui-pull-left border text-c">XL</li>
+                                <li class="mui-pull-left border text-c">XXL</li>
+                                <li class="mui-pull-left border text-c">XXXL</li>
+                            </ul>
+                        </li>
+                        <li class="mui-table-view">
+                            <p class="mui-table-view-cell">
+                                <a href="javascript:void(0)" class="">
+                                    <span class="mui-navigate-right font18"></span>In stock
+                                </a>
+                            </p>
+                        </li>
+                        <li class="bakc-fff padding-line44 property border-be">
+                            <p class="line16">Quantity</p>
+                            <div class="mui-numbox margin-t20" data-numbox-step="1" data-numbox-min="1"
+                                 data-numbox-max="100" style="z-index: 99;">
+                                <button class="mui-btn mui-numbox-btn-minus" type="button" disabled="">
+                                    <s class="iconfont icon-jian mui-pull-left text-c"></s>
+                                </button>
+                                <input class="mui-numbox-input" type="number" data-numbox-max="100"/>
+                                <button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button">
+                                    <s class="iconfont icon-jia mui-pull-left text-c"></s>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="bakc-fff padding-line44 property coupon-list">
+                            <!--<div class="mui-table-view">
+                            <a href="javascript:void(0)" class=" font-color-3">
+                            <span class="mui-navigate-right font18 mui-pull-right right-4"></span>
+                            <s class="iconfont icon-youhuiquan font18 mui-pull-right font-color-h mar-right" style="line-height: 24px;"></s>
+                            Discounts&Coupons
+                            </a>
+                            </div>--><!--优惠券-->
+                            <div class="mui-table-view-table">
+                                <a href="javascript:void(0)">
+                                    <p>Shipping:<span class="font-color-3">US$8.00</span></p>
+                                    <p class="line16">To trinidad and Tobago via RTTMALL Standard Shipping</p>
+                                </a>
+                            </div>
+                        </li>
                     </ul>
-                </li>
-                <li class="mui-table-view">
-                    <p class="mui-table-view-cell">
-                        <a href="javascript:void(0)" class="">
-                            <span class="mui-navigate-right font18"></span>In stock
-                        </a>
-                    </p>
-                </li>
-                <li class="bakc-fff padding-line44 property border-be">
-                    <p class="line16">Quantity</p>
-                    <div class="mui-numbox margin-t20" data-numbox-step="1" data-numbox-min="1" data-numbox-max="100" style="z-index: 99;">
-                        <button class="mui-btn mui-numbox-btn-minus" type="button" disabled="">
-                            <s class="iconfont icon-jian mui-pull-left text-c"></s>
-                        </button>
-                        <input class="mui-numbox-input" type="number" data-numbox-max="100"/>
-                        <button class="mui-btn mui-numbox-btn-plus" style="right: 0 !important;" type="button">
-                            <s class="iconfont icon-jia mui-pull-left text-c"></s>
-                        </button>
-                    </div>
-                </li>
-                <li class="bakc-fff padding-line44 property coupon-list">
-                    <!--<div class="mui-table-view">
-                    <a href="javascript:void(0)" class=" font-color-3">
-                    <span class="mui-navigate-right font18 mui-pull-right right-4"></span>
-                    <s class="iconfont icon-youhuiquan font18 mui-pull-right font-color-h mar-right" style="line-height: 24px;"></s>
-                    Discounts&Coupons
-                    </a>
-                    </div>--><!--优惠券-->
-                    <div class="mui-table-view-table">
-                        <a href="javascript:void(0)">
-                            <p>Shipping:<span class="font-color-3">US$8.00</span></p>
-                            <p class="line16">To trinidad and Tobago via RTTMALL Standard Shipping</p>
-                        </a>
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hidden bakc-fff buy-now border-t">
+            <button class="mui-pull-right buy-now-button nborder font12">BUY NOW</button>
+            <button class="mui-pull-right cart-btn-button nback font12 font-color-h">ADD TO CART</button>
         </div>
     </div>
-</div>
-<div class="hidden bakc-fff buy-now border-t" >
-    <button class="mui-pull-right buy-now-button nborder font12">BUY NOW</button>
-    <button class="mui-pull-right cart-btn-button nback font12 font-color-h">ADD TO CART</button>
 </div>
 <script src="../../js/common/api.js"></script>
 <script src="../../js/common/jquery.min.js"></script>
@@ -324,14 +330,16 @@
 </script>
 <script type="text/javascript">
     mui.init();
+    mui('#offCanvasWrapper').scroll();
     mui('#offCanvasContentScroll').scroll();
+    mui('#refreshContainer').scroll();
     /*五星评价*/
-    var progressbar1 = mui('#star');
+    /*var progressbar1 = mui('#star');
     mui(progressbar1).progressbar().setProgress(0);
-    /*默认开始值*/
+    /!*默认开始值*!/
     progressbar1.on('tap', 'a', function () {
         mui(progressbar1).progressbar().setProgress(this.getAttribute('data-progress'));
-    });
+    });*/
 
     /**
      * 通过随机数模拟业务进度，真实业务中需根据实际进度修改
@@ -353,20 +361,21 @@
             }
         }, Math.random() * 200 + 200);
     }
+
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });
 </script>
 <script type="text/javascript" defer>
     mui.init({
-        pullRefresh : {
-            container:"#refreshContainer",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
-            up:{
+        pullRefresh: {
+            container: "#refreshContainer",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up: {
                 height: 50, //可选.默认50.触发上拉加载拖动距离
                 auto: false, //可选,默认false.自动上拉加载一次
                 contentrefresh: "Loading...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
                 contentnomore: '-_- have nothing !!!', //可选，请求完毕若没有更多数据时显示的提醒内容；
-                callback : function() {
+                callback: function () {
                     var self = this; // 这里的this == mui('#refreshContainer').pullRefresh()
                     // 加载更多的内容
                     loadMore(this);
@@ -380,15 +389,15 @@
         window.top.location.href = this.href;
     });
     var list_state = false;
-    var loadMore = function(pullRefresh) {
+    var loadMore = function (pullRefresh) {
         // 加载更多的内容到列表中
-        if (list_state == false){
+        if (list_state == false) {
             // 如果有更多数据，则继续
             pullRefresh.endPullupToRefresh(false);
             $("#productDes").show();
             $("#show_details").hide();
             list_state = true;
-        }else{
+        } else {
             // 如果没有更多数据了，则关闭上拉加载
             pullRefresh.endPullupToRefresh(true);
         }

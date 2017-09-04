@@ -23,20 +23,7 @@
             <div class="mui-scroll padding-b50">
                 <div class="mui-content">
                     <ul class="border-t back-fb">
-                        <li class="padding-line44">
-                            <a href="javascript:;">
-                                <p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
-                                <dl class="mui-media-body product-text relative">
-                                    <dt class="nospace font14">
-                                        This is the title. This is the title. This is the title.
-                                        This is the title. This is the title. This is the title.
-                                    </dt>
-                                    <dd>
-                                        <p class="font-weight color-red font16">US $86.64</p>
-                                    </dd>
-                                </dl>
-                            </a>
-                        </li>
+                        <!-- main -->
                     </ul>
                     <ul>
                         <li class="bakc-fff padding-line44 property border-be">
@@ -114,6 +101,22 @@
 <script src="../../js/common/mui.min.js"></script>
 <script src="../../js/common/template/template.js"></script>
 <script src="../../js/main.js"></script>
+<script src="../../js/details/details.js"></script>
+<script type="text/html">
+    <li class="padding-line44">
+        <a href="javascript:;">
+            <p class="product-size mui-pull-left radius4"><img src="../../images/img.jpg"></p>
+            <dl class="mui-media-body product-text relative">
+                <dt class="nospace font14">
+                    {{}}
+                </dt>
+                <dd>
+                    <p class="font-weight color-red font16">US $86.64</p>
+                </dd>
+            </dl>
+        </a>
+    </li>
+</script>
 <script type="text/javascript">
     mui.init();
     mui('#offCanvasSideScroll').scroll();

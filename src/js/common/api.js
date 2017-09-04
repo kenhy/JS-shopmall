@@ -31,7 +31,7 @@ var RTTMALL_API = {
     URL_CART_CHECKED : API_BASE_URL + "/cart/checked",
     URL_CART_CHECKED_LIST : API_BASE_URL + "/cart/checked/list",
     URL_CART_QUANTITY : API_BASE_URL + "/cart/quantity",
-    URL_INDEX_CART_COUNT : API_BASE_URL + "/cart/count",
+    URL_CART_COUNT : API_BASE_URL + "/cart/count",
     URL_CART_REMOVE : API_BASE_URL + "/cart/remove",
     URL_CART_REMOVE_LIST : API_BASE_URL + "/cart/remove/list",
 
