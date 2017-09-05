@@ -39,6 +39,7 @@
 </head>
 
 <body>
+
 <header class="mui-bar mui-bar-nav bakc-fff">
     <span id="back_btn" class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left" onclick="history.back();"></span>
     <a id="remind_me" href="remind-me.html" class="user_check mui-icon iconfont icon-icon-remind mui-pull-right font22 font-color-9"></a>
@@ -114,7 +115,7 @@
                     </dd>
                     </a>
                     <dd>
-                        <span data-productid="{{p.superDealProductId}}" class="remind-add mui-pull-right text-r bottom-right color-skyblue">REMIND ME</span>
+                        <span data-productid="{{p.superDealProductId}}" class="remind-add mui-pull-right text-r bottom-right color-red">REMIND ME</span>
                     </dd>
                 </dl>
             </li>
@@ -125,9 +126,11 @@
 </script>
 
 <script type="text/javascript">
+    mui.init();
+    mui('#offCanvasWrapper').scroll();
+    mui('#offCanvasContentScroll').scroll();
     var controls = document.getElementById('segmentedControl');
     var contents = document.getElementById('segmentedControlContents');
-    mui.init();
     mui('body').on('tap', 'a', function () {
         window.top.location.href = this.href;
     });

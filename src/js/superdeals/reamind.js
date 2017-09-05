@@ -1,15 +1,6 @@
 /**
  * Created by zhangjianan on 2017/8/1.
  */
-$(document).ready(function () {
-    init_reaming();
-    var Cancle_reminder = $(".cancle-reminder");
-    Cancle_reminder.on('click',function () {
-        var index = this.getAttribute("data-productid");
-        console.log(index);
-        del_reaming(index);
-    });
-});
 
 function init_reaming() {
     var token = getCookie('token');
