@@ -3,6 +3,7 @@
  */
 var domain = document.domain;
 
+
 /* 输入跳转 */
 function lesson_input() {
     var input_in = document.getElementById('input_in');
@@ -104,12 +105,6 @@ Date.prototype.format = function(f) {
                 o[k] : ("00" + o[k]).substr(("" + o[k]).length));
     return f;
 };
-
-/*登录*/
-function href_check() {
-    var href_check_item = $(".user_check");
-        href_check_item.attr("href","/containers/login/login.html");
-}
 
 /*会员*/
 function getCustomerRole() {
@@ -235,12 +230,16 @@ function formatTime(timeStr) {
     return timeStr;
 }
 
+/*登录跳转*/
+function href_check() {
+    var href_check_item = $(".user_check");
+    href_check_item.attr("href","/containers/login/login.html");
+}
+
 /*登录状态监测*/
 function all_login_status(){
     var token = getCookie("token");
     if (token == "") {
-        //console.log(username);
-        //console.log(imagePath);
         href_check();
     }
 }
